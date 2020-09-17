@@ -1,0 +1,19 @@
+{
+	"name": "DestinationDataset_swc",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_RAW_BAMBOOHR",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "FILE_BAMBOOHR",
+				"folderPath": "BambooHR",
+				"fileSystem": "cntrawzonesltdev"
+			}
+		}
+	}
+}
