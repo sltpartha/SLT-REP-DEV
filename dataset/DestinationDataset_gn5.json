@@ -9,7 +9,7 @@
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "dev",
+			"schema": "dbhitarth123",
 			"table": "Account"
 		}
 	}
