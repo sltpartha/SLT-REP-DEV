@@ -1,0 +1,20 @@
+{
+	"name": "DS_ADLS_CURATED_BAMBOOHR",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_RAW_BAMBOOHR",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "Bamboo HR",
+				"fileSystem": "cntcuratedzonesltdev"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}

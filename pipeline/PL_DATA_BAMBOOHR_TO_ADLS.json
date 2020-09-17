@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_swc",
+				"name": "PL_DATA_BAMBOOHR_TO_ADLS",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
