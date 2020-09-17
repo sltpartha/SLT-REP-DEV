@@ -1,5 +1,5 @@
 {
-	"name": "SourceDataset_swc",
+	"name": "DS_REST_BAMBOOHR",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_BAMBOOHR_REST",
