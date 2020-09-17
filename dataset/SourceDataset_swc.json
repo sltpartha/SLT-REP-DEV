@@ -1,0 +1,12 @@
+{
+	"name": "SourceDataset_swc",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_BAMBOOHR_REST",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	}
+}
