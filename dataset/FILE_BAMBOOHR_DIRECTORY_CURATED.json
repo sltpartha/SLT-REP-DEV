@@ -1,0 +1,23 @@
+{
+	"name": "FILE_BAMBOOHR_DIRECTORY_CURATED",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_RAW_BAMBOOHR",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "Bamboo HR",
+				"fileSystem": "cntcuratedzonesltdev"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
