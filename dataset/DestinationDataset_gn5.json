@@ -9,8 +9,8 @@
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "sltsqldbdev",
-			"table": "account"
+			"schema": "dev",
+			"table": "Account"
 		}
 	}
 }
