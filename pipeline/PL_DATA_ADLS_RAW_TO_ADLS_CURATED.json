@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "PL_TRANS_ADLK_BAMBOOHR_Flattened_DirectoryData",
+				"name": "PL_TRANS_ADLK_BAMBOOHR_DirectoryData",
 				"description": "Flattened directory data",
 				"type": "Copy",
 				"dependsOn": [],
