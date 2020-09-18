@@ -47,7 +47,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_ADLS_RAW_BAMBOOHR",
+						"referenceName": "DS_ADLS_RAW_HR_EmployeeDirectory",
 						"type": "DatasetReference"
 					}
 				]
