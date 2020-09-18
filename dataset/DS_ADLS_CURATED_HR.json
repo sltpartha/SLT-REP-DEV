@@ -5,6 +5,9 @@
 			"referenceName": "LS_ADLS_BAMBOOHR",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "HR/ADLS CURATED"
+		},
 		"annotations": [],
 		"type": "Parquet",
 		"typeProperties": {

@@ -5,6 +5,9 @@
 			"referenceName": "LS_REST_BAMBOOHR",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "HR/HR REST ENDPOINT"
+		},
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
