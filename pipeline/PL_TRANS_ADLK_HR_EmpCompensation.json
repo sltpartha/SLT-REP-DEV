@@ -124,7 +124,7 @@
 									"path": "$['overtimeRate']['currency']"
 								},
 								"sink": {
-									"name": "currency"
+									"name": "currencyOverTime"
 								}
 							},
 							{
