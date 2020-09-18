@@ -27,12 +27,14 @@
 						}
 					},
 					"sink": {
-						"type": "ParquetSink",
+						"type": "DelimitedTextSink",
 						"storeSettings": {
 							"type": "AzureBlobFSWriteSettings"
 						},
 						"formatSettings": {
-							"type": "ParquetWriteSettings"
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
 						}
 					},
 					"enableStaging": false,
@@ -44,8 +46,8 @@
 									"path": "$['id']"
 								},
 								"sink": {
-									"name": "id",
-									"type": "Int64"
+									"type": "Int64",
+									"ordinal": 1
 								}
 							},
 							{
@@ -53,8 +55,8 @@
 									"path": "$['employeeId']"
 								},
 								"sink": {
-									"name": "employeeId",
-									"type": "Int64"
+									"type": "Int64",
+									"ordinal": 2
 								}
 							},
 							{
@@ -62,8 +64,8 @@
 									"path": "$['date']"
 								},
 								"sink": {
-									"name": "date",
-									"type": "DateTime"
+									"type": "DateTime",
+									"ordinal": 3
 								}
 							},
 							{
@@ -71,8 +73,8 @@
 									"path": "$['location']"
 								},
 								"sink": {
-									"name": "location",
-									"type": "String"
+									"type": "String",
+									"ordinal": 4
 								}
 							},
 							{
@@ -80,8 +82,8 @@
 									"path": "$['department']"
 								},
 								"sink": {
-									"name": "department",
-									"type": "String"
+									"type": "String",
+									"ordinal": 5
 								}
 							},
 							{
@@ -89,8 +91,8 @@
 									"path": "$['division']"
 								},
 								"sink": {
-									"name": "division",
-									"type": "String"
+									"type": "String",
+									"ordinal": 6
 								}
 							},
 							{
@@ -98,8 +100,8 @@
 									"path": "$['jobTitle']"
 								},
 								"sink": {
-									"name": "jobTitle",
-									"type": "String"
+									"type": "String",
+									"ordinal": 7
 								}
 							},
 							{
@@ -107,8 +109,8 @@
 									"path": "$['reportsTo']"
 								},
 								"sink": {
-									"name": "reportsTo",
-									"type": "String"
+									"type": "String",
+									"ordinal": 8
 								}
 							}
 						],
@@ -124,7 +126,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_ADLS_CURATED_HR",
+						"referenceName": "DelimitedText1",
 						"type": "DatasetReference"
 					}
 				]
