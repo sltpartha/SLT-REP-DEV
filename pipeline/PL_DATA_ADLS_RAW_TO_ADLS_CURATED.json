@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "PL_TRANS_ADLK_RAW_TO_ADLS_CURATED",
+				"name": "PL_TRANS_ADLK_BAMBOOHR_Flattned_DirectoryData",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
