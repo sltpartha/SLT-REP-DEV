@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_6tz",
+				"name": "PL_TRANS_ADLK_HR_EmpCompensation",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
