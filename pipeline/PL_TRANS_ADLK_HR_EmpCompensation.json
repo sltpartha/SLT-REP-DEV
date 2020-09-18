@@ -162,7 +162,7 @@
 								},
 								"sink": {
 									"name": "valueOvertime",
-									"type": "Double"
+									"type": "String"
 								}
 							}
 						]
