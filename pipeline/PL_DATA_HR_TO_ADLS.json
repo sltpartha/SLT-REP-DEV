@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "PL_DATA_HR_TO_ADLS",
+				"name": "PL_DATA_HR_TO_ADLS_EmployeeDirectory",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
