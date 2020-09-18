@@ -1,5 +1,5 @@
 {
-	"name": "PL_DATA_BAMBOOHR_TO_ADLS",
+	"name": "PL_DATA_HR_TO_ADLS",
 	"properties": {
 		"activities": [
 			{
@@ -41,7 +41,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_REST_HR",
+						"referenceName": "DS_REST_HR_EmployeeDirectory",
 						"type": "DatasetReference"
 					}
 				],
