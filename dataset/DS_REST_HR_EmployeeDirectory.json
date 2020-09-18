@@ -8,7 +8,7 @@
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
-			"relativeUrl": "v1/employees/directory"
+			"relativeUrl": "v1/employees/Compensation"
 		},
 		"schema": []
 	}
