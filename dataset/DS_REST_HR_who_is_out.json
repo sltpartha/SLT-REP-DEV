@@ -1,0 +1,18 @@
+{
+	"name": "DS_REST_HR_who_is_out",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_REST_BAMBOOHR",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "HR/HR REST ENDPOINT"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": "v1/time_off/whos_out/"
+		},
+		"schema": []
+	}
+}
