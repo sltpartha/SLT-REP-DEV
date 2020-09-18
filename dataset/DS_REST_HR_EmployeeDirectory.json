@@ -8,7 +8,7 @@
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
-			"relativeUrl": "v1/employees/all/tables/compensation "
+			"relativeUrl": "v1/employees/all/tables/"
 		},
 		"schema": []
 	}
