@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "FILE_D",
+				"fileName": "FILE_DIRECTORY",
 				"folderPath": "BambooHR",
 				"fileSystem": "cntrawzonesltdev"
 			}
