@@ -41,7 +41,7 @@
 						"mappings": [
 							{
 								"source": {
-									"path": "['id']"
+									"path": "$['id']"
 								},
 								"sink": {
 									"name": "id",
@@ -50,97 +50,25 @@
 							},
 							{
 								"source": {
-									"path": "['displayName']"
+									"path": "$['employeeId']"
 								},
 								"sink": {
-									"name": "displayName",
-									"type": "String"
+									"name": "employeeId",
+									"type": "Int64"
 								}
 							},
 							{
 								"source": {
-									"path": "['firstName']"
+									"path": "$['date']"
 								},
 								"sink": {
-									"name": "firstName",
-									"type": "String"
+									"name": "date",
+									"type": "DateTime"
 								}
 							},
 							{
 								"source": {
-									"path": "['lastName']"
-								},
-								"sink": {
-									"name": "lastName",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['preferredName']"
-								},
-								"sink": {
-									"name": "preferredName",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['gender']"
-								},
-								"sink": {
-									"name": "gender",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['jobTitle']"
-								},
-								"sink": {
-									"name": "jobTitle",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['workPhone']"
-								},
-								"sink": {
-									"name": "workPhone",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['mobilePhone']"
-								},
-								"sink": {
-									"name": "mobilePhone",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['workEmail']"
-								},
-								"sink": {
-									"name": "workEmail",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['department']"
-								},
-								"sink": {
-									"name": "department",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['location']"
+									"path": "$['location']"
 								},
 								"sink": {
 									"name": "location",
@@ -149,7 +77,16 @@
 							},
 							{
 								"source": {
-									"path": "['division']"
+									"path": "$['department']"
+								},
+								"sink": {
+									"name": "department",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['division']"
 								},
 								"sink": {
 									"name": "division",
@@ -158,57 +95,30 @@
 							},
 							{
 								"source": {
-									"path": "['linkedIn']"
+									"path": "$['jobTitle']"
 								},
 								"sink": {
-									"name": "linkedIn",
+									"name": "jobTitle",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "['workPhoneExtension']"
+									"path": "$['reportsTo']"
 								},
 								"sink": {
-									"name": "workPhoneExtension",
+									"name": "reportsTo",
 									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['photoUploaded']"
-								},
-								"sink": {
-									"name": "photoUploaded",
-									"type": "Boolean"
-								}
-							},
-							{
-								"source": {
-									"path": "['photoUrl']"
-								},
-								"sink": {
-									"name": "photoUrl",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['canUploadPhoto']"
-								},
-								"sink": {
-									"name": "canUploadPhoto",
-									"type": "Int16"
 								}
 							}
 						],
-						"collectionReference": "$['employees']",
+						"collectionReference": "",
 						"mapComplexValuesToString": false
 					}
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_ADLS_RAW_HR_EmployeeDirectory",
+						"referenceName": "DS_ADLS_RAW_HR_JobInformation",
 						"type": "DatasetReference"
 					}
 				],
