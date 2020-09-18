@@ -155,7 +155,7 @@
 								},
 								"sink": {
 									"name": "Amount",
-									"type": "Int32"
+									"type": "Double"
 								}
 							},
 							{
