@@ -9,7 +9,7 @@
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "master",
+			"schema": "sltsqldbdev",
 			"table": "account"
 		}
 	}
