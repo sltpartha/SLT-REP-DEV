@@ -1,5 +1,5 @@
 {
-	"name": "DS_REST_HR",
+	"name": "DS_REST_HR_EmployeeDirectory",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_REST_BAMBOOHR",
