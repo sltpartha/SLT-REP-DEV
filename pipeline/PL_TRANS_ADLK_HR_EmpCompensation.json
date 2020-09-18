@@ -27,12 +27,14 @@
 						}
 					},
 					"sink": {
-						"type": "ParquetSink",
+						"type": "DelimitedTextSink",
 						"storeSettings": {
 							"type": "AzureBlobFSWriteSettings"
 						},
 						"formatSettings": {
-							"type": "ParquetWriteSettings"
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
 						}
 					},
 					"enableStaging": false,
@@ -44,7 +46,8 @@
 									"path": "$['employeeId']"
 								},
 								"sink": {
-									"name": "employeeId"
+									"type": "Int64",
+									"ordinal": 1
 								}
 							},
 							{
@@ -52,7 +55,7 @@
 									"path": "$['startDate']"
 								},
 								"sink": {
-									"name": "startDate"
+									"ordinal": 2
 								}
 							},
 							{
@@ -60,7 +63,7 @@
 									"path": "$['rate']['currency']"
 								},
 								"sink": {
-									"name": "currency"
+									"ordinal": 3
 								}
 							},
 							{
@@ -68,7 +71,7 @@
 									"path": "$['rate']['value']"
 								},
 								"sink": {
-									"name": "value"
+									"ordinal": 4
 								}
 							},
 							{
@@ -76,7 +79,7 @@
 									"path": "$['type']"
 								},
 								"sink": {
-									"name": "type"
+									"ordinal": 5
 								}
 							},
 							{
@@ -84,7 +87,7 @@
 									"path": "$['exempt']"
 								},
 								"sink": {
-									"name": "exempt"
+									"ordinal": 6
 								}
 							},
 							{
@@ -92,7 +95,7 @@
 									"path": "$['reason']"
 								},
 								"sink": {
-									"name": "reason"
+									"ordinal": 7
 								}
 							},
 							{
@@ -100,7 +103,7 @@
 									"path": "$['comment']"
 								},
 								"sink": {
-									"name": "comment"
+									"ordinal": 8
 								}
 							},
 							{
@@ -108,7 +111,7 @@
 									"path": "$['paidPer']"
 								},
 								"sink": {
-									"name": "paidPer"
+									"ordinal": 9
 								}
 							},
 							{
@@ -116,7 +119,7 @@
 									"path": "$['paySchedule']"
 								},
 								"sink": {
-									"name": "paySchedule"
+									"ordinal": 10
 								}
 							},
 							{
@@ -124,7 +127,7 @@
 									"path": "$['overtimeRate']['currency']"
 								},
 								"sink": {
-									"name": "OverTimeCurrency"
+									"ordinal": 11
 								}
 							},
 							{
@@ -132,7 +135,7 @@
 									"path": "$['overtimeRate']['value']"
 								},
 								"sink": {
-									"name": "OverTimeValue"
+									"ordinal": 12
 								}
 							}
 						],
@@ -148,7 +151,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_ADLS_CURATED_HR",
+						"referenceName": "DelimitedText1",
 						"type": "DatasetReference"
 					}
 				]
