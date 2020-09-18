@@ -41,164 +41,98 @@
 						"mappings": [
 							{
 								"source": {
-									"path": "['id']"
+									"path": "$['employeeId']"
 								},
 								"sink": {
-									"name": "id",
-									"type": "Int64"
+									"name": "employeeId"
 								}
 							},
 							{
 								"source": {
-									"path": "['displayName']"
+									"path": "$['startDate']"
 								},
 								"sink": {
-									"name": "displayName",
-									"type": "String"
+									"name": "startDate"
 								}
 							},
 							{
 								"source": {
-									"path": "['firstName']"
+									"path": "$['rate']['currency']"
 								},
 								"sink": {
-									"name": "firstName",
-									"type": "String"
+									"name": "currency"
 								}
 							},
 							{
 								"source": {
-									"path": "['lastName']"
+									"path": "$['rate']['value']"
 								},
 								"sink": {
-									"name": "lastName",
-									"type": "String"
+									"name": "value"
 								}
 							},
 							{
 								"source": {
-									"path": "['preferredName']"
+									"path": "$['type']"
 								},
 								"sink": {
-									"name": "preferredName",
-									"type": "String"
+									"name": "type"
 								}
 							},
 							{
 								"source": {
-									"path": "['gender']"
+									"path": "$['exempt']"
 								},
 								"sink": {
-									"name": "gender",
-									"type": "String"
+									"name": "exempt"
 								}
 							},
 							{
 								"source": {
-									"path": "['jobTitle']"
+									"path": "$['reason']"
 								},
 								"sink": {
-									"name": "jobTitle",
-									"type": "String"
+									"name": "reason"
 								}
 							},
 							{
 								"source": {
-									"path": "['workPhone']"
+									"path": "$['comment']"
 								},
 								"sink": {
-									"name": "workPhone",
-									"type": "String"
+									"name": "comment"
 								}
 							},
 							{
 								"source": {
-									"path": "['mobilePhone']"
+									"path": "$['paidPer']"
 								},
 								"sink": {
-									"name": "mobilePhone",
-									"type": "String"
+									"name": "paidPer"
 								}
 							},
 							{
 								"source": {
-									"path": "['workEmail']"
+									"path": "$['paySchedule']"
 								},
 								"sink": {
-									"name": "workEmail",
-									"type": "String"
+									"name": "paySchedule"
 								}
 							},
 							{
 								"source": {
-									"path": "['department']"
+									"path": "$['overtimeRate']['currency']"
 								},
 								"sink": {
-									"name": "department",
-									"type": "String"
+									"name": "currency"
 								}
 							},
 							{
 								"source": {
-									"path": "['location']"
+									"path": "$['overtimeRate']['value']"
 								},
 								"sink": {
-									"name": "location",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['division']"
-								},
-								"sink": {
-									"name": "division",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['linkedIn']"
-								},
-								"sink": {
-									"name": "linkedIn",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['workPhoneExtension']"
-								},
-								"sink": {
-									"name": "workPhoneExtension",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['photoUploaded']"
-								},
-								"sink": {
-									"name": "photoUploaded",
-									"type": "Boolean"
-								}
-							},
-							{
-								"source": {
-									"path": "['photoUrl']"
-								},
-								"sink": {
-									"name": "photoUrl",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['canUploadPhoto']"
-								},
-								"sink": {
-									"name": "canUploadPhoto",
-									"type": "Int16"
+									"name": "value"
 								}
 							}
 						],
