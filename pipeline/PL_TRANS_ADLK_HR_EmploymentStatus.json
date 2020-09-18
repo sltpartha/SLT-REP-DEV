@@ -27,12 +27,14 @@
 						}
 					},
 					"sink": {
-						"type": "ParquetSink",
+						"type": "DelimitedTextSink",
 						"storeSettings": {
 							"type": "AzureBlobFSWriteSettings"
 						},
 						"formatSettings": {
-							"type": "ParquetWriteSettings"
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
 						}
 					},
 					"enableStaging": false,
@@ -142,7 +144,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_ADLS_CURATED_HR",
+						"referenceName": "DelimitedText1",
 						"type": "DatasetReference"
 					}
 				]
