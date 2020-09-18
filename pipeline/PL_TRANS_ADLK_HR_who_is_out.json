@@ -1,0 +1,228 @@
+{
+	"name": "PL_TRANS_ADLK_HR_who_is_out",
+	"properties": {
+		"activities": [
+			{
+				"name": "PL_TRANS_ADLK_HR_who_is_out",
+				"description": "Flattened directory data",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "['id']"
+								},
+								"sink": {
+									"name": "id",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"path": "['displayName']"
+								},
+								"sink": {
+									"name": "displayName",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['firstName']"
+								},
+								"sink": {
+									"name": "firstName",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['lastName']"
+								},
+								"sink": {
+									"name": "lastName",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['preferredName']"
+								},
+								"sink": {
+									"name": "preferredName",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['gender']"
+								},
+								"sink": {
+									"name": "gender",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['jobTitle']"
+								},
+								"sink": {
+									"name": "jobTitle",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['workPhone']"
+								},
+								"sink": {
+									"name": "workPhone",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['mobilePhone']"
+								},
+								"sink": {
+									"name": "mobilePhone",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['workEmail']"
+								},
+								"sink": {
+									"name": "workEmail",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['department']"
+								},
+								"sink": {
+									"name": "department",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['location']"
+								},
+								"sink": {
+									"name": "location",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['division']"
+								},
+								"sink": {
+									"name": "division",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['linkedIn']"
+								},
+								"sink": {
+									"name": "linkedIn",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['workPhoneExtension']"
+								},
+								"sink": {
+									"name": "workPhoneExtension",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['photoUploaded']"
+								},
+								"sink": {
+									"name": "photoUploaded",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"path": "['photoUrl']"
+								},
+								"sink": {
+									"name": "photoUrl",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['canUploadPhoto']"
+								},
+								"sink": {
+									"name": "canUploadPhoto",
+									"type": "Int16"
+								}
+							}
+						],
+						"collectionReference": "$['employees']",
+						"mapComplexValuesToString": false
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_ADLS_RAW_HR_EmployeeDirectory",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_ADLS_CURATED_HR",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "HR/ADLS RAW to ADLS CURATED"
+		},
+		"annotations": []
+	}
+}
