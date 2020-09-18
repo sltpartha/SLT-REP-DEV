@@ -41,7 +41,7 @@
 						"mappings": [
 							{
 								"source": {
-									"path": "['id']"
+									"path": "$['id']"
 								},
 								"sink": {
 									"name": "id",
@@ -50,165 +50,93 @@
 							},
 							{
 								"source": {
-									"path": "['displayName']"
+									"path": "$['employeeId']"
 								},
 								"sink": {
-									"name": "displayName",
+									"name": "employeeId",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"path": "$['date']"
+								},
+								"sink": {
+									"name": "date",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['employmentStatus']"
+								},
+								"sink": {
+									"name": "employmentStatus",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "['firstName']"
+									"path": "$['comment']"
 								},
 								"sink": {
-									"name": "firstName",
+									"name": "comment",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "['lastName']"
+									"path": "$['terminationReasonId']"
 								},
 								"sink": {
-									"name": "lastName",
+									"name": "terminationReasonId",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "['preferredName']"
+									"path": "$['terminationTypeId']"
 								},
 								"sink": {
-									"name": "preferredName",
+									"name": "terminationTypeId",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "['gender']"
+									"path": "$['terminationRehireId']"
 								},
 								"sink": {
-									"name": "gender",
+									"name": "terminationRehireId",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "['jobTitle']"
+									"path": "$['benetracStatus']"
 								},
 								"sink": {
-									"name": "jobTitle",
+									"name": "benetracStatus",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "['workPhone']"
+									"path": "$['gusto']"
 								},
 								"sink": {
-									"name": "workPhone",
+									"name": "gusto",
 									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['mobilePhone']"
-								},
-								"sink": {
-									"name": "mobilePhone",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['workEmail']"
-								},
-								"sink": {
-									"name": "workEmail",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['department']"
-								},
-								"sink": {
-									"name": "department",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['location']"
-								},
-								"sink": {
-									"name": "location",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['division']"
-								},
-								"sink": {
-									"name": "division",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['linkedIn']"
-								},
-								"sink": {
-									"name": "linkedIn",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['workPhoneExtension']"
-								},
-								"sink": {
-									"name": "workPhoneExtension",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['photoUploaded']"
-								},
-								"sink": {
-									"name": "photoUploaded",
-									"type": "Boolean"
-								}
-							},
-							{
-								"source": {
-									"path": "['photoUrl']"
-								},
-								"sink": {
-									"name": "photoUrl",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['canUploadPhoto']"
-								},
-								"sink": {
-									"name": "canUploadPhoto",
-									"type": "Int16"
 								}
 							}
 						],
-						"collectionReference": "$['employees']",
+						"collectionReference": "",
 						"mapComplexValuesToString": false
 					}
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_ADLS_RAW_HR_EmployeeDirectory",
+						"referenceName": "DS_ADLS_RAW_HR_EmploymentStatus",
 						"type": "DatasetReference"
 					}
 				],
