@@ -172,7 +172,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_6tz",
+						"referenceName": "DS_ADLS_RAW_HR_EmployeeCompensation",
 						"type": "DatasetReference"
 					}
 				],
@@ -184,6 +184,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "HR/ADLS RAW to ADLS CURATED"
+		},
 		"annotations": []
 	}
 }
