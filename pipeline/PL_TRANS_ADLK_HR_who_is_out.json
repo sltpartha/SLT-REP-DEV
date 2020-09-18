@@ -82,8 +82,7 @@
 									"path": "$['start']"
 								},
 								"sink": {
-									"name": "start",
-									"type": "DateTime"
+									"name": "startDate"
 								}
 							},
 							{
