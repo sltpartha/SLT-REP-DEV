@@ -1,0 +1,21 @@
+{
+	"name": "DS_REST_HR_EmployeeTimeOff",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_REST_BAMBOOHR",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "HR/HR REST ENDPOINT"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": {
+				"value": "@concat('v1/time_off/requests/?start=2019-09-01','&end=',adddays(utcnow(),31,'yyyy-MM-dd'))",
+				"type": "Expression"
+			}
+		},
+		"schema": []
+	}
+}
