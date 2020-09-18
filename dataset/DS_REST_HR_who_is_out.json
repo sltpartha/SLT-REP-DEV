@@ -12,7 +12,7 @@
 		"type": "RestResource",
 		"typeProperties": {
 			"relativeUrl": {
-				"value": "@concat('v1/time_off/whos_out/?start=',startOfMonth(utcnow(),'yyyy-MM-dd'),'&end=',adddays(utcnow(),31,'yyyy-MM-dd'))",
+				"value": "@concat('v1/time_off/whos_out/?start=',adddays(utcnow(),-31,'yyyy-MM-dd'),'&end=',adddays(utcnow(),31,'yyyy-MM-dd'))",
 				"type": "Expression"
 			}
 		},
