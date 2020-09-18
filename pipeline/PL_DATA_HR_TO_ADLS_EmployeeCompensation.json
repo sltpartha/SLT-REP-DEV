@@ -42,13 +42,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_REST_HR_EmployeeDirectory",
+						"referenceName": "DS_REST_HR_EmployeeCompensation",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_ADLS_RAW_HR_EmployeeDirectory",
+						"referenceName": "DS_ADLS_RAW_HR_EmployeeCompensation",
 						"type": "DatasetReference"
 					}
 				]
