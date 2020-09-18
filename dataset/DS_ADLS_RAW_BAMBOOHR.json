@@ -2,7 +2,7 @@
 	"name": "DS_ADLS_RAW_BAMBOOHR",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "LS_ADLS_RAW_BAMBOOHR",
+			"referenceName": "LS_ADLS_BAMBOOHR",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
