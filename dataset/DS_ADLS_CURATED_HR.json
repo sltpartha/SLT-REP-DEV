@@ -1,5 +1,5 @@
 {
-	"name": "DS_ADLS_CURATED_BAMBOOHR",
+	"name": "DS_ADLS_CURATED_HR",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_ADLS_BAMBOOHR",

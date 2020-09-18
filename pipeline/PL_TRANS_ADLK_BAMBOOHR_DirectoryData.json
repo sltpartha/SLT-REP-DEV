@@ -214,7 +214,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_ADLS_CURATED_BAMBOOHR",
+						"referenceName": "DS_ADLS_CURATED_HR",
 						"type": "DatasetReference"
 					}
 				]
