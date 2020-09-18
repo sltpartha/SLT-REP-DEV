@@ -41,7 +41,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_REST_BAMBOOHR",
+						"referenceName": "DS_REST_HR",
 						"type": "DatasetReference"
 					}
 				],

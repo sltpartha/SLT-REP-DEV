@@ -1,5 +1,5 @@
 {
-	"name": "DS_REST_BAMBOOHR",
+	"name": "DS_REST_HR",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_REST_BAMBOOHR",
