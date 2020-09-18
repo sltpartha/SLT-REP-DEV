@@ -154,7 +154,8 @@
 									"path": "$['overtimeRate']['currency']"
 								},
 								"sink": {
-									"name": "currencyOvertime"
+									"name": "currencyOvertime",
+									"type": "String"
 								}
 							},
 							{
@@ -162,7 +163,7 @@
 									"path": "$['overtimeRate']['value']"
 								},
 								"sink": {
-									"name": "value",
+									"name": "valueOvertime",
 									"type": "Double"
 								}
 							}
