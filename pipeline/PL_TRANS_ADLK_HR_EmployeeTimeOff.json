@@ -211,15 +211,6 @@
 									"name": "Action-bypass",
 									"type": "Boolean"
 								}
-							},
-							{
-								"source": {
-									"path": "$['notes']"
-								},
-								"sink": {
-									"name": "notes",
-									"type": "String"
-								}
 							}
 						],
 						"collectionReference": "",
