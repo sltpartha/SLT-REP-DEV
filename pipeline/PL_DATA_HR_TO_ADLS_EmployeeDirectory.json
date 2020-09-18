@@ -54,6 +54,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "HR/REST API TO ADLS RAW"
+		},
 		"annotations": []
 	}
 }

@@ -1,0 +1,19 @@
+{
+	"name": "DS_ADLS_RAW_HR_EmployeeCompensation",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_BAMBOOHR",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "Compensation",
+				"folderPath": "BambooHR",
+				"fileSystem": "cntrawzonesltdev"
+			}
+		}
+	}
+}
