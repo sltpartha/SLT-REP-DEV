@@ -1,0 +1,22 @@
+{
+	"name": "DS_ADLS_RAW_HR_JobInformation",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_BAMBOOHR",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "HR/ADLS RAW"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "JobInformation",
+				"folderPath": "BambooHR",
+				"fileSystem": "cntrawzonesltdev"
+			}
+		}
+	}
+}
