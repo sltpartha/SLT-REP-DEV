@@ -4,7 +4,7 @@
 		"description": "Fetches employee Job Information from Bamboo HR to ADLS Raw zone through API (as-is json files)",
 		"activities": [
 			{
-				"name": "PL_DATA_HR_TO_ADLS_EmployeeCompensation",
+				"name": "PL_DATA_HR_TO_ADLS_JobInformation",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
