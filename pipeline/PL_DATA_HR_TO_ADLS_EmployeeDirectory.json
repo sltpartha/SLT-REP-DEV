@@ -1,6 +1,7 @@
 {
-	"name": "PL_DATA_HR_TO_ADLS",
+	"name": "PL_DATA_HR_TO_ADLS_EmployeeDirectory",
 	"properties": {
+		"description": "Fetches employee directory from Bamboo HR to ADLS RAw zone through API (as-is json files)",
 		"activities": [
 			{
 				"name": "PL_DATA_HR_TO_ADLS_EmployeeDirectory",
