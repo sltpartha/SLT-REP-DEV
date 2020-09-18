@@ -11,7 +11,10 @@
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
-			"relativeUrl": "v1/time_off/whos_out/"
+			"relativeUrl": {
+				"value": "@v1/time_off/whos_out/?start=startOfMonth(utcnow(),'yyyy-MM-dd')&end=adddays(utcnow(),31,'yyyy-MM-dd')",
+				"type": "Expression"
+			}
 		},
 		"schema": []
 	}
