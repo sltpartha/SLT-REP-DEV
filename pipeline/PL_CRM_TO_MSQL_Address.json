@@ -581,13 +581,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_gxc",
+						"referenceName": "DS_REST_CRM_Customer_Address",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_gxc",
+						"referenceName": "DS_SQL_CRM_Customer_Address",
 						"type": "DatasetReference"
 					}
 				]

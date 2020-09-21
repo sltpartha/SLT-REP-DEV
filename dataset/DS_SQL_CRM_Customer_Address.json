@@ -1,9 +1,12 @@
 {
-	"name": "DestinationDataset_gxc",
+	"name": "DS_SQL_CRM_Customer_Address",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_SQL_DB",
 			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "CRM SQL Datasets"
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
