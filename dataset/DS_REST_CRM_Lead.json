@@ -1,9 +1,12 @@
 {
-	"name": "SourceDataset_6u0",
+	"name": "DS_REST_CRM_Lead",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_CRM",
 			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "CRM REST EndPoints"
 		},
 		"annotations": [],
 		"type": "DynamicsCrmEntity",
