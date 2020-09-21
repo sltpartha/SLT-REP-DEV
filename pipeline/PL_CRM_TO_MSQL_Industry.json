@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_uny",
+				"name": "PL_CRM_TO_MSQL_Industry",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {

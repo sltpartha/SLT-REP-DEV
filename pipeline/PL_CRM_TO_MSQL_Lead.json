@@ -4,7 +4,7 @@
 		"description": "Moving CRM data to MS SQL DB",
 		"activities": [
 			{
-				"name": "Copy_gn5",
+				"name": "PL_CRM_TO_MSQL_Lead",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
