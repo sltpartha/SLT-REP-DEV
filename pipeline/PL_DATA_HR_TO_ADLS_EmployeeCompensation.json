@@ -71,7 +71,7 @@
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
-							"wildcardFolderPath": "Bamboo HR",
+							"wildcardFolderPath": "BambooHR",
 							"wildcardFileName": "*.json"
 						},
 						"formatSettings": {
