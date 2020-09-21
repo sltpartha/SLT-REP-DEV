@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_vwp",
+				"name": "PL_CRM_TO_MSQL_Currency",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -341,13 +341,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_vwp",
+						"referenceName": "DS_REST_CRM_Currency",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_vwp",
+						"referenceName": "DS_SQL_CRM_Currency",
 						"type": "DatasetReference"
 					}
 				]
