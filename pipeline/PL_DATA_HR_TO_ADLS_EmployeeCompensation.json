@@ -54,7 +54,7 @@
 				]
 			},
 			{
-				"name": "PL_DATA_ADLS_RAW_TO_ADLS_Storage",
+				"name": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -66,8 +66,39 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings"
+						}
+					},
 					"enableStaging": false
-				}
+				},
+				"inputs": [
+					{
+						"referenceName": "Json1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Json2",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"folder": {
