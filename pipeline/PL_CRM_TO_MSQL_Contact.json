@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_ns4",
+				"name": "PL_CRM_TO_MSQL_Contact",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -36,13 +36,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_ns4",
+						"referenceName": "DS_REST_CRM_Contact",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_ns4",
+						"referenceName": "DS_SQL_CRM_Contact",
 						"type": "DatasetReference"
 					}
 				]
