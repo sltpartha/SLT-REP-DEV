@@ -46,7 +46,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Json2",
+						"referenceName": "DS_ADLS_STORAGE",
 						"type": "DatasetReference"
 					}
 				]

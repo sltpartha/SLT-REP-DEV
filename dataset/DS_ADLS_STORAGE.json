@@ -1,5 +1,5 @@
 {
-	"name": "Json2",
+	"name": "DS_ADLS_STORAGE",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_ADLS_BAMBOOHR",
