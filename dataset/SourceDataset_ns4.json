@@ -1,0 +1,15 @@
+{
+	"name": "SourceDataset_ns4",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_CRM",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DynamicsCrmEntity",
+		"schema": [],
+		"typeProperties": {
+			"entityName": "contact"
+		}
+	}
+}
