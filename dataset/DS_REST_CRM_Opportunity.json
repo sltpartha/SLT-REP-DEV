@@ -1,9 +1,12 @@
 {
-	"name": "SourceDataset_2ep",
+	"name": "DS_REST_CRM_Opportunity",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_CRM",
 			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "CRM REST EndPoints"
 		},
 		"annotations": [],
 		"type": "DynamicsCrmEntity",

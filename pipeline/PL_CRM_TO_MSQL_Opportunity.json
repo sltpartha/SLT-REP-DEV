@@ -1,9 +1,9 @@
 {
-	"name": "CopyPipeline_2ep",
+	"name": "PL_CRM_TO_MSQL_Opportunity",
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_2ep",
+				"name": "PL_CRM_TO_MSQL_Opportunity",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -1441,13 +1441,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_2ep",
+						"referenceName": "DS_REST_CRM_Opportunity",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_2ep",
+						"referenceName": "DS_SQL_CRM_Opportunity",
 						"type": "DatasetReference"
 					}
 				]
