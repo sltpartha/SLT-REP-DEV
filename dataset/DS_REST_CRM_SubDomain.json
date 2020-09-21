@@ -1,9 +1,12 @@
 {
-	"name": "SourceDataset_3ha",
+	"name": "DS_REST_CRM_SubDomain",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_CRM",
 			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "CRM REST EndPoints"
 		},
 		"annotations": [],
 		"type": "DynamicsCrmEntity",

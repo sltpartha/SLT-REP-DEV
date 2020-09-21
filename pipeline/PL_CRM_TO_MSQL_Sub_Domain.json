@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_3ha",
+				"name": "PL_CRM_TO_MSQL_Sub_Domain",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -36,13 +36,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_3ha",
+						"referenceName": "DS_REST_CRM_SubDomain",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_3ha",
+						"referenceName": "DS_SQL_CRM_SubDomain",
 						"type": "DatasetReference"
 					}
 				]
