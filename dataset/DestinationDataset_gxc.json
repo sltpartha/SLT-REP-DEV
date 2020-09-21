@@ -1,0 +1,16 @@
+{
+	"name": "DestinationDataset_gxc",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQL_DB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "sltsqldbdev",
+			"table": "customeraddress"
+		}
+	}
+}
