@@ -40,7 +40,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Json1",
+						"referenceName": "DS_ADLS_RAW",
 						"type": "DatasetReference"
 					}
 				],
