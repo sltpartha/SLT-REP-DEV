@@ -1,0 +1,15 @@
+{
+	"name": "SourceDataset_3ha",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_CRM",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DynamicsCrmEntity",
+		"schema": [],
+		"typeProperties": {
+			"entityName": "is_subdomain"
+		}
+	}
+}
