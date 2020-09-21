@@ -36,13 +36,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_uny",
+						"referenceName": "DS_REST_CRM_Industry",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_uny",
+						"referenceName": "DS_SQL_CRM_Indusrty",
 						"type": "DatasetReference"
 					}
 				]

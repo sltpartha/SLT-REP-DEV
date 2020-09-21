@@ -1,5 +1,5 @@
 {
-	"name": "SourceDataset_uny",
+	"name": "DS_REST_CRM_Industry",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_CRM",

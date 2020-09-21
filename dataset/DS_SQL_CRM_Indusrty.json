@@ -1,5 +1,5 @@
 {
-	"name": "DestinationDataset_uny",
+	"name": "DS_SQL_CRM_Indusrty",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_SQL_DB",
