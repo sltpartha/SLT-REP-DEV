@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_gxc",
+				"name": "PL_CRM_TO_MSQL_Address",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
