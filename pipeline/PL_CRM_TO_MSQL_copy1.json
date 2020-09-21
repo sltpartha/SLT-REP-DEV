@@ -1,10 +1,10 @@
 {
-	"name": "PL_CRM_TO_MSQL_Account",
+	"name": "PL_CRM_TO_MSQL_copy1",
 	"properties": {
 		"description": "Moving CRM data to MS SQL DB",
 		"activities": [
 			{
-				"name": "PL_CRM_TO_MSQL_Account",
+				"name": "Copy_gn5",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {

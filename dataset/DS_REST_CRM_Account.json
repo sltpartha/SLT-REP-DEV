@@ -1,9 +1,12 @@
 {
-	"name": "SourceDataset_gn5",
+	"name": "DS_REST_CRM_Account",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_CRM",
 			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "CRM REST EndPoints"
 		},
 		"annotations": [],
 		"type": "DynamicsCrmEntity",

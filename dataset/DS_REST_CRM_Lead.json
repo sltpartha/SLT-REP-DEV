@@ -1,19 +1,18 @@
 {
-	"name": "DS_SQL_CRM_Account",
+	"name": "DS_REST_CRM_Lead",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "LS_SQL_DB",
+			"referenceName": "LS_CRM",
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
-			"name": "CRM SQL Datasets"
+			"name": "CRM REST EndPoints"
 		},
 		"annotations": [],
-		"type": "AzureSqlTable",
+		"type": "DynamicsCrmEntity",
 		"schema": [],
 		"typeProperties": {
-			"schema": "sltsqldbdev",
-			"table": "account"
+			"entityName": "lead"
 		}
 	}
 }

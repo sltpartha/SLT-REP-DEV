@@ -1,5 +1,5 @@
 {
-	"name": "DS_SQL_CRM_Account",
+	"name": "DS_SQL_CRM_Account_copy1",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_SQL_DB",
