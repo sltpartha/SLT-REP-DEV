@@ -72,7 +72,7 @@
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
 							"wildcardFolderPath": "BambooHR",
-							"wildcardFileName": "*.json"
+							"wildcardFileName": "*"
 						},
 						"formatSettings": {
 							"type": "JsonReadSettings"
