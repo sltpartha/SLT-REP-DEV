@@ -50,7 +50,14 @@
 									},
 									"disableMetricsCollection": false
 								},
-								"enableStaging": false
+								"enableStaging": true,
+								"stagingSettings": {
+									"linkedServiceName": {
+										"referenceName": "STAGING linked service",
+										"type": "LinkedServiceReference"
+									},
+									"path": "stagingcrm"
+								}
 							},
 							"inputs": [
 								{
