@@ -1,10 +1,9 @@
 {
-	"name": "PL_TRANS_ADLK_HR_who_is_out",
+	"name": "PL_DATA_ADLS_CURATED_TO_SYNAP_Who_is_out",
 	"properties": {
 		"activities": [
 			{
-				"name": "PL_TRANS_ADLK_HR_who_is_out",
-				"description": "Flattened directory data",
+				"name": "PL_DATA_ADLS_CURATED_TO_SYNAP_Who_is_out",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -14,34 +13,43 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "cntcuratedzonesltdev/Bamboo HR/EmployeeCompensation.parquet"
+					},
+					{
+						"name": "Destination",
+						"value": "HR.EmpCompensation"
+					}
+				],
 				"typeProperties": {
 					"source": {
-						"type": "JsonSource",
+						"type": "ParquetSource",
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true
-						},
-						"formatSettings": {
-							"type": "JsonReadSettings"
 						}
 					},
 					"sink": {
-						"type": "ParquetSink",
-						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings"
+						"type": "SqlDWSink",
+						"allowPolyBase": true,
+						"polyBaseSettings": {
+							"rejectValue": 0,
+							"rejectType": "value",
+							"useTypeDefault": true
 						},
-						"formatSettings": {
-							"type": "ParquetWriteSettings"
-						}
+						"tableOption": "autoCreate"
 					},
 					"enableStaging": false,
+					"parallelCopies": 3,
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
 							{
 								"source": {
-									"path": "$['id']"
+									"name": "id",
+									"type": "Int64"
 								},
 								"sink": {
 									"name": "id",
@@ -50,7 +58,8 @@
 							},
 							{
 								"source": {
-									"path": "$['type']"
+									"name": "type",
+									"type": "String"
 								},
 								"sink": {
 									"name": "type",
@@ -59,7 +68,8 @@
 							},
 							{
 								"source": {
-									"path": "$['employeeId']"
+									"name": "employeeId",
+									"type": "Int64"
 								},
 								"sink": {
 									"name": "employeeId",
@@ -68,7 +78,8 @@
 							},
 							{
 								"source": {
-									"path": "$['name']"
+									"name": "name",
+									"type": "String"
 								},
 								"sink": {
 									"name": "name",
@@ -77,43 +88,43 @@
 							},
 							{
 								"source": {
-									"path": "$['start']"
+									"name": "startDate",
+									"type": "String"
 								},
 								"sink": {
 									"name": "startDate",
-									"type": "DateTime"
+									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "$['end']"
+									"name": "endDate",
+									"type": "String"
 								},
 								"sink": {
 									"name": "endDate",
-									"type": "DateTime"
+									"type": "String"
 								}
 							}
-						],
-						"collectionReference": "",
-						"mapComplexValuesToString": false
+						]
 					}
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_ADLS_RAW_HR_who_is_out",
+						"referenceName": "DS_ADLS_CURATED_HR_Who_is_out",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_ADLS_CURATED_HR",
+						"referenceName": "DS_SYNAPSE_HR_Who_is_out",
 						"type": "DatasetReference"
 					}
 				]
 			}
 		],
 		"folder": {
-			"name": "HR/ADLS RAW to ADLS CURATED"
+			"name": "HR/ADLS CURATED to SYNAPSE"
 		},
 		"annotations": []
 	}
