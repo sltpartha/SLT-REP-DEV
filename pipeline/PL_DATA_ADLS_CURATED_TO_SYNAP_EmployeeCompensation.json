@@ -1,9 +1,9 @@
 {
-	"name": "test1",
+	"name": "PL_DATA_ADLS_CURATED_TO_SYNAP_EmployeeCompensation",
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_v9e",
+				"name": "PL_DATA_ADLS_CURATED_TO_SYNAP_EmployeeCompensation",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -195,6 +195,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "HR/ADLS CURATED to SYNAPSE"
+		},
 		"annotations": []
 	}
 }
