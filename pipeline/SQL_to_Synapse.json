@@ -41,7 +41,7 @@
 								},
 								"sink": {
 									"type": "SqlDWSink",
-									"preCopyScript": "@concat('TRUNCATE TABLE sltsqldbdev.',@dataset().cw_table)",
+									"preCopyScript": "@concat('TRUNCATE TABLE sltsqldbdev.',dataset().cw_table)",
 									"allowPolyBase": true,
 									"polyBaseSettings": {
 										"rejectValue": 0,
