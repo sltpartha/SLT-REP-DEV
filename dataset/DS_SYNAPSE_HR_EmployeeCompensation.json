@@ -2,7 +2,7 @@
 	"name": "DS_SYNAPSE_HR_EmployeeCompensation",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureSynapseAnalytics1",
+			"referenceName": "LS_SYNAP",
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
