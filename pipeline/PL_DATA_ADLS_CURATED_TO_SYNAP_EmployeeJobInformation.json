@@ -70,111 +70,61 @@
 							},
 							{
 								"source": {
-									"name": "startDate",
+									"name": "date",
 									"type": "DateTime"
 								},
 								"sink": {
-									"name": "startDate",
+									"name": "date",
 									"type": "DateTime"
 								}
 							},
 							{
 								"source": {
-									"name": "currency",
+									"name": "location",
 									"type": "String"
 								},
 								"sink": {
-									"name": "currency",
+									"name": "location",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "pay",
+									"name": "department",
 									"type": "String"
 								},
 								"sink": {
-									"name": "pay",
+									"name": "department",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "type",
+									"name": "division",
 									"type": "String"
 								},
 								"sink": {
-									"name": "type",
+									"name": "division",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "exempt",
+									"name": "jobTitle",
 									"type": "String"
 								},
 								"sink": {
-									"name": "exempt",
+									"name": "jobTitle",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "reason",
+									"name": "reportsTo",
 									"type": "String"
 								},
 								"sink": {
-									"name": "reason",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "comment",
-									"type": "String"
-								},
-								"sink": {
-									"name": "comment",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "paidPer",
-									"type": "String"
-								},
-								"sink": {
-									"name": "paidPer",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "paySchedule",
-									"type": "String"
-								},
-								"sink": {
-									"name": "paySchedule",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "currencyOvertime",
-									"type": "String"
-								},
-								"sink": {
-									"name": "currencyOvertime",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "valueOvertime",
-									"type": "String"
-								},
-								"sink": {
-									"name": "valueOvertime",
+									"name": "reportsTo",
 									"type": "String"
 								}
 							}
@@ -183,13 +133,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_ADLS_CURATED_HR_EmployeeCompensation",
+						"referenceName": "DS_ADLS_CURATED_HR_EmployeeJobInformation",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_SYNAPSE_HR_EmployeeCompensation",
+						"referenceName": "DS_SYNAPSE_HR_EmployeeJobInformation",
 						"type": "DatasetReference"
 					}
 				]
