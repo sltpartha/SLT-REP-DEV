@@ -42,7 +42,192 @@
 						"tableOption": "autoCreate"
 					},
 					"enableStaging": false,
-					"parallelCopies": 3
+					"parallelCopies": 3,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "id",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "id",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "displayName",
+									"type": "String"
+								},
+								"sink": {
+									"name": "displayName",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "firstName",
+									"type": "String"
+								},
+								"sink": {
+									"name": "firstName",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "lastName",
+									"type": "String"
+								},
+								"sink": {
+									"name": "lastName",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "preferredName",
+									"type": "String"
+								},
+								"sink": {
+									"name": "preferredName",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "gender",
+									"type": "String"
+								},
+								"sink": {
+									"name": "gender",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "jobTitle",
+									"type": "String"
+								},
+								"sink": {
+									"name": "jobTitle",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "workPhone",
+									"type": "String"
+								},
+								"sink": {
+									"name": "workPhone",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mobilePhone",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mobilePhone",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "workEmail",
+									"type": "String"
+								},
+								"sink": {
+									"name": "workEmail",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "department",
+									"type": "String"
+								},
+								"sink": {
+									"name": "department",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "location",
+									"type": "String"
+								},
+								"sink": {
+									"name": "location",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "division",
+									"type": "String"
+								},
+								"sink": {
+									"name": "division",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "linkedIn",
+									"type": "String"
+								},
+								"sink": {
+									"name": "linkedIn",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "workPhoneExtension",
+									"type": "String"
+								},
+								"sink": {
+									"name": "workPhoneExtension",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "photoUploaded",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "photoUploaded",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "photoUrl",
+									"type": "String"
+								},
+								"sink": {
+									"name": "photoUrl",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "canUploadPhoto",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "canUploadPhoto",
+									"type": "Int32"
+								}
+							}
+						]
+					}
 				},
 				"inputs": [
 					{
