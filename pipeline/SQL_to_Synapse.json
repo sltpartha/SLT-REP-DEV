@@ -42,7 +42,6 @@
 								"sink": {
 									"type": "SqlDWSink",
 									"preCopyScript": "@concat('TRUNCATE TABLE sltsqldbdev.',item().destination.table)",
-									"allowCopyCommand": true,
 									"tableOption": "autoCreate",
 									"disableMetricsCollection": false
 								},
