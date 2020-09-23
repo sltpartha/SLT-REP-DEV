@@ -1,9 +1,12 @@
 {
-	"name": "SourceDataset_v9e",
+	"name": "DS_ADLS_CURATED_HR_EmployeeCompensation",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_ADLS_BAMBOOHR",
 			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "HR/ADLS CURATED"
 		},
 		"annotations": [],
 		"type": "Parquet",
