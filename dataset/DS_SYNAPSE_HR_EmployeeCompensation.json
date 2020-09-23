@@ -1,5 +1,5 @@
 {
-	"name": "DestinationDataset_v9e",
+	"name": "DS_SYNAPSE_HR_EmployeeCompensation",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureSynapseAnalytics1",

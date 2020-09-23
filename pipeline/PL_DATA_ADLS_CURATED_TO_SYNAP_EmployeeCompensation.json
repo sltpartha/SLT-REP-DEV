@@ -189,7 +189,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_v9e",
+						"referenceName": "DS_SYNAPSE_HR_EmployeeCompensation",
 						"type": "DatasetReference"
 					}
 				]
