@@ -89,21 +89,21 @@
 							{
 								"source": {
 									"name": "startDate",
-									"type": "String"
+									"type": "DateTime"
 								},
 								"sink": {
 									"name": "startDate",
-									"type": "String"
+									"type": "DateTime"
 								}
 							},
 							{
 								"source": {
 									"name": "endDate",
-									"type": "String"
+									"type": "DateTime"
 								},
 								"sink": {
 									"name": "endDate",
-									"type": "String"
+									"type": "DateTime"
 								}
 							}
 						]
