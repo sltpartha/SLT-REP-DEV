@@ -46,14 +46,7 @@
 									"tableOption": "autoCreate",
 									"disableMetricsCollection": false
 								},
-								"enableStaging": true,
-								"stagingSettings": {
-									"linkedServiceName": {
-										"referenceName": "STAGING linked service",
-										"type": "LinkedServiceReference"
-									},
-									"path": "stagingcrm"
-								}
+								"enableStaging": false
 							},
 							"inputs": [
 								{
