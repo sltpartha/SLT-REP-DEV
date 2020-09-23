@@ -53,68 +53,11 @@
 				]
 			},
 			{
-				"name": "PL_DATA_HR_TO_ADLS_EmployeeCompensation_copy1",
-				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "PL_DATA_HR_TO_ADLS_EmployeeCompensation",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [
-					{
-						"name": "Destination",
-						"value": "cntrawzonesltdev/BambooHR/FILE_BAMBOOHR"
-					}
-				],
-				"typeProperties": {
-					"source": {
-						"type": "RestSource",
-						"httpRequestTimeout": "00:01:40",
-						"requestInterval": "00.00:00:00.010",
-						"requestMethod": "GET"
-					},
-					"sink": {
-						"type": "JsonSink",
-						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings"
-						},
-						"formatSettings": {
-							"type": "JsonWriteSettings",
-							"filePattern": "setOfObjects"
-						}
-					},
-					"enableStaging": false,
-					"validateDataConsistency": false
-				},
-				"inputs": [
-					{
-						"referenceName": "DS_REST_HR_EmployeeCompensation",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "DS_ADLS_RAW_HR_EmployeeCompensation",
-						"type": "DatasetReference"
-					}
-				]
-			},
-			{
 				"name": "PL_TRANS_ADLK_HR_EmpCompensation",
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "PL_DATA_HR_TO_ADLS_EmployeeCompensation_copy1",
+						"activity": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -487,6 +430,62 @@
 				"outputs": [
 					{
 						"referenceName": "DS_SYNAPSE_HR_EmployeeCompensation",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "PL_DATA_HR_TO_ADLS_EmployeeCompensation",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"wildcardFolderPath": "BambooHR",
+							"wildcardFileName": "*"
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_ADLS_RAW",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_ADLS_STORAGE",
 						"type": "DatasetReference"
 					}
 				]
