@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "PL_DATA_HR_TO_ADLS_JobInformation",
+				"name": "PL_DATA_HR_TO_ADLS_Who_is_out",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -32,8 +32,7 @@
 							"type": "AzureBlobFSWriteSettings"
 						},
 						"formatSettings": {
-							"type": "JsonWriteSettings",
-							"filePattern": "setOfObjects"
+							"type": "JsonWriteSettings"
 						}
 					},
 					"enableStaging": false,
@@ -41,23 +40,23 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_REST_HR_JobInformation",
+						"referenceName": "DS_REST_HR_who_is_out",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_ADLS_RAW_HR_JobInformation",
+						"referenceName": "DS_ADLS_RAW_HR_who_is_out",
 						"type": "DatasetReference"
 					}
 				]
 			},
 			{
-				"name": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_JobInformation",
+				"name": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_who_is_out",
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "PL_DATA_HR_TO_ADLS_JobInformation",
+						"activity": "PL_DATA_HR_TO_ADLS_Who_is_out",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -96,7 +95,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_ADLS_RAW_HR_JobInformation",
+						"referenceName": "DS_ADLS_RAW_HR_who_is_out",
 						"type": "DatasetReference"
 					}
 				],
@@ -108,12 +107,12 @@
 				]
 			},
 			{
-				"name": "PL_TRANS_ADLK_HR_JobInformation",
+				"name": "PL_TRANS_ADLK_HR_who_is_out",
 				"description": "Flattened directory data",
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_JobInformation",
+						"activity": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_who_is_out",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -162,6 +161,15 @@
 							},
 							{
 								"source": {
+									"path": "$['type']"
+								},
+								"sink": {
+									"name": "type",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
 									"path": "$['employeeId']"
 								},
 								"sink": {
@@ -171,56 +179,29 @@
 							},
 							{
 								"source": {
-									"path": "$['date']"
+									"path": "$['name']"
 								},
 								"sink": {
-									"name": "date",
+									"name": "name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['start']"
+								},
+								"sink": {
+									"name": "startDate",
 									"type": "DateTime"
 								}
 							},
 							{
 								"source": {
-									"path": "$['location']"
+									"path": "$['end']"
 								},
 								"sink": {
-									"name": "location",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['department']"
-								},
-								"sink": {
-									"name": "department",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['division']"
-								},
-								"sink": {
-									"name": "division",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['jobTitle']"
-								},
-								"sink": {
-									"name": "jobTitle",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['reportsTo']"
-								},
-								"sink": {
-									"name": "reportsTo",
-									"type": "String"
+									"name": "endDate",
+									"type": "DateTime"
 								}
 							}
 						],
@@ -230,7 +211,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_ADLS_RAW_HR_JobInformation",
+						"referenceName": "DS_ADLS_RAW_HR_who_is_out",
 						"type": "DatasetReference"
 					}
 				],
@@ -242,11 +223,11 @@
 				]
 			},
 			{
-				"name": "PL_DATA_ADLS_CURATED_TO_SYNAP_EmployeeJobInformation",
+				"name": "PL_DATA_ADLS_CURATED_TO_SYNAP_Who_is_out",
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "PL_TRANS_ADLK_HR_JobInformation",
+						"activity": "PL_TRANS_ADLK_HR_who_is_out",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -279,15 +260,13 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"preCopyScript": "TRUNCATE TABLE HR.EmpCompensation",
 						"allowPolyBase": true,
 						"polyBaseSettings": {
 							"rejectValue": 0,
 							"rejectType": "value",
-							"useTypeDefault": false
+							"useTypeDefault": true
 						},
-						"tableOption": "autoCreate",
-						"disableMetricsCollection": false
+						"tableOption": "autoCreate"
 					},
 					"enableStaging": false,
 					"parallelCopies": 3,
@@ -306,6 +285,16 @@
 							},
 							{
 								"source": {
+									"name": "type",
+									"type": "String"
+								},
+								"sink": {
+									"name": "type",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
 									"name": "employeeId",
 									"type": "Int64"
 								},
@@ -316,62 +305,32 @@
 							},
 							{
 								"source": {
-									"name": "date",
+									"name": "name",
+									"type": "String"
+								},
+								"sink": {
+									"name": "name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "startDate",
 									"type": "DateTime"
 								},
 								"sink": {
-									"name": "date",
+									"name": "startDate",
 									"type": "DateTime"
 								}
 							},
 							{
 								"source": {
-									"name": "location",
-									"type": "String"
+									"name": "endDate",
+									"type": "DateTime"
 								},
 								"sink": {
-									"name": "location",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "department",
-									"type": "String"
-								},
-								"sink": {
-									"name": "department",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "division",
-									"type": "String"
-								},
-								"sink": {
-									"name": "division",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "jobTitle",
-									"type": "String"
-								},
-								"sink": {
-									"name": "jobTitle",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "reportsTo",
-									"type": "String"
-								},
-								"sink": {
-									"name": "reportsTo",
-									"type": "String"
+									"name": "endDate",
+									"type": "DateTime"
 								}
 							}
 						]
@@ -379,13 +338,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_ADLS_CURATED_HR_EmployeeJobInformation",
+						"referenceName": "DS_ADLS_CURATED_HR_Who_is_out",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_SYNAPSE_HR_EmployeeJobInformation",
+						"referenceName": "DS_SYNAPSE_HR_Who_is_out",
 						"type": "DatasetReference"
 					}
 				]
