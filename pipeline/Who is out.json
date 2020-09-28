@@ -112,7 +112,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_who_is_out",
+						"activity": "PL_DATA_HR_TO_ADLS_Who_is_out",
 						"dependencyConditions": [
 							"Succeeded"
 						]
