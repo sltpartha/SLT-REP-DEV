@@ -113,7 +113,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_JobInformation",
+						"activity": "PL_DATA_HR_TO_ADLS_JobInformation",
 						"dependencyConditions": [
 							"Succeeded"
 						]
