@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "PL_DATA_HR_TO_ADLS_EmployeeTimeOff",
+				"name": "PL_DATA_HR_TO_ADLS_EmploymentStatus",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -41,23 +41,23 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_REST_HR_EmployeeTimeOff",
+						"referenceName": "DS_REST_HR_EmploymentStatus",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_ADLS_RAW_HR_EmployeeTimeOff",
+						"referenceName": "DS_ADLS_RAW_HR_EmploymentStatus",
 						"type": "DatasetReference"
 					}
 				]
 			},
 			{
-				"name": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_EmployeeTimeOff",
+				"name": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_EmploymentStatus",
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "PL_DATA_HR_TO_ADLS_EmployeeTimeOff",
+						"activity": "PL_DATA_HR_TO_ADLS_EmploymentStatus",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -96,7 +96,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_ADLS_RAW_HR_EmployeeTimeOff",
+						"referenceName": "DS_ADLS_RAW_HR_EmploymentStatus",
 						"type": "DatasetReference"
 					}
 				],
@@ -108,12 +108,12 @@
 				]
 			},
 			{
-				"name": "PL_TRANS_ADLK_HR_EmployeeTimeOff",
+				"name": "PL_TRANS_ADLK_HR_EmploymentStatus",
 				"description": "Flattened directory data",
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_EmployeeTimeOff",
+						"activity": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_EmploymentStatus",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -171,155 +171,74 @@
 							},
 							{
 								"source": {
-									"path": "$['status']['lastChanged']"
+									"path": "$['date']"
 								},
 								"sink": {
-									"name": "lastChanged",
+									"name": "date",
 									"type": "DateTime"
 								}
 							},
 							{
 								"source": {
-									"path": "$['status']['lastChangedByUserId']"
+									"path": "$['employmentStatus']"
 								},
 								"sink": {
-									"name": "lastChangedByUserId",
-									"type": "Int64"
-								}
-							},
-							{
-								"source": {
-									"path": "$['status']['status']"
-								},
-								"sink": {
-									"name": "status",
+									"name": "employmentStatus",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "$['name']"
+									"path": "$['comment']"
 								},
 								"sink": {
-									"name": "name",
+									"name": "comment",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "$['start']"
+									"path": "$['terminationReasonId']"
 								},
 								"sink": {
-									"name": "startDate",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"path": "$['end']"
-								},
-								"sink": {
-									"name": "endDate",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"path": "$['created']"
-								},
-								"sink": {
-									"name": "createdDate",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"path": "$['type']['id']"
-								},
-								"sink": {
-									"name": "TypeID",
-									"type": "Int64"
-								}
-							},
-							{
-								"source": {
-									"path": "$['type']['name']"
-								},
-								"sink": {
-									"name": "LeaveType",
+									"name": "terminationReasonId",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "$['amount']['unit']"
+									"path": "$['terminationTypeId']"
 								},
 								"sink": {
-									"name": "LeaveUnit",
+									"name": "terminationTypeId",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "$['amount']['amount']"
+									"path": "$['terminationRehireId']"
 								},
 								"sink": {
-									"name": "Amount",
-									"type": "Double"
+									"name": "terminationRehireId",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "$['actions']['view']"
+									"path": "$['benetracStatus']"
 								},
 								"sink": {
-									"name": "Action-view",
-									"type": "Boolean"
+									"name": "benetracStatus",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "$['actions']['edit']"
+									"path": "$['gusto']"
 								},
 								"sink": {
-									"name": "Action-edit",
-									"type": "Boolean"
-								}
-							},
-							{
-								"source": {
-									"path": "$['actions']['cancel']"
-								},
-								"sink": {
-									"name": "Action-cancel",
-									"type": "Boolean"
-								}
-							},
-							{
-								"source": {
-									"path": "$['actions']['approve']"
-								},
-								"sink": {
-									"name": "Action-approve",
-									"type": "Boolean"
-								}
-							},
-							{
-								"source": {
-									"path": "$['actions']['deny']"
-								},
-								"sink": {
-									"name": "Action-deny",
-									"type": "Boolean"
-								}
-							},
-							{
-								"source": {
-									"path": "$['actions']['bypass']"
-								},
-								"sink": {
-									"name": "Action-bypass",
-									"type": "Boolean"
+									"name": "gusto",
+									"type": "String"
 								}
 							}
 						],
@@ -329,7 +248,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_ADLS_RAW_HR_EmployeeTimeOff",
+						"referenceName": "DS_ADLS_RAW_HR_EmploymentStatus",
 						"type": "DatasetReference"
 					}
 				],
@@ -341,11 +260,11 @@
 				]
 			},
 			{
-				"name": "PL_DATA_ADLS_CURATED_TO_SYNAP_EmployeeTimeOff",
+				"name": "PL_DATA_ADLS_CURATED_TO_SYNAP_EmploymentStatus",
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "PL_TRANS_ADLK_HR_EmployeeTimeOff",
+						"activity": "PL_TRANS_ADLK_HR_EmploymentStatus",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -413,172 +332,82 @@
 							},
 							{
 								"source": {
-									"name": "lastChanged",
+									"name": "date",
 									"type": "DateTime"
 								},
 								"sink": {
-									"name": "lastChanged",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"name": "lastChangedByUserId",
-									"type": "Int64"
-								},
-								"sink": {
-									"name": "lastChangedByUserId",
-									"type": "Int64"
-								}
-							},
-							{
-								"source": {
-									"name": "status",
-									"type": "String"
-								},
-								"sink": {
-									"name": "status",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "name",
-									"type": "String"
-								},
-								"sink": {
-									"name": "name",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "startDate",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "startDate",
+									"name": "date",
 									"type": "DateTime"
 								}
 							},
 							{
 								"source": {
-									"name": "endDate",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "endDate",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"name": "createdDate",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "createdDate",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"name": "TypeID",
-									"type": "Int64"
-								},
-								"sink": {
-									"name": "TypeID",
-									"type": "Int64"
-								}
-							},
-							{
-								"source": {
-									"name": "LeaveType",
+									"name": "employmentStatus",
 									"type": "String"
 								},
 								"sink": {
-									"name": "LeaveType",
+									"name": "employmentStatus",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "LeaveUnit",
+									"name": "comment",
 									"type": "String"
 								},
 								"sink": {
-									"name": "LeaveUnit",
+									"name": "comment",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "Amount",
-									"type": "Double"
+									"name": "terminationReasonId",
+									"type": "String"
 								},
 								"sink": {
-									"name": "Amount",
-									"type": "Double"
+									"name": "terminationReasonId",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "Action-view",
-									"type": "Boolean"
+									"name": "terminationTypeId",
+									"type": "String"
 								},
 								"sink": {
-									"name": "Action-view",
-									"type": "Boolean"
+									"name": "terminationTypeId",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "Action-edit",
-									"type": "Boolean"
+									"name": "terminationRehireId",
+									"type": "String"
 								},
 								"sink": {
-									"name": "Action-edit",
-									"type": "Boolean"
+									"name": "terminationRehireId",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "Action-cancel",
-									"type": "Boolean"
+									"name": "benetracStatus",
+									"type": "String"
 								},
 								"sink": {
-									"name": "Action-cancel",
-									"type": "Boolean"
+									"name": "benetracStatus",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "Action-approve",
-									"type": "Boolean"
+									"name": "gusto",
+									"type": "String"
 								},
 								"sink": {
-									"name": "Action-approve",
-									"type": "Boolean"
-								}
-							},
-							{
-								"source": {
-									"name": "Action-deny",
-									"type": "Boolean"
-								},
-								"sink": {
-									"name": "Action-deny",
-									"type": "Boolean"
-								}
-							},
-							{
-								"source": {
-									"name": "Action-bypass",
-									"type": "Boolean"
-								},
-								"sink": {
-									"name": "Action-bypass",
-									"type": "Boolean"
+									"name": "gusto",
+									"type": "String"
 								}
 							}
 						]
@@ -586,13 +415,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_ADLS_CURATED_HR_EmployeeTimeOff",
+						"referenceName": "DS_ADLS_CURATED_HR_EmploymentStatus",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_SYNAPSE_HR_EmployeeTimeOff",
+						"referenceName": "DS_SYNAPSE_HR_EmploymentStatus",
 						"type": "DatasetReference"
 					}
 				]
