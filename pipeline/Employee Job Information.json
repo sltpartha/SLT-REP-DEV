@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "PL_DATA_HR_TO_ADLS_EmploymentStatus",
+				"name": "PL_DATA_HR_TO_ADLS_JobInformation",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -41,23 +41,23 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_REST_HR_EmploymentStatus",
+						"referenceName": "DS_REST_HR_JobInformation",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_ADLS_RAW_HR_EmploymentStatus",
+						"referenceName": "DS_ADLS_RAW_HR_JobInformation",
 						"type": "DatasetReference"
 					}
 				]
 			},
 			{
-				"name": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_EmploymentStatus",
+				"name": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_JobInformation",
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "PL_DATA_HR_TO_ADLS_EmploymentStatus",
+						"activity": "PL_DATA_HR_TO_ADLS_JobInformation",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -96,7 +96,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_ADLS_RAW_HR_EmploymentStatus",
+						"referenceName": "DS_ADLS_RAW_HR_JobInformation",
 						"type": "DatasetReference"
 					}
 				],
@@ -108,12 +108,12 @@
 				]
 			},
 			{
-				"name": "PL_TRANS_ADLK_HR_EmploymentStatus",
+				"name": "PL_TRANS_ADLK_HR_JobInformation",
 				"description": "Flattened directory data",
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_EmploymentStatus",
+						"activity": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_JobInformation",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -180,64 +180,46 @@
 							},
 							{
 								"source": {
-									"path": "$['employmentStatus']"
+									"path": "$['location']"
 								},
 								"sink": {
-									"name": "employmentStatus",
+									"name": "location",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "$['comment']"
+									"path": "$['department']"
 								},
 								"sink": {
-									"name": "comment",
+									"name": "department",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "$['terminationReasonId']"
+									"path": "$['division']"
 								},
 								"sink": {
-									"name": "terminationReasonId",
+									"name": "division",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "$['terminationTypeId']"
+									"path": "$['jobTitle']"
 								},
 								"sink": {
-									"name": "terminationTypeId",
+									"name": "jobTitle",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "$['terminationRehireId']"
+									"path": "$['reportsTo']"
 								},
 								"sink": {
-									"name": "terminationRehireId",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['benetracStatus']"
-								},
-								"sink": {
-									"name": "benetracStatus",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['gusto']"
-								},
-								"sink": {
-									"name": "gusto",
+									"name": "reportsTo",
 									"type": "String"
 								}
 							}
@@ -248,7 +230,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_ADLS_RAW_HR_EmploymentStatus",
+						"referenceName": "DS_ADLS_RAW_HR_JobInformation",
 						"type": "DatasetReference"
 					}
 				],
@@ -260,11 +242,11 @@
 				]
 			},
 			{
-				"name": "PL_DATA_ADLS_CURATED_TO_SYNAP_EmploymentStatus",
+				"name": "PL_DATA_ADLS_CURATED_TO_SYNAP_EmployeeJobInformation",
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "PL_TRANS_ADLK_HR_EmploymentStatus",
+						"activity": "PL_TRANS_ADLK_HR_JobInformation",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -297,13 +279,15 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
+						"preCopyScript": "TRUNCATE TABLE HR.EmpCompensation",
 						"allowPolyBase": true,
 						"polyBaseSettings": {
 							"rejectValue": 0,
 							"rejectType": "value",
-							"useTypeDefault": true
+							"useTypeDefault": false
 						},
-						"tableOption": "autoCreate"
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"parallelCopies": 3,
@@ -342,71 +326,51 @@
 							},
 							{
 								"source": {
-									"name": "employmentStatus",
+									"name": "location",
 									"type": "String"
 								},
 								"sink": {
-									"name": "employmentStatus",
+									"name": "location",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "comment",
+									"name": "department",
 									"type": "String"
 								},
 								"sink": {
-									"name": "comment",
+									"name": "department",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "terminationReasonId",
+									"name": "division",
 									"type": "String"
 								},
 								"sink": {
-									"name": "terminationReasonId",
+									"name": "division",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "terminationTypeId",
+									"name": "jobTitle",
 									"type": "String"
 								},
 								"sink": {
-									"name": "terminationTypeId",
+									"name": "jobTitle",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "terminationRehireId",
+									"name": "reportsTo",
 									"type": "String"
 								},
 								"sink": {
-									"name": "terminationRehireId",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "benetracStatus",
-									"type": "String"
-								},
-								"sink": {
-									"name": "benetracStatus",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "gusto",
-									"type": "String"
-								},
-								"sink": {
-									"name": "gusto",
+									"name": "reportsTo",
 									"type": "String"
 								}
 							}
@@ -415,13 +379,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_ADLS_CURATED_HR_EmploymentStatus",
+						"referenceName": "DS_ADLS_CURATED_HR_EmployeeJobInformation",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_SYNAPSE_HR_EmploymentStatus",
+						"referenceName": "DS_SYNAPSE_HR_EmployeeJobInformation",
 						"type": "DatasetReference"
 					}
 				]
