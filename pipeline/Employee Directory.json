@@ -360,7 +360,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_EmployeeDirectory",
+						"activity": "PL_DATA_HR_TO_ADLS_EmployeeDirectory",
 						"dependencyConditions": [
 							"Succeeded"
 						]
