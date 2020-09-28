@@ -57,7 +57,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE",
+						"activity": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_Compensation",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -435,7 +435,7 @@
 				]
 			},
 			{
-				"name": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE",
+				"name": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_Compensation",
 				"type": "Copy",
 				"dependsOn": [
 					{
@@ -445,55 +445,6 @@
 						]
 					}
 				],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "JsonSource",
-						"storeSettings": {
-							"type": "AzureBlobFSReadSettings",
-							"recursive": true,
-							"wildcardFolderPath": "BambooHR",
-							"wildcardFileName": "*"
-						},
-						"formatSettings": {
-							"type": "JsonReadSettings"
-						}
-					},
-					"sink": {
-						"type": "JsonSink",
-						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings"
-						},
-						"formatSettings": {
-							"type": "JsonWriteSettings"
-						}
-					},
-					"enableStaging": false
-				},
-				"inputs": [
-					{
-						"referenceName": "DS_ADLS_RAW",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "DS_ADLS_STORAGE",
-						"type": "DatasetReference"
-					}
-				]
-			},
-			{
-				"name": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_copy1",
-				"type": "Copy",
-				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
