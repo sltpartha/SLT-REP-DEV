@@ -1,9 +1,9 @@
 {
-	"name": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_EmployeeTimeOff_copy1",
+	"name": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_EmploymentStatus",
 	"properties": {
 		"activities": [
 			{
-				"name": "EmployeeTimeOff_copy1",
+				"name": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_EmploymentStatus",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
