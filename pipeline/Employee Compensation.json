@@ -527,7 +527,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_ADLS_RAW",
+						"referenceName": "DS_ADLS_RAW_HR_EmployeeCompensation",
 						"type": "DatasetReference"
 					}
 				],
