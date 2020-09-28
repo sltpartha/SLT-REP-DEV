@@ -57,7 +57,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_Compensation",
+						"activity": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_EmployeeCompensation",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -435,7 +435,7 @@
 				]
 			},
 			{
-				"name": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_Compensation",
+				"name": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_EmployeeCompensation",
 				"type": "Copy",
 				"dependsOn": [
 					{
