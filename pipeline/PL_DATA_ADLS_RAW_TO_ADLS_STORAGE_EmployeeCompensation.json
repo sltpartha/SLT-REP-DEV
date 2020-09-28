@@ -1,9 +1,9 @@
 {
-	"name": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_Compensation",
+	"name": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_EmployeeCompensation",
 	"properties": {
 		"activities": [
 			{
-				"name": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_Compensation",
+				"name": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_EmployeeCompensation",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
