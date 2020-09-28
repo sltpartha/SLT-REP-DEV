@@ -1,9 +1,9 @@
 {
-	"name": "PL_TRANS_ADLK_HR_DirectoryData",
+	"name": "PL_TRANS_ADLK_HR_EmployeeDirectory",
 	"properties": {
 		"activities": [
 			{
-				"name": "PL_TRANS_ADLK_HR_DirectoryData",
+				"name": "PL_TRANS_ADLK_HR_EmployeeDirectory",
 				"description": "Flattened directory data",
 				"type": "Copy",
 				"dependsOn": [],

@@ -1,9 +1,9 @@
 {
-	"name": "Employee Compensation",
+	"name": "Employee Job Information",
 	"properties": {
 		"activities": [
 			{
-				"name": "PL_DATA_HR_TO_ADLS_EmployeeCompensation",
+				"name": "PL_DATA_HR_TO_ADLS_JobInformation",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -41,23 +41,23 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_REST_HR_EmployeeCompensation",
+						"referenceName": "DS_REST_HR_JobInformation",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_ADLS_RAW_HR_EmployeeCompensation",
+						"referenceName": "DS_ADLS_RAW_HR_JobInformation",
 						"type": "DatasetReference"
 					}
 				]
 			},
 			{
-				"name": "PL_TRANS_ADLK_HR_EmpCompensation",
+				"name": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_JobInformation",
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "PL_DATA_HR_TO_ADLS_EmployeeCompensation",
+						"activity": "PL_DATA_HR_TO_ADLS_JobInformation",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -70,16 +70,63 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [
-					{
-						"name": "Source",
-						"value": "cntrawzonesltdev/BambooHR/EmployeeCompensation"
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"wildcardFolderPath": "BambooHR"
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
 					},
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
 					{
-						"name": "Destination",
-						"value": "cntcuratedzonesltdev/Bamboo HR/TestCompensation"
+						"referenceName": "DS_ADLS_RAW_HR_JobInformation",
+						"type": "DatasetReference"
 					}
 				],
+				"outputs": [
+					{
+						"referenceName": "DS_ADLS_STORAGE",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "PL_TRANS_ADLK_HR_JobInformation",
+				"description": "Flattened directory data",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "PL_DATA_HR_TO_ADLS_JobInformation",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
 				"typeProperties": {
 					"source": {
 						"type": "JsonSource",
@@ -101,7 +148,6 @@
 						}
 					},
 					"enableStaging": false,
-					"validateDataConsistency": false,
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
@@ -125,106 +171,66 @@
 							},
 							{
 								"source": {
-									"path": "$['startDate']"
+									"path": "$['date']"
 								},
 								"sink": {
-									"name": "startDate",
+									"name": "date",
 									"type": "DateTime"
 								}
 							},
 							{
 								"source": {
-									"path": "$['rate']['currency']"
+									"path": "$['location']"
 								},
 								"sink": {
-									"name": "currency",
+									"name": "location",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "$['rate']['value']"
+									"path": "$['department']"
 								},
 								"sink": {
-									"name": "pay"
-								}
-							},
-							{
-								"source": {
-									"path": "$['type']"
-								},
-								"sink": {
-									"name": "type",
+									"name": "department",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "$['exempt']"
+									"path": "$['division']"
 								},
 								"sink": {
-									"name": "exempt",
+									"name": "division",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "$['reason']"
+									"path": "$['jobTitle']"
 								},
 								"sink": {
-									"name": "reason",
+									"name": "jobTitle",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "$['comment']"
+									"path": "$['reportsTo']"
 								},
 								"sink": {
-									"name": "comment",
+									"name": "reportsTo",
 									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['paidPer']"
-								},
-								"sink": {
-									"name": "paidPer",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['paySchedule']"
-								},
-								"sink": {
-									"name": "paySchedule",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['overtimeRate']['currency']"
-								},
-								"sink": {
-									"name": "currencyOvertime"
-								}
-							},
-							{
-								"source": {
-									"path": "$['overtimeRate']['value']"
-								},
-								"sink": {
-									"name": "valueOvertime"
 								}
 							}
-						]
+						],
+						"collectionReference": "",
+						"mapComplexValuesToString": false
 					}
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_ADLS_RAW_HR_EmployeeCompensation",
+						"referenceName": "DS_ADLS_RAW_HR_JobInformation",
 						"type": "DatasetReference"
 					}
 				],
@@ -236,11 +242,11 @@
 				]
 			},
 			{
-				"name": "PL_DATA_ADLS_CURATED_TO_SYNAP_EmployeeCompensation",
+				"name": "PL_DATA_ADLS_CURATED_TO_SYNAP_EmployeeJobInformation",
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "PL_TRANS_ADLK_HR_EmpCompensation",
+						"activity": "PL_TRANS_ADLK_HR_JobInformation",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -310,111 +316,61 @@
 							},
 							{
 								"source": {
-									"name": "startDate",
+									"name": "date",
 									"type": "DateTime"
 								},
 								"sink": {
-									"name": "startDate",
+									"name": "date",
 									"type": "DateTime"
 								}
 							},
 							{
 								"source": {
-									"name": "currency",
+									"name": "location",
 									"type": "String"
 								},
 								"sink": {
-									"name": "currency",
+									"name": "location",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "pay",
+									"name": "department",
 									"type": "String"
 								},
 								"sink": {
-									"name": "pay",
+									"name": "department",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "type",
+									"name": "division",
 									"type": "String"
 								},
 								"sink": {
-									"name": "type",
+									"name": "division",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "exempt",
+									"name": "jobTitle",
 									"type": "String"
 								},
 								"sink": {
-									"name": "exempt",
+									"name": "jobTitle",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "reason",
+									"name": "reportsTo",
 									"type": "String"
 								},
 								"sink": {
-									"name": "reason",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "comment",
-									"type": "String"
-								},
-								"sink": {
-									"name": "comment",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "paidPer",
-									"type": "String"
-								},
-								"sink": {
-									"name": "paidPer",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "paySchedule",
-									"type": "String"
-								},
-								"sink": {
-									"name": "paySchedule",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "currencyOvertime",
-									"type": "String"
-								},
-								"sink": {
-									"name": "currencyOvertime",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "valueOvertime",
-									"type": "String"
-								},
-								"sink": {
-									"name": "valueOvertime",
+									"name": "reportsTo",
 									"type": "String"
 								}
 							}
@@ -423,68 +379,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_ADLS_CURATED_HR_EmployeeCompensation",
+						"referenceName": "DS_ADLS_CURATED_HR_EmployeeJobInformation",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_SYNAPSE_HR_EmployeeCompensation",
-						"type": "DatasetReference"
-					}
-				]
-			},
-			{
-				"name": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_EmployeeCompensation",
-				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "PL_DATA_HR_TO_ADLS_EmployeeCompensation",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "JsonSource",
-						"storeSettings": {
-							"type": "AzureBlobFSReadSettings",
-							"recursive": true,
-							"wildcardFolderPath": "BambooHR"
-						},
-						"formatSettings": {
-							"type": "JsonReadSettings"
-						}
-					},
-					"sink": {
-						"type": "JsonSink",
-						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings"
-						},
-						"formatSettings": {
-							"type": "JsonWriteSettings"
-						}
-					},
-					"enableStaging": false
-				},
-				"inputs": [
-					{
-						"referenceName": "DS_ADLS_RAW_HR_EmployeeCompensation",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "DS_ADLS_STORAGE",
+						"referenceName": "DS_SYNAPSE_HR_EmployeeJobInformation",
 						"type": "DatasetReference"
 					}
 				]
