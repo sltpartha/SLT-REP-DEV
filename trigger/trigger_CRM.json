@@ -45,6 +45,12 @@
 					"referenceName": "PL_CRM_TO_MSQL_Opportunity",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "PL_CRM_TO_MSQL_Sub_Domain",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
