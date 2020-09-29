@@ -33,6 +33,12 @@
 					"referenceName": "PL_CRM_TO_MSQL_Industry",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "PL_CRM_TO_MSQL_Lead",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
