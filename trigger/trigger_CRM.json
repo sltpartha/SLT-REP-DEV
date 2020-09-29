@@ -15,6 +15,12 @@
 					"referenceName": "PL_CRM_TO_MSQL_Address",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "PL_CRM_TO_MSQL_Contact",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
