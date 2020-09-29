@@ -10,6 +10,9 @@
 				"type": "String"
 			}
 		},
+		"folder": {
+			"name": "CRM SQL Datasets"
+		},
 		"annotations": [],
 		"type": "AzureSqlDWTable",
 		"schema": [],

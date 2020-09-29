@@ -41,7 +41,10 @@
 								},
 								"sink": {
 									"type": "SqlDWSink",
-									"preCopyScript": "@concat('TRUNCATE TABLE sltsqldbdev.',item().destination.table)",
+									"preCopyScript": {
+										"value": "@concat('TRUNCATE TABLE sltsqldbdev.',item().destination.table)",
+										"type": "Expression"
+									},
 									"tableOption": "autoCreate",
 									"disableMetricsCollection": false
 								},
@@ -49,7 +52,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "SourceDataset_cox",
+									"referenceName": "DS_SQL_CRM",
 									"type": "DatasetReference",
 									"parameters": {
 										"cw_table": "@item().source.table"
@@ -140,6 +143,9 @@
 					}
 				]
 			}
+		},
+		"folder": {
+			"name": "CRM"
 		},
 		"annotations": []
 	}

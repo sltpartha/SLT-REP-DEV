@@ -1,5 +1,5 @@
 {
-	"name": "SourceDataset_cox",
+	"name": "DS_SQL_CRM",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_SQL_DB",
@@ -9,6 +9,9 @@
 			"cw_table": {
 				"type": "String"
 			}
+		},
+		"folder": {
+			"name": "CRM REST EndPoints"
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
