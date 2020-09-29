@@ -1,0 +1,601 @@
+{
+	"name": "PL_CRM_TO_MSQL_Address",
+	"properties": {
+		"activities": [
+			{
+				"name": "PL_CRM_TO_MSQL_Address",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "customeraddress"
+					},
+					{
+						"name": "Destination",
+						"value": "sltsqldbdev.customeraddress"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "DynamicsCrmSource"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "addressnumber",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "addressnumber",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "addresstypecode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "addresstypecode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "city",
+									"type": "String"
+								},
+								"sink": {
+									"name": "city",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "composite",
+									"type": "String"
+								},
+								"sink": {
+									"name": "composite",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "country",
+									"type": "String"
+								},
+								"sink": {
+									"name": "country",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "county",
+									"type": "String"
+								},
+								"sink": {
+									"name": "county",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "createdby",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "createdby",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "createdbyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "createdbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "createdbyyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "createdbyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "createdon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "createdon",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "createdonbehalfby",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "createdonbehalfby",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "createdonbehalfbyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "createdonbehalfbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "createdonbehalfbyyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "createdonbehalfbyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "customeraddressid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "customeraddressid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "exchangerate",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "exchangerate",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "fax",
+									"type": "String"
+								},
+								"sink": {
+									"name": "fax",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "freighttermscode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "freighttermscode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "importsequencenumber",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "importsequencenumber",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "latitude",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "latitude",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "line1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "line1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "line2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "line2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "line3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "line3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "longitude",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "longitude",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedby",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "modifiedby",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedbyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "modifiedbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedbyyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "modifiedbyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "modifiedon",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedonbehalfby",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "modifiedonbehalfby",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedonbehalfbyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "modifiedonbehalfbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedonbehalfbyyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "modifiedonbehalfbyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "name",
+									"type": "String"
+								},
+								"sink": {
+									"name": "name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "objecttypecode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "objecttypecode",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "overriddencreatedon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "overriddencreatedon",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "ownerid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "ownerid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "owneridtype",
+									"type": "String"
+								},
+								"sink": {
+									"name": "owneridtype",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "owningbusinessunit",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "owningbusinessunit",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "owninguser",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "owninguser",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "parentid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "parentid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "parentidtypecode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "parentidtypecode",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "postalcode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "postalcode",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "postofficebox",
+									"type": "String"
+								},
+								"sink": {
+									"name": "postofficebox",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "primarycontactname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "primarycontactname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "shippingmethodcode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "shippingmethodcode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "stateorprovince",
+									"type": "String"
+								},
+								"sink": {
+									"name": "stateorprovince",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "telephone1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "telephone1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "telephone2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "telephone2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "telephone3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "telephone3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "timezoneruleversionnumber",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "timezoneruleversionnumber",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "transactioncurrencyid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "transactioncurrencyid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "transactioncurrencyidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "transactioncurrencyidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "upszone",
+									"type": "String"
+								},
+								"sink": {
+									"name": "upszone",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "utcconversiontimezonecode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "utcconversiontimezonecode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "utcoffset",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "utcoffset",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "versionnumber",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "versionnumber",
+									"type": "Int64"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_REST_CRM_Customer_Address",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_SQL_CRM_Customer_Address",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "CRM"
+		},
+		"annotations": []
+	}
+}

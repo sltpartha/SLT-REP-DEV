@@ -1,0 +1,27 @@
+{
+	"name": "DS_Synapse_CRM",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSynapseAnalytics1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"cw_table": {
+				"type": "String"
+			}
+		},
+		"folder": {
+			"name": "CRM SQL Datasets"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "sltsqldbdev",
+			"table": {
+				"value": "@dataset().cw_table",
+				"type": "Expression"
+			}
+		}
+	}
+}
