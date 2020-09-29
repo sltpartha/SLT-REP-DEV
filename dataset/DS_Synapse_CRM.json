@@ -1,5 +1,5 @@
 {
-	"name": "DestinationDataset_cox",
+	"name": "DS_Synapse_CRM",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureSynapseAnalytics1",

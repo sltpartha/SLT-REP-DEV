@@ -61,7 +61,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "DestinationDataset_cox",
+									"referenceName": "DS_Synapse_CRM",
 									"type": "DatasetReference",
 									"parameters": {
 										"cw_table": "@item().destination.table"
