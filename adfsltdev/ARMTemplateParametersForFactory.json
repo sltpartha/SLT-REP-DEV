@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adfsltdev"
+		},
+		"LS_ADLS_BAMBOOHR_accountKey": {
+			"value": ""
+		},
+		"LS_REST_BAMBOOHR_password": {
+			"value": ""
+		},
+		"LS_SYNAP_connectionString": {
+			"value": ""
+		},
+		"LS_ADLS_BAMBOOHR_properties_typeProperties_url": {
+			"value": "https://dlssltdev.dfs.core.windows.net"
+		},
+		"LS_REST_BAMBOOHR_properties_typeProperties_url": {
+			"value": "https://{a59ddcc1352d59ce08383d989c273fd87a66421b}:x@api.bamboohr.com/api/gateway.php/summalinguae/"
+		},
+		"LS_REST_BAMBOOHR_properties_typeProperties_userName": {
+			"value": "a59ddcc1352d59ce08383d989c273fd87a66421b"
+		}
+	}
+}
