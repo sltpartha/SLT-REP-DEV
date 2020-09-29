@@ -27,6 +27,12 @@
 					"referenceName": "PL_CRM_TO_MSQL_Currency",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "PL_CRM_TO_MSQL_Industry",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
