@@ -1045,50 +1045,6 @@
 							},
 							{
 								"source": {
-									"name": "Vorname_enc",
-									"type": "Byte[]",
-									"physicalType": "blob"
-								},
-								"sink": {
-									"name": "Vorname_enc",
-									"type": "Byte[]"
-								}
-							},
-							{
-								"source": {
-									"name": "Nachname_enc",
-									"type": "Byte[]",
-									"physicalType": "blob"
-								},
-								"sink": {
-									"name": "Nachname_enc",
-									"type": "Byte[]"
-								}
-							},
-							{
-								"source": {
-									"name": "Telefon_enc",
-									"type": "Byte[]",
-									"physicalType": "blob"
-								},
-								"sink": {
-									"name": "Telefon_enc",
-									"type": "Byte[]"
-								}
-							},
-							{
-								"source": {
-									"name": "Geburtsdatum_enc",
-									"type": "Byte[]",
-									"physicalType": "blob"
-								},
-								"sink": {
-									"name": "Geburtsdatum_enc",
-									"type": "Byte[]"
-								}
-							},
-							{
-								"source": {
 									"name": "ExternalID",
 									"type": "String",
 									"physicalType": "varchar"
@@ -1349,28 +1305,6 @@
 								"sink": {
 									"name": "Berufsbezeichnung",
 									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "Kreditkartennummer_enc",
-									"type": "Byte[]",
-									"physicalType": "blob"
-								},
-								"sink": {
-									"name": "Kreditkartennummer_enc",
-									"type": "Byte[]"
-								}
-							},
-							{
-								"source": {
-									"name": "Kreditkartenverfallsdatum_enc",
-									"type": "Byte[]",
-									"physicalType": "blob"
-								},
-								"sink": {
-									"name": "Kreditkartenverfallsdatum_enc",
-									"type": "Byte[]"
 								}
 							},
 							{
