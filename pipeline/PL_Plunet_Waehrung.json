@@ -25,7 +25,9 @@
 				],
 				"typeProperties": {
 					"source": {
-						"type": "AzureMySqlSource"
+						"type": "SqlDWSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
 					},
 					"sink": {
 						"type": "SqlDWSink",
@@ -172,13 +174,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_Plunet_Auftrag",
+						"referenceName": "DS_DW_Waehrung",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_DW_Auftrag",
+						"referenceName": "DS_DW_Waehrung",
 						"type": "DatasetReference"
 					}
 				]
