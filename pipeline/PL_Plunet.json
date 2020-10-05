@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_fhq",
+				"name": "Plunet_SampleTables_Move",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
