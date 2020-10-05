@@ -116,7 +116,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_fhq",
+						"referenceName": "DS_DW_Auftrag",
 						"type": "DatasetReference"
 					}
 				]
