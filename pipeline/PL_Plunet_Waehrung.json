@@ -42,6 +42,164 @@
 					},
 					"translator": {
 						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "WaehrungID",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "WaehrungID",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Bezeichnung",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "Bezeichnung",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Kurs",
+									"type": "Double",
+									"physicalType": "double"
+								},
+								"sink": {
+									"name": "Kurs",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "Datum",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "Datum",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "MindestEinheit",
+									"type": "Double",
+									"physicalType": "double"
+								},
+								"sink": {
+									"name": "MindestEinheit",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "SymbolVorBetrag",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "SymbolVorBetrag",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "NeuerKurs",
+									"type": "Double",
+									"physicalType": "double"
+								},
+								"sink": {
+									"name": "NeuerKurs",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "AendernAm",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "AendernAm",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Nachkommastellen",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "Nachkommastellen",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ISOCode",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "ISOCode",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Charges",
+									"type": "Double",
+									"physicalType": "double"
+								},
+								"sink": {
+									"name": "Charges",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "AutomatischeAktualisierung",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "AutomatischeAktualisierung",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "KursAufBasisHeimatWaehrungAnzeigen",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "KursAufBasisHeimatWaehrungAnzeigen",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							}
+						],
 						"typeConversion": true,
 						"typeConversionSettings": {
 							"allowDataTruncation": true,
