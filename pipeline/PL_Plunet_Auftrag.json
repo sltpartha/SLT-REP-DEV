@@ -149,6 +149,18 @@
 									"type": "Single",
 									"physicalType": "float"
 								}
+							},
+							{
+								"source": {
+									"name": "IDWaehrung",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "IDWaehrung",
+									"type": "Int32",
+									"physicalType": "int"
+								}
 							}
 						],
 						"typeConversion": true,
