@@ -44,38 +44,60 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "MitarbeiterID",
+									"name": "AuftragID",
+									"type": "Int32",
 									"physicalType": "int"
 								},
 								"sink": {
-									"name": "MitarbeiterID"
+									"name": "MitarbeiterID",
+									"type": "Int32",
+									"physicalType": "int"
 								}
 							},
 							{
 								"source": {
+									"name": "AuftragsDatum",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
 									"name": "Vorname",
-									"physicalType": "varchar"
-								},
-								"sink": {
-									"name": "Vorname"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
 								"source": {
+									"name": "Status",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
 									"name": "Nachname",
-									"physicalType": "varchar"
-								},
-								"sink": {
-									"name": "Nachname"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
 								"source": {
-									"name": "eMail",
-									"physicalType": "longtext"
+									"name": "IDKunde",
+									"type": "Int32",
+									"physicalType": "int"
 								},
 								"sink": {
-									"name": "eMail"
+									"name": "eMail",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Preis",
+									"type": "Double",
+									"physicalType": "double"
+								},
+								"sink": {
+									"name": ""
 								}
 							}
 						],
