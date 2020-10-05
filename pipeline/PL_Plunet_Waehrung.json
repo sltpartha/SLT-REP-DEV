@@ -25,9 +25,8 @@
 				],
 				"typeProperties": {
 					"source": {
-						"type": "SqlDWSource",
-						"queryTimeout": "02:00:00",
-						"partitionOption": "None"
+						"type": "AzureMySqlSource",
+						"queryTimeout": "02:00:00"
 					},
 					"sink": {
 						"type": "SqlDWSink",
@@ -43,128 +42,6 @@
 					},
 					"translator": {
 						"type": "TabularTranslator",
-						"mappings": [
-							{
-								"source": {
-									"name": "AuftragID",
-									"type": "Int32",
-									"physicalType": "int"
-								},
-								"sink": {
-									"name": "AuftragID",
-									"type": "Int32",
-									"physicalType": "int"
-								}
-							},
-							{
-								"source": {
-									"name": "Status",
-									"type": "Int32",
-									"physicalType": "int"
-								},
-								"sink": {
-									"name": "Status",
-									"type": "Int32",
-									"physicalType": "int"
-								}
-							},
-							{
-								"source": {
-									"name": "AuftragsDatum",
-									"type": "DateTime",
-									"physicalType": "datetime"
-								},
-								"sink": {
-									"name": "AuftragsDatum",
-									"type": "DateTime",
-									"physicalType": "datetime2"
-								}
-							},
-							{
-								"source": {
-									"name": "IDKunde",
-									"type": "Int32",
-									"physicalType": "int"
-								},
-								"sink": {
-									"name": "IDKunde",
-									"type": "Int32",
-									"physicalType": "int"
-								}
-							},
-							{
-								"source": {
-									"name": "ErstelltDurchMitarbeiterID",
-									"type": "Int32",
-									"physicalType": "int"
-								},
-								"sink": {
-									"name": "ErstelltDurchMitarbeiterID",
-									"type": "Int32",
-									"physicalType": "int"
-								}
-							},
-							{
-								"source": {
-									"name": "Preis",
-									"type": "Double",
-									"physicalType": "double"
-								},
-								"sink": {
-									"name": "Preis",
-									"type": "Single",
-									"physicalType": "float"
-								}
-							},
-							{
-								"source": {
-									"name": "AnzeigeName",
-									"type": "String",
-									"physicalType": "varchar"
-								},
-								"sink": {
-									"name": "AnzeigeName",
-									"type": "String",
-									"physicalType": "nvarchar"
-								}
-							},
-							{
-								"source": {
-									"name": "MWStSatz1",
-									"type": "Double",
-									"physicalType": "double"
-								},
-								"sink": {
-									"name": "MWStSatz1",
-									"type": "Single",
-									"physicalType": "float"
-								}
-							},
-							{
-								"source": {
-									"name": "MWStSatz2",
-									"type": "Double",
-									"physicalType": "double"
-								},
-								"sink": {
-									"name": "MWStSatz2",
-									"type": "Single",
-									"physicalType": "float"
-								}
-							},
-							{
-								"source": {
-									"name": "IDWaehrung",
-									"type": "Int32",
-									"physicalType": "int"
-								},
-								"sink": {
-									"name": "IDWaehrung",
-									"type": "Int32",
-									"physicalType": "int"
-								}
-							}
-						],
 						"typeConversion": true,
 						"typeConversionSettings": {
 							"allowDataTruncation": true,
@@ -174,7 +51,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_DW_Waehrung",
+						"referenceName": "DS_Plunet_Waehrung",
 						"type": "DatasetReference"
 					}
 				],
