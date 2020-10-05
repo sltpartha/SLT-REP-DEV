@@ -1,5 +1,5 @@
 {
-	"name": "PL_Plunet_Miterbiter",
+	"name": "PL_Plunet_Auftrag",
 	"properties": {
 		"activities": [
 			{
@@ -88,7 +88,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_fhq",
+						"referenceName": "DS_Plunet_Auftrag",
 						"type": "DatasetReference"
 					}
 				],
