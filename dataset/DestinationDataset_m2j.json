@@ -1,0 +1,16 @@
+{
+	"name": "DestinationDataset_m2j",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSynapseAnalytics2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "HR",
+			"table": "Employee_Title"
+		}
+	}
+}
