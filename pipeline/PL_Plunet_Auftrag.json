@@ -51,19 +51,7 @@
 								"sink": {
 									"name": "AuftragID",
 									"type": "Int32",
-									"physicalType": "int"
-								}
-							},
-							{
-								"source": {
-									"name": "Status",
-									"type": "Int32",
-									"physicalType": "int"
-								},
-								"sink": {
-									"name": "Status",
-									"type": "Int32",
-									"physicalType": "int"
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -75,7 +63,19 @@
 								"sink": {
 									"name": "AuftragsDatum",
 									"type": "DateTime",
-									"physicalType": "datetime2"
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Status",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "Status",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -87,19 +87,7 @@
 								"sink": {
 									"name": "IDKunde",
 									"type": "Int32",
-									"physicalType": "int"
-								}
-							},
-							{
-								"source": {
-									"name": "ErstelltDurchMitarbeiterID",
-									"type": "Int32",
-									"physicalType": "int"
-								},
-								"sink": {
-									"name": "ErstelltDurchMitarbeiterID",
-									"type": "Int32",
-									"physicalType": "int"
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -110,8 +98,56 @@
 								},
 								"sink": {
 									"name": "Preis",
-									"type": "Single",
-									"physicalType": "float"
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "MWStSatz1",
+									"type": "Double",
+									"physicalType": "double"
+								},
+								"sink": {
+									"name": "MWStSatz1",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "MWStSatz2",
+									"type": "Double",
+									"physicalType": "double"
+								},
+								"sink": {
+									"name": "MWStSatz2",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "DatumAnlage",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "DatumAnlage",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "IDWaehrung",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "IDWaehrung",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -123,43 +159,43 @@
 								"sink": {
 									"name": "AnzeigeName",
 									"type": "String",
-									"physicalType": "nvarchar"
+									"physicalType": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "MWStSatz1",
-									"type": "Double",
-									"physicalType": "double"
+									"name": "LieferDatum",
+									"type": "DateTime",
+									"physicalType": "datetime"
 								},
 								"sink": {
-									"name": "MWStSatz1",
-									"type": "Single",
-									"physicalType": "float"
+									"name": "LieferDatum",
+									"type": "DateTime",
+									"physicalType": "DateTime"
 								}
 							},
 							{
 								"source": {
-									"name": "MWStSatz2",
-									"type": "Double",
-									"physicalType": "double"
+									"name": "AbschlussdatumAuftrag",
+									"type": "DateTime",
+									"physicalType": "datetime"
 								},
 								"sink": {
-									"name": "MWStSatz2",
-									"type": "Single",
-									"physicalType": "float"
+									"name": "AbschlussdatumAuftrag",
+									"type": "DateTime",
+									"physicalType": "DateTime"
 								}
 							},
 							{
 								"source": {
-									"name": "IDWaehrung",
+									"name": "ErstelltDurchMitarbeiterID",
 									"type": "Int32",
 									"physicalType": "int"
 								},
 								"sink": {
-									"name": "IDWaehrung",
+									"name": "ErstelltDurchMitarbeiterID",
 									"type": "Int32",
-									"physicalType": "int"
+									"physicalType": "Int32"
 								}
 							}
 						],
