@@ -297,13 +297,15 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
+						"preCopyScript": "TRUNCATE table HR.EmploymentStatus",
 						"allowPolyBase": true,
 						"polyBaseSettings": {
 							"rejectValue": 0,
 							"rejectType": "value",
 							"useTypeDefault": true
 						},
-						"tableOption": "autoCreate"
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"parallelCopies": 3,
