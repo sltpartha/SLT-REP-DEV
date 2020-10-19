@@ -1,5 +1,5 @@
 {
-	"name": "copy_azuremysql_synapse",
+	"name": "copy_plunet_azuresql",
 	"properties": {
 		"description": "copy plunet data from azure my sql to synapse",
 		"activities": [
@@ -65,8 +65,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"source": {
-									"type": "AzureMySqlSource",
-									"queryTimeout": "02:00:00"
+									"type": "MySqlSource"
 								},
 								"sink": {
 									"type": "SqlDWSink",
@@ -89,7 +88,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "AzureMySqlTable1",
+									"referenceName": "PlunetOnPremises_SQLDB",
 									"type": "DatasetReference"
 								}
 							],

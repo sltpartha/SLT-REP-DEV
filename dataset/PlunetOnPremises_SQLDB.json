@@ -1,0 +1,12 @@
+{
+	"name": "PlunetOnPremises_SQLDB",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "PlunetDatabse",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "MySqlTable",
+		"schema": []
+	}
+}
