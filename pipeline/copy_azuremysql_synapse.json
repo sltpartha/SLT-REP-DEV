@@ -70,10 +70,6 @@
 								},
 								"sink": {
 									"type": "SqlDWSink",
-									"preCopyScript": {
-										"value": "@{concat('truncate table ',item().table_name)}",
-										"type": "Expression"
-									},
 									"tableOption": "autoCreate",
 									"disableMetricsCollection": false
 								},
