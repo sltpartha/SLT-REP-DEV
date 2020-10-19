@@ -7,6 +7,12 @@
 		},
 		"annotations": [],
 		"type": "MySqlTable",
-		"schema": []
+		"schema": [],
+		"typeProperties": {
+			"tableName": {
+				"value": "@item().table_name",
+				"type": "Expression"
+			}
+		}
 	}
 }
