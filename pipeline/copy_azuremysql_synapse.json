@@ -1,6 +1,7 @@
 {
 	"name": "copy_azuremysql_synapse",
 	"properties": {
+		"description": "copy plunet data from azure my sql to synapse",
 		"annotations": []
 	}
 }
