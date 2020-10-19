@@ -59,16 +59,16 @@
 							"typeProperties": {
 								"source": {
 									"type": "MySqlSource",
-									"query": {
-										"value": "@concat('select * from ',item().table_name)",
-										"type": "Expression"
-									}
+									"query": "@concat('select * from ',item().table_name)"
 								},
 								"sink": {
 									"type": "AzureMySqlSink",
 									"writeBatchSize": 10000,
 									"writeBatchTimeout": "00:00:30",
-									"preCopyScript": "@concat('truncate table ',item().table_name)"
+									"preCopyScript": {
+										"value": "@concat('truncate table ',item().table_name)",
+										"type": "Expression"
+									}
 								},
 								"enableStaging": false,
 								"translator": {
