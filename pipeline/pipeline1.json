@@ -17,7 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "MySqlSource",
-						"query": "select table_name from information_schema.tables where table_type = 'BASE TABLE' order by table_name"
+						"query": "select distinct table_name from information_schema.tables where table_type = 'BASE TABLE' order by table_name"
 					},
 					"dataset": {
 						"referenceName": "MySqlTable1",
