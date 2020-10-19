@@ -58,13 +58,36 @@
 							"userProperties": [],
 							"typeProperties": {
 								"source": {
-									"type": "MySqlSource"
+									"type": "MySqlSource",
+									"query": {
+										"value": "select * from @item().table_name",
+										"type": "Expression"
+									}
 								},
-								"enableStaging": false
+								"sink": {
+									"type": "AzureMySqlSink",
+									"writeBatchSize": 10000,
+									"writeBatchTimeout": "00:00:30"
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
 							},
 							"inputs": [
 								{
 									"referenceName": "MySqlTable3",
+									"type": "DatasetReference"
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "AzureMySqlTable1",
 									"type": "DatasetReference"
 								}
 							]
