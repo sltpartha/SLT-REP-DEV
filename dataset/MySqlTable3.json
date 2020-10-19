@@ -1,0 +1,12 @@
+{
+	"name": "MySqlTable3",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "PlunetDatabse",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "MySqlTable",
+		"schema": []
+	}
+}
