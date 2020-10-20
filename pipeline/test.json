@@ -18,7 +18,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "MySqlSource",
-						"query": "select * from z__eigenschaft"
+						"query": "select * from z_taba33"
 					},
 					"sink": {
 						"type": "SqlDWSink"
