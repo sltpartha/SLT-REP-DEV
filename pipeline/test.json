@@ -75,12 +75,12 @@
 							{
 								"source": {
 									"name": "Aktiv",
-									"type": "String"
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "Aktiv",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							}
 						],
