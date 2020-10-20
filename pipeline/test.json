@@ -18,15 +18,12 @@
 				"typeProperties": {
 					"source": {
 						"type": "MySqlSource",
-						"query": {
-							"value": "select * from Angebot",
-							"type": "Expression"
-						}
+						"query": "select * from `angebot`"
 					},
 					"sink": {
 						"type": "SqlDWSink",
 						"preCopyScript": {
-							"value": "truncate table  Angebot",
+							"value": "truncate table  `angebot`",
 							"type": "Expression"
 						},
 						"tableOption": "autoCreate",
