@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "Plunet_Table_Names2.csv",
+				"fileName": "Plunet_Table_Names.csv",
 				"container": "plunettablelist"
 			},
 			"columnDelimiter": ",",
