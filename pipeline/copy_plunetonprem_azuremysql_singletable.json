@@ -16,16 +16,13 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "MySqlSource"
+						"type": "MySqlSource",
+						"query": "select * from z__eigenschaft"
 					},
 					"sink": {
 						"type": "AzureMySqlSink",
 						"writeBatchSize": 10000,
-						"writeBatchTimeout": "00:00:30",
-						"preCopyScript": {
-							"value": "@concat('truncate table ',item().table_name)",
-							"type": "Expression"
-						}
+						"writeBatchTimeout": "00:00:30"
 					},
 					"enableStaging": false,
 					"translator": {
