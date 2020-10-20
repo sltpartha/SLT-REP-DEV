@@ -7,9 +7,6 @@
 		},
 		"annotations": [],
 		"type": "MySqlTable",
-		"schema": [],
-		"typeProperties": {
-			"tableName": "`z__eigenschaft`"
-		}
+		"schema": []
 	}
 }
