@@ -11,7 +11,7 @@
 		"typeProperties": {
 			"schema": "Plunet",
 			"table": {
-				"value": "Angebot",
+				"value": "z_taba33",
 				"type": "Expression"
 			}
 		}
