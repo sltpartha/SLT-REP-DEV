@@ -9,7 +9,7 @@
 		"type": "MySqlTable",
 		"schema": [],
 		"typeProperties": {
-			"tableName": "`z_taba22`"
+			"tableName": "@item().table_name"
 		}
 	}
 }

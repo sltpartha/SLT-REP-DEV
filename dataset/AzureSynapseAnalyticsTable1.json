@@ -10,10 +10,7 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "Plunet",
-			"table": {
-				"value": "z_taba22",
-				"type": "Expression"
-			}
+			"table": "@item().table_name"
 		}
 	}
 }
