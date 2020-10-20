@@ -89,7 +89,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "PlunetOnPremises_SQLDB",
+									"referenceName": "MySqlTable3",
 									"type": "DatasetReference"
 								}
 							],
