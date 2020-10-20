@@ -9,7 +9,7 @@
 		"type": "AzureMySqlTable",
 		"schema": [],
 		"typeProperties": {
-			"tableName": "z__eigenschaft"
+			"tableName": "@item().table_name"
 		}
 	}
 }
