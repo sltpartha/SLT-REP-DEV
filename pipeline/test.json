@@ -21,7 +21,8 @@
 						"query": "select * from z_taba33"
 					},
 					"sink": {
-						"type": "SqlDWSink"
+						"type": "SqlDWSink",
+						"tableOption": "autoCreate"
 					},
 					"enableStaging": false,
 					"translator": {
