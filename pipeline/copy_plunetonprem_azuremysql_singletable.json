@@ -17,7 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "MySqlSource",
-						"query": "select * from z__eigenschaft"
+						"query": "select * from 'z__eigenschaft'"
 					},
 					"sink": {
 						"type": "AzureMySqlSink",
