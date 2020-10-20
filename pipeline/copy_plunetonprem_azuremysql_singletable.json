@@ -54,7 +54,7 @@
 		"variables": {
 			"query": {
 				"type": "String",
-				"defaultValue": "select * from z__eigenschaft"
+				"defaultValue": "select * from z__eigenschaft;"
 			}
 		},
 		"annotations": []
