@@ -23,7 +23,7 @@
 					"sink": {
 						"type": "SqlDWSink",
 						"preCopyScript": {
-							"value": "truncate table  `angebot`",
+							"value": "truncate table  angebot",
 							"type": "Expression"
 						},
 						"tableOption": "autoCreate",
