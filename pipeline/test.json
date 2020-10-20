@@ -21,13 +21,15 @@
 						"query": "select * from angebot"
 					},
 					"sink": {
-						"type": "SqlDWSink",
-						"preCopyScript": {
-							"value": "truncate table  angebot",
-							"type": "Expression"
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
 						},
-						"tableOption": "autoCreate",
-						"disableMetricsCollection": false
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
 					},
 					"enableStaging": false,
 					"translator": {
@@ -47,7 +49,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "AzureSynapseAnalyticsTable1",
+						"referenceName": "DelimitedText1",
 						"type": "DatasetReference"
 					}
 				]
