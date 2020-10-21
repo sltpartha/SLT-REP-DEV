@@ -9,7 +9,7 @@
 		"type": "MySqlTable",
 		"schema": [],
 		"typeProperties": {
-			"tableName": "@item().table_name"
+			"tableName": "`x_mandant`"
 		}
 	}
 }
