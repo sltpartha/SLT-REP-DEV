@@ -1540,6 +1540,13 @@
 						"disableMetricsCollection": false
 					},
 					"enableStaging": true,
+					"stagingSettings": {
+						"linkedServiceName": {
+							"referenceName": "AzureDataLakeStorage1",
+							"type": "LinkedServiceReference"
+						},
+						"path": "stagingplunet"
+					},
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
