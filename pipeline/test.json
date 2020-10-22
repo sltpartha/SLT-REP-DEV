@@ -1631,30 +1631,6 @@
 							},
 							{
 								"source": {
-									"name": "Bezeichnung",
-									"type": "String",
-									"physicalType": "text"
-								},
-								"sink": {
-									"name": "Bezeichnung",
-									"type": "String",
-									"physicalType": "nvarchar"
-								}
-							},
-							{
-								"source": {
-									"name": "Gegenstand",
-									"type": "String",
-									"physicalType": "longtext"
-								},
-								"sink": {
-									"name": "Gegenstand",
-									"type": "String",
-									"physicalType": "nvarchar"
-								}
-							},
-							{
-								"source": {
 									"name": "DatumAngebot",
 									"type": "DateTime",
 									"physicalType": "datetime"
