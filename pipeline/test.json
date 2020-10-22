@@ -1534,14 +1534,7 @@
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
-					"enableStaging": true,
-					"stagingSettings": {
-						"linkedServiceName": {
-							"referenceName": "AzureDataLakeStorage1",
-							"type": "LinkedServiceReference"
-						},
-						"path": "stagingplunet"
-					},
+					"enableStaging": false,
 					"enableSkipIncompatibleRow": true,
 					"logStorageSettings": {
 						"linkedServiceName": {
