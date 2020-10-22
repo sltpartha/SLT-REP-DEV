@@ -1535,13 +1535,6 @@
 					},
 					"enableStaging": false,
 					"enableSkipIncompatibleRow": true,
-					"logStorageSettings": {
-						"linkedServiceName": {
-							"referenceName": "AzureDataLakeStorage1",
-							"type": "LinkedServiceReference"
-						},
-						"path": "loggingpluneterrors"
-					},
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
