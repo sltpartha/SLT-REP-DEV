@@ -1529,7 +1529,6 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"preCopyScript": "truncate table Plunet.auftrag",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
