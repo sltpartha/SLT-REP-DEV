@@ -18,7 +18,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "MySqlSource",
-						"query": "select * from x_mandant"
+						"query": "select * from auftrag"
 					},
 					"sink": {
 						"type": "SqlDWSink",
