@@ -10,7 +10,10 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "Plunet",
-			"table": "@item().table_name"
+			"table": {
+				"value": "Auftrag",
+				"type": "Expression"
+			}
 		}
 	}
 }
