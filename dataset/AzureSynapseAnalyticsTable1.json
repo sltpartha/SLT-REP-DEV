@@ -10,7 +10,7 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "Plunet",
-			"table": "x_mandant"
+			"table": "@item().table_name"
 		}
 	}
 }
