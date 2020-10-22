@@ -1529,7 +1529,7 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"preCopyScript": "truncate table auftrag",
+						"preCopyScript": "truncate table Plunet.auftrag",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
