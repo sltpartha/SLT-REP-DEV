@@ -9,7 +9,7 @@
 		"type": "MySqlTable",
 		"schema": [],
 		"typeProperties": {
-			"tableName": "`x_mandant`"
+			"tableName": "`auftrag`"
 		}
 	}
 }
