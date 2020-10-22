@@ -1532,7 +1532,7 @@
 						"preCopyScript": "truncate table Plunet.auftrag",
 						"allowPolyBase": true,
 						"polyBaseSettings": {
-							"rejectValue": 0,
+							"rejectValue": 1,
 							"rejectType": "value",
 							"useTypeDefault": true
 						},
