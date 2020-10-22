@@ -1,0 +1,52 @@
+{
+	"name": "SourceDataset_db3",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SLTMySqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureMySqlTable",
+		"schema": [
+			{
+				"name": "AuftragAssistentID",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "IDMain",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "IDMitarbeiter",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "PreiseSichtbar",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Status",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "ProjektRolleID",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"tableName": "angebotassistent"
+		}
+	}
+}
