@@ -1530,12 +1530,7 @@
 					"sink": {
 						"type": "SqlDWSink",
 						"preCopyScript": "truncate table Plunet.auftrag",
-						"allowPolyBase": true,
-						"polyBaseSettings": {
-							"rejectValue": 999999999,
-							"rejectType": "value",
-							"useTypeDefault": true
-						},
+						"allowCopyCommand": true,
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
