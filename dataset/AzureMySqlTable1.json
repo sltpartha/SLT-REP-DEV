@@ -9,7 +9,7 @@
 		"type": "AzureMySqlTable",
 		"schema": [],
 		"typeProperties": {
-			"tableName": "@item().table_name"
+			"tableName": "auftrag"
 		}
 	}
 }
