@@ -71,10 +71,7 @@
 							"outputs": [
 								{
 									"referenceName": "DestinationDataset_405",
-									"type": "DatasetReference",
-									"parameters": {
-										"cw_table": "@item().destination.table"
-									}
+									"type": "DatasetReference"
 								}
 							]
 						}

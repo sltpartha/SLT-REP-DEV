@@ -5,11 +5,6 @@
 			"referenceName": "LS_SYNAP",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"cw_table": {
-				"type": "String"
-			}
-		},
 		"annotations": [],
 		"type": "AzureSqlDWTable",
 		"schema": [],
