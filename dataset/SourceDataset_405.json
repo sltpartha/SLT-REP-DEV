@@ -9,7 +9,8 @@
 		"type": "SqlServerTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": ""
+			"schema": "CDN",
+			"table": "BnkRozKwotyView"
 		}
 	}
 }
