@@ -24,16 +24,7 @@
 								"secureOutput": false,
 								"secureInput": false
 							},
-							"userProperties": [
-								{
-									"name": "Source",
-									"value": "CDN.@{item().source.table}"
-								},
-								{
-									"name": "Destination",
-									"value": "CDN.@{item().destination.table}"
-								}
-							],
+							"userProperties": [],
 							"typeProperties": {
 								"source": {
 									"type": "SqlServerSource",
