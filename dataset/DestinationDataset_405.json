@@ -1,0 +1,24 @@
+{
+	"name": "DestinationDataset_405",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SYNAP",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"cw_table": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "CDN",
+			"table": {
+				"value": "@dataset().cw_table",
+				"type": "Expression"
+			}
+		}
+	}
+}
