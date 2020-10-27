@@ -18,10 +18,7 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "sltsqldbdev",
-			"table": {
-				"value": "@dataset().cw_table",
-				"type": "Expression"
-			}
+			"table": "account_test"
 		}
 	}
 }
