@@ -5,11 +5,6 @@
 			"referenceName": "AzureSynapseAnalytics2",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"cw_table": {
-				"type": "String"
-			}
-		},
 		"folder": {
 			"name": "CRM SQL Datasets"
 		},
