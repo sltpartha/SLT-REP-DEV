@@ -65,10 +65,7 @@
 							"inputs": [
 								{
 									"referenceName": "SourceDataset_405",
-									"type": "DatasetReference",
-									"parameters": {
-										"cw_table": "@item().source.table"
-									}
+									"type": "DatasetReference"
 								}
 							],
 							"outputs": [

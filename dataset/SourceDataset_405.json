@@ -5,20 +5,11 @@
 			"referenceName": "OptimaServer",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"cw_table": {
-				"type": "String"
-			}
-		},
 		"annotations": [],
 		"type": "SqlServerTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "CDN",
-			"table": {
-				"value": "@dataset().cw_table",
-				"type": "Expression"
-			}
+			"schema": ""
 		}
 	}
 }
