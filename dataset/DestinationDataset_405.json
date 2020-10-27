@@ -14,9 +14,9 @@
 		"type": "AzureSqlDWTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "CDN",
+			"schema": "optima",
 			"table": {
-				"value": "@dataset().cw_table",
+				"value": "BnkRozKwotyView",
 				"type": "Expression"
 			}
 		}

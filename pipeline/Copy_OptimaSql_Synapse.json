@@ -37,6 +37,7 @@
 							"typeProperties": {
 								"source": {
 									"type": "SqlServerSource",
+									"sqlReaderQuery": "select * from [CDN_SLT].[CDN].[BnkRozKwotyView]",
 									"partitionOption": "None"
 								},
 								"sink": {
