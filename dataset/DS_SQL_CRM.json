@@ -5,6 +5,11 @@
 			"referenceName": "LS_SQL_DB",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"cw_table": {
+				"type": "string"
+			}
+		},
 		"folder": {
 			"name": "CRM REST EndPoints"
 		},
@@ -13,7 +18,7 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "sltsqldbdev",
-			"table": "lead"
+			"table": "@dataset().cw_table"
 		}
 	}
 }
