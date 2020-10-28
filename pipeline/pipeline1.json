@@ -31,10 +31,6 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"preCopyScript": {
-							"value": "TRUNCATE TABLE sltsqldbdev.lead",
-							"type": "Expression"
-						},
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
