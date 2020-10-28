@@ -13,16 +13,7 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [
-					{
-						"name": "Source",
-						"value": "sltsqldbdev.@{item().source.table}"
-					},
-					{
-						"name": "Destination",
-						"value": "sltsqldbdev.@{item().destination.table}"
-					}
-				],
+				"userProperties": [],
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
