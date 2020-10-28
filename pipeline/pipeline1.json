@@ -26,12 +26,13 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
+						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
 					"sink": {
 						"type": "SqlDWSink",
 						"preCopyScript": {
-							"value": "@concat('TRUNCATE TABLE sltsqldbdev.',item().destination.table)",
+							"value": "TRUNCATE TABLE sltsqldbdev.lead",
 							"type": "Expression"
 						},
 						"tableOption": "autoCreate",
@@ -41,17 +42,14 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_SQL_CRM",
+						"referenceName": "AzureSqlTable1",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_Synapse_CRM",
-						"type": "DatasetReference",
-						"parameters": {
-							"cw_table": "@item().destination.table"
-						}
+						"referenceName": "testsynap",
+						"type": "DatasetReference"
 					}
 				]
 			}
