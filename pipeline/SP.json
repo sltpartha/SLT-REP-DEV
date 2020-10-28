@@ -1,0 +1,31 @@
+{
+	"name": "SP",
+	"properties": {
+		"activities": [
+			{
+				"name": "Stored procedure1",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[SalesAndMarketing].[REVENUE_QUALITY_RECURRING_ONEOFF_REVENUE_SP]"
+				},
+				"linkedServiceName": {
+					"referenceName": "LS_SYNAP",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Stored Procedures for Sales KPI"
+		},
+		"annotations": []
+	}
+}
