@@ -53,7 +53,10 @@
 							"inputs": [
 								{
 									"referenceName": "DS_SQL_CRM",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"cw_table": "@item().destination.table"
+									}
 								}
 							],
 							"outputs": [
