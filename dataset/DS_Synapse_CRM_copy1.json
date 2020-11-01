@@ -13,7 +13,7 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "sltsqldbdev",
-			"table": "account_test"
+			"table": "Lead_Test1"
 		}
 	}
 }
