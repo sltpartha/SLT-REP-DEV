@@ -1,5 +1,5 @@
 {
-	"name": "Test_CRM",
+	"name": "Lead Selected Cols",
 	"properties": {
 		"activities": [
 			{
@@ -127,6 +127,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "CRM"
+		},
 		"annotations": []
 	}
 }
