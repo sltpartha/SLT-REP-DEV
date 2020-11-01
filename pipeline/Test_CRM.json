@@ -16,7 +16,9 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "DynamicsCrmSource"
+						"type": "AzureSqlSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
 					},
 					"sink": {
 						"type": "SqlDWSink",
@@ -28,26 +30,6 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "accountcategorycode",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "accountcategorycode",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "accountclassificationcode",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "accountclassificationcode",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
 									"name": "accountid",
 									"type": "Guid"
 								},
@@ -58,22 +40,22 @@
 							},
 							{
 								"source": {
-									"name": "accountnumber",
+									"name": "accountidname",
 									"type": "String"
 								},
 								"sink": {
-									"name": "accountnumber",
+									"name": "accountidname",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "accountratingcode",
-									"type": "Int32"
+									"name": "accountidyominame",
+									"type": "String"
 								},
 								"sink": {
-									"name": "accountratingcode",
-									"type": "Int32"
+									"name": "accountidyominame",
+									"type": "String"
 								}
 							},
 							{
@@ -144,16 +126,6 @@
 								"sink": {
 									"name": "address1_fax",
 									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "address1_freighttermscode",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "address1_freighttermscode",
-									"type": "Int32"
 								}
 							},
 							{
@@ -233,16 +205,6 @@
 								},
 								"sink": {
 									"name": "address1_postofficebox",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "address1_primarycontactname",
-									"type": "String"
-								},
-								"sink": {
-									"name": "address1_primarycontactname",
 									"type": "String"
 								}
 							},
@@ -388,16 +350,6 @@
 							},
 							{
 								"source": {
-									"name": "address2_freighttermscode",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "address2_freighttermscode",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
 									"name": "address2_latitude",
 									"type": "Double"
 								},
@@ -478,16 +430,6 @@
 							},
 							{
 								"source": {
-									"name": "address2_primarycontactname",
-									"type": "String"
-								},
-								"sink": {
-									"name": "address2_primarycontactname",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
 									"name": "address2_shippingmethodcode",
 									"type": "Int32"
 								},
@@ -558,72 +500,122 @@
 							},
 							{
 								"source": {
-									"name": "aging30",
+									"name": "budgetamount",
 									"type": "Decimal"
 								},
 								"sink": {
-									"name": "aging30",
+									"name": "budgetamount",
 									"type": "Decimal"
 								}
 							},
 							{
 								"source": {
-									"name": "aging30_base",
+									"name": "budgetamount_base",
 									"type": "Decimal"
 								},
 								"sink": {
-									"name": "aging30_base",
+									"name": "budgetamount_base",
 									"type": "Decimal"
 								}
 							},
 							{
 								"source": {
-									"name": "aging60",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "aging60",
-									"type": "Decimal"
-								}
-							},
-							{
-								"source": {
-									"name": "aging60_base",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "aging60_base",
-									"type": "Decimal"
-								}
-							},
-							{
-								"source": {
-									"name": "aging90",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "aging90",
-									"type": "Decimal"
-								}
-							},
-							{
-								"source": {
-									"name": "aging90_base",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "aging90_base",
-									"type": "Decimal"
-								}
-							},
-							{
-								"source": {
-									"name": "businesstypecode",
+									"name": "budgetstatus",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "businesstypecode",
+									"name": "budgetstatus",
 									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "businesscard",
+									"type": "String"
+								},
+								"sink": {
+									"name": "businesscard",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "businesscardattributes",
+									"type": "String"
+								},
+								"sink": {
+									"name": "businesscardattributes",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "campaignid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "campaignid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "campaignidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "campaignidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "companyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "companyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "confirminterest",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "confirminterest",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "contactid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "contactid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "contactidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "contactidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "contactidyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "contactidyominame",
+									"type": "String"
 								}
 							},
 							{
@@ -634,36 +626,6 @@
 								"sink": {
 									"name": "createdby",
 									"type": "Guid"
-								}
-							},
-							{
-								"source": {
-									"name": "createdbyexternalparty",
-									"type": "Guid"
-								},
-								"sink": {
-									"name": "createdbyexternalparty",
-									"type": "Guid"
-								}
-							},
-							{
-								"source": {
-									"name": "createdbyexternalpartyname",
-									"type": "String"
-								},
-								"sink": {
-									"name": "createdbyexternalpartyname",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "createdbyexternalpartyyominame",
-									"type": "String"
-								},
-								"sink": {
-									"name": "createdbyexternalpartyyominame",
-									"type": "String"
 								}
 							},
 							{
@@ -728,72 +690,52 @@
 							},
 							{
 								"source": {
-									"name": "creditlimit",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "creditlimit",
-									"type": "Decimal"
-								}
-							},
-							{
-								"source": {
-									"name": "creditlimit_base",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "creditlimit_base",
-									"type": "Decimal"
-								}
-							},
-							{
-								"source": {
-									"name": "creditonhold",
-									"type": "Boolean"
-								},
-								"sink": {
-									"name": "creditonhold",
-									"type": "Boolean"
-								}
-							},
-							{
-								"source": {
-									"name": "customersizecode",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "customersizecode",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "customertypecode",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "customertypecode",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "defaultpricelevelid",
+									"name": "customerid",
 									"type": "Guid"
 								},
 								"sink": {
-									"name": "defaultpricelevelid",
+									"name": "customerid",
 									"type": "Guid"
 								}
 							},
 							{
 								"source": {
-									"name": "defaultpricelevelidname",
+									"name": "customeridname",
 									"type": "String"
 								},
 								"sink": {
-									"name": "defaultpricelevelidname",
+									"name": "customeridname",
 									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "customeridtype",
+									"type": "String"
+								},
+								"sink": {
+									"name": "customeridtype",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "customeridyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "customeridyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "decisionmaker",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "decisionmaker",
+									"type": "Boolean"
 								}
 							},
 							{
@@ -813,16 +755,6 @@
 								},
 								"sink": {
 									"name": "donotbulkemail",
-									"type": "Boolean"
-								}
-							},
-							{
-								"source": {
-									"name": "donotbulkpostalmail",
-									"type": "Boolean"
-								},
-								"sink": {
-									"name": "donotbulkpostalmail",
 									"type": "Boolean"
 								}
 							},
@@ -938,12 +870,52 @@
 							},
 							{
 								"source": {
-									"name": "erb_service",
-									"type": "Int32"
+									"name": "estimatedamount",
+									"type": "Decimal"
 								},
 								"sink": {
-									"name": "erb_service",
-									"type": "Int32"
+									"name": "estimatedamount",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "estimatedamount_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "estimatedamount_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "estimatedclosedate",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "estimatedclosedate",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "estimatedvalue",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "estimatedvalue",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "evaluatefit",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "evaluatefit",
+									"type": "Boolean"
 								}
 							},
 							{
@@ -968,6 +940,16 @@
 							},
 							{
 								"source": {
+									"name": "firstname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "firstname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
 									"name": "followemail",
 									"type": "Boolean"
 								},
@@ -978,11 +960,11 @@
 							},
 							{
 								"source": {
-									"name": "ftpsiteurl",
+									"name": "fullname",
 									"type": "String"
 								},
 								"sink": {
-									"name": "ftpsiteurl",
+									"name": "fullname",
 									"type": "String"
 								}
 							},
@@ -1008,22 +990,12 @@
 							},
 							{
 								"source": {
-									"name": "is_annualbusinesspotential",
-									"type": "Decimal"
+									"name": "initialcommunication",
+									"type": "Int32"
 								},
 								"sink": {
-									"name": "is_annualbusinesspotential",
-									"type": "Decimal"
-								}
-							},
-							{
-								"source": {
-									"name": "is_annualbusinesspotential_base",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "is_annualbusinesspotential_base",
-									"type": "Decimal"
+									"name": "initialcommunication",
+									"type": "Int32"
 								}
 							},
 							{
@@ -1038,16 +1010,6 @@
 							},
 							{
 								"source": {
-									"name": "is_clienttype",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "is_clienttype",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
 									"name": "is_country_region",
 									"type": "String"
 								},
@@ -1058,22 +1020,12 @@
 							},
 							{
 								"source": {
-									"name": "is_fax",
-									"type": "String"
+									"name": "is_gender",
+									"type": "Int32"
 								},
 								"sink": {
-									"name": "is_fax",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "is_importis",
-									"type": "Boolean"
-								},
-								"sink": {
-									"name": "is_importis",
-									"type": "Boolean"
+									"name": "is_gender",
+									"type": "Int32"
 								}
 							},
 							{
@@ -1098,42 +1050,12 @@
 							},
 							{
 								"source": {
-									"name": "is_msa",
-									"type": "Boolean"
-								},
-								"sink": {
-									"name": "is_msa",
-									"type": "Boolean"
-								}
-							},
-							{
-								"source": {
-									"name": "is_paymentterms",
+									"name": "is_leadsourcecode",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "is_paymentterms",
+									"name": "is_leadsourcecode",
 									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "is_potentialcrossupsell",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "is_potentialcrossupsell",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "is_primary",
-									"type": "String"
-								},
-								"sink": {
-									"name": "is_primary",
-									"type": "String"
 								}
 							},
 							{
@@ -1218,21 +1140,11 @@
 							},
 							{
 								"source": {
-									"name": "is_revenueplatforms",
+									"name": "is_salutation",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "is_revenueplatforms",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "is_services1",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "is_services1",
+									"name": "is_salutation",
 									"type": "Int32"
 								}
 							},
@@ -1298,51 +1210,21 @@
 							},
 							{
 								"source": {
-									"name": "is_subverticals",
-									"type": "Guid"
+									"name": "is_subsource",
+									"type": "Int32"
 								},
 								"sink": {
-									"name": "is_subverticals",
-									"type": "Guid"
+									"name": "is_subsource",
+									"type": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "is_subverticalsname",
+									"name": "is_subsources",
 									"type": "String"
 								},
 								"sink": {
-									"name": "is_subverticalsname",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "is_territorycode",
-									"type": "String"
-								},
-								"sink": {
-									"name": "is_territorycode",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "is_verticals",
-									"type": "Guid"
-								},
-								"sink": {
-									"name": "is_verticals",
-									"type": "Guid"
-								}
-							},
-							{
-								"source": {
-									"name": "is_verticalsname",
-									"type": "String"
-								},
-								"sink": {
-									"name": "is_verticalsname",
+									"name": "is_subsources",
 									"type": "String"
 								}
 							},
@@ -1358,12 +1240,42 @@
 							},
 							{
 								"source": {
+									"name": "isautocreate",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "isautocreate",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
 									"name": "isprivate",
 									"type": "Boolean"
 								},
 								"sink": {
 									"name": "isprivate",
 									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "jobtitle",
+									"type": "String"
+								},
+								"sink": {
+									"name": "jobtitle",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "lastname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "lastname",
+									"type": "String"
 								}
 							},
 							{
@@ -1388,52 +1300,32 @@
 							},
 							{
 								"source": {
-									"name": "marketcap",
-									"type": "Decimal"
+									"name": "leadid",
+									"type": "Guid"
 								},
 								"sink": {
-									"name": "marketcap",
-									"type": "Decimal"
+									"name": "leadid",
+									"type": "Guid"
 								}
 							},
 							{
 								"source": {
-									"name": "marketcap_base",
-									"type": "Decimal"
+									"name": "leadqualitycode",
+									"type": "Int32"
 								},
 								"sink": {
-									"name": "marketcap_base",
-									"type": "Decimal"
+									"name": "leadqualitycode",
+									"type": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "marketingonly",
-									"type": "Boolean"
+									"name": "leadsourcecode",
+									"type": "Int32"
 								},
 								"sink": {
-									"name": "marketingonly",
-									"type": "Boolean"
-								}
-							},
-							{
-								"source": {
-									"name": "masteraccountidname",
-									"type": "String"
-								},
-								"sink": {
-									"name": "masteraccountidname",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "masteraccountidyominame",
-									"type": "String"
-								},
-								"sink": {
-									"name": "masteraccountidyominame",
-									"type": "String"
+									"name": "leadsourcecode",
+									"type": "Int32"
 								}
 							},
 							{
@@ -1448,6 +1340,26 @@
 							},
 							{
 								"source": {
+									"name": "masterleadidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "masterleadidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "masterleadidyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "masterleadidyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
 									"name": "merged",
 									"type": "Boolean"
 								},
@@ -1458,42 +1370,32 @@
 							},
 							{
 								"source": {
+									"name": "middlename",
+									"type": "String"
+								},
+								"sink": {
+									"name": "middlename",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mobilephone",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mobilephone",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
 									"name": "modifiedby",
 									"type": "Guid"
 								},
 								"sink": {
 									"name": "modifiedby",
 									"type": "Guid"
-								}
-							},
-							{
-								"source": {
-									"name": "modifiedbyexternalparty",
-									"type": "Guid"
-								},
-								"sink": {
-									"name": "modifiedbyexternalparty",
-									"type": "Guid"
-								}
-							},
-							{
-								"source": {
-									"name": "modifiedbyexternalpartyname",
-									"type": "String"
-								},
-								"sink": {
-									"name": "modifiedbyexternalpartyname",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "modifiedbyexternalpartyyominame",
-									"type": "String"
-								},
-								"sink": {
-									"name": "modifiedbyexternalpartyyominame",
-									"type": "String"
 								}
 							},
 							{
@@ -1558,12 +1460,72 @@
 							},
 							{
 								"source": {
-									"name": "name",
+									"name": "msdyn_gdproptout",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "msdyn_gdproptout",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "need",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "need",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_name",
 									"type": "String"
 								},
 								"sink": {
-									"name": "name",
+									"name": "new_name",
 									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "new_name0",
+									"type": "String"
+								},
+								"sink": {
+									"name": "new_name0",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "new_name00",
+									"type": "String"
+								},
+								"sink": {
+									"name": "new_name00",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "new_name000",
+									"type": "String"
+								},
+								"sink": {
+									"name": "new_name000",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "new_reve",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_reve",
+									"type": "Int32"
 								}
 							},
 							{
@@ -1588,101 +1550,21 @@
 							},
 							{
 								"source": {
-									"name": "opendeals",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "opendeals",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "opendeals_date",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "opendeals_date",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"name": "opendeals_state",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "opendeals_state",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "openrevenue",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "openrevenue",
-									"type": "Decimal"
-								}
-							},
-							{
-								"source": {
-									"name": "openrevenue_base",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "openrevenue_base",
-									"type": "Decimal"
-								}
-							},
-							{
-								"source": {
-									"name": "openrevenue_date",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "openrevenue_date",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"name": "openrevenue_state",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "openrevenue_state",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "originatingleadid",
+									"name": "originatingcaseid",
 									"type": "Guid"
 								},
 								"sink": {
-									"name": "originatingleadid",
+									"name": "originatingcaseid",
 									"type": "Guid"
 								}
 							},
 							{
 								"source": {
-									"name": "originatingleadidname",
+									"name": "originatingcaseidname",
 									"type": "String"
 								},
 								"sink": {
-									"name": "originatingleadidname",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "originatingleadidyominame",
-									"type": "String"
-								},
-								"sink": {
-									"name": "originatingleadidyominame",
+									"name": "originatingcaseidname",
 									"type": "String"
 								}
 							},
@@ -1738,16 +1620,6 @@
 							},
 							{
 								"source": {
-									"name": "ownershipcode",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "ownershipcode",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
 									"name": "owningbusinessunit",
 									"type": "Guid"
 								},
@@ -1774,6 +1646,16 @@
 								"sink": {
 									"name": "owninguser",
 									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "pager",
+									"type": "String"
+								},
+								"sink": {
+									"name": "pager",
+									"type": "String"
 								}
 							},
 							{
@@ -1808,42 +1690,42 @@
 							},
 							{
 								"source": {
+									"name": "parentcontactid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "parentcontactid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "parentcontactidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "parentcontactidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "parentcontactidyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "parentcontactidyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
 									"name": "participatesinworkflow",
 									"type": "Boolean"
 								},
 								"sink": {
 									"name": "participatesinworkflow",
 									"type": "Boolean"
-								}
-							},
-							{
-								"source": {
-									"name": "paymenttermscode",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "paymenttermscode",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "preferredappointmentdaycode",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "preferredappointmentdaycode",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "preferredappointmenttimecode",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "preferredappointmenttimecode",
-									"type": "Int32"
 								}
 							},
 							{
@@ -1858,122 +1740,12 @@
 							},
 							{
 								"source": {
-									"name": "preferredequipmentid",
-									"type": "Guid"
+									"name": "prioritycode",
+									"type": "Int32"
 								},
 								"sink": {
-									"name": "preferredequipmentid",
-									"type": "Guid"
-								}
-							},
-							{
-								"source": {
-									"name": "preferredequipmentidname",
-									"type": "String"
-								},
-								"sink": {
-									"name": "preferredequipmentidname",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "preferredserviceid",
-									"type": "Guid"
-								},
-								"sink": {
-									"name": "preferredserviceid",
-									"type": "Guid"
-								}
-							},
-							{
-								"source": {
-									"name": "preferredserviceidname",
-									"type": "String"
-								},
-								"sink": {
-									"name": "preferredserviceidname",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "preferredsystemuserid",
-									"type": "Guid"
-								},
-								"sink": {
-									"name": "preferredsystemuserid",
-									"type": "Guid"
-								}
-							},
-							{
-								"source": {
-									"name": "preferredsystemuseridname",
-									"type": "String"
-								},
-								"sink": {
-									"name": "preferredsystemuseridname",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "preferredsystemuseridyominame",
-									"type": "String"
-								},
-								"sink": {
-									"name": "preferredsystemuseridyominame",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "primarycontactid",
-									"type": "Guid"
-								},
-								"sink": {
-									"name": "primarycontactid",
-									"type": "Guid"
-								}
-							},
-							{
-								"source": {
-									"name": "primarycontactidname",
-									"type": "String"
-								},
-								"sink": {
-									"name": "primarycontactidname",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "primarycontactidyominame",
-									"type": "String"
-								},
-								"sink": {
-									"name": "primarycontactidyominame",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "primarysatoriid",
-									"type": "String"
-								},
-								"sink": {
-									"name": "primarysatoriid",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "primarytwitterid",
-									"type": "String"
-								},
-								"sink": {
-									"name": "primarytwitterid",
-									"type": "String"
+									"name": "prioritycode",
+									"type": "Int32"
 								}
 							},
 							{
@@ -1984,6 +1756,76 @@
 								"sink": {
 									"name": "processid",
 									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "purchaseprocess",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "purchaseprocess",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "purchasetimeframe",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "purchasetimeframe",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "qualificationcomments",
+									"type": "String"
+								},
+								"sink": {
+									"name": "qualificationcomments",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "qualifyingopportunityid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "qualifyingopportunityid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "qualifyingopportunityidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "qualifyingopportunityidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "relatedobjectid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "relatedobjectid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "relatedobjectidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "relatedobjectidname",
+									"type": "String"
 								}
 							},
 							{
@@ -2008,22 +1850,52 @@
 							},
 							{
 								"source": {
-									"name": "sharesoutstanding",
+									"name": "salesstage",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "sharesoutstanding",
+									"name": "salesstage",
 									"type": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "shippingmethodcode",
+									"name": "salesstagecode",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "shippingmethodcode",
+									"name": "salesstagecode",
 									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "salutation",
+									"type": "String"
+								},
+								"sink": {
+									"name": "salutation",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "schedulefollowup_prospect",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "schedulefollowup_prospect",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "schedulefollowup_qualify",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "schedulefollowup_qualify",
+									"type": "DateTime"
 								}
 							},
 							{
@@ -2108,11 +1980,11 @@
 							},
 							{
 								"source": {
-									"name": "stockexchange",
+									"name": "subject",
 									"type": "String"
 								},
 								"sink": {
-									"name": "stockexchange",
+									"name": "subject",
 									"type": "String"
 								}
 							},
@@ -2153,46 +2025,6 @@
 								},
 								"sink": {
 									"name": "telephone3",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "territorycode",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "territorycode",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "territoryid",
-									"type": "Guid"
-								},
-								"sink": {
-									"name": "territoryid",
-									"type": "Guid"
-								}
-							},
-							{
-								"source": {
-									"name": "territoryidname",
-									"type": "String"
-								},
-								"sink": {
-									"name": "territoryidname",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "tickersymbol",
-									"type": "String"
-								},
-								"sink": {
-									"name": "tickersymbol",
 									"type": "String"
 								}
 							},
@@ -2278,11 +2110,51 @@
 							},
 							{
 								"source": {
-									"name": "yominame",
+									"name": "yomicompanyname",
 									"type": "String"
 								},
 								"sink": {
-									"name": "yominame",
+									"name": "yomicompanyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "yomifirstname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "yomifirstname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "yomifullname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "yomifullname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "yomilastname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "yomilastname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "yomimiddlename",
+									"type": "String"
+								},
+								"sink": {
+									"name": "yomimiddlename",
 									"type": "String"
 								}
 							}
@@ -2291,7 +2163,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_REST_CRM_Account",
+						"referenceName": "AzureSqlTable1",
 						"type": "DatasetReference"
 					}
 				],
