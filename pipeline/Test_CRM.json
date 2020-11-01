@@ -22,6 +22,7 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
+						"preCopyScript": "truncate table CRM.LeadSelectedCols",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
