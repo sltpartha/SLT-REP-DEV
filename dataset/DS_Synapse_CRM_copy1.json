@@ -12,7 +12,7 @@
 		"type": "AzureSqlDWTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "sltsqldbdev",
+			"schema": "CRM",
 			"table": "LeadSelectedCols"
 		}
 	}

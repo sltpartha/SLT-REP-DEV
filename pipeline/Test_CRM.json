@@ -22,7 +22,6 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"preCopyScript": "Truncate table sltsqldbdev.Lead_Selected_Cols",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
