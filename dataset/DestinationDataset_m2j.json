@@ -9,8 +9,8 @@
 		"type": "AzureSqlDWTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "HR",
-			"table": "Employee_Title"
+			"schema": "Plunet",
+			"table": "External_ID_mapping"
 		}
 	}
 }
