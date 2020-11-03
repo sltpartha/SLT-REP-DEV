@@ -12,8 +12,8 @@
 		"type": "AzureSqlDWTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "CRM",
-			"table": "LeadSelectedCols"
+			"schema": "Plunet",
+			"table": "ExternalID_Mapping"
 		}
 	}
 }
