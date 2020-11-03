@@ -8,11 +8,10 @@
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
-			"sheetName": "Employee Status",
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "Employee_Status_SLT_SortedByRole.xlsx",
-				"fileSystem": "roleshr"
+				"fileName": "account-customer mapping.csv",
+				"fileSystem": "accountcustomermap"
 			},
 			"firstRowAsHeader": true
 		},
