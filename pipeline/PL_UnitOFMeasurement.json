@@ -1,0 +1,396 @@
+{
+	"name": "PL_UnitOFMeasurement",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "SqlDWSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "PreisEinheitID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PreisEinheitID",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Deutsch",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Deutsch",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "English",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "English",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZusatzSprache1",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ZusatzSprache1",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "NormZeit",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "NormZeit",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PreisAnzeigen",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PreisAnzeigen",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZusatzSprache2",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ZusatzSprache2",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZusatzSprache3",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ZusatzSprache3",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ServiceID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ServiceID",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "NormEinheit",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "NormEinheit",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BezugEinheit",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "BezugEinheit",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "isBezugsPreis",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "isBezugsPreis",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MemoDeutsch",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MemoDeutsch",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MemoEnglish",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MemoEnglish",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MemoZusatzSprache1",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MemoZusatzSprache1",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MemoZusatzSprache2",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MemoZusatzSprache2",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MemoZusatzSprache3",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MemoZusatzSprache3",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BeiRegistrierungAktiv",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "BeiRegistrierungAktiv",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RegistrierungMengeProEinheit",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "RegistrierungMengeProEinheit",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RundungArt",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "RundungArt",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MindestEinheit",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MindestEinheit",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ProzGewichtung",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ProzGewichtung",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "NormMengeH",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "NormMengeH",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "IDQBLineItem",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "IDQBLineItem",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Artikelnummer",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Artikelnummer",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "NormZeitDouble",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "NormZeitDouble",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Exportiert",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Exportiert",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "IgnoreTimeInPlanning",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "IgnoreTimeInPlanning",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DelimitedText1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_Synapse_CRM_copy1",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
