@@ -151,69 +151,14 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"tableOption": "autoCreate"
+						"preCopyScript": "truncate table slt_test.angebot_textmodul",
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"validateDataConsistency": false,
 					"translator": {
 						"type": "TabularTranslator",
-						"mappings": [
-							{
-								"source": {
-									"name": "TextModulVerwendungID",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "TextModulVerwendungID",
-									"type": "Int32",
-									"physicalType": "int"
-								}
-							},
-							{
-								"source": {
-									"name": "IDTextModul",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "IDTextModul",
-									"type": "Int32",
-									"physicalType": "int"
-								}
-							},
-							{
-								"source": {
-									"name": "IDMain",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "IDMain",
-									"type": "Int32",
-									"physicalType": "int"
-								}
-							},
-							{
-								"source": {
-									"name": "Inhalt",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Inhalt",
-									"type": "String",
-									"physicalType": "text"
-								}
-							},
-							{
-								"source": {
-									"name": "Inhalt_Datum",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "Inhalt_Datum",
-									"type": "DateTime",
-									"physicalType": "datetime"
-								}
-							}
-						],
 						"typeConversion": true,
 						"typeConversionSettings": {
 							"allowDataTruncation": true,
@@ -235,6 +180,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "srija"
+		},
 		"annotations": []
 	}
 }
