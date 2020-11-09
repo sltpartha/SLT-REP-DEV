@@ -152,16 +152,11 @@
 					"sink": {
 						"type": "SqlDWSink",
 						"preCopyScript": "truncate table slt_test.angebot_textmodul",
-						"allowPolyBase": true,
-						"polyBaseSettings": {
-							"rejectValue": 0,
-							"rejectType": "value",
-							"useTypeDefault": true
-						},
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
+					"validateDataConsistency": false,
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
@@ -172,7 +167,8 @@
 								},
 								"sink": {
 									"name": "TextModulVerwendungID",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -182,7 +178,8 @@
 								},
 								"sink": {
 									"name": "IDTextModul",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -192,7 +189,8 @@
 								},
 								"sink": {
 									"name": "IDMain",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -202,7 +200,8 @@
 								},
 								"sink": {
 									"name": "Inhalt",
-									"type": "String"
+									"type": "String",
+									"physicalType": "String"
 								}
 							},
 							{
@@ -212,7 +211,8 @@
 								},
 								"sink": {
 									"name": "Inhalt_Datum",
-									"type": "DateTime"
+									"type": "DateTime",
+									"physicalType": "DateTime"
 								}
 							},
 							{
@@ -222,10 +222,16 @@
 								},
 								"sink": {
 									"name": "INHALT_NEW",
-									"type": "String"
+									"type": "String",
+									"physicalType": "String"
 								}
 							}
-						]
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
 					}
 				},
 				"inputs": [
