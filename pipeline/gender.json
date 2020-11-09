@@ -29,13 +29,14 @@
 						"requestBody": "{\n    \"title\": \"CustomGenderReport\",\n    \n    \"fields\": [\n        \"firstName\",\n        \"lastName\",\n        \"employeeNumber\",\n        \"customGenderCategory\"\n    ]\n}"
 					},
 					"sink": {
-						"type": "JsonSink",
+						"type": "DelimitedTextSink",
 						"storeSettings": {
 							"type": "AzureBlobFSWriteSettings"
 						},
 						"formatSettings": {
-							"type": "JsonWriteSettings",
-							"filePattern": "setOfObjects"
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
 						}
 					},
 					"enableStaging": false,
@@ -118,7 +119,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_ADLS_RAW_HR_EmployeeCompensation",
+						"referenceName": "DelimitedText2",
 						"type": "DatasetReference"
 					}
 				]
