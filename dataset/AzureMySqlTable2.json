@@ -7,9 +7,6 @@
 		},
 		"annotations": [],
 		"type": "AzureMySqlTable",
-		"schema": [],
-		"typeProperties": {
-			"tableName": "angebot_textmodul"
-		}
+		"schema": []
 	}
 }
