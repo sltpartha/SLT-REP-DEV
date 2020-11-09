@@ -1,0 +1,23 @@
+{
+	"name": "custom_gender",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_BAMBOOHR",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "HR/ADLS RAW"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "custom_gender",
+				"folderPath": "BambooHR",
+				"fileSystem": "cntrawzonesltdev"
+			}
+		},
+		"schema": {}
+	}
+}
