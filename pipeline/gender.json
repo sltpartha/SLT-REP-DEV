@@ -25,8 +25,7 @@
 						"type": "RestSource",
 						"httpRequestTimeout": "00:01:40",
 						"requestInterval": "00.00:00:00.010",
-						"requestMethod": "POST",
-						"requestBody": "{\n    \"title\": \"CustomGenderReport\",\n    \n    \"fields\": [\n        \"firstName\",\n        \"lastName\",\n        \"employeeNumber\",\n        \"customGenderCategory\"\n    ]\n}"
+						"requestMethod": "GET"
 					},
 					"sink": {
 						"type": "DelimitedTextSink",
@@ -40,75 +39,10 @@
 						}
 					},
 					"enableStaging": false,
+					"validateDataConsistency": false,
 					"translator": {
 						"type": "TabularTranslator",
-						"mappings": [
-							{
-								"source": {
-									"path": "$['id']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['employeeId']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['startDate']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['rate']['currency']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['rate']['value']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['type']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['exempt']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['reason']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['comment']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['paidPer']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['paySchedule']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['overtimeRate']['currency']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['overtimeRate']['value']"
-								}
-							}
-						]
+						"mapComplexValuesToString": true
 					}
 				},
 				"inputs": [
