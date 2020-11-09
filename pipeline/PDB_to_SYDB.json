@@ -96,7 +96,7 @@
 							"tableName": "`angebot_textmodul`"
 						},
 						"destination": {
-							"table": "`angebot_textmodul`"
+							"table": "angebot_textmodul"
 						},
 						"copySource": {
 							"query": "select * from `angebot_textmodul`"
@@ -164,7 +164,7 @@
 							"tableName": "`kundeeigenschaft`"
 						},
 						"destination": {
-							"table": "`kundeeigenschaft`"
+							"table": "kundeeigenschaft"
 						},
 						"copySource": {
 							"query": "select * from `kundeeigenschaft`"
@@ -232,7 +232,7 @@
 							"tableName": "`textmodultext`"
 						},
 						"destination": {
-							"table": "`textmodultext`"
+							"table": "textmodultext"
 						},
 						"copySource": {
 							"query": "select * from `textmodultext`"
