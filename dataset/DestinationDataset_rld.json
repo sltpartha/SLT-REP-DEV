@@ -1,0 +1,19 @@
+{
+	"name": "DestinationDataset_rld",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_BAMBOOHR",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "gender_test1",
+				"fileSystem": "cntrawzonesltdev"
+			}
+		},
+		"schema": {}
+	}
+}
