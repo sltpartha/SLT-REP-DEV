@@ -57,6 +57,9 @@
 				"defaultValue": "select * from z__eigenschaft;"
 			}
 		},
+		"folder": {
+			"name": "Plunet_Old_Pipeline"
+		},
 		"annotations": []
 	}
 }

@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_P_T1",
+				"name": "ForEach_97g",
 				"type": "ForEach",
 				"dependsOn": [],
 				"userProperties": [],
@@ -14,7 +14,7 @@
 					},
 					"activities": [
 						{
-							"name": "Plunet_DB_to_Sys_DW_T1",
+							"name": "Copy_97g",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
@@ -44,15 +44,13 @@
 								},
 								"sink": {
 									"type": "SqlDWSink",
-									"preCopyScript": "Truncate table [slt_test].@dataset().cw_table",
 									"allowPolyBase": true,
 									"polyBaseSettings": {
 										"rejectValue": 0,
 										"rejectType": "value",
 										"useTypeDefault": true
 									},
-									"tableOption": "autoCreate",
-									"disableMetricsCollection": false
+									"tableOption": "autoCreate"
 								},
 								"enableStaging": true,
 								"stagingSettings": {

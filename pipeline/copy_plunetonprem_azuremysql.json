@@ -59,7 +59,10 @@
 							"typeProperties": {
 								"source": {
 									"type": "MySqlSource",
-									"query": "@concat('select * from ',item().table_name)"
+									"query": {
+										"value": "@concat('select * from ',item().table_name)",
+										"type": "Expression"
+									}
 								},
 								"sink": {
 									"type": "AzureMySqlSink",
@@ -97,6 +100,9 @@
 				}
 			}
 		],
+		"folder": {
+			"name": "Plunet_Old_Pipeline"
+		},
 		"annotations": []
 	}
 }
