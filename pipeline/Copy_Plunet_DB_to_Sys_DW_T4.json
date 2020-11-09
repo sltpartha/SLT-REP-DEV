@@ -44,13 +44,15 @@
 								},
 								"sink": {
 									"type": "SqlDWSink",
+									"preCopyScript": "Truncate table SLT.",
 									"allowPolyBase": true,
 									"polyBaseSettings": {
 										"rejectValue": 0,
 										"rejectType": "value",
 										"useTypeDefault": true
 									},
-									"tableOption": "autoCreate"
+									"tableOption": "autoCreate",
+									"disableMetricsCollection": false
 								},
 								"enableStaging": true,
 								"stagingSettings": {
@@ -96,7 +98,7 @@
 							"tableName": "`z_taba17`"
 						},
 						"destination": {
-							"table": "`z_taba17`"
+							"table": "z_taba17"
 						},
 						"copySource": {
 							"query": "select * from `z_taba17`"
@@ -164,7 +166,7 @@
 							"tableName": "`z_taba18`"
 						},
 						"destination": {
-							"table": "`z_taba18`"
+							"table": "z_taba18"
 						},
 						"copySource": {
 							"query": "select * from `z_taba18`"
@@ -232,7 +234,7 @@
 							"tableName": "`z_taba19`"
 						},
 						"destination": {
-							"table": "`z_taba19`"
+							"table": "z_taba19"
 						},
 						"copySource": {
 							"query": "select * from `z_taba19`"
@@ -300,7 +302,7 @@
 							"tableName": "`z_taba20`"
 						},
 						"destination": {
-							"table": "`z_taba20`"
+							"table": "z_taba20"
 						},
 						"copySource": {
 							"query": "select * from `z_taba20`"
@@ -368,7 +370,7 @@
 							"tableName": "`z_taba21`"
 						},
 						"destination": {
-							"table": "`z_taba21`"
+							"table": "z_taba21"
 						},
 						"copySource": {
 							"query": "select * from `z_taba21`"
@@ -436,7 +438,7 @@
 							"tableName": "`z_taba22`"
 						},
 						"destination": {
-							"table": "`z_taba22`"
+							"table": "z_taba22"
 						},
 						"copySource": {
 							"query": "select * from `z_taba22`"
@@ -504,7 +506,7 @@
 							"tableName": "`z_taba23`"
 						},
 						"destination": {
-							"table": "`z_taba23`"
+							"table": "z_taba23"
 						},
 						"copySource": {
 							"query": "select * from `z_taba23`"
@@ -572,7 +574,7 @@
 							"tableName": "`z_taba24`"
 						},
 						"destination": {
-							"table": "`z_taba24`"
+							"table": "z_taba24"
 						},
 						"copySource": {
 							"query": "select * from `z_taba24`"
@@ -640,7 +642,7 @@
 							"tableName": "`z_taba25`"
 						},
 						"destination": {
-							"table": "`z_taba25`"
+							"table": "z_taba25"
 						},
 						"copySource": {
 							"query": "select * from `z_taba25`"
@@ -708,7 +710,7 @@
 							"tableName": "`z_taba30`"
 						},
 						"destination": {
-							"table": "`z_taba30`"
+							"table": "z_taba30"
 						},
 						"copySource": {
 							"query": "select * from `z_taba30`"
@@ -776,7 +778,7 @@
 							"tableName": "`z_taba31`"
 						},
 						"destination": {
-							"table": "`z_taba31`"
+							"table": "z_taba31"
 						},
 						"copySource": {
 							"query": "select * from `z_taba31`"
@@ -844,7 +846,7 @@
 							"tableName": "`z_taba32`"
 						},
 						"destination": {
-							"table": "`z_taba32`"
+							"table": "z_taba32"
 						},
 						"copySource": {
 							"query": "select * from `z_taba32`"
@@ -912,7 +914,7 @@
 							"tableName": "`z_taba33`"
 						},
 						"destination": {
-							"table": "`z_taba33`"
+							"table": "z_taba33"
 						},
 						"copySource": {
 							"query": "select * from `z_taba33`"
