@@ -24,12 +24,7 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"allowPolyBase": true,
-						"polyBaseSettings": {
-							"rejectValue": 0,
-							"rejectType": "value",
-							"useTypeDefault": true
-						}
+						"tableOption": "autoCreate"
 					},
 					"enableStaging": false,
 					"translator": {
@@ -38,68 +33,57 @@
 							{
 								"source": {
 									"name": "crm_account_name",
-									"type": "String"
+									"type": "String",
+									"physicalType": "String"
 								},
 								"sink": {
-									"name": "accountid",
-									"type": "Guid"
+									"name": "crm_account_name",
+									"type": "String",
+									"physicalType": "String"
 								}
 							},
 							{
 								"source": {
 									"name": "crm_account_id",
-									"type": "String"
+									"type": "String",
+									"physicalType": "String"
 								},
 								"sink": {
-									"name": "leadid",
-									"type": "Guid"
+									"name": "crm_account_id",
+									"type": "String",
+									"physicalType": "String"
 								}
 							},
 							{
 								"source": {
 									"name": "plunet_customer_name",
-									"type": "String"
+									"type": "String",
+									"physicalType": "String"
 								},
 								"sink": {
-									"name": "leadqualitycode",
-									"type": "Int32"
+									"name": "plunet_customer_name",
+									"type": "String",
+									"physicalType": "String"
 								}
 							},
 							{
 								"source": {
 									"name": "plunet_customer_id",
-									"type": "String"
+									"type": "String",
+									"physicalType": "String"
 								},
 								"sink": {
-									"name": "createdon",
-									"type": "DateTime"
-								}
-							},
-							{
-								"sink": {
-									"name": "createdby",
-									"type": "Guid"
-								}
-							},
-							{
-								"sink": {
-									"name": "createdbyname",
-									"type": "String"
-								}
-							},
-							{
-								"sink": {
-									"name": "parentaccountid",
-									"type": "Guid"
-								}
-							},
-							{
-								"sink": {
-									"name": "estimatedvalue",
-									"type": "Single"
+									"name": "plunet_customer_id",
+									"type": "String",
+									"physicalType": "String"
 								}
 							}
-						]
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
 					}
 				},
 				"inputs": [
