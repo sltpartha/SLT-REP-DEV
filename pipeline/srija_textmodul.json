@@ -161,7 +161,72 @@
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "TextModulVerwendungID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "TextModulVerwendungID",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "IDTextModul",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "IDTextModul",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "IDMain",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "IDMain",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Inhalt",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Inhalt",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Inhalt_Datum",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Inhalt_Datum",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "INHALT_NEW",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INHALT_NEW",
+									"type": "String"
+								}
+							}
+						]
+					}
 				},
 				"inputs": [
 					{
