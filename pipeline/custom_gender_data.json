@@ -19,10 +19,8 @@
 						"type": "RestSource",
 						"httpRequestTimeout": "00:05:40",
 						"requestInterval": "00.00:00:00.020",
-						"requestMethod": "GET",
-						"additionalHeaders": {
-							"format": "XML"
-						}
+						"requestMethod": "POST",
+						"requestBody": "{\n    \"title\": \"CustomGenderReport\",\n    \n    \"fields\": [\n        \"firstName\",\n        \"lastName\",\n        \"employeeNumber\",\n        \"customGenderCategory\"\n    ]\n}"
 					},
 					"sink": {
 						"type": "JsonSink",
