@@ -96,7 +96,7 @@
 							"tableName": "`angebot`"
 						},
 						"destination": {
-							"table": "`angebot`"
+							"table": "angebot"
 						},
 						"copySource": {
 							"query": "select * from `angebot`"
@@ -1424,7 +1424,7 @@
 							"tableName": "`angebotassistent`"
 						},
 						"destination": {
-							"table": "`angebotassistent`"
+							"table": "angebotassistent"
 						},
 						"copySource": {
 							"query": "select * from `angebotassistent`"
@@ -1502,7 +1502,7 @@
 							"tableName": "`angebotposition`"
 						},
 						"destination": {
-							"table": "`angebotposition`"
+							"table": "angebotposition"
 						},
 						"copySource": {
 							"query": "select * from `angebotposition`"
@@ -1870,7 +1870,7 @@
 							"tableName": "`angebotposzeilenpreis`"
 						},
 						"destination": {
-							"table": "`angebotposzeilenpreis`"
+							"table": "angebotposzeilenpreis"
 						},
 						"copySource": {
 							"query": "select * from `angebotposzeilenpreis`"
@@ -2008,7 +2008,7 @@
 							"tableName": "`ansprechpartner`"
 						},
 						"destination": {
-							"table": "`ansprechpartner`"
+							"table": "ansprechpartner"
 						},
 						"copySource": {
 							"query": "select * from `ansprechpartner`"
@@ -2506,7 +2506,7 @@
 							"tableName": "`aufgabe`"
 						},
 						"destination": {
-							"table": "`aufgabe`"
+							"table": "aufgabe"
 						},
 						"copySource": {
 							"query": "select * from `aufgabe`"
@@ -2654,7 +2654,7 @@
 							"tableName": "`auftrag`"
 						},
 						"destination": {
-							"table": "`auftrag`"
+							"table": "auftrag"
 						},
 						"copySource": {
 							"query": "select * from `auftrag`"
@@ -3992,7 +3992,7 @@
 							"tableName": "`auftragassistent`"
 						},
 						"destination": {
-							"table": "`auftragassistent`"
+							"table": "auftragassistent"
 						},
 						"copySource": {
 							"query": "select * from `auftragassistent`"
@@ -4120,7 +4120,7 @@
 							"tableName": "`auftrageigenschaft`"
 						},
 						"destination": {
-							"table": "`auftrageigenschaft`"
+							"table": "auftrageigenschaft"
 						},
 						"copySource": {
 							"query": "select * from `auftrageigenschaft`"
@@ -4188,7 +4188,7 @@
 							"tableName": "`auftragposition`"
 						},
 						"destination": {
-							"table": "`auftragposition`"
+							"table": "auftragposition"
 						},
 						"copySource": {
 							"query": "select * from `auftragposition`"
