@@ -17,7 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "MySqlSource",
-						"query": "select * from `angebot_textmodul`"
+						"query": "select idmain from `angebot_textmodul`"
 					},
 					"sink": {
 						"type": "SqlDWSink",
