@@ -9,9 +9,9 @@
 		"type": "AzureSqlDWTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "Plunet",
+			"schema": "slt_test",
 			"table": {
-				"value": "Auftrag",
+				"value": "Angebot_Textmodul",
 				"type": "Expression"
 			}
 		}
