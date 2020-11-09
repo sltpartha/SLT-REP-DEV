@@ -48,7 +48,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_ADLS_RAW_HR_EmployeeCompensation",
+						"referenceName": "custom_gender",
 						"type": "DatasetReference"
 					}
 				]
