@@ -1,0 +1,121 @@
+{
+	"name": "hitarth_textmodule",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_m2e",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "`angebot_textmodul`"
+					},
+					{
+						"name": "Destination",
+						"value": "slt_test.angebot_textmodul"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "MySqlSource",
+						"query": "select * from `angebot_textmodul`"
+					},
+					"sink": {
+						"type": "SqlDWSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"validateDataConsistency": true,
+					"logStorageSettings": {
+						"linkedServiceName": {
+							"referenceName": "AzureBlobStorage1",
+							"type": "LinkedServiceReference"
+						},
+						"path": "stagingplunet"
+					},
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "TextModulVerwendungID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "TextModulVerwendungID",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "IDTextModul",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "IDTextModul",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "IDMain",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "IDMain",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Inhalt",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Inhalt",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Inhalt_Datum",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Inhalt_Datum",
+									"type": "DateTime"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_m2e",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_m2e",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
