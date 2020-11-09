@@ -14,7 +14,7 @@
 		"type": "AzureSqlDWTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "",
+			"schema": "slt_test",
 			"table": {
 				"value": "@dataset().cw_table",
 				"type": "Expression"
