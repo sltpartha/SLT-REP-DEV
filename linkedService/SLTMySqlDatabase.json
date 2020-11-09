@@ -5,8 +5,8 @@
 		"annotations": [],
 		"type": "AzureMySql",
 		"typeProperties": {
-			"connectionString": "server=plunetdevmysqlserver.mysql.database.azure.com;port=3306;database=slt;uid=sltadmindev@plunetdevmysqlserver;sslmode=1;usesystemtruststore=0",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkFERlNMVERFVl83YjA0MGRhZi1jZGMwLTQ0ZTItODlmOS1mNmNhM2QxZWNhOWEiDQp9"
+			"connectionString": "server=plunetdevmysqlserver.mysql.database.azure.com;port=3306;database=plunet;uid=sltadmindev@plunetdevmysqlserver;sslmode=1;usesystemtruststore=0",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkFERlNMVERFVl82OTBlZGNjNy04YTE5LTQ5ZjktYjRlNC02MGRmMDA4MmJkNzMiDQp9"
 		}
 	}
 }
