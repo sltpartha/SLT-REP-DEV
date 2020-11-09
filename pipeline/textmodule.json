@@ -1,5 +1,5 @@
 {
-	"name": "textmodule_test1",
+	"name": "textmodule",
 	"properties": {
 		"activities": [
 			{
@@ -17,7 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "MySqlSource",
-						"query": "select\n   at.*,\n  SUBSTRING_INDEX(SUBSTRING_INDEX(AT.inhalt, ';', numbers.n), ';', -1) INHALT_NEW\nfrom\n  (select 1 n union all\n   select 2 union all select 3 union all\n   select 4 union all select 5 union all\n   select 6 union all select 7 union all\n   select 8 union all select 9) numbers INNER JOIN angebot_textmodul at\n  on CHAR_LENGTH(AT.inhalt)\n     -CHAR_LENGTH(REPLACE(AT.inhalt, ';', ''))>=numbers.n-1"
+						"query": "select\n   at.*,\n  SUBSTRING_INDEX(SUBSTRING_INDEX(AT.inhalt, ';', numbers.n), ';', -1) INHALT_NEW\nfrom\n  (select 1 n union all\n   select 2 union all select 3 union all\n   select 4 union all select 5 union all\n   select 6 union all select 7 union all\n   select 8 union all select 9) numbers INNER JOIN Plunet.`angebot_textmodul` at\n  on CHAR_LENGTH(AT.inhalt)\n     -CHAR_LENGTH(REPLACE(AT.inhalt, ';', ''))>=numbers.n-1"
 					},
 					"sink": {
 						"type": "SqlDWSink",
