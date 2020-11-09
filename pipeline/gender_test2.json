@@ -29,23 +29,20 @@
 						"httpRequestTimeout": "00:01:40",
 						"requestInterval": "00.00:00:00.010",
 						"requestMethod": "POST",
-						"requestBody": "{\n    \"title\": \"CustomGenderReport\",\n    \n    \"fields\": [\n        \"firstName\",\n        \"lastName\",\n        \"employeeNumber\",\n        \"customGenderCategory\"\n    ]\n}",
-						"additionalHeaders": {
-							"format": "XML"
-						}
+						"requestBody": "{\n    \"title\": \"CustomGenderReport\",\n    \n    \"fields\": [\n        \"firstName\",\n        \"lastName\",\n        \"employeeNumber\",\n        \"customGenderCategory\"\n    ]\n}"
 					},
 					"sink": {
 						"type": "JsonSink",
 						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings",
-							"copyBehavior": "FlattenHierarchy"
+							"type": "AzureBlobFSWriteSettings"
 						},
 						"formatSettings": {
 							"type": "JsonWriteSettings",
 							"filePattern": "arrayOfObjects"
 						}
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"validateDataConsistency": false
 				},
 				"inputs": [
 					{
