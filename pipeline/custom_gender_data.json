@@ -21,10 +21,14 @@
 				],
 				"typeProperties": {
 					"source": {
-						"type": "RestSource",
-						"httpRequestTimeout": "00:01:40",
-						"requestInterval": "00.00:00:00.010",
-						"requestMethod": "GET"
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
 					},
 					"sink": {
 						"type": "JsonSink",
@@ -41,7 +45,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_REST_HR_EmployeeCompensation",
+						"referenceName": "custom_gender",
 						"type": "DatasetReference"
 					}
 				],
