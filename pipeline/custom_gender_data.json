@@ -19,11 +19,7 @@
 						"type": "RestSource",
 						"httpRequestTimeout": "00:05:40",
 						"requestInterval": "00.00:00:00.020",
-						"requestMethod": "POST",
-						"requestBody": {
-							"value": "@{pipeline().parameters.body}",
-							"type": "Expression"
-						},
+						"requestMethod": "GET",
 						"additionalHeaders": {
 							"format": "XML"
 						}
