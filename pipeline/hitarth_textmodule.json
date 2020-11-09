@@ -31,18 +31,16 @@
 					"sink": {
 						"type": "SqlDWSink",
 						"preCopyScript": "truncate table slt_test.angebot_textmodul",
+						"allowPolyBase": true,
+						"polyBaseSettings": {
+							"rejectValue": 0,
+							"rejectType": "value",
+							"useTypeDefault": true
+						},
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
-					"validateDataConsistency": true,
-					"logStorageSettings": {
-						"linkedServiceName": {
-							"referenceName": "AzureBlobStorage1",
-							"type": "LinkedServiceReference"
-						},
-						"path": "stagingplunet"
-					},
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
@@ -96,12 +94,7 @@
 									"type": "DateTime"
 								}
 							}
-						],
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
+						]
 					}
 				},
 				"inputs": [
