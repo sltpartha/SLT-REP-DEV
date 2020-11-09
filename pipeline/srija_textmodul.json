@@ -118,14 +118,7 @@
 			{
 				"name": "mysql to synapse",
 				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "Copy_787",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -151,7 +144,6 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"preCopyScript": "truncate table slt_test.angebot_textmodul",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
