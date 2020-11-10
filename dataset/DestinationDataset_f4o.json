@@ -702,7 +702,7 @@
 			}
 		],
 		"typeProperties": {
-			"schema": "dbo",
+			"schema": "slt_test",
 			"table": "mitarbeiter"
 		}
 	}
