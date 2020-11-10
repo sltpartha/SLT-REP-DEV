@@ -9,7 +9,7 @@
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "slt-test",
+			"schema": "slt_test",
 			"table": "mitarbeiter"
 		}
 	}
