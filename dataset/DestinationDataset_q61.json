@@ -1,0 +1,652 @@
+{
+	"name": "DestinationDataset_q61",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SYNAP",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [
+			{
+				"name": "AngebotID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Status",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "IDKunde",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AngebotNr",
+				"type": "varchar"
+			},
+			{
+				"name": "Version",
+				"type": "varchar"
+			},
+			{
+				"name": "Bezeichnung",
+				"type": "varchar"
+			},
+			{
+				"name": "Gegenstand",
+				"type": "varchar"
+			},
+			{
+				"name": "DatumAnfrage",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DatumAngebot",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DatumBindefrist",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "IhrZeichen",
+				"type": "varchar"
+			},
+			{
+				"name": "Vorbehalt",
+				"type": "varchar"
+			},
+			{
+				"name": "Preis",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 5
+			},
+			{
+				"name": "RabattBetrag",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 5
+			},
+			{
+				"name": "RabattSatz",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 5
+			},
+			{
+				"name": "MWStSatz1",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 5
+			},
+			{
+				"name": "MWStSatz2",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 5
+			},
+			{
+				"name": "MWStBrutto1",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 5
+			},
+			{
+				"name": "MWStBrutto2",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 5
+			},
+			{
+				"name": "SkontoText",
+				"type": "varchar"
+			},
+			{
+				"name": "RabattText",
+				"type": "varchar"
+			},
+			{
+				"name": "IDAnsprechpartner",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "DatumAnlage",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DatumZIP",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "Leistung",
+				"type": "varchar"
+			},
+			{
+				"name": "LostOrderMemo",
+				"type": "varchar"
+			},
+			{
+				"name": "MemoProjektleitung",
+				"type": "varchar"
+			},
+			{
+				"name": "WithMemoAlert",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "IDWaehrung",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "KursBeiAnlage",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "AnschriftID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AnzeigeName",
+				"type": "varchar"
+			},
+			{
+				"name": "AngebotAusAnfrageID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "VorlageID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Lieferdatum",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "LieferanschriftID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MWStSatz3",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "MWStBrutto3",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "TextModulTextID_1",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TextModulTextID_2",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TextModulTextID_3",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TextModulTextID_4",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TextModulTextID_5",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AbholAnschrift1",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AbholAnschrift2",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AdditionalAnschrift1",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AdditionalAnschrift2",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Anschrift1Ansprechpartner",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Anschrift2Ansprechpartner",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LieferDatumAsString",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LieferDatumString",
+				"type": "varchar"
+			},
+			{
+				"name": "AngebotAbgabeBis",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "ForumThreadID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "BearbeitungForum",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "StatusArchivierung",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ForumID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Kurzfassung_Anzeigen",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TextModulText_1",
+				"type": "varchar"
+			},
+			{
+				"name": "TextModulText_2",
+				"type": "varchar"
+			},
+			{
+				"name": "TextModulText_3",
+				"type": "varchar"
+			},
+			{
+				"name": "TextModulText_4",
+				"type": "varchar"
+			},
+			{
+				"name": "TextModulText_5",
+				"type": "varchar"
+			},
+			{
+				"name": "ProjektArtID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "EndKundeID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "DatumGewandelt",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "DokumenteVerschoben",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MandantID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "IndirekterKundeAnsprechpartnerID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MWStSatz4",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "MWStBrutto4",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "CAT_Art",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Zeitzone",
+				"type": "varchar"
+			},
+			{
+				"name": "AblehnungsgrundID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Ablehnungsdatum",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "Angebot_Intern",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ProjektMaske",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "StartDatum_Projekt",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "EndDatum_Projekt",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "AnschriftID_Projekt",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "InklusiveWochenende",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Zielrendite",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "UserDefinedString",
+				"type": "varchar"
+			},
+			{
+				"name": "UserDefined_Long1",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MWStSatz5",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "MWStBrutto5",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "DokumentHerkunft",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "FreigabeAngebot_MitarbeiterID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "FreigabeAngebot_Date",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "Kostenstelle",
+				"type": "varchar"
+			},
+			{
+				"name": "UserDefined_String2",
+				"type": "varchar"
+			},
+			{
+				"name": "FreigabeAngebot_AP1_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "FreigabeAngebot_AP2_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ZusatzEmpfaenger",
+				"type": "varchar"
+			},
+			{
+				"name": "InklusiveSonntag",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "EN15038Konform_Soll",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "EN15038PositionID_Invalid",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PLMemo_InJobKopieren",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ProjektHierarchie",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "HauptProjektID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CATUebernahmeTyp",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PositionID_Sprachunabhaengig",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "IDSuchSchablone",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "IDJobkette",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "IsRelaissprachenAktiv",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RechnungsempfaengerKundeID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RechnungsempfaengerAnsprechpartnerID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "DolmetschAdressVorlageID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "IDPositionSchablone",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MwSt_Satz1_Rundung",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MwSt_Satz2_Rundung",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MwSt_Satz3_Rundung",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MwSt_Satz4_Rundung",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MwSt_Satz5_Rundung",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "KostenuebertragungInPosition",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "VertraulichkeitStufeID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Abschlussdatum",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "VertraulichkeitZipPasswort",
+				"type": "varchar"
+			},
+			{
+				"name": "WeitereEmpfaengerFuerProjektEmails",
+				"type": "varchar"
+			},
+			{
+				"name": "EmailCCAdressen",
+				"type": "varchar"
+			},
+			{
+				"name": "ExterneID",
+				"type": "varchar"
+			},
+			{
+				"name": "IsMultiTeamProjekt",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "KundeID_geloescht",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AnsprechpartnerID_geloescht",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AnfragerFreigabe_MitarbeiterID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CompanyCodeID_Invoice",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ZahlungslinkErzeugen",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MWStSatzR",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "MWStBruttoR",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "MwSt_SatzR_Rundung",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MWStBasisR",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "ErstelltDurchMitarbeiterID",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "slt_test",
+			"table": "angebot"
+		}
+	}
+}
