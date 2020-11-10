@@ -1,0 +1,16 @@
+{
+	"name": "DestinationDataset_emd",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SYNAP",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "",
+			"table": "mitarbeiter"
+		}
+	}
+}
