@@ -12,8 +12,8 @@
 		"type": "AzureSqlDWTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "Plunet",
-			"table": "Unit_Of_Measurement"
+			"schema": "CRM",
+			"table": "LeadSelectedCols"
 		}
 	}
 }
