@@ -9,8 +9,8 @@
 		"type": "AzureSqlDWTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "",
-			"table": "`mitarbeiter`"
+			"schema": "slt_test",
+			"table": "mitarbeiter"
 		}
 	}
 }
