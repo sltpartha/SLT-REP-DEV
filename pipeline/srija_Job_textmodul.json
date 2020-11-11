@@ -32,7 +32,7 @@
 						"type": "AzureMySqlSink",
 						"writeBatchSize": 10000,
 						"writeBatchTimeout": "00:00:30",
-						"preCopyScript": "truncate table plunet.angebot_textmodul"
+						"preCopyScript": "truncate table plunet.auftragjob_textmodul"
 					},
 					"enableStaging": false,
 					"validateDataConsistency": false,
@@ -46,8 +46,7 @@
 								},
 								"sink": {
 									"name": "TextModulVerwendungID",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "Int32"
 								}
 							},
 							{
@@ -57,8 +56,7 @@
 								},
 								"sink": {
 									"name": "IDTextModul",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "Int32"
 								}
 							},
 							{
@@ -68,8 +66,7 @@
 								},
 								"sink": {
 									"name": "IDMain",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "Int32"
 								}
 							},
 							{
@@ -79,8 +76,7 @@
 								},
 								"sink": {
 									"name": "Inhalt",
-									"type": "String",
-									"physicalType": "text"
+									"type": "String"
 								}
 							},
 							{
@@ -90,8 +86,7 @@
 								},
 								"sink": {
 									"name": "Inhalt_Datum",
-									"type": "DateTime",
-									"physicalType": "datetime"
+									"type": "DateTime"
 								}
 							}
 						],
