@@ -5,11 +5,14 @@
 			"referenceName": "Plunet_Database",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "Srija_DS"
+		},
 		"annotations": [],
 		"type": "MySqlTable",
 		"schema": [],
 		"typeProperties": {
-			"tableName": "`angebot_textmodul`"
+			"tableName": "`auftragjob_textmodul`"
 		}
 	}
 }
