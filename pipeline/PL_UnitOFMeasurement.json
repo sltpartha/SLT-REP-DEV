@@ -385,7 +385,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_Synapse_CRM_copy1",
+						"referenceName": "DS_UnitOFMeasurement",
 						"type": "DatasetReference"
 					}
 				]
