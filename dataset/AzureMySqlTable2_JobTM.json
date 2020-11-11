@@ -1,0 +1,12 @@
+{
+	"name": "AzureMySqlTable2_JobTM",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SLTMySqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureMySqlTable",
+		"schema": []
+	}
+}
