@@ -1,0 +1,248 @@
+{
+	"name": "srija_textmodul_copy1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_787",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "`angebot_textmodul`"
+					},
+					{
+						"name": "Destination",
+						"value": "angebot_textmodul"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "MySqlSource",
+						"query": "select * from `angebot_textmodul`"
+					},
+					"sink": {
+						"type": "AzureMySqlSink",
+						"writeBatchSize": 10000,
+						"writeBatchTimeout": "00:00:30",
+						"preCopyScript": "truncate table plunet.angebot_textmodul"
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "TextModulVerwendungID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "TextModulVerwendungID",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "IDTextModul",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "IDTextModul",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "IDMain",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "IDMain",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Inhalt",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Inhalt",
+									"type": "String",
+									"physicalType": "text"
+								}
+							},
+							{
+								"source": {
+									"name": "Inhalt_Datum",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Inhalt_Datum",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_787",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_787",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "mysql to synapse",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "`angebot_textmodul`"
+					},
+					{
+						"name": "Destination",
+						"value": "angebot_textmodul"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "AzureMySqlSource",
+						"query": "select\n   at.*,\n  SUBSTRING_INDEX(SUBSTRING_INDEX(AT.inhalt, ';', numbers.n), ';', -1) INHALT_NEW\nfrom\n  (select 1 n union all\n   select 2 union all select 3 union all\n   select 4 union all select 5 union all\n   select 6 union all select 7 union all\n   select 8 union all select 9) numbers INNER JOIN angebot_textmodul at\n  on CHAR_LENGTH(AT.inhalt)\n     -CHAR_LENGTH(REPLACE(AT.inhalt, ';', ''))>=numbers.n-1",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "SqlDWSink",
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "TextModulVerwendungID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "TextModulVerwendungID",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "IDTextModul",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "IDTextModul",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "IDMain",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "IDMain",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Inhalt",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Inhalt",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Inhalt_Datum",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Inhalt_Datum",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "INHALT_NEW",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INHALT_NEW",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "AzureMySqlTable2",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureSynapseAnalyticsTable2",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "srija"
+		},
+		"annotations": []
+	}
+}
