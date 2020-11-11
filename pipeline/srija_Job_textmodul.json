@@ -26,7 +26,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "MySqlSource",
-						"query": "select * from `angebot_textmodul`"
+						"query": "select * from `auftragjob_textmodul`"
 					},
 					"sink": {
 						"type": "AzureMySqlSink",
@@ -104,13 +104,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_787",
+						"referenceName": "SourceDataset_787_JobTM",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_787",
+						"referenceName": "DestinationDataset_787_copy1",
 						"type": "DatasetReference"
 					}
 				]
@@ -118,7 +118,14 @@
 			{
 				"name": "mysql to synapse",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Copy_787",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
