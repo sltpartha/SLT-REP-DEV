@@ -1,5 +1,5 @@
 {
-	"name": "DestinationDataset_787",
+	"name": "DestinationDataset_787_copy1",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "SLTMySqlDatabase",
