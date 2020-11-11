@@ -5,6 +5,9 @@
 			"referenceName": "Plunet_Database",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "Srija_DS"
+		},
 		"annotations": [],
 		"type": "MySqlTable",
 		"schema": [],
