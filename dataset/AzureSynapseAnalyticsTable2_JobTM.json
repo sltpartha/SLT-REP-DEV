@@ -5,6 +5,9 @@
 			"referenceName": "LS_SYNAP",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "Srija_DS"
+		},
 		"annotations": [],
 		"type": "AzureSqlDWTable",
 		"schema": [],
