@@ -1,0 +1,15 @@
+{
+	"name": "SourceDataset_787_JobTM",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Plunet_Database",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "MySqlTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "`angebot_textmodul`"
+		}
+	}
+}
