@@ -228,13 +228,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "AzureMySqlTable2",
+						"referenceName": "AzureMySqlTable2_JobTM",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "AzureSynapseAnalyticsTable2",
+						"referenceName": "AzureSynapseAnalyticsTable2_JobTM",
 						"type": "DatasetReference"
 					}
 				]
