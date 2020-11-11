@@ -44,13 +44,15 @@
 								},
 								"sink": {
 									"type": "SqlDWSink",
+									"preCopyScript": "Truncate table [slt_test].@dataset().cw_table",
 									"allowPolyBase": true,
 									"polyBaseSettings": {
 										"rejectValue": 0,
 										"rejectType": "value",
 										"useTypeDefault": true
 									},
-									"tableOption": "autoCreate"
+									"tableOption": "autoCreate",
+									"disableMetricsCollection": false
 								},
 								"enableStaging": true,
 								"stagingSettings": {
