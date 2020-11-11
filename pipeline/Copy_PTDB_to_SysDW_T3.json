@@ -59,6 +59,7 @@
 										"type": "LinkedServiceReference"
 									}
 								},
+								"parallelCopies": 3,
 								"translator": {
 									"value": "@item().copyActivity.translator",
 									"type": "Expression"
