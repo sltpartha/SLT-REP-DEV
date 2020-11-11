@@ -71,6 +71,18 @@
 							},
 							{
 								"source": {
+									"name": "Quantity",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Quantity",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
 									"name": "ZusatzSprache1",
 									"type": "String",
 									"physicalType": "String"
