@@ -43,7 +43,7 @@
 			}
 		],
 		"typeProperties": {
-			"tableName": "angebot_textmodul"
+			"tableName": "auftragjob_textmodul "
 		}
 	}
 }
