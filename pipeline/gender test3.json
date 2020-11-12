@@ -29,53 +29,15 @@
 					"sink": {
 						"type": "JsonSink",
 						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings"
+							"type": "AzureBlobFSWriteSettings",
+							"copyBehavior": "FlattenHierarchy"
 						},
 						"formatSettings": {
 							"type": "JsonWriteSettings",
-							"filePattern": "setOfObjects"
+							"filePattern": "arrayOfObjects"
 						}
 					},
-					"enableStaging": false,
-					"validateDataConsistency": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"mappings": [
-							{
-								"source": {
-									"path": "$['employees'][0]['id']"
-								},
-								"sink": {
-									"path": "$['employees'][0]['id']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['employees'][0]['employeeNumber']"
-								},
-								"sink": {
-									"path": "$['employees'][0]['employeeNumber']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['employees'][0]['fullName1']"
-								},
-								"sink": {
-									"path": "$['employees'][0]['fullName1']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['employees'][0]['customGenderCategory']"
-								},
-								"sink": {
-									"path": "$['employees'][0]['customGenderCategory']"
-								}
-							}
-						],
-						"collectionReference": ""
-					}
+					"enableStaging": false
 				},
 				"inputs": [
 					{
