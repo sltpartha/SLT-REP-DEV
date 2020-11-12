@@ -1,5 +1,5 @@
 {
-	"name": "srija_textmodul_quote",
+	"name": "srija_order_textmodul",
 	"properties": {
 		"activities": [
 			{
@@ -26,13 +26,13 @@
 				"typeProperties": {
 					"source": {
 						"type": "MySqlSource",
-						"query": "select * from `angebot_textmodul`"
+						"query": "select * from `auftragjob_textmodul`"
 					},
 					"sink": {
 						"type": "AzureMySqlSink",
 						"writeBatchSize": 10000,
 						"writeBatchTimeout": "00:00:30",
-						"preCopyScript": "truncate table plunet.angebot_textmodul"
+						"preCopyScript": "truncate table plunet.auftragjob_textmodul"
 					},
 					"enableStaging": false,
 					"validateDataConsistency": false,
@@ -46,8 +46,7 @@
 								},
 								"sink": {
 									"name": "TextModulVerwendungID",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "Int32"
 								}
 							},
 							{
@@ -57,8 +56,7 @@
 								},
 								"sink": {
 									"name": "IDTextModul",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "Int32"
 								}
 							},
 							{
@@ -68,8 +66,7 @@
 								},
 								"sink": {
 									"name": "IDMain",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "Int32"
 								}
 							},
 							{
@@ -79,8 +76,7 @@
 								},
 								"sink": {
 									"name": "Inhalt",
-									"type": "String",
-									"physicalType": "text"
+									"type": "String"
 								}
 							},
 							{
@@ -90,8 +86,7 @@
 								},
 								"sink": {
 									"name": "Inhalt_Datum",
-									"type": "DateTime",
-									"physicalType": "datetime"
+									"type": "DateTime"
 								}
 							}
 						],
@@ -104,13 +99,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_787",
+						"referenceName": "SourceDataset_787_JobTM",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_787",
+						"referenceName": "DestinationDataset_787_copy1",
 						"type": "DatasetReference"
 					}
 				]
@@ -118,7 +113,14 @@
 			{
 				"name": "mysql to synapse",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Copy_787",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -139,12 +141,11 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureMySqlSource",
-						"query": "select\n   at.*,\n  SUBSTRING_INDEX(SUBSTRING_INDEX(AT.inhalt, ';', numbers.n), ';', -1) INHALT_NEW\nfrom\n  (select 1 n union all\n   select 2 union all select 3 union all\n   select 4 union all select 5 union all\n   select 6 union all select 7 union all\n   select 8 union all select 9) numbers INNER JOIN angebot_textmodul at\n  on CHAR_LENGTH(AT.inhalt)\n     -CHAR_LENGTH(REPLACE(AT.inhalt, ';', ''))>=numbers.n-1",
+						"query": "select\n   at.*,\n  SUBSTRING_INDEX(SUBSTRING_INDEX(AT.inhalt, ';', numbers.n), ';', -1) INHALT_NEW\nfrom\n  (select 1 n union all\n   select 2 union all select 3 union all\n   select 4 union all select 5 union all\n   select 6 union all select 7 union all\n   select 8 union all select 9) numbers INNER JOIN auftragjob_textmodul at\n  on CHAR_LENGTH(AT.inhalt)\n     -CHAR_LENGTH(REPLACE(AT.inhalt, ';', ''))>=numbers.n-1",
 						"queryTimeout": "02:00:00"
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"preCopyScript": "truncate table slt_test.angebot_textmodul",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
@@ -229,13 +230,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "AzureMySqlTable2",
+						"referenceName": "AzureMySqlTable2_JobTM",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "AzureSynapseAnalyticsTable2",
+						"referenceName": "AzureSynapseAnalyticsTable2_JobTM",
 						"type": "DatasetReference"
 					}
 				]
