@@ -16,7 +16,8 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "MySqlSource"
+						"type": "MySqlSource",
+						"query": "select * from `mitarbeiter`"
 					},
 					"sink": {
 						"type": "SqlDWSink",
