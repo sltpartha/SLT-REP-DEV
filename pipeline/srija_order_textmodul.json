@@ -26,7 +26,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "MySqlSource",
-						"query": "select * from `auftrag_textmodul`"
+						"query": "select * from `auftragjob_textmodul`"
 					},
 					"sink": {
 						"type": "AzureMySqlSink",
