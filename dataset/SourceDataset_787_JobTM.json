@@ -12,7 +12,7 @@
 		"type": "MySqlTable",
 		"schema": [],
 		"typeProperties": {
-			"tableName": "`auftragjob_textmodul`"
+			"tableName": "`auftrag_textmodul`"
 		}
 	}
 }
