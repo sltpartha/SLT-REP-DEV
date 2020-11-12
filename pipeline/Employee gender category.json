@@ -3,66 +3,9 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "PL_DATA_HR_TO_ADLS_EmployeeCompensation",
+				"name": "PL_TRANS_ADLK_HR_EmpGender",
 				"type": "Copy",
 				"dependsOn": [],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [
-					{
-						"name": "Destination",
-						"value": "cntrawzonesltdev/BambooHR/FILE_BAMBOOHR"
-					}
-				],
-				"typeProperties": {
-					"source": {
-						"type": "RestSource",
-						"httpRequestTimeout": "00:01:40",
-						"requestInterval": "00.00:00:00.010",
-						"requestMethod": "GET"
-					},
-					"sink": {
-						"type": "JsonSink",
-						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings"
-						},
-						"formatSettings": {
-							"type": "JsonWriteSettings",
-							"filePattern": "setOfObjects"
-						}
-					},
-					"enableStaging": false,
-					"validateDataConsistency": false
-				},
-				"inputs": [
-					{
-						"referenceName": "DS_REST_HR_EmployeeCompensation",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "DS_ADLS_RAW_HR_EmployeeCompensation",
-						"type": "DatasetReference"
-					}
-				]
-			},
-			{
-				"name": "PL_TRANS_ADLK_HR_EmpCompensation",
-				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "PL_DATA_HR_TO_ADLS_EmployeeCompensation",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -224,7 +167,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_ADLS_RAW_HR_EmployeeCompensation",
+						"referenceName": "DS_ADLS_RAW_HR_GenderCategory",
 						"type": "DatasetReference"
 					}
 				],
@@ -240,7 +183,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "PL_TRANS_ADLK_HR_EmpCompensation",
+						"activity": "PL_TRANS_ADLK_HR_EmpGender",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -437,14 +380,7 @@
 			{
 				"name": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_EmployeeCompensation",
 				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "PL_DATA_HR_TO_ADLS_EmployeeCompensation",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
