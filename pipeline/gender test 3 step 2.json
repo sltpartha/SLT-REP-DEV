@@ -46,12 +46,13 @@
 						}
 					},
 					"enableStaging": false,
+					"validateDataConsistency": false,
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
 							{
 								"source": {
-									"path": "['id']"
+									"path": "$['employees'][0]['id']"
 								},
 								"sink": {
 									"name": "id"
@@ -59,7 +60,7 @@
 							},
 							{
 								"source": {
-									"path": "['employeeNumber']"
+									"path": "$['employees'][0]['employeeNumber']"
 								},
 								"sink": {
 									"name": "employeeNumber"
@@ -67,7 +68,7 @@
 							},
 							{
 								"source": {
-									"path": "['fullName1']"
+									"path": "$['employees'][0]['fullName1']"
 								},
 								"sink": {
 									"name": "fullName1"
@@ -75,14 +76,14 @@
 							},
 							{
 								"source": {
-									"path": "['customGenderCategory']"
+									"path": "$['employees'][0]['customGenderCategory']"
 								},
 								"sink": {
 									"name": "customGenderCategory"
 								}
 							}
 						],
-						"collectionReference": "$['employees']"
+						"collectionReference": ""
 					}
 				},
 				"inputs": [
