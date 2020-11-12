@@ -13,7 +13,7 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "slt_test",
-			"table": "auftragjob_textmodul"
+			"table": "auftrag_textmodul"
 		}
 	}
 }
