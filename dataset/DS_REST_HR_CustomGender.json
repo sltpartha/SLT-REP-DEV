@@ -1,5 +1,5 @@
 {
-	"name": "DS_REST_HR_who_is_out_copy1",
+	"name": "DS_REST_HR_CustomGender",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_REST_BAMBOOHR",
