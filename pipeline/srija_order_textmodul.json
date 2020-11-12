@@ -105,7 +105,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_787_copy1",
+						"referenceName": "DestinationDataset_787_job",
 						"type": "DatasetReference"
 					}
 				]
