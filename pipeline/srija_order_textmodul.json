@@ -26,7 +26,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "MySqlSource",
-						"query": "select * from `auftragjob_textmodul`"
+						"query": "select * from `auftrag_textmodul`"
 					},
 					"sink": {
 						"type": "AzureMySqlSink",
@@ -99,7 +99,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_787_JobTM",
+						"referenceName": "SourceDataset_787_orderTM",
 						"type": "DatasetReference"
 					}
 				],
