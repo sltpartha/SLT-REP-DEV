@@ -26,13 +26,13 @@
 				"typeProperties": {
 					"source": {
 						"type": "MySqlSource",
-						"query": "select * from `auftragjob_textmodul`"
+						"query": "select * from `auftrag_textmodul`"
 					},
 					"sink": {
 						"type": "AzureMySqlSink",
 						"writeBatchSize": 10000,
 						"writeBatchTimeout": "00:00:30",
-						"preCopyScript": "truncate table plunet.auftragjob_textmodul"
+						"preCopyScript": "truncate table plunet.auftrag_textmodul"
 					},
 					"enableStaging": false,
 					"validateDataConsistency": false,
