@@ -32,7 +32,7 @@
 						"type": "AzureMySqlSink",
 						"writeBatchSize": 10000,
 						"writeBatchTimeout": "00:00:30",
-						"preCopyScript": "truncate table plunet.auftrag_textmodul"
+						"preCopyScript": "truncate table plunet.auftragjob_textmodul"
 					},
 					"enableStaging": false,
 					"validateDataConsistency": false,
