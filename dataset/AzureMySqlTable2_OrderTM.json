@@ -10,6 +10,9 @@
 		},
 		"annotations": [],
 		"type": "AzureMySqlTable",
-		"schema": []
+		"schema": [],
+		"typeProperties": {
+			"tableName": "auftrag_textmodul"
+		}
 	}
 }
