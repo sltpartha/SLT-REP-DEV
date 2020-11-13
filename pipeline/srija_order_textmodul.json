@@ -146,6 +146,7 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
+						"preCopyScript": "truncate table slt_test.auftrag_textmodul",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
