@@ -1,0 +1,1820 @@
+{
+	"name": "Copy_PTDB_to_SysDW_T6",
+	"properties": {
+		"activities": [
+			{
+				"name": "ForEach_xsf",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.cw_items",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Copy_xsf",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [
+								{
+									"name": "Source",
+									"value": "@{item().source.tableName}"
+								},
+								{
+									"name": "Destination",
+									"value": ".@{item().destination.table}"
+								}
+							],
+							"typeProperties": {
+								"source": {
+									"type": "AzureMySqlSource"
+								},
+								"sink": {
+									"type": "SqlDWSink",
+									"allowPolyBase": true,
+									"polyBaseSettings": {
+										"rejectValue": 0,
+										"rejectType": "value",
+										"useTypeDefault": false
+									},
+									"tableOption": "autoCreate"
+								},
+								"enableStaging": true,
+								"stagingSettings": {
+									"linkedServiceName": {
+										"referenceName": "AzureBlobStorage1",
+										"type": "LinkedServiceReference"
+									}
+								},
+								"translator": {
+									"value": "@item().copyActivity.translator",
+									"type": "Expression"
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "SourceDataset_xsf",
+									"type": "DatasetReference",
+									"parameters": {
+										"cw_tableName": "@item().source.tableName"
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "DestinationDataset_xsf",
+									"type": "DatasetReference",
+									"parameters": {
+										"cw_table": "@item().destination.table"
+									}
+								}
+							]
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"cw_items": {
+				"type": "Array",
+				"defaultValue": [
+					{
+						"source": {
+							"tableName": "angebot_textmodul"
+						},
+						"destination": {
+							"table": "angebot_textmodul"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "TextModulVerwendungID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "TextModulVerwendungID",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "IDTextModul",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "IDTextModul",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "IDMain",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "IDMain",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Inhalt",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Inhalt",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Inhalt_Datum",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Inhalt_Datum",
+											"type": "DateTime"
+										}
+									}
+								]
+							}
+						}
+					},
+					{
+						"source": {
+							"tableName": "kundeeigenschaft"
+						},
+						"destination": {
+							"table": "kundeeigenschaft"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "EigenschaftID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "EigenschaftID",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "IDKunde",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "IDKunde",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "IDEigenschaft",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "IDEigenschaft",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "IDWert",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "IDWert",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Reihenfolge",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Reihenfolge",
+											"type": "Int32"
+										}
+									}
+								]
+							}
+						}
+					},
+					{
+						"source": {
+							"tableName": "textmodultext"
+						},
+						"destination": {
+							"table": "textmodultext"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "TextModulTextID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "TextModulTextID",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "TextModulID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "TextModulID",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ZusatzSprache1",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ZusatzSprache1",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ZusatzSprache2",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ZusatzSprache2",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ZusatzSprache3",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ZusatzSprache3",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Bezeichnung_Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Bezeichnung_Deutsch",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Bezeichnung_Englisch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Bezeichnung_Englisch",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Bezeichnung_ZusatzSprache1",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Bezeichnung_ZusatzSprache1",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Bezeichnung_ZusatzSprache2",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Bezeichnung_ZusatzSprache2",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Bezeichnung_ZusatzSprache3",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Bezeichnung_ZusatzSprache3",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "HauptDropDownAuswahl",
+											"type": "String"
+										},
+										"sink": {
+											"name": "HauptDropDownAuswahl",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Reihenfolge",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Reihenfolge",
+											"type": "Int32"
+										}
+									}
+								]
+							}
+						}
+					},
+					{
+						"source": {
+							"tableName": "z__eigenschaft"
+						},
+						"destination": {
+							"table": "z__eigenschaft"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "EigenschaftID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "EigenschaftID",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "TabName",
+											"type": "String"
+										},
+										"sink": {
+											"name": "TabName",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "MitarbeiterEigenschaft",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "MitarbeiterEigenschaft",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "KundeEigenschaft",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "KundeEigenschaft",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "PositionEigenschaft",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "PositionEigenschaft",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "LieferantEigenschaft",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "LieferantEigenschaft",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ProjektEigenschaft",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ProjektEigenschaft",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ExternSichtbar",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ExternSichtbar",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "BeiRegistrierungAktiv",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "BeiRegistrierungAktiv",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "BeiRegistrierungPflicht",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "BeiRegistrierungPflicht",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "AufProjektEbenePflichtfeld",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "AufProjektEbenePflichtfeld",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "NurEinWert",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "NurEinWert",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "NurLesenMitarbeiter",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "NurLesenMitarbeiter",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "NurLesenKunde",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "NurLesenKunde",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "NurLesenLieferant",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "NurLesenLieferant",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "NurLesenProjekt",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "NurLesenProjekt",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "NurLesenPosition",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "NurLesenPosition",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "AnfrageEigenschaft",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "AnfrageEigenschaft",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "AnfrageKundenLoginSichtbar",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "AnfrageKundenLoginSichtbar",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "PflichtFeldAnfrage",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "PflichtFeldAnfrage",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "PflichtFeldAngebot",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "PflichtFeldAngebot",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "PflichtFeldAuftrag",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "PflichtFeldAuftrag",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "PflichtFeldRechnung",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "PflichtFeldRechnung",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "HauptEigenschaftID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "HauptEigenschaftID",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "AngebotKundenLoginSichtbar",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "AngebotKundenLoginSichtbar",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "AuftragKundenLoginSichtbar",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "AuftragKundenLoginSichtbar",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "RechnungKundenLoginSichtbar",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "RechnungKundenLoginSichtbar",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "AktivDolmetschprojekt",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "AktivDolmetschprojekt",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "AktivUebersetzungsprojekt",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "AktivUebersetzungsprojekt",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Reihenfolge",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Reihenfolge",
+											"type": "Int32"
+										}
+									}
+								]
+							}
+						}
+					},
+					{
+						"source": {
+							"tableName": "z_clientindustry"
+						},
+						"destination": {
+							"table": "z_clientindustry"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ID",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Aktiv",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Aktiv",
+											"type": "Int32"
+										}
+									}
+								]
+							}
+						}
+					},
+					{
+						"source": {
+							"tableName": "z_clienttype"
+						},
+						"destination": {
+							"table": "z_clienttype"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ID",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Aktiv",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Aktiv",
+											"type": "Int32"
+										}
+									}
+								]
+							}
+						}
+					},
+					{
+						"source": {
+							"tableName": "z_domain"
+						},
+						"destination": {
+							"table": "z_domain"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ID",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Aktiv",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Aktiv",
+											"type": "Int32"
+										}
+									}
+								]
+							}
+						}
+					},
+					{
+						"source": {
+							"tableName": "z_servicetype"
+						},
+						"destination": {
+							"table": "z_servicetype"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ID",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Aktiv",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Aktiv",
+											"type": "Int32"
+										}
+									}
+								]
+							}
+						}
+					},
+					{
+						"source": {
+							"tableName": "z_taba17"
+						},
+						"destination": {
+							"table": "z_taba17"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ID",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Aktiv",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Aktiv",
+											"type": "Int32"
+										}
+									}
+								]
+							}
+						}
+					},
+					{
+						"source": {
+							"tableName": "z_taba18"
+						},
+						"destination": {
+							"table": "z_taba18"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ID",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Aktiv",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Aktiv",
+											"type": "Int32"
+										}
+									}
+								]
+							}
+						}
+					},
+					{
+						"source": {
+							"tableName": "z_taba19"
+						},
+						"destination": {
+							"table": "z_taba19"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ID",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Aktiv",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Aktiv",
+											"type": "Int32"
+										}
+									}
+								]
+							}
+						}
+					},
+					{
+						"source": {
+							"tableName": "z_taba20"
+						},
+						"destination": {
+							"table": "z_taba20"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ID",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Aktiv",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Aktiv",
+											"type": "Int32"
+										}
+									}
+								]
+							}
+						}
+					},
+					{
+						"source": {
+							"tableName": "z_taba21"
+						},
+						"destination": {
+							"table": "z_taba21"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ID",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Aktiv",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Aktiv",
+											"type": "Int32"
+										}
+									}
+								]
+							}
+						}
+					},
+					{
+						"source": {
+							"tableName": "z_taba22"
+						},
+						"destination": {
+							"table": "z_taba22"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ID",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Aktiv",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Aktiv",
+											"type": "Int32"
+										}
+									}
+								]
+							}
+						}
+					},
+					{
+						"source": {
+							"tableName": "z_taba23"
+						},
+						"destination": {
+							"table": "z_taba23"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ID",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Aktiv",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Aktiv",
+											"type": "Int32"
+										}
+									}
+								]
+							}
+						}
+					},
+					{
+						"source": {
+							"tableName": "z_taba24"
+						},
+						"destination": {
+							"table": "z_taba24"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ID",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Aktiv",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Aktiv",
+											"type": "Int32"
+										}
+									}
+								]
+							}
+						}
+					},
+					{
+						"source": {
+							"tableName": "z_taba25"
+						},
+						"destination": {
+							"table": "z_taba25"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ID",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Aktiv",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Aktiv",
+											"type": "Int32"
+										}
+									}
+								]
+							}
+						}
+					},
+					{
+						"source": {
+							"tableName": "z_taba30"
+						},
+						"destination": {
+							"table": "z_taba30"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ID",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Aktiv",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Aktiv",
+											"type": "Int32"
+										}
+									}
+								]
+							}
+						}
+					},
+					{
+						"source": {
+							"tableName": "z_taba31"
+						},
+						"destination": {
+							"table": "z_taba31"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ID",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Aktiv",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Aktiv",
+											"type": "Int32"
+										}
+									}
+								]
+							}
+						}
+					},
+					{
+						"source": {
+							"tableName": "z_taba32"
+						},
+						"destination": {
+							"table": "z_taba32"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ID",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Aktiv",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Aktiv",
+											"type": "Int32"
+										}
+									}
+								]
+							}
+						}
+					},
+					{
+						"source": {
+							"tableName": "z_taba33"
+						},
+						"destination": {
+							"table": "z_taba33"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ID",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Aktiv",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Aktiv",
+											"type": "String"
+										}
+									}
+								]
+							}
+						}
+					}
+				]
+			}
+		},
+		"annotations": []
+	}
+}
