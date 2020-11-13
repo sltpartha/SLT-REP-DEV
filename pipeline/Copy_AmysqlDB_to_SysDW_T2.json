@@ -39,7 +39,9 @@
 									"type": "AzureMySqlSource"
 								},
 								"sink": {
-									"type": "AzureSqlSink"
+									"type": "AzureSqlSink",
+									"preCopyScript": "@concat('Truncate table slt_test.' , item().destination.table)",
+									"disableMetricsCollection": false
 								},
 								"enableStaging": false,
 								"validateDataConsistency": false,
