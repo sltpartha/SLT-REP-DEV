@@ -2,7 +2,7 @@
 	"name": "SourceDataset_787_orderTM",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "Plunet_Database",
+			"referenceName": "Plunet_Test_Database",
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
@@ -10,9 +10,6 @@
 		},
 		"annotations": [],
 		"type": "MySqlTable",
-		"schema": [],
-		"typeProperties": {
-			"tableName": "`auftrag_textmodul`"
-		}
+		"schema": []
 	}
 }
