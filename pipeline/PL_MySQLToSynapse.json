@@ -41,7 +41,7 @@
 								"sink": {
 									"type": "SqlDWSink",
 									"tableOption": {
-										"value": "@concat('truncate table slt_test.',dataset().cw_table)",
+										"value": "@concat('Truncate table slt_test.' , item().destination.table)",
 										"type": "Expression"
 									},
 									"disableMetricsCollection": false
