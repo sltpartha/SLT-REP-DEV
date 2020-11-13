@@ -39,7 +39,12 @@
 									"type": "AzureMySqlSource"
 								},
 								"sink": {
-									"type": "SqlDWSink"
+									"type": "SqlDWSink",
+									"tableOption": {
+										"value": "@concat('truncate table slt_test.',dataset().cw_table)",
+										"type": "Expression"
+									},
+									"disableMetricsCollection": false
 								},
 								"enableStaging": false,
 								"validateDataConsistency": false,
