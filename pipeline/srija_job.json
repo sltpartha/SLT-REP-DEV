@@ -30,7 +30,7 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"preCopyScript": "truncate table slt_job",
+						"preCopyScript": "truncate table slt_test.job",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
