@@ -1,0 +1,15 @@
+{
+	"name": "SourceDataset_2gu",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Plunet_Test_Database",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "MySqlTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "`mitarbeiter`"
+		}
+	}
+}
