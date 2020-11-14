@@ -94,6 +94,14 @@
 									"type": "DateTime",
 									"physicalType": "datetime2"
 								}
+							},
+							{
+								"source": {
+									"name": ""
+								},
+								"sink": {
+									"name": ""
+								}
 							}
 						],
 						"typeConversion": true,
