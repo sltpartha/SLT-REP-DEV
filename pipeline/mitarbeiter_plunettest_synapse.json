@@ -1,5 +1,5 @@
 {
-	"name": "kunde_plunettest_synapse",
+	"name": "mitarbeiter_plunettest_synapse",
 	"properties": {
 		"activities": [
 			{
@@ -26,11 +26,13 @@
 				"typeProperties": {
 					"source": {
 						"type": "MySqlSource",
-						"query": "select * from `kunde`"
+						"query": "select * from `mitarbeiter`"
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"tableOption": "autoCreate"
+						"preCopyScript": "truncate table slt_test.mitarbeiter",
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"validateDataConsistency": false,
@@ -893,8 +895,7 @@
 									"type": "String"
 								},
 								"sink": {
-									"name": "ExternalID",
-									"type": "String"
+									"name": "ExternalID"
 								}
 							},
 							{
