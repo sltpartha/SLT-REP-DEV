@@ -40,7 +40,11 @@
 								},
 								"sink": {
 									"type": "AzureSqlSink",
-									"preCopyScript": "@concat('Truncate table slt_test.' , item().destination.table)",
+									"preCopyScript": {
+										"value": "@concat('Truncate table slt_test.' , item().destination.table)",
+										"type": "Expression"
+									},
+									"tableOption": "autoCreate",
 									"disableMetricsCollection": false
 								},
 								"enableStaging": false,
