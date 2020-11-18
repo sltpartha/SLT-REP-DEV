@@ -46,7 +46,7 @@
 									"type": "AzureMySqlSink",
 									"writeBatchSize": 10000,
 									"writeBatchTimeout": "00:00:30",
-									"preCopyScript": "@concat('Truncate table slt_test.' , item().destination.table)"
+									"preCopyScript": "@concat('Truncate table ' , item().destination.tableName)"
 								},
 								"enableStaging": false,
 								"validateDataConsistency": false,
