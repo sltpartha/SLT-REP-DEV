@@ -1,0 +1,24 @@
+{
+	"name": "Trigger_ucw",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Copy_PlunettestDB_to_AmysqlDB_T5",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 8,
+				"startTime": "2020-11-19T08:49:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
