@@ -1,0 +1,23 @@
+{
+	"name": "DestinationDataset_c50",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureMySql_SLT_test",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"cw_tableName": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "AzureMySqlTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": {
+				"value": "@dataset().cw_tableName",
+				"type": "Expression"
+			}
+		}
+	}
+}
