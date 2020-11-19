@@ -1,0 +1,1103 @@
+{
+	"name": "Copy_PlunettestDB_to_AmysqlDB_T5",
+	"properties": {
+		"activities": [
+			{
+				"name": "ForEach_ucw",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.cw_items",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Copy_ucw",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [
+								{
+									"name": "Source",
+									"value": "@{item().source.tableName}"
+								},
+								{
+									"name": "Destination",
+									"value": "@{item().destination.tableName}"
+								}
+							],
+							"typeProperties": {
+								"source": {
+									"type": "MySqlSource",
+									"query": {
+										"value": "@item().copySource.query",
+										"type": "Expression"
+									}
+								},
+								"sink": {
+									"type": "AzureMySqlSink",
+									"writeBatchSize": 10000,
+									"writeBatchTimeout": "00:00:30"
+								},
+								"enableStaging": false,
+								"validateDataConsistency": false,
+								"translator": {
+									"value": "@item().copyActivity.translator",
+									"type": "Expression"
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "SourceDataset_ucw",
+									"type": "DatasetReference",
+									"parameters": {
+										"cw_tableName": "@item().source.tableName"
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "DestinationDataset_ucw",
+									"type": "DatasetReference",
+									"parameters": {
+										"cw_tableName": "@item().destination.tableName"
+									}
+								}
+							]
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"cw_items": {
+				"type": "Array",
+				"defaultValue": [
+					{
+						"source": {
+							"tableName": "`z_taba17`"
+						},
+						"destination": {
+							"tableName": "z_taba17"
+						},
+						"copySource": {
+							"query": "select * from `z_taba17`"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ID",
+											"type": "Int32",
+											"physicalType": "int"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ArtikelnummerTeil",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "Aktiv",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Aktiv",
+											"type": "Int32",
+											"physicalType": "int"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						}
+					},
+					{
+						"source": {
+							"tableName": "`z_taba18`"
+						},
+						"destination": {
+							"tableName": "z_taba18"
+						},
+						"copySource": {
+							"query": "select * from `z_taba18`"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ID",
+											"type": "Int32",
+											"physicalType": "int"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ArtikelnummerTeil",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "Aktiv",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Aktiv",
+											"type": "Int32",
+											"physicalType": "int"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						}
+					},
+					{
+						"source": {
+							"tableName": "`z_taba19`"
+						},
+						"destination": {
+							"tableName": "z_taba19"
+						},
+						"copySource": {
+							"query": "select * from `z_taba19`"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ID",
+											"type": "Int32",
+											"physicalType": "int"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ArtikelnummerTeil",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "Aktiv",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Aktiv",
+											"type": "Int32",
+											"physicalType": "int"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						}
+					},
+					{
+						"source": {
+							"tableName": "`z_taba20`"
+						},
+						"destination": {
+							"tableName": "z_taba20"
+						},
+						"copySource": {
+							"query": "select * from `z_taba20`"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ID",
+											"type": "Int32",
+											"physicalType": "int"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ArtikelnummerTeil",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "Aktiv",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Aktiv",
+											"type": "Int32",
+											"physicalType": "int"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						}
+					},
+					{
+						"source": {
+							"tableName": "`z_taba21`"
+						},
+						"destination": {
+							"tableName": "z_taba21"
+						},
+						"copySource": {
+							"query": "select * from `z_taba21`"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ID",
+											"type": "Int32",
+											"physicalType": "int"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ArtikelnummerTeil",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "Aktiv",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Aktiv",
+											"type": "Int32",
+											"physicalType": "int"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						}
+					},
+					{
+						"source": {
+							"tableName": "`z_taba22`"
+						},
+						"destination": {
+							"tableName": "z_taba22"
+						},
+						"copySource": {
+							"query": "select * from `z_taba22`"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ID",
+											"type": "Int32",
+											"physicalType": "int"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ArtikelnummerTeil",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "Aktiv",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Aktiv",
+											"type": "Int32",
+											"physicalType": "int"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						}
+					},
+					{
+						"source": {
+							"tableName": "`z_taba23`"
+						},
+						"destination": {
+							"tableName": "z_taba23"
+						},
+						"copySource": {
+							"query": "select * from `z_taba23`"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ID",
+											"type": "Int32",
+											"physicalType": "int"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ArtikelnummerTeil",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "Aktiv",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Aktiv",
+											"type": "Int32",
+											"physicalType": "int"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						}
+					},
+					{
+						"source": {
+							"tableName": "`z_taba24`"
+						},
+						"destination": {
+							"tableName": "z_taba24"
+						},
+						"copySource": {
+							"query": "select * from `z_taba24`"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ID",
+											"type": "Int32",
+											"physicalType": "int"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ArtikelnummerTeil",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "Aktiv",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Aktiv",
+											"type": "Int32",
+											"physicalType": "int"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						}
+					},
+					{
+						"source": {
+							"tableName": "`z_taba25`"
+						},
+						"destination": {
+							"tableName": "z_taba25"
+						},
+						"copySource": {
+							"query": "select * from `z_taba25`"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ID",
+											"type": "Int32",
+											"physicalType": "int"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ArtikelnummerTeil",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "Aktiv",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Aktiv",
+											"type": "Int32",
+											"physicalType": "int"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						}
+					},
+					{
+						"source": {
+							"tableName": "`z_taba30`"
+						},
+						"destination": {
+							"tableName": "z_taba30"
+						},
+						"copySource": {
+							"query": "select * from `z_taba30`"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ID",
+											"type": "Int32",
+											"physicalType": "int"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ArtikelnummerTeil",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "Aktiv",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Aktiv",
+											"type": "Int32",
+											"physicalType": "int"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						}
+					},
+					{
+						"source": {
+							"tableName": "`z_taba31`"
+						},
+						"destination": {
+							"tableName": "z_taba31"
+						},
+						"copySource": {
+							"query": "select * from `z_taba31`"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ID",
+											"type": "Int32",
+											"physicalType": "int"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ArtikelnummerTeil",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "Aktiv",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Aktiv",
+											"type": "Int32",
+											"physicalType": "int"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						}
+					},
+					{
+						"source": {
+							"tableName": "`z_taba32`"
+						},
+						"destination": {
+							"tableName": "z_taba32"
+						},
+						"copySource": {
+							"query": "select * from `z_taba32`"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ID",
+											"type": "Int32",
+											"physicalType": "int"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ArtikelnummerTeil",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "Aktiv",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Aktiv",
+											"type": "Int32",
+											"physicalType": "int"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						}
+					},
+					{
+						"source": {
+							"tableName": "`z_taba33`"
+						},
+						"destination": {
+							"tableName": "z_taba33"
+						},
+						"copySource": {
+							"query": "select * from `z_taba33`"
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ID",
+											"type": "Int32",
+											"physicalType": "int"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "ArtikelnummerTeil",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ArtikelnummerTeil",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "Aktiv",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Aktiv",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						}
+					}
+				]
+			}
+		},
+		"annotations": []
+	}
+}
