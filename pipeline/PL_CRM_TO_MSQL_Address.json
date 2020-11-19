@@ -29,7 +29,7 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"preCopyScript": "Truncate table sltsqldbdev.address",
+						"preCopyScript": "Truncate table sltsqldbdev.customeraddress",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
