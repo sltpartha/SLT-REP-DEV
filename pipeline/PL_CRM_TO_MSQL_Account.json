@@ -30,7 +30,9 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"tableOption": "autoCreate"
+						"preCopyScript": "Truncate table sltsqldbdev.account",
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"validateDataConsistency": false,
