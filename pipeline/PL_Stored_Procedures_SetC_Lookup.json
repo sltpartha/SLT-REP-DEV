@@ -34,7 +34,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"storedProcedureName": {
-									"value": "@item().Set_A",
+									"value": "@item().Set_C",
 									"type": "Expression"
 								}
 							},
