@@ -1,5 +1,5 @@
 {
-	"name": "PL_Stored_Procedures_DM_Lookup",
+	"name": "PL_Stored_Procedures_SetA_Lookup",
 	"properties": {
 		"activities": [
 			{
@@ -33,7 +33,10 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"storedProcedureName": "@item().Set_A"
+								"storedProcedureName": {
+									"value": "@item().Set_A",
+									"type": "Expression"
+								}
 							},
 							"linkedServiceName": {
 								"referenceName": "LS_SYNAP",
