@@ -33,7 +33,7 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"storedProcedureName": "@item().Stored_Procedure_name"
+								"storedProcedureName": "@item().Set A"
 							}
 						}
 					]
