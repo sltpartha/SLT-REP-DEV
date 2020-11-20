@@ -34,6 +34,10 @@
 							"userProperties": [],
 							"typeProperties": {
 								"storedProcedureName": "@item().Set A"
+							},
+							"linkedServiceName": {
+								"referenceName": "LS_SYNAP",
+								"type": "LinkedServiceReference"
 							}
 						}
 					]
@@ -56,7 +60,7 @@
 						"type": "DelimitedTextSource",
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
-							"recursive": true
+							"fileListPath": "storedprocedurelist/Stored_Procedure_List.xlsx"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextReadSettings"
