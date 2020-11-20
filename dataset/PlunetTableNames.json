@@ -10,8 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "Stored_Procedure_List.xlsx",
-				"container": "storedprocedurelist"
+				"fileName": "Plunet_Table_Names.csv",
+				"container": "plunettablelist"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
