@@ -63,7 +63,7 @@
 						}
 					},
 					"dataset": {
-						"referenceName": "PlunetTableNames",
+						"referenceName": "StoredProcedureList",
 						"type": "DatasetReference"
 					},
 					"firstRowOnly": false
