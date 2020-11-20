@@ -70,7 +70,7 @@
 						}
 					},
 					"dataset": {
-						"referenceName": "StoredProcedureList_SetA",
+						"referenceName": "StoredProcedureList_SetB",
 						"type": "DatasetReference"
 					},
 					"firstRowOnly": false
