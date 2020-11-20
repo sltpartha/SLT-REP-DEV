@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "Stored_Procedure_List.csv",
+				"fileName": "Stored_Procedure_ListC.csv",
 				"container": "storedprocedurelist"
 			},
 			"columnDelimiter": ",",
