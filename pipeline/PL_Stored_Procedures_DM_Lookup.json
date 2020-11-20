@@ -33,7 +33,7 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"storedProcedureName": "@item().Set A"
+								"storedProcedureName": "@items().Set A"
 							},
 							"linkedServiceName": {
 								"referenceName": "LS_SYNAP",
