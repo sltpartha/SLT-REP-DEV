@@ -1,5 +1,5 @@
 {
-	"name": "StoredProcedureList",
+	"name": "StoredProcedureList_SetA",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage1",
