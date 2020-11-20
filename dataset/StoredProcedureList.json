@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "Stored_Procedure_List.xlsx",
+				"fileName": "Stored_Procedure_ListA.xlsx",
 				"container": "storedprocedurelist"
 			},
 			"columnDelimiter": ",",
@@ -18,10 +18,6 @@
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": [
-			{
-				"type": "String"
-			}
-		]
+		"schema": []
 	}
 }
