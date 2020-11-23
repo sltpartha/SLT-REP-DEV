@@ -1,0 +1,17 @@
+{
+	"name": "AMySql_to_Synapse",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 8,
+				"startTime": "2020-11-23T07:52:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
