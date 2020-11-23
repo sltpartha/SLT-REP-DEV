@@ -1,0 +1,19 @@
+{
+	"name": "AzureSynapseAnalyticsTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SYNAP",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "slt_test",
+			"table": {
+				"value": "Angebot_Textmodul",
+				"type": "Expression"
+			}
+		}
+	}
+}

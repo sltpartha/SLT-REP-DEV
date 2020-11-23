@@ -1,0 +1,17 @@
+{
+	"name": "Trigger_tqg",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 24,
+				"startTime": "2020-11-13T11:31:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}

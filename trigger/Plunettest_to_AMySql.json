@@ -1,0 +1,48 @@
+{
+	"name": "Plunettest_to_AMySql",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Copy_PlunettestDB_to_AmysqlDB_T1",
+					"type": "PipelineReference"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Copy_PlunettestDB_to_AmysqlDB_T2",
+					"type": "PipelineReference"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Copy_PlunettestDB_to_AmysqlDB_T3",
+					"type": "PipelineReference"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Copy_PlunettestDB_to_AmysqlDB_T4",
+					"type": "PipelineReference"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Copy_PlunettestDB_to_AmysqlDB_T5",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 2,
+				"startTime": "2020-11-23T07:51:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}

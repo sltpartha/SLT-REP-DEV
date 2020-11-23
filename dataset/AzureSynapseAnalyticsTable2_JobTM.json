@@ -1,0 +1,19 @@
+{
+	"name": "AzureSynapseAnalyticsTable2_JobTM",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SYNAP",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Srija_DS"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "slt_test",
+			"table": "auftragjob_textmodul"
+		}
+	}
+}

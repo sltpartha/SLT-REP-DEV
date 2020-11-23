@@ -1,0 +1,15 @@
+{
+	"name": "AzureMySqlTable2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SLTMySqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Srija_DS"
+		},
+		"annotations": [],
+		"type": "AzureMySqlTable",
+		"schema": []
+	}
+}

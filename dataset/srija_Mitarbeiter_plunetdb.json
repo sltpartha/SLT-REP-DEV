@@ -1,0 +1,12 @@
+{
+	"name": "srija_Mitarbeiter_plunetdb",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Plunet_Test_Database",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "MySqlTable",
+		"schema": []
+	}
+}

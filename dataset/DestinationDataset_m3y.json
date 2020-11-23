@@ -1,0 +1,16 @@
+{
+	"name": "DestinationDataset_m3y",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQL_DB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "slt_test",
+			"table": "mitarbeiter"
+		}
+	}
+}

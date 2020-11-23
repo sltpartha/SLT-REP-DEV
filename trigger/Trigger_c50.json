@@ -1,0 +1,17 @@
+{
+	"name": "Trigger_c50",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 8,
+				"startTime": "2020-11-19T08:30:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}

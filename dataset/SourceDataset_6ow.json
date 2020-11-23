@@ -1,0 +1,23 @@
+{
+	"name": "SourceDataset_6ow",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SLTMySqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"cw_tableName": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "AzureMySqlTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": {
+				"value": "@dataset().cw_tableName",
+				"type": "Expression"
+			}
+		}
+	}
+}

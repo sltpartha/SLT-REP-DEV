@@ -1,0 +1,17 @@
+{
+	"name": "Trigger_6ni",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 24,
+				"startTime": "2020-11-10T05:55:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}

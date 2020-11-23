@@ -1,0 +1,48 @@
+{
+	"name": "AMySql_to_Synapse",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Copy_AmysqlDB_to_SysDW_T1",
+					"type": "PipelineReference"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Copy_AmysqlDB_to_SysDW_T2",
+					"type": "PipelineReference"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Copy_AmysqlDB_to_SysDW_T3",
+					"type": "PipelineReference"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Copy_AmysqlDB_to_SysDW_T4",
+					"type": "PipelineReference"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Copy_AmysqlDB_to_SysDW_T5",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 8,
+				"startTime": "2020-11-23T07:52:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}

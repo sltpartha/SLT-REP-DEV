@@ -1,0 +1,17 @@
+{
+	"name": "Trigger_o15",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 8,
+				"startTime": "2020-11-13T11:10:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}

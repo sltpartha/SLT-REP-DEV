@@ -1,0 +1,16 @@
+{
+	"name": "SourceDataset_405",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "OptimaServer",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "CDN",
+			"table": "BnkRozKwotyView"
+		}
+	}
+}

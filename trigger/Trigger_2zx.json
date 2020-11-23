@@ -1,0 +1,17 @@
+{
+	"name": "Trigger_2zx",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 8,
+				"startTime": "2020-11-13T11:44:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
