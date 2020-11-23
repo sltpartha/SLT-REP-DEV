@@ -1,0 +1,17 @@
+{
+	"name": "Plunettest_to_AMySql",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 8,
+				"startTime": "2020-11-23T07:51:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
