@@ -21,6 +21,12 @@
 					"referenceName": "Copy_PlunettestDB_to_AmysqlDB_T3",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Copy_PlunettestDB_to_AmysqlDB_T4",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
