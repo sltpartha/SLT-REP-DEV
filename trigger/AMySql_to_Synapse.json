@@ -21,6 +21,12 @@
 					"referenceName": "Copy_AmysqlDB_to_SysDW_T3",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Copy_AmysqlDB_to_SysDW_T4",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
