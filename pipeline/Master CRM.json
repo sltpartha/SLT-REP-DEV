@@ -32,7 +32,10 @@
 						"referenceName": "SQL_to_Synapse",
 						"type": "PipelineReference"
 					},
-					"waitOnCompletion": true
+					"waitOnCompletion": true,
+					"parameters": {
+						"cw_items": "[{\"source\":{\"table\":\"account\"},\"destination\":{\"table\":\"account\"}},{\"source\":{\"table\":\"contact\"},\"destination\":{\"table\":\"contact\"}},{\"source\":{\"table\":\"Currency\"},\"destination\":{\"table\":\"Currency\"}},{\"source\":{\"table\":\"customeraddress\"},\"destination\":{\"table\":\"customeraddress\"}},{\"source\":{\"table\":\"industry\"},\"destination\":{\"table\":\"industry\"}},{\"source\":{\"table\":\"opportunity\"},\"destination\":{\"table\":\"opportunity\"}},{\"source\":{\"table\":\"SubDomain\"},\"destination\":{\"table\":\"SubDomain\"}}]"
+					}
 				}
 			}
 		],
