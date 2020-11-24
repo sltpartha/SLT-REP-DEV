@@ -25,10 +25,13 @@
 				],
 				"typeProperties": {
 					"source": {
-						"type": "ParquetSource",
+						"type": "DelimitedTextSource",
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
 						}
 					},
 					"sink": {
@@ -183,7 +186,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_ADLS_CURATED_HR_EmployeeCompensation",
+						"referenceName": "DS_ADLS_CURATED_HR_EmployeeGender",
 						"type": "DatasetReference"
 					}
 				],
