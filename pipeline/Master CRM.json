@@ -16,8 +16,8 @@
 				}
 			},
 			{
-				"name": "SQL to Synapse",
-				"type": "ExecutePipeline",
+				"name": "ForEach_cox",
+				"type": "ForEach",
 				"dependsOn": [
 					{
 						"activity": "All CRM to MySQL",
@@ -28,11 +28,68 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
-					"pipeline": {
-						"referenceName": "SQL_to_Synapse",
-						"type": "PipelineReference"
+					"items": {
+						"value": "@pipeline().parameters.cw_items",
+						"type": "Expression"
 					},
-					"waitOnCompletion": true
+					"activities": [
+						{
+							"name": "Copy_cox",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [
+								{
+									"name": "Source",
+									"value": "sltsqldbdev.@{item().source.table}"
+								},
+								{
+									"name": "Destination",
+									"value": "sltsqldbdev.@{item().destination.table}"
+								}
+							],
+							"typeProperties": {
+								"source": {
+									"type": "AzureSqlSource",
+									"partitionOption": "None"
+								},
+								"sink": {
+									"type": "SqlDWSink",
+									"preCopyScript": {
+										"value": "@concat('TRUNCATE TABLE sltsqldbdev.',item().destination.table)",
+										"type": "Expression"
+									},
+									"tableOption": "autoCreate",
+									"disableMetricsCollection": false
+								},
+								"enableStaging": false
+							},
+							"inputs": [
+								{
+									"referenceName": "DS_SQL_CRM",
+									"type": "DatasetReference",
+									"parameters": {
+										"cw_table": "@item().destination.table"
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "DS_Synapse_CRM",
+									"type": "DatasetReference",
+									"parameters": {
+										"cw_table": "@item().destination.table"
+									}
+								}
+							]
+						}
+					]
 				}
 			}
 		],
