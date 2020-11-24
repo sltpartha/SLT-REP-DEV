@@ -9,7 +9,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
-						"referenceName": "Copy_PlunettestDB_to_AmysqlDB_T1_copy1",
+						"referenceName": "Copy_PlunettestDB_to_AmysqlDB_T1",
 						"type": "PipelineReference"
 					},
 					"waitOnCompletion": true
