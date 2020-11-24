@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "PL_DATA_ADLS_CURATED_TO_SYNAP_EmployeeCompensation",
+				"name": "PL_DATA_ADLS_CURATED_TO_SYNAP_EmployeeGender",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
