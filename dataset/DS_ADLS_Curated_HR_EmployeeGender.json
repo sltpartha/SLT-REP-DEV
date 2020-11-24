@@ -1,0 +1,38 @@
+{
+	"name": "DS_ADLS_Curated_HR_EmployeeGender",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_BAMBOOHR",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "genderCategory.parquet",
+				"folderPath": "Bamboo HR",
+				"fileSystem": "cntcuratedzonesltdev"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "id",
+				"type": "UTF8"
+			},
+			{
+				"name": "employeeNumber",
+				"type": "UTF8"
+			},
+			{
+				"name": "fullName1",
+				"type": "UTF8"
+			},
+			{
+				"name": "customGenderCategory",
+				"type": "UTF8"
+			}
+		]
+	}
+}

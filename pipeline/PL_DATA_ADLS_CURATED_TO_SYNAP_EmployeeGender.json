@@ -25,13 +25,10 @@
 				],
 				"typeProperties": {
 					"source": {
-						"type": "DelimitedTextSource",
+						"type": "ParquetSource",
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true
-						},
-						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
 						}
 					},
 					"sink": {
@@ -90,7 +87,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_ADLS_CURATED_HR_EmployeeGender",
+						"referenceName": "DS_ADLS_Curated_HR_EmployeeGender",
 						"type": "DatasetReference"
 					}
 				],
