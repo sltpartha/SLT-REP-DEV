@@ -36,12 +36,6 @@
 			},
 			{
 				"pipelineReference": {
-					"referenceName": "PL_CRM_TO_MSQL_Lead",
-					"type": "PipelineReference"
-				}
-			},
-			{
-				"pipelineReference": {
 					"referenceName": "PL_CRM_TO_MSQL_Opportunity",
 					"type": "PipelineReference"
 				}
@@ -58,7 +52,7 @@
 			"recurrence": {
 				"frequency": "Day",
 				"interval": 1,
-				"startTime": "2020-09-30T02:30:00.000Z",
+				"startTime": "2020-09-30T02:30:00Z",
 				"timeZone": "UTC"
 			}
 		}
