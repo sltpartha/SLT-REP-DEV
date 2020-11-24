@@ -36,13 +36,7 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"preCopyScript": "TRUNCATE TABLE HR.EmpCompensation",
-						"allowPolyBase": true,
-						"polyBaseSettings": {
-							"rejectValue": 0,
-							"rejectType": "value",
-							"useTypeDefault": false
-						},
+						"preCopyScript": "TRUNCATE TABLE HR.EmpGenderCategory",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
