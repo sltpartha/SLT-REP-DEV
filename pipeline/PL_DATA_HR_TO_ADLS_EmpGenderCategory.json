@@ -37,53 +37,7 @@
 							"filePattern": "arrayOfObjects"
 						}
 					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"mappings": [
-							{
-								"source": {
-									"path": "$['title']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['fields'][0]['id']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['fields'][0]['type']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['fields'][0]['name']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['employees'][0]['id']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['employees'][0]['employeeNumber']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['employees'][0]['fullName1']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['employees'][0]['customGenderCategory']"
-								}
-							}
-						],
-						"collectionReference": ""
-					}
+					"enableStaging": false
 				},
 				"inputs": [
 					{
