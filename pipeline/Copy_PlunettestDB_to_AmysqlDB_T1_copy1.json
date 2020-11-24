@@ -9,7 +9,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@pipeline().parameters.cw_items",
+						"value": "@pipeline().parameters.cw_items1",
 						"type": "Expression"
 					},
 					"activities": [
