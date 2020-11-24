@@ -48,7 +48,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
-						"referenceName": "Lead Selected Cols",
+						"referenceName": "PL_CRM_TO_Synapse_Lead_Selected_Cols",
 						"type": "PipelineReference"
 					},
 					"waitOnCompletion": true
