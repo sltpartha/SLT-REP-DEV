@@ -1,0 +1,200 @@
+{
+	"name": "PL_DATA_ADLS_CURATED_TO_SYNAP_EmployeeGender",
+	"properties": {
+		"activities": [
+			{
+				"name": "PL_DATA_ADLS_CURATED_TO_SYNAP_EmployeeCompensation",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "cntcuratedzonesltdev/Bamboo HR/EmployeeCompensation.parquet"
+					},
+					{
+						"name": "Destination",
+						"value": "HR.EmpCompensation"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "ParquetSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true
+						}
+					},
+					"sink": {
+						"type": "SqlDWSink",
+						"preCopyScript": "TRUNCATE TABLE HR.EmpCompensation",
+						"allowPolyBase": true,
+						"polyBaseSettings": {
+							"rejectValue": 0,
+							"rejectType": "value",
+							"useTypeDefault": false
+						},
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"parallelCopies": 3,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "id",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "id",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "employeeId",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "employeeId",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "startDate",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "startDate",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "currency",
+									"type": "String"
+								},
+								"sink": {
+									"name": "currency",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "pay",
+									"type": "String"
+								},
+								"sink": {
+									"name": "pay",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "type",
+									"type": "String"
+								},
+								"sink": {
+									"name": "type",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "exempt",
+									"type": "String"
+								},
+								"sink": {
+									"name": "exempt",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "reason",
+									"type": "String"
+								},
+								"sink": {
+									"name": "reason",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "comment",
+									"type": "String"
+								},
+								"sink": {
+									"name": "comment",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "paidPer",
+									"type": "String"
+								},
+								"sink": {
+									"name": "paidPer",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "paySchedule",
+									"type": "String"
+								},
+								"sink": {
+									"name": "paySchedule",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "currencyOvertime",
+									"type": "String"
+								},
+								"sink": {
+									"name": "currencyOvertime",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "valueOvertime",
+									"type": "String"
+								},
+								"sink": {
+									"name": "valueOvertime",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_ADLS_CURATED_HR_EmployeeCompensation",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_SYNAPSE_HR_EmployeeCompensation",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
