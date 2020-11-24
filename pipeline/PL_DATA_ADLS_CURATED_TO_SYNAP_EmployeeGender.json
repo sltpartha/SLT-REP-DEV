@@ -99,6 +99,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "HR/ADLS CURATED to SYNAPSE"
+		},
 		"annotations": []
 	}
 }
