@@ -54,130 +54,40 @@
 							{
 								"source": {
 									"name": "id",
-									"type": "Int64"
+									"type": "String"
 								},
 								"sink": {
 									"name": "id",
-									"type": "Int64"
-								}
-							},
-							{
-								"source": {
-									"name": "employeeId",
-									"type": "Int64"
-								},
-								"sink": {
-									"name": "employeeId",
-									"type": "Int64"
-								}
-							},
-							{
-								"source": {
-									"name": "startDate",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "startDate",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"name": "currency",
-									"type": "String"
-								},
-								"sink": {
-									"name": "currency",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "pay",
+									"name": "employeeNumber",
 									"type": "String"
 								},
 								"sink": {
-									"name": "pay",
+									"name": "employeeNumber",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "type",
+									"name": "fullName1",
 									"type": "String"
 								},
 								"sink": {
-									"name": "type",
+									"name": "fullName1",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "exempt",
+									"name": "customGenderCategory",
 									"type": "String"
 								},
 								"sink": {
-									"name": "exempt",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "reason",
-									"type": "String"
-								},
-								"sink": {
-									"name": "reason",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "comment",
-									"type": "String"
-								},
-								"sink": {
-									"name": "comment",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "paidPer",
-									"type": "String"
-								},
-								"sink": {
-									"name": "paidPer",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "paySchedule",
-									"type": "String"
-								},
-								"sink": {
-									"name": "paySchedule",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "currencyOvertime",
-									"type": "String"
-								},
-								"sink": {
-									"name": "currencyOvertime",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "valueOvertime",
-									"type": "String"
-								},
-								"sink": {
-									"name": "valueOvertime",
+									"name": "customGenderCategory",
 									"type": "String"
 								}
 							}
@@ -192,7 +102,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_SYNAPSE_HR_EmployeeCompensation",
+						"referenceName": "DS_SYNAPSE_HR_GenderCategory",
 						"type": "DatasetReference"
 					}
 				]
