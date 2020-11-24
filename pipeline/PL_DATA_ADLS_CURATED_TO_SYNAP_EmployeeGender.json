@@ -33,7 +33,6 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"preCopyScript": "TRUNCATE TABLE HR.EmpGenderCategory",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
