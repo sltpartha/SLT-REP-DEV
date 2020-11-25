@@ -1,0 +1,163 @@
+{
+	"name": "PL_CRM_TO_Synapse_Lead_Selected_Cols_copy1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DynamicsCrmSource"
+					},
+					"sink": {
+						"type": "SqlDWSink",
+						"preCopyScript": "truncate table CRM.LeadSelectedCols",
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "accountid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "accountid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "leadid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "leadid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "leadqualitycode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "leadqualitycode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "createdby",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "createdby",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "createdon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "createdon",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "createdbyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "createdbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "estimatedvalue",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "estimatedvalue",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "parentaccountid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "parentaccountid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "companyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "companyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "erb_companycode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "erb_companycode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "erb_service",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "erb_service",
+									"type": "Int32"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DynamicsCrmEntity1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_Synapse_CRM_copy1",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "CRM"
+		},
+		"annotations": []
+	}
+}
