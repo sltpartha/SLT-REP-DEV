@@ -145,6 +145,7 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
+						"preCopyScript": "TRUNCATE TABLE HR.EmpDirectory",
 						"allowPolyBase": true,
 						"polyBaseSettings": {
 							"rejectValue": 0,
