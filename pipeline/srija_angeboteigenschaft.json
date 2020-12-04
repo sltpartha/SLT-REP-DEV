@@ -26,11 +26,10 @@
 				"typeProperties": {
 					"source": {
 						"type": "MySqlSource",
-						"query": "select * from `land`"
+						"query": "select * from `angeboteigenschaft`"
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"preCopyScript": "truncate table slt_test.land",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
@@ -41,79 +40,57 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "LandID",
+									"name": "EigenschaftID",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "LandID",
+									"name": "EigenschaftID",
 									"type": "Int32",
 									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "Deutsch",
-									"type": "String"
+									"name": "IDProjekt",
+									"type": "Int32"
 								},
 								"sink": {
-									"name": "Deutsch",
-									"type": "String",
-									"physicalType": "String"
+									"name": "IDProjekt",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "English",
-									"type": "String"
+									"name": "IDEigenschaft",
+									"type": "Int32"
 								},
 								"sink": {
-									"name": "English",
-									"type": "String",
-									"physicalType": "String"
+									"name": "IDEigenschaft",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "ZusatzSprache1",
-									"type": "String"
+									"name": "IDWert",
+									"type": "Int32"
 								},
 								"sink": {
-									"name": "ZusatzSprache1",
-									"type": "String",
-									"physicalType": "String"
+									"name": "IDWert",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "ZusatzSprache2",
-									"type": "String"
+									"name": "Reihenfolge",
+									"type": "Int32"
 								},
 								"sink": {
-									"name": "ZusatzSprache2",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "ZusatzSprache3",
-									"type": "String"
-								},
-								"sink": {
-									"name": "ZusatzSprache3",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "ISOCode",
-									"type": "String"
-								},
-								"sink": {
-									"name": "ISOCode",
-									"type": "String",
-									"physicalType": "String"
+									"name": "Reihenfolge",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							}
 						],
@@ -126,13 +103,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SD_Land",
+						"referenceName": "SD_Quote_Property",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DD_Land",
+						"referenceName": "DD_Quote_Property",
 						"type": "DatasetReference"
 					}
 				]
