@@ -29,7 +29,6 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"preCopyScript": "truncate table slt_test.Adresse",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
@@ -37,6 +36,250 @@
 					"validateDataConsistency": false,
 					"translator": {
 						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "AdresseID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "AdresseID",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "IDKunde",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "IDKunde",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Typ",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Typ",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Strasse",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Strasse",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Strasse2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Strasse2",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PLZ",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PLZ",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Ort",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Ort",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PLZ_Postfach",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PLZ_Postfach",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Postfach",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Postfach",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "IDLand",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "IDLand",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Vorname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Vorname",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Nachname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Nachname",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Nickname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Nickname",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Bundesland",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Bundesland",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ErtragKonto",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ErtragKonto",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "KontoFIBU",
+									"type": "String"
+								},
+								"sink": {
+									"name": "KontoFIBU",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "IDBesteuerungsArt",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "IDBesteuerungsArt",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "UST_ID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "UST_ID",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ErloesKontoID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ErloesKontoID",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Buero",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Buero",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CostCenter1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CostCenter1",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VatByRegion",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "VatByRegion",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							}
+						],
 						"typeConversion": true,
 						"typeConversionSettings": {
 							"allowDataTruncation": true,
