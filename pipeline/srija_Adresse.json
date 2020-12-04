@@ -29,6 +29,7 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
+						"preCopyScript": "truncate table slt_test.Adresse",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
