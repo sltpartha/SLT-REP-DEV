@@ -28,7 +28,7 @@
 						"type": "DynamicsCrmSource"
 					},
 					"sink": {
-						"type": "AzureSqlSink",
+						"type": "SqlDWSink",
 						"preCopyScript": "truncate table sltsqldbdev.currency",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
@@ -349,7 +349,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_SQL_CRM_Currency",
+						"referenceName": "DS_Synapse_CRM_Currency",
 						"type": "DatasetReference"
 					}
 				]
