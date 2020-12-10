@@ -1,5 +1,5 @@
 {
-	"name": "PL_CRM_TO_MSQL_Opportunity",
+	"name": "PL_CRM_TO_SYNAPSE_Opportunity",
 	"properties": {
 		"activities": [
 			{
