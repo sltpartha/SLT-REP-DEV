@@ -28,7 +28,7 @@
 						"type": "DynamicsCrmSource"
 					},
 					"sink": {
-						"type": "AzureSqlSink",
+						"type": "SqlDWSink",
 						"preCopyScript": "Truncate table sltsqldbdev.customeraddress",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
@@ -589,7 +589,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_SQL_CRM_Customer_Address",
+						"referenceName": "DS_Synapse_CRM_Address",
 						"type": "DatasetReference"
 					}
 				]
