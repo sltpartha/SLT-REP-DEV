@@ -28,9 +28,8 @@
 						"type": "DynamicsCrmSource"
 					},
 					"sink": {
-						"type": "AzureSqlSink",
+						"type": "SqlDWSink",
 						"preCopyScript": "truncate table sltsqldbdev.industry",
-						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
@@ -44,7 +43,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_SQL_CRM_Indusrty",
+						"referenceName": "DS_Synapse_CRM_Industry",
 						"type": "DatasetReference"
 					}
 				]
