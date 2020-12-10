@@ -22,7 +22,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
-						"referenceName": "PL_CRM_TO_MSQL_Contact",
+						"referenceName": "PL_CRM_TO_SYNAPSE_Contact",
 						"type": "PipelineReference"
 					},
 					"waitOnCompletion": true
@@ -35,7 +35,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
-						"referenceName": "PL_CRM_TO_MSQL_Address",
+						"referenceName": "PL_CRM_TO_SYNAPSE_Address",
 						"type": "PipelineReference"
 					},
 					"waitOnCompletion": true
@@ -61,7 +61,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
-						"referenceName": "PL_CRM_TO_MSQL_Currency",
+						"referenceName": "PL_CRM_TO_SYNAPSE_Currency",
 						"type": "PipelineReference"
 					},
 					"waitOnCompletion": true
@@ -74,7 +74,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
-						"referenceName": "PL_CRM_TO_MSQL_Industry",
+						"referenceName": "PL_CRM_TO_SYNAPSE_Industry",
 						"type": "PipelineReference"
 					},
 					"waitOnCompletion": true
@@ -87,7 +87,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
-						"referenceName": "PL_CRM_TO_MSQL_Opportunity",
+						"referenceName": "PL_CRM_TO_SYNAPSE_Opportunity",
 						"type": "PipelineReference"
 					},
 					"waitOnCompletion": true
@@ -100,7 +100,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
-						"referenceName": "PL_CRM_TO_MSQL_Sub_Domain",
+						"referenceName": "PL_CRM_TO_SYNAPSE_Sub_Domain",
 						"type": "PipelineReference"
 					},
 					"waitOnCompletion": true
