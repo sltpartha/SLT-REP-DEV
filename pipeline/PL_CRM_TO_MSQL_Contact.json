@@ -28,7 +28,7 @@
 						"type": "DynamicsCrmSource"
 					},
 					"sink": {
-						"type": "AzureSqlSink",
+						"type": "SqlDWSink",
 						"preCopyScript": "Truncate table sltsqldbdev.Contact",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
@@ -44,7 +44,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_SQL_CRM_Contact",
+						"referenceName": "DS_Synapse_CRM_Contact",
 						"type": "DatasetReference"
 					}
 				]
