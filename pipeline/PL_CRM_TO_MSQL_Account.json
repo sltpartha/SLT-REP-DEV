@@ -29,7 +29,7 @@
 						"type": "DynamicsCrmSource"
 					},
 					"sink": {
-						"type": "AzureSqlSink",
+						"type": "SqlDWSink",
 						"preCopyScript": "Truncate table sltsqldbdev.account",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
@@ -2300,7 +2300,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_SQL_CRM_Account",
+						"referenceName": "DS_Synapse_CRM",
 						"type": "DatasetReference"
 					}
 				]
