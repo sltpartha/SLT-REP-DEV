@@ -9,7 +9,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
-						"referenceName": "PL_CRM_TO_MSQL_Account",
+						"referenceName": "PL_CRM_TO_SYNAPSE_Account",
 						"type": "PipelineReference"
 					},
 					"waitOnCompletion": true
