@@ -28,9 +28,8 @@
 						"type": "DynamicsCrmSource"
 					},
 					"sink": {
-						"type": "AzureSqlSink",
+						"type": "SqlDWSink",
 						"preCopyScript": "truncate table sltsqldbdev.opportunity",
-						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
@@ -1449,7 +1448,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_SQL_CRM_Opportunity",
+						"referenceName": "DS_Synapse_CRM_Opportunity",
 						"type": "DatasetReference"
 					}
 				]
