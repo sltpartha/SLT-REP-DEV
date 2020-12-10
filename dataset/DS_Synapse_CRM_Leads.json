@@ -1,5 +1,5 @@
 {
-	"name": "DS_Synapse_CRM_copy1",
+	"name": "DS_Synapse_CRM_Leads",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureSynapseAnalytics2",
