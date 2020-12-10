@@ -28,7 +28,7 @@
 						"type": "DynamicsCrmSource"
 					},
 					"sink": {
-						"type": "AzureSqlSink",
+						"type": "SqlDWSink",
 						"preCopyScript": "truncate table sltsqldbdev.subdomain",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
@@ -44,7 +44,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_SQL_CRM_SubDomain",
+						"referenceName": "DS_Synapse_CRM_Sub_Domain",
 						"type": "DatasetReference"
 					}
 				]
