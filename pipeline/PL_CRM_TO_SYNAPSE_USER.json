@@ -28,9 +28,8 @@
 						"type": "DynamicsCrmSource"
 					},
 					"sink": {
-						"type": "AzureSqlSink",
-						"tableOption": "autoCreate",
-						"disableMetricsCollection": false
+						"type": "SqlDWSink",
+						"tableOption": "autoCreate"
 					},
 					"enableStaging": false,
 					"validateDataConsistency": false,
@@ -1548,7 +1547,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_SQL_CRM_USER",
+						"referenceName": "DS_Synapse_CRM_User",
 						"type": "DatasetReference"
 					}
 				]
