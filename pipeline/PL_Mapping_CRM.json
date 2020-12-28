@@ -33,7 +33,9 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"tableOption": "autoCreate"
+						"preCopyScript": "truncate table  [sltdbdev].[CRM_Mapping]",
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"validateDataConsistency": false,
