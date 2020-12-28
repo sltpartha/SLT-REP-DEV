@@ -147,6 +147,16 @@
 									"name": "companyname",
 									"type": "String"
 								}
+							},
+							{
+								"source": {
+									"name": "is_industryid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "is_industryid",
+									"type": "Guid"
+								}
 							}
 						]
 					}
