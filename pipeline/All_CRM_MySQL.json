@@ -118,6 +118,19 @@
 					},
 					"waitOnCompletion": true
 				}
+			},
+			{
+				"name": "CRM Mapping",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "PL_Mapping_CRM",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"folder": {
