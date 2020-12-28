@@ -105,6 +105,19 @@
 					},
 					"waitOnCompletion": true
 				}
+			},
+			{
+				"name": "USER",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "PL_CRM_TO_SYNAPSE_USER",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"folder": {
