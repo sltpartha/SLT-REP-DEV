@@ -29,7 +29,7 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"preCopyScript": "truncate table sltsqldbdev.USER",
+						"preCopyScript": "truncate table sltsqldbdev.[USER]",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
