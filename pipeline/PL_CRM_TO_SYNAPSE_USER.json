@@ -29,10 +29,1516 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
+						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
-					"validateDataConsistency": false
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "accessmode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "accessmode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "activedirectoryguid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "activedirectoryguid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_addressid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "address1_addressid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_addresstypecode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "address1_addresstypecode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_city",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_city",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_composite",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_composite",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_country",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_country",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_county",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_county",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_fax",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_fax",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_latitude",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "address1_latitude",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_line1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_line1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_line2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_line2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_line3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_line3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_longitude",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "address1_longitude",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_name",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_postalcode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_postalcode",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_postofficebox",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_postofficebox",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_shippingmethodcode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "address1_shippingmethodcode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_stateorprovince",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_stateorprovince",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_telephone1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_telephone1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_telephone2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_telephone2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_telephone3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_telephone3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_upszone",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_upszone",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_utcoffset",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "address1_utcoffset",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_addressid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "address2_addressid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_addresstypecode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "address2_addresstypecode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_city",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_city",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_composite",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_composite",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_country",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_country",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_county",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_county",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_fax",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_fax",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_latitude",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "address2_latitude",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_line1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_line1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_line2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_line2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_line3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_line3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_longitude",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "address2_longitude",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_name",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_postalcode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_postalcode",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_postofficebox",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_postofficebox",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_shippingmethodcode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "address2_shippingmethodcode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_stateorprovince",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_stateorprovince",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_telephone1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_telephone1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_telephone2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_telephone2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_telephone3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_telephone3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_upszone",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_upszone",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_utcoffset",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "address2_utcoffset",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "applicationid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "applicationid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "applicationiduri",
+									"type": "String"
+								},
+								"sink": {
+									"name": "applicationiduri",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "azureactivedirectoryobjectid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "azureactivedirectoryobjectid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "businessunitid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "businessunitid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "businessunitidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "businessunitidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "calendarid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "calendarid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "caltype",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "caltype",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "createdby",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "createdby",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "createdbyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "createdbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "createdbyyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "createdbyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "createdon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "createdon",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "createdonbehalfby",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "createdonbehalfby",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "createdonbehalfbyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "createdonbehalfbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "createdonbehalfbyyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "createdonbehalfbyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "defaultfilterspopulated",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "defaultfilterspopulated",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "defaultmailbox",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "defaultmailbox",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "defaultmailboxname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "defaultmailboxname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "defaultodbfoldername",
+									"type": "String"
+								},
+								"sink": {
+									"name": "defaultodbfoldername",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "disabledreason",
+									"type": "String"
+								},
+								"sink": {
+									"name": "disabledreason",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "displayinserviceviews",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "displayinserviceviews",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "domainname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "domainname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "emailrouteraccessapproval",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "emailrouteraccessapproval",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "employeeid",
+									"type": "String"
+								},
+								"sink": {
+									"name": "employeeid",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "entityimage_timestamp",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "entityimage_timestamp",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "entityimage_url",
+									"type": "String"
+								},
+								"sink": {
+									"name": "entityimage_url",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "entityimageid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "entityimageid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "exchangerate",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "exchangerate",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "firstname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "firstname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "fullname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "fullname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "governmentid",
+									"type": "String"
+								},
+								"sink": {
+									"name": "governmentid",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "homephone",
+									"type": "String"
+								},
+								"sink": {
+									"name": "homephone",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "identityid",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "identityid",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "importsequencenumber",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "importsequencenumber",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "incomingemaildeliverymethod",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "incomingemaildeliverymethod",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "internalemailaddress",
+									"type": "String"
+								},
+								"sink": {
+									"name": "internalemailaddress",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "invitestatuscode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "invitestatuscode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "isactivedirectoryuser",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "isactivedirectoryuser",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "isdisabled",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "isdisabled",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "isemailaddressapprovedbyo365admin",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "isemailaddressapprovedbyo365admin",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "isintegrationuser",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "isintegrationuser",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "islicensed",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "islicensed",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "issyncwithdirectory",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "issyncwithdirectory",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "jobtitle",
+									"type": "String"
+								},
+								"sink": {
+									"name": "jobtitle",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "lastname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "lastname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "latestupdatetime",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "latestupdatetime",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "middlename",
+									"type": "String"
+								},
+								"sink": {
+									"name": "middlename",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mobilealertemail",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mobilealertemail",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mobileofflineprofileid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "mobileofflineprofileid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "mobileofflineprofileidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mobileofflineprofileidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mobilephone",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mobilephone",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedby",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "modifiedby",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedbyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "modifiedbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedbyyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "modifiedbyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "modifiedon",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedonbehalfby",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "modifiedonbehalfby",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedonbehalfbyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "modifiedonbehalfbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedonbehalfbyyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "modifiedonbehalfbyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "msdyn_gdproptout",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "msdyn_gdproptout",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "nickname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "nickname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "organizationid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "organizationid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "organizationidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "organizationidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "outgoingemaildeliverymethod",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "outgoingemaildeliverymethod",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "overriddencreatedon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "overriddencreatedon",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "parentsystemuserid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "parentsystemuserid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "parentsystemuseridname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "parentsystemuseridname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "parentsystemuseridyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "parentsystemuseridyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "passporthi",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "passporthi",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "passportlo",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "passportlo",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "personalemailaddress",
+									"type": "String"
+								},
+								"sink": {
+									"name": "personalemailaddress",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "photourl",
+									"type": "String"
+								},
+								"sink": {
+									"name": "photourl",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "positionid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "positionid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "positionidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "positionidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "preferredaddresscode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "preferredaddresscode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "preferredemailcode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "preferredemailcode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "preferredphonecode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "preferredphonecode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "processid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "processid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "queueid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "queueid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "queueidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "queueidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "salutation",
+									"type": "String"
+								},
+								"sink": {
+									"name": "salutation",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "setupuser",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "setupuser",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "sharepointemailaddress",
+									"type": "String"
+								},
+								"sink": {
+									"name": "sharepointemailaddress",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "siteid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "siteid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "siteidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "siteidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "skills",
+									"type": "String"
+								},
+								"sink": {
+									"name": "skills",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "stageid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "stageid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "systemuserid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "systemuserid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "territoryid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "territoryid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "territoryidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "territoryidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "timezoneruleversionnumber",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "timezoneruleversionnumber",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "title",
+									"type": "String"
+								},
+								"sink": {
+									"name": "title",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "transactioncurrencyid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "transactioncurrencyid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "transactioncurrencyidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "transactioncurrencyidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "traversedpath",
+									"type": "String"
+								},
+								"sink": {
+									"name": "traversedpath",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "userlicensetype",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "userlicensetype",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "userpuid",
+									"type": "String"
+								},
+								"sink": {
+									"name": "userpuid",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "utcconversiontimezonecode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "utcconversiontimezonecode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "versionnumber",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "versionnumber",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "windowsliveid",
+									"type": "String"
+								},
+								"sink": {
+									"name": "windowsliveid",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "yammeremailaddress",
+									"type": "String"
+								},
+								"sink": {
+									"name": "yammeremailaddress",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "yammeruserid",
+									"type": "String"
+								},
+								"sink": {
+									"name": "yammeruserid",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "yomifirstname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "yomifirstname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "yomifullname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "yomifullname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "yomilastname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "yomilastname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "yomimiddlename",
+									"type": "String"
+								},
+								"sink": {
+									"name": "yomimiddlename",
+									"type": "String"
+								}
+							}
+						]
+					}
 				},
 				"inputs": [
 					{
