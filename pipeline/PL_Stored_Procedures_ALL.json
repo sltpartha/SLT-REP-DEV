@@ -22,7 +22,7 @@
 					{
 						"activity": "Execute Pipeline1",
 						"dependencyConditions": [
-							"Succeeded"
+							"Completed"
 						]
 					}
 				],
@@ -42,7 +42,7 @@
 					{
 						"activity": "Execute Pipeline2",
 						"dependencyConditions": [
-							"Succeeded"
+							"Completed"
 						]
 					}
 				],
