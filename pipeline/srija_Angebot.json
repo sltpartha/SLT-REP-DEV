@@ -25,7 +25,8 @@
 				],
 				"typeProperties": {
 					"source": {
-						"type": "MySqlSource"
+						"type": "MySqlSource",
+						"query": "SELECT\ncast(angebotnr AS SIGNED) AS \"Quote number\",\nQ.*,\nmax(version) AS \"Latest version\" FROM angebot Q\nGROUP BY angebotnr\nORDER BY `Quote number` ASC"
 					},
 					"sink": {
 						"type": "SqlDWSink",
