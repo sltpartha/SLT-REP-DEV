@@ -5,8 +5,8 @@
 		"annotations": [],
 		"type": "SqlServer",
 		"typeProperties": {
-			"connectionString": "integrated security=False;data source=172.17.68.10\\OPTIMA;initial catalog=CDN_SLT;user id=powerup",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI2YjIyYzE5Yy02MTQ0LTQ3ZjMtOGNlMi01M2U1ZGJhYjcwZTMiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"connectionString": "integrated security=False;data source=172.17.68.11;initial catalog=CDN_SLT;user id=powerupcloud",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIxZWQ0ZmRhOS1mNTY5LTQ5OTEtYjljYS1iMzk4MTdmMTQxNjUiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "PlunetOnpromises",
