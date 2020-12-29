@@ -1,9 +1,9 @@
 {
-	"name": "srija_Adresse_copy1",
+	"name": "srija_Angebot",
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_sxm",
+				"name": "Angebot",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -29,7 +29,7 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"preCopyScript": "truncate table slt_test.Adresse",
+						"preCopyScript": "truncate table slt_test.Angebot",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
@@ -290,13 +290,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SD_Adresse",
+						"referenceName": "SD_Angebot",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DD_Adresse",
+						"referenceName": "DD_Angebot",
 						"type": "DatasetReference"
 					}
 				]
