@@ -17,7 +17,7 @@
 				"typeProperties": {
 					"command": "python3 test.py",
 					"resourceLinkedService": {
-						"referenceName": "optima",
+						"referenceName": "optimaStorage",
 						"type": "LinkedServiceReference"
 					},
 					"folderPath": "optima-input",
