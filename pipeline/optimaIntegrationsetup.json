@@ -27,7 +27,7 @@
 					}
 				},
 				"linkedServiceName": {
-					"referenceName": "Optimatest",
+					"referenceName": "optimalinksetup",
 					"type": "LinkedServiceReference"
 				}
 			}
