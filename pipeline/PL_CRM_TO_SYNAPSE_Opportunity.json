@@ -29,7 +29,7 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"preCopyScript": "truncate table sltsqldbdev.opportunity",
+						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
@@ -439,6 +439,126 @@
 							},
 							{
 								"source": {
+									"name": "erb_companycode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "erb_companycode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "erb_invoicecreatedon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "erb_invoicecreatedon",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "erb_leadsource",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "erb_leadsource",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "erb_leadtype",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "erb_leadtype",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "erb_ordercreatedon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "erb_ordercreatedon",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "erb_quotecreatedon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "erb_quotecreatedon",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "erb_revenueplatform",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "erb_revenueplatform",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "erb_service",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "erb_service",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "erb_subvertical",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "erb_subvertical",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "erb_subverticalname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "erb_subverticalname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "erb_vertical",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "erb_vertical",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "erb_verticalname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "erb_verticalname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
 									"name": "estimatedclosedate",
 									"type": "DateTime"
 								},
@@ -709,12 +829,132 @@
 							},
 							{
 								"source": {
+									"name": "new_invoiceid",
+									"type": "String"
+								},
+								"sink": {
+									"name": "new_invoiceid",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "new_invoicestatus",
+									"type": "String"
+								},
+								"sink": {
+									"name": "new_invoicestatus",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "new_invoicevalue",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "new_invoicevalue",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "new_invoicevalue_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "new_invoicevalue_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "new_orderid",
+									"type": "String"
+								},
+								"sink": {
+									"name": "new_orderid",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "new_orderstatus",
+									"type": "String"
+								},
+								"sink": {
+									"name": "new_orderstatus",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "new_ordervalue",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "new_ordervalue",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "new_ordervalue_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "new_ordervalue_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
 									"name": "new_plunetquoteid",
 									"type": "String"
 								},
 								"sink": {
 									"name": "new_plunetquoteid",
 									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "new_quoteid",
+									"type": "String"
+								},
+								"sink": {
+									"name": "new_quoteid",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "new_quotestatus",
+									"type": "String"
+								},
+								"sink": {
+									"name": "new_quotestatus",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "new_quotevalue",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "new_quotevalue",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "new_quotevalue_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "new_quotevalue_base",
+									"type": "Decimal"
 								}
 							},
 							{
