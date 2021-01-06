@@ -40,10 +40,12 @@
 								},
 								"sink": {
 									"type": "SqlDWSink",
+									"preCopyScript": "@concat('Truncate table slt_test.' , item().destination.table)",
 									"tableOption": {
 										"value": "@item().copySink.tableOption",
 										"type": "Expression"
-									}
+									},
+									"disableMetricsCollection": false
 								},
 								"enableStaging": true,
 								"stagingSettings": {
