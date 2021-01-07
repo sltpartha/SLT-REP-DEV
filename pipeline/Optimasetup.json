@@ -16,7 +16,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"command": "python3 test.py\n",
+					"command": "pip3 install -r requirements.txt\npython3 test.py\n",
 					"resourceLinkedService": {
 						"referenceName": "optimaStorage",
 						"type": "LinkedServiceReference"
