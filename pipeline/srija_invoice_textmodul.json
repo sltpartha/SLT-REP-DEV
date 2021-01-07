@@ -169,7 +169,7 @@
 								"sink": {
 									"name": "TextModulVerwendungID",
 									"type": "Int32",
-									"physicalType": "int"
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -181,7 +181,7 @@
 								"sink": {
 									"name": "IDTextModul",
 									"type": "Int32",
-									"physicalType": "int"
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -193,7 +193,7 @@
 								"sink": {
 									"name": "IDMain",
 									"type": "Int32",
-									"physicalType": "int"
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -205,7 +205,7 @@
 								"sink": {
 									"name": "Inhalt",
 									"type": "String",
-									"physicalType": "nvarchar"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -217,7 +217,18 @@
 								"sink": {
 									"name": "Inhalt_Datum",
 									"type": "DateTime",
-									"physicalType": "datetime2"
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "INHALT_NEW",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INHALT_NEW",
+									"type": "String",
+									"physicalType": "String"
 								}
 							}
 						],
