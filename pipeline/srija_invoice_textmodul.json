@@ -146,12 +146,12 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureMySqlSource",
-						"query": "select\n   at.*,\n  SUBSTRING_INDEX(SUBSTRING_INDEX(AT.inhalt, ';', numbers.n), ';', -1) INHALT_NEW\nfrom\n  (select 1 n union all\n   select 2 union all select 3 union all\n   select 4 union all select 5 union all\n   select 6 union all select 7 union all\n   select 8 union all select 9) numbers INNER JOIN angebot_textmodul at\n  on CHAR_LENGTH(AT.inhalt)\n     -CHAR_LENGTH(REPLACE(AT.inhalt, ';', ''))>=numbers.n-1",
+						"query": "select\n   at.*,\n  SUBSTRING_INDEX(SUBSTRING_INDEX(AT.inhalt, ';', numbers.n), ';', -1) INHALT_NEW\nfrom\n  (select 1 n union all\n   select 2 union all select 3 union all\n   select 4 union all select 5 union all\n   select 6 union all select 7 union all\n   select 8 union all select 9) numbers INNER JOIN ausgangsrechnung_textmodul at\n  on CHAR_LENGTH(AT.inhalt)\n     -CHAR_LENGTH(REPLACE(AT.inhalt, ';', ''))>=numbers.n-1",
 						"queryTimeout": "02:00:00"
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"preCopyScript": "truncate table slt_test.angebot_textmodul",
+						"preCopyScript": "truncate table slt_test.ausgangsrechnung_textmodul",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
@@ -236,13 +236,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "AzureMySqlTable2",
+						"referenceName": "AzureMySqlTable2_Invoice_Textmodule",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "AzureSynapseAnalyticsTable2",
+						"referenceName": "AzureSynapseAnalyticsTable2_invoice_textmodule",
 						"type": "DatasetReference"
 					}
 				]
