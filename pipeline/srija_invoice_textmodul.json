@@ -25,15 +25,14 @@
 				],
 				"typeProperties": {
 					"source": {
-						"type": "AzureMySqlSource",
-						"query": "select * from `ausgangsrechnung_textmodul`",
-						"queryTimeout": "02:00:00"
+						"type": "MySqlSource",
+						"query": "select * from `ausgangsrechnung_textmodul`"
 					},
 					"sink": {
 						"type": "AzureMySqlSink",
 						"writeBatchSize": 10000,
 						"writeBatchTimeout": "00:00:30",
-						"preCopyScript": "truncate table plunet.angebot_textmodul"
+						"preCopyScript": "truncate table plunet.ausgangsrechnung_textmodul"
 					},
 					"enableStaging": false,
 					"validateDataConsistency": false,
@@ -105,13 +104,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DestinationDataset_invoice_textmodule",
+						"referenceName": "SourceDataset_invoice_textmodule",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_787",
+						"referenceName": "DestinationDataset_invoice_textmodule",
 						"type": "DatasetReference"
 					}
 				]
