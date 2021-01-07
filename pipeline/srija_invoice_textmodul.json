@@ -163,67 +163,61 @@
 							{
 								"source": {
 									"name": "TextModulVerwendungID",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "int"
 								},
 								"sink": {
 									"name": "TextModulVerwendungID",
 									"type": "Int32",
-									"physicalType": "Int32"
+									"physicalType": "int"
 								}
 							},
 							{
 								"source": {
 									"name": "IDTextModul",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "int"
 								},
 								"sink": {
 									"name": "IDTextModul",
 									"type": "Int32",
-									"physicalType": "Int32"
+									"physicalType": "int"
 								}
 							},
 							{
 								"source": {
 									"name": "IDMain",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "int"
 								},
 								"sink": {
 									"name": "IDMain",
 									"type": "Int32",
-									"physicalType": "Int32"
+									"physicalType": "int"
 								}
 							},
 							{
 								"source": {
 									"name": "Inhalt",
-									"type": "String"
+									"type": "String",
+									"physicalType": "text"
 								},
 								"sink": {
 									"name": "Inhalt",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "nvarchar"
 								}
 							},
 							{
 								"source": {
 									"name": "Inhalt_Datum",
-									"type": "DateTime"
+									"type": "DateTime",
+									"physicalType": "datetime"
 								},
 								"sink": {
 									"name": "Inhalt_Datum",
 									"type": "DateTime",
-									"physicalType": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"name": "INHALT_NEW",
-									"type": "String"
-								},
-								"sink": {
-									"name": "INHALT_NEW",
-									"type": "String",
-									"physicalType": "String"
+									"physicalType": "datetime2"
 								}
 							}
 						],
