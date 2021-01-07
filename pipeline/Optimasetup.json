@@ -14,6 +14,7 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
+				"userProperties": [],
 				"typeProperties": {
 					"command": "python3 optima.py",
 					"resourceLinkedService": {
