@@ -16,7 +16,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"command": "python3 optima.py\n",
+					"command": "python3 optima.py",
 					"resourceLinkedService": {
 						"referenceName": "optimaStorage",
 						"type": "LinkedServiceReference"
