@@ -5,6 +5,24 @@
 		"factoryName": {
 			"value": "adfsltdev"
 		},
+		"optima_connectionString": {
+			"value": ""
+		},
+		"optimaStorage_connectionString": {
+			"value": ""
+		},
+		"optimabatch_accessKey": {
+			"value": ""
+		},
+		"optimabatch_properties_typeProperties_accountName": {
+			"value": "optima"
+		},
+		"optimabatch_properties_typeProperties_batchUri": {
+			"value": "https://optima.westeurope.batch.azure.com"
+		},
+		"optimabatch_properties_typeProperties_poolName": {
+			"value": "Optima-engine"
+		},
 		"containerUri": {
 			"value": ""
 		},

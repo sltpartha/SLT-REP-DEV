@@ -5,23 +5,23 @@
 		"factoryName": {
 			"value": "adfsltdev"
 		},
-		"LS_ADLS_BAMBOOHR_accountKey": {
+		"optima_connectionString": {
 			"value": ""
 		},
-		"LS_REST_BAMBOOHR_password": {
+		"optimaStorage_connectionString": {
 			"value": ""
 		},
-		"LS_SYNAP_connectionString": {
+		"optimabatch_accessKey": {
 			"value": ""
 		},
-		"LS_ADLS_BAMBOOHR_properties_typeProperties_url": {
-			"value": "https://dlssltdev.dfs.core.windows.net"
+		"optimabatch_properties_typeProperties_accountName": {
+			"value": "optima"
 		},
-		"LS_REST_BAMBOOHR_properties_typeProperties_url": {
-			"value": "https://{a59ddcc1352d59ce08383d989c273fd87a66421b}:x@api.bamboohr.com/api/gateway.php/summalinguae/"
+		"optimabatch_properties_typeProperties_batchUri": {
+			"value": "https://optima.westeurope.batch.azure.com"
 		},
-		"LS_REST_BAMBOOHR_properties_typeProperties_userName": {
-			"value": "a59ddcc1352d59ce08383d989c273fd87a66421b"
+		"optimabatch_properties_typeProperties_poolName": {
+			"value": "Optima-engine"
 		}
 	}
 }

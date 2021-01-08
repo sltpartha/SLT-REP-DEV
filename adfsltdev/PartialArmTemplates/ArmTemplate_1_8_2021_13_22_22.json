@@ -6,30 +6,6 @@
 			"type": "string",
 			"metadata": "Data Factory name",
 			"defaultValue": "adfsltdev"
-		},
-		"optima_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'optima'"
-		},
-		"optimaStorage_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'optimaStorage'"
-		},
-		"optimabatch_accessKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accessKey' of 'optimabatch'"
-		},
-		"optimabatch_properties_typeProperties_accountName": {
-			"type": "string",
-			"defaultValue": "optima"
-		},
-		"optimabatch_properties_typeProperties_batchUri": {
-			"type": "string",
-			"defaultValue": "https://optima.westeurope.batch.azure.com"
-		},
-		"optimabatch_properties_typeProperties_poolName": {
-			"type": "string",
-			"defaultValue": "Optima-engine"
 		}
 	},
 	"variables": {
@@ -76,35 +52,8 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/optimaStorage')]",
 				"[concat(variables('factoryId'), '/linkedServices/optimabatch')]"
 			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/optima')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"connectionString": "[parameters('optima_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/optimaStorage')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"connectionString": "[parameters('optimaStorage_connectionString')]"
-				}
-			},
-			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/optimabatch')]",
@@ -114,22 +63,20 @@
 				"annotations": [],
 				"type": "AzureBatch",
 				"typeProperties": {
-					"accountName": "[parameters('optimabatch_properties_typeProperties_accountName')]",
+					"accountName": "optima",
 					"accessKey": {
 						"type": "SecureString",
-						"value": "[parameters('optimabatch_accessKey')]"
+						"value": "**********"
 					},
-					"batchUri": "[parameters('optimabatch_properties_typeProperties_batchUri')]",
-					"poolName": "[parameters('optimabatch_properties_typeProperties_poolName')]",
+					"batchUri": "https://optima.westeurope.batch.azure.com",
+					"poolName": "Optima-engine",
 					"linkedServiceName": {
 						"referenceName": "optimaStorage",
 						"type": "LinkedServiceReference"
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/optimaStorage')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Optima-Trigger')]",
@@ -144,8 +91,7 @@
 						"pipelineReference": {
 							"referenceName": "Optimasetup",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
