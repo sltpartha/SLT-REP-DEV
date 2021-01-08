@@ -1,0 +1,25 @@
+{
+	"name": "Optima-Trigger",
+	"properties": {
+		"description": "Optima-Trigger",
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Optimasetup",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 15,
+				"startTime": "2021-01-08T12:10:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}
