@@ -1,5 +1,5 @@
 {
-	"name": "Copy_AmysqlDB_to_SysDW_T5",
+	"name": "Azure_MySqlDB_to_Synapse_DW_T5",
 	"properties": {
 		"activities": [
 			{
@@ -40,7 +40,10 @@
 								},
 								"sink": {
 									"type": "SqlDWSink",
-									"preCopyScript": "@concat('Truncate table slt_test.' , item().destination.table)",
+									"preCopyScript": {
+										"value": "@concat('Truncate table slt_test.' , item().destination.table)",
+										"type": "Expression"
+									},
 									"allowPolyBase": true,
 									"polyBaseSettings": {
 										"rejectValue": 0,
