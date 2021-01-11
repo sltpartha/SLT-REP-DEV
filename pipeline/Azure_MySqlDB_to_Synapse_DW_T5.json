@@ -14,7 +14,7 @@
 					},
 					"activities": [
 						{
-							"name": "Copy_2zx",
+							"name": "Azure_MySqlDB_to_Synapse_DW_T5",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
