@@ -40,7 +40,10 @@
 								},
 								"sink": {
 									"type": "SqlDWSink",
-									"preCopyScript": "@concat('Truncate table slt_test.' , item().destination.table)",
+									"preCopyScript": {
+										"value": "@concat('Truncate table slt_test.' , item().destination.table)",
+										"type": "Expression"
+									},
 									"tableOption": "autoCreate",
 									"disableMetricsCollection": false
 								},
@@ -614,6 +617,9 @@
 					}
 				]
 			}
+		},
+		"folder": {
+			"name": "Plunet_Old_Pipeline"
 		},
 		"annotations": []
 	}
