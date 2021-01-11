@@ -14,7 +14,7 @@
 					},
 					"activities": [
 						{
-							"name": "Copy_igh",
+							"name": "Azure_MySqlDB_to_Synapse_DW_T2",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
@@ -67,7 +67,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "SourceDataset_igh",
+									"referenceName": "Azure_MySql_T2",
 									"type": "DatasetReference",
 									"parameters": {
 										"cw_tableName": "@item().source.tableName"
@@ -76,7 +76,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "DestinationDataset_igh",
+									"referenceName": "Azure_Synspase_T2",
 									"type": "DatasetReference",
 									"parameters": {
 										"cw_table": "@item().destination.table"
