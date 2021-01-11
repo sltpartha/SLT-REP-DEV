@@ -66,7 +66,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "SourceDataset_2zx",
+									"referenceName": "Plunet_Azure_MySql_T5",
 									"type": "DatasetReference",
 									"parameters": {
 										"cw_tableName": "@item().source.tableName"
@@ -75,7 +75,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "DestinationDataset_2zx",
+									"referenceName": "Plunet_Azure_Synspase_T5",
 									"type": "DatasetReference",
 									"parameters": {
 										"cw_table": "@item().destination.table"
