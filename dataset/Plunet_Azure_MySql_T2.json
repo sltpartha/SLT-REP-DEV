@@ -1,5 +1,5 @@
 {
-	"name": "Azure_MySql_T2",
+	"name": "Plunet_Azure_MySql_T2",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureMySql_SLT_test",
