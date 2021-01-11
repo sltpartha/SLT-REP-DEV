@@ -1,5 +1,5 @@
 {
-	"name": "DestinationDataset_2zx",
+	"name": "Plunet_Azure_Synspase_T5",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_SYNAP",
