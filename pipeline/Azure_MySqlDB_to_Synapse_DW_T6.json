@@ -64,7 +64,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "SourceDataset_3cj",
+									"referenceName": "Plunet_Azure_MySql_T6",
 									"type": "DatasetReference",
 									"parameters": {
 										"cw_tableName": "@item().source.tableName"
@@ -73,7 +73,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "DestinationDataset_3cj",
+									"referenceName": "Plunet_Azure_Synspase_T6",
 									"type": "DatasetReference",
 									"parameters": {
 										"cw_schema": "@item().destination.schema",
