@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "ForEach_qt0",
+				"name": "Plunet_Azure_MySql_T1",
 				"type": "ForEach",
 				"dependsOn": [],
 				"userProperties": [],
@@ -14,7 +14,7 @@
 					},
 					"activities": [
 						{
-							"name": "Copy_qt0",
+							"name": "PlunettestDB_to_Azure_MySqlDB_T1",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
@@ -60,7 +60,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "SourceDataset_qt0",
+									"referenceName": "Plunet_DB_T1",
 									"type": "DatasetReference",
 									"parameters": {
 										"cw_tableName": "@item().source.tableName"
@@ -69,7 +69,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "DestinationDataset_qt0",
+									"referenceName": "Azure_PlunetDB_MySql_T1",
 									"type": "DatasetReference",
 									"parameters": {
 										"cw_tableName": "@item().destination.tableName"
