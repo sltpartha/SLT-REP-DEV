@@ -1,5 +1,5 @@
 {
-	"name": "Copy_PlunettestDB_to_AmysqlDB_T1",
+	"name": "PlunettestDB_to_Azure_MySqlDB_T1",
 	"properties": {
 		"activities": [
 			{
