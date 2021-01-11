@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "ForEach_dpt",
+				"name": "Plunet_Azure_MySql_T2",
 				"type": "ForEach",
 				"dependsOn": [],
 				"userProperties": [],
@@ -14,7 +14,7 @@
 					},
 					"activities": [
 						{
-							"name": "Copy_dpt",
+							"name": "PlunettestDB_to_Azure_MySqlDB_T2",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
@@ -60,7 +60,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "SourceDataset_dpt",
+									"referenceName": "Plunet_DB_T2",
 									"type": "DatasetReference",
 									"parameters": {
 										"cw_tableName": "@item().source.tableName"
@@ -69,7 +69,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "DestinationDataset_dpt",
+									"referenceName": "Azure_PlunetDB_MySql_T2",
 									"type": "DatasetReference",
 									"parameters": {
 										"cw_tableName": "@item().destination.tableName"
