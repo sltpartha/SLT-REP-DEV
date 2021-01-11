@@ -67,7 +67,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "SourceDataset_h5p",
+									"referenceName": "Azure_MySql_T1",
 									"type": "DatasetReference",
 									"parameters": {
 										"cw_tableName": "@item().source.tableName"
@@ -76,7 +76,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "DestinationDataset_h5p",
+									"referenceName": "Azure_Synspase_T1",
 									"type": "DatasetReference",
 									"parameters": {
 										"cw_table": "@item().destination.table"
