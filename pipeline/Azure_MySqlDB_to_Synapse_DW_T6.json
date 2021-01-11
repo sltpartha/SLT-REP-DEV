@@ -1,5 +1,5 @@
 {
-	"name": "Copy_AmysqlDB_to_SysDW_T6",
+	"name": "Azure_MySqlDB_to_Synapse_DW_T6",
 	"properties": {
 		"activities": [
 			{
