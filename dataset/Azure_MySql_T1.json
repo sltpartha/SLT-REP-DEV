@@ -1,5 +1,5 @@
 {
-	"name": "SourceDataset_h5p",
+	"name": "Azure_MySql_T1",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureMySql_SLT_test",
