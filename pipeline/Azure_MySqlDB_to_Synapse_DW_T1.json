@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "ForEach_h5p",
+				"name": "AMySql_Synapse_T1",
 				"type": "ForEach",
 				"dependsOn": [],
 				"userProperties": [],
