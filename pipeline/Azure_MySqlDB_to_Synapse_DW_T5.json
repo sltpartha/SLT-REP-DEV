@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "ForEach_2zx",
+				"name": "MySql_Synapse_T5",
 				"type": "ForEach",
 				"dependsOn": [],
 				"userProperties": [],
