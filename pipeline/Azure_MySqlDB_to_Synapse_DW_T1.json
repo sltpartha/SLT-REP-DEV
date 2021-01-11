@@ -1,5 +1,5 @@
 {
-	"name": "Azure_MySqlDB_to_SysDW_T1",
+	"name": "Azure_MySqlDB_to_Synapse_DW_T1",
 	"properties": {
 		"activities": [
 			{
