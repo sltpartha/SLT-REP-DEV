@@ -10,6 +10,9 @@
 				"type": "String"
 			}
 		},
+		"folder": {
+			"name": "Plunet_to_Azure_MySql"
+		},
 		"annotations": [],
 		"type": "AzureMySqlTable",
 		"schema": [],
