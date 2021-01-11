@@ -24,13 +24,13 @@
 			},
 			{
 				"pipelineReference": {
-					"referenceName": "Copy_AmysqlDB_to_SysDW_T4",
+					"referenceName": "Azure_MySqlDB_to_Synapse_DW_T4",
 					"type": "PipelineReference"
 				}
 			},
 			{
 				"pipelineReference": {
-					"referenceName": "Copy_AmysqlDB_to_SysDW_T5",
+					"referenceName": "Azure_MySqlDB_to_Synapse_DW_T5",
 					"type": "PipelineReference"
 				}
 			}

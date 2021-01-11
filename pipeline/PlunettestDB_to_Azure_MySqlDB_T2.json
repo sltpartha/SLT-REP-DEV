@@ -3163,6 +3163,9 @@
 				]
 			}
 		},
+		"folder": {
+			"name": "Plunet"
+		},
 		"annotations": []
 	}
 }

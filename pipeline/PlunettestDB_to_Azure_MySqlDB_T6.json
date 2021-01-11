@@ -978,6 +978,9 @@
 				]
 			}
 		},
+		"folder": {
+			"name": "Plunet"
+		},
 		"annotations": []
 	}
 }

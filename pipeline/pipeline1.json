@@ -9,7 +9,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
-						"referenceName": "Copy_PlunettestDB_to_AmysqlDB_T1",
+						"referenceName": "PlunettestDB_to_Azure_MySqlDB_T1",
 						"type": "PipelineReference"
 					},
 					"waitOnCompletion": true
@@ -22,7 +22,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
-						"referenceName": "Copy_PlunettestDB_to_AmysqlDB_T3",
+						"referenceName": "PlunettestDB_to_Azure_MySqlDB_T3",
 						"type": "PipelineReference"
 					},
 					"waitOnCompletion": true
@@ -35,7 +35,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
-						"referenceName": "Copy_PlunettestDB_to_AmysqlDB_T2",
+						"referenceName": "PlunettestDB_to_Azure_MySqlDB_T2",
 						"type": "PipelineReference"
 					},
 					"waitOnCompletion": true
@@ -48,7 +48,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
-						"referenceName": "Copy_PlunettestDB_to_AmysqlDB_T4",
+						"referenceName": "PlunettestDB_to_Azure_MySqlDB_T4",
 						"type": "PipelineReference"
 					},
 					"waitOnCompletion": true
@@ -61,7 +61,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
-						"referenceName": "Copy_PlunettestDB_to_AmysqlDB_T5",
+						"referenceName": "PlunettestDB_to_Azure_MySqlDB_T5",
 						"type": "PipelineReference"
 					},
 					"waitOnCompletion": true
