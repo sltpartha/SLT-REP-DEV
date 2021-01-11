@@ -1,5 +1,5 @@
 {
-	"name": "SourceDataset_dpt",
+	"name": "Plunet_DB_T2",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Plunet_Test_Database",
