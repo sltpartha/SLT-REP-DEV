@@ -35,7 +35,6 @@
 						"preCopyScript": "Truncate table mitarbeiter"
 					},
 					"enableStaging": false,
-					"validateDataConsistency": false,
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
@@ -1722,6 +1721,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "Plunet_Old_Pipeline"
+		},
 		"annotations": []
 	}
 }
