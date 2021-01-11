@@ -1,5 +1,5 @@
 {
-	"name": "SourceDataset_bwj",
+	"name": "Plunet_DB_T3",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Plunet_Test_Database",
