@@ -1,5 +1,5 @@
 {
-	"name": "DestinationDataset_c50",
+	"name": "Azure_PlunetDB_MySql_T4",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureMySql_SLT_test",
