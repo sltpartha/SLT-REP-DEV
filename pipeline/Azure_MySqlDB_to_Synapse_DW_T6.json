@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "ForEach_3cj",
+				"name": "MySql_Synapse_T6",
 				"type": "ForEach",
 				"dependsOn": [],
 				"userProperties": [],
@@ -14,7 +14,7 @@
 					},
 					"activities": [
 						{
-							"name": "Copy_3cj",
+							"name": "Azure_MySqlDB_to_Synapse_DW_T6",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
