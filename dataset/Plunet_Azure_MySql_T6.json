@@ -1,5 +1,5 @@
 {
-	"name": "SourceDataset_3cj",
+	"name": "Plunet_Azure_MySql_T6",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureMySql_SLT_test",
