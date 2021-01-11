@@ -1,5 +1,5 @@
 {
-	"name": "DestinationDataset_bwj",
+	"name": "Azure_PlunetDB_MySql_T3",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureMySql_SLT_test",
