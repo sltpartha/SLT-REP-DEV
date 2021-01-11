@@ -1,5 +1,5 @@
 {
-	"name": "SourceDataset_2zx",
+	"name": "Plunet_Azure_MySql_T5",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureMySql_SLT_test",
