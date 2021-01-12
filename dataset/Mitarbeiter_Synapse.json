@@ -1,5 +1,5 @@
 {
-	"name": "DestinationDataset_9m9",
+	"name": "Mitarbeiter_Synapse",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_SYNAP",
