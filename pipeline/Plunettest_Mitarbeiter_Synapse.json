@@ -1,5 +1,5 @@
 {
-	"name": "Mitarbeiter_Plunettest_Synapse",
+	"name": "Plunettest_Mitarbeiter_Synapse",
 	"properties": {
 		"activities": [
 			{
@@ -53,7 +53,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Mitarbeiter_Synapse",
+						"referenceName": "Synapse_Mitarbeiter",
 						"type": "DatasetReference"
 					}
 				]
