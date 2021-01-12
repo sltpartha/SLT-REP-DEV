@@ -1,5 +1,5 @@
 {
-	"name": "srija_Angebot",
+	"name": "Plunettest_Angebot_Synapse",
 	"properties": {
 		"activities": [
 			{
@@ -1504,13 +1504,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SD_Angebot",
+						"referenceName": "Plunettest_Angebot",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DD_Angebot",
+						"referenceName": "Synapse_Angebot",
 						"type": "DatasetReference"
 					}
 				]
