@@ -1,5 +1,5 @@
 {
-	"name": "AzureSynapseAnalyticsTable2_JobTM",
+	"name": "AzureMySql_Job_textmodul_2",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_SYNAP",
