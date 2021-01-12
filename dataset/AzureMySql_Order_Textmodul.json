@@ -1,5 +1,5 @@
 {
-	"name": "DestinationDataset_787_order",
+	"name": "AzureMySql_Order_Textmodul",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "SLTMySqlDatabase",
