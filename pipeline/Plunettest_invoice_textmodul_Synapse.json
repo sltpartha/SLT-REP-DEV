@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_787",
+				"name": "Invoice_Textmodul",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -120,7 +120,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Copy_787",
+						"activity": "Invoice_Textmodul",
 						"dependencyConditions": [
 							"Succeeded"
 						]
