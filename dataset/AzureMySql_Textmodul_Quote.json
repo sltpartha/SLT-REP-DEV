@@ -1,5 +1,5 @@
 {
-	"name": "DestinationDataset_787",
+	"name": "AzureMySql_Textmodul_Quote",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "SLTMySqlDatabase",
