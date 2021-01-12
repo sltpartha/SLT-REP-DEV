@@ -29,6 +29,7 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
+						"preCopyScript": "Truncate table  sltsqldbdev.business_potential",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
