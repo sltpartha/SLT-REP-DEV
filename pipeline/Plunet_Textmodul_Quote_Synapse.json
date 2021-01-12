@@ -1,9 +1,9 @@
 {
-	"name": "Plunet_textmodul_quote_Synapse",
+	"name": "Plunet_Textmodul_Quote_Synapse",
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_787",
+				"name": "Textmodul_Quote",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -120,7 +120,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Copy_787",
+						"activity": "Textmodul_Quote",
 						"dependencyConditions": [
 							"Succeeded"
 						]
