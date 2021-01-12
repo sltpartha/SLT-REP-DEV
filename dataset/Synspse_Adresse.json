@@ -1,5 +1,5 @@
 {
-	"name": "DD_Adresse",
+	"name": "Synspse_Adresse",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_SYNAP",
