@@ -1,9 +1,9 @@
 {
-	"name": "mitarbeiter_plunettest_synapse",
+	"name": "Mitarbeiter_Plunettest_Synapse",
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_9m9",
+				"name": "Mitarbeiter_Plunettest_Synapse",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
