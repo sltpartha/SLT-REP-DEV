@@ -1,5 +1,5 @@
 {
-	"name": "Mitarbeiter_Synapse",
+	"name": "Synapse_Mitarbeiter",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_SYNAP",
