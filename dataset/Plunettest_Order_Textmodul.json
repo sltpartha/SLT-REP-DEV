@@ -1,5 +1,5 @@
 {
-	"name": "SourceDataset_787_orderTM",
+	"name": "Plunettest_Order_Textmodul",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Plunet_Test_Database",
