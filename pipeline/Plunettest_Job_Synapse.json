@@ -985,7 +985,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_sxm",
+						"referenceName": "Synapse_Job",
 						"type": "DatasetReference"
 					}
 				]
