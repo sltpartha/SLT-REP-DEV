@@ -1,9 +1,9 @@
 {
-	"name": "Plunet_order_textmodul_Synapse",
+	"name": "Plunet_Order_Textmodul_Synapse",
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_787",
+				"name": "Order_Textmodul",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -115,7 +115,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Copy_787",
+						"activity": "Order_Textmodul",
 						"dependencyConditions": [
 							"Succeeded"
 						]
