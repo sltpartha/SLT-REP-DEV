@@ -99,13 +99,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_787_orderTM",
+						"referenceName": "Plunettest_Order_Textmodul",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_787_order",
+						"referenceName": "AzureMySql_Order_Textmodul",
 						"type": "DatasetReference"
 					}
 				]
@@ -231,13 +231,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "AzureMySqlTable2_OrderTM",
+						"referenceName": "AzureMySql_Order_Textmodul_2",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "AzureSynapseAnalyticsTable2_OrderTM",
+						"referenceName": "Synapse_Order_Textmodul",
 						"type": "DatasetReference"
 					}
 				]
