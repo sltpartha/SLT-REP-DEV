@@ -1,9 +1,9 @@
 {
-	"name": "srija_job",
+	"name": "Plunettest_Job_Synapse",
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_sxm",
+				"name": "Job",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -979,7 +979,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_sxm",
+						"referenceName": "Plunettest_Job",
 						"type": "DatasetReference"
 					}
 				],
