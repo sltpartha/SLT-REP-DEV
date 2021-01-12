@@ -1,5 +1,5 @@
 {
-	"name": "DD_Quote_Property",
+	"name": "Synapse_Angeboteigenschaft",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_SYNAP",
