@@ -1,9 +1,9 @@
 {
-	"name": "srija_angeboteigenschaft",
+	"name": "Plunettest_Angeboteigenschaft_Synapse",
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_sxm",
+				"name": "Angeboteigenschaft",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -104,13 +104,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SD_Quote_Property",
+						"referenceName": "Plunettest_Angeboteigenschaft",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DD_Quote_Property",
+						"referenceName": "Synapse_Angeboteigenschaft",
 						"type": "DatasetReference"
 					}
 				]
