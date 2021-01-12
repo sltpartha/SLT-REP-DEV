@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Plunettest_Mitarbeiter_Synapse",
+				"name": "Mitarbeiter",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
