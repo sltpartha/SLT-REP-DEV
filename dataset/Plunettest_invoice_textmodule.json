@@ -1,5 +1,5 @@
 {
-	"name": "SourceDataset_invoice_textmodule",
+	"name": "Plunettest_invoice_textmodule",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Plunet_Test_Database",
