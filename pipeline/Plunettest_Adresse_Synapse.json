@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Plunettest_Adresse_Synapse",
+				"name": "Adresse",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
