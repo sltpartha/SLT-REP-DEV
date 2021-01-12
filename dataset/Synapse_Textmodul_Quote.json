@@ -1,5 +1,5 @@
 {
-	"name": "AzureSynapseAnalyticsTable2",
+	"name": "Synapse_Textmodul_Quote",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_SYNAP",
