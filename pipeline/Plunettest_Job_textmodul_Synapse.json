@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_787",
+				"name": "Job_Textmodul",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -115,7 +115,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Copy_787",
+						"activity": "Job_Textmodul",
 						"dependencyConditions": [
 							"Succeeded"
 						]
