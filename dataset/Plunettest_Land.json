@@ -1,5 +1,5 @@
 {
-	"name": "Plunettest_Land_Synapse",
+	"name": "Plunettest_Land",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Plunet_Test_Database",
