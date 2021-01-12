@@ -1,5 +1,5 @@
 {
-	"name": "SourceDataset_sxm",
+	"name": "Plunettest_Job",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Plunet_Test_Database",
