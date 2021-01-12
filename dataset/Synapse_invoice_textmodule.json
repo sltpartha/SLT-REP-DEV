@@ -1,5 +1,5 @@
 {
-	"name": "AzureSynapseAnalyticsTable2_invoice_textmodule",
+	"name": "Synapse_invoice_textmodule",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_SYNAP",
