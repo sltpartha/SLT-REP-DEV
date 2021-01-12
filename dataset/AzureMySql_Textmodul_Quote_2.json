@@ -1,5 +1,5 @@
 {
-	"name": "AzureMySqlTable2",
+	"name": "AzureMySql_Textmodul_Quote_2",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "SLTMySqlDatabase",
