@@ -5,6 +5,9 @@
 			"referenceName": "Plunet_Test_Database",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "Sreeja Dataset"
+		},
 		"annotations": [],
 		"type": "MySqlTable",
 		"schema": [],
