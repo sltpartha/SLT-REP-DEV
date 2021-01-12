@@ -104,13 +104,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_787",
+						"referenceName": "Plunettest_Textmodul_Quote",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_787",
+						"referenceName": "AzureMySql_Textmodul_Quote",
 						"type": "DatasetReference"
 					}
 				]
@@ -236,13 +236,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "AzureMySqlTable2",
+						"referenceName": "AzureMySql_Textmodul_Quote_2",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "AzureSynapseAnalyticsTable2",
+						"referenceName": "Synapse_Textmodul_Quote",
 						"type": "DatasetReference"
 					}
 				]
