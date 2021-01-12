@@ -6,7 +6,7 @@
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
-			"name": "Srija_DS"
+			"name": "Sreeja Dataset"
 		},
 		"annotations": [],
 		"type": "AzureSqlDWTable",
