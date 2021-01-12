@@ -1,5 +1,5 @@
 {
-	"name": "DestinationDataset_sxm",
+	"name": "Synapse_Job",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_SYNAP",
