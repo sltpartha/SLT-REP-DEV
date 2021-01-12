@@ -1,5 +1,5 @@
 {
-	"name": "SourceDataset_787_JobTM",
+	"name": "Plunettest_Job_textmodul",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Plunet_Test_Database",
