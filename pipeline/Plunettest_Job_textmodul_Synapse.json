@@ -99,13 +99,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_787_JobTM",
+						"referenceName": "Plunettest_Job_textmodul",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_787_job",
+						"referenceName": "AzureMySql_Job_textmodul",
 						"type": "DatasetReference"
 					}
 				]
@@ -231,13 +231,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "AzureMySqlTable2_JobTM",
+						"referenceName": "AzureMySql_Job_textmodul_2",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "AzureSynapseAnalyticsTable2_JobTM",
+						"referenceName": "Synapse_Job_textmodul",
 						"type": "DatasetReference"
 					}
 				]
