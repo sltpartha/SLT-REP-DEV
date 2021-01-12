@@ -1,5 +1,5 @@
 {
-	"name": "AzureMySqlTable2_OrderTM",
+	"name": "AzureMySql_Order_Textmodul_2",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "SLTMySqlDatabase",
