@@ -1,5 +1,5 @@
 {
-	"name": "srija_Land",
+	"name": "Plunettest_Land_Synapse",
 	"properties": {
 		"activities": [
 			{
@@ -126,13 +126,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SD_Land",
+						"referenceName": "Plunettest_Land",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DD_Land",
+						"referenceName": "Synapse_Land",
 						"type": "DatasetReference"
 					}
 				]
