@@ -47,13 +47,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_9m9",
+						"referenceName": "Plunettest_Mitarbeiter",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_9m9",
+						"referenceName": "Mitarbeiter_Synapse",
 						"type": "DatasetReference"
 					}
 				]
