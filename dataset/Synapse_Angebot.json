@@ -1,5 +1,5 @@
 {
-	"name": "DD_Angebot",
+	"name": "Synapse_Angebot",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_SYNAP",
