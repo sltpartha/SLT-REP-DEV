@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_sxm",
+				"name": "Plunettest_Adresse_Synapse",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -290,13 +290,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SD_Adresse",
+						"referenceName": "Plunettest_Adresse",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DD_Adresse",
+						"referenceName": "Synspse_Adresse",
 						"type": "DatasetReference"
 					}
 				]
