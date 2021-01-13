@@ -1,5 +1,5 @@
 {
-	"name": "DestinationDataset_lna",
+	"name": "DD_APAC_Holidays",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_SYNAP",
@@ -10,7 +10,7 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "HR",
-			"table": "Geo_Specific_Holidays"
+			"table": "APAC_Holidays"
 		}
 	}
 }
