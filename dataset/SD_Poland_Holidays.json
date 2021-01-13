@@ -8,7 +8,7 @@
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
-			"sheetName": "APAC Holidays",
+			"sheetName": "Poland Holidays",
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": "2021 Global Holidays by geo.xlsx",
