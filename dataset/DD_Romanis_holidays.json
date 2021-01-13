@@ -1,0 +1,16 @@
+{
+	"name": "DD_Romanis_holidays",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SYNAP",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "HR",
+			"table": "Romanis_holidays"
+		}
+	}
+}
