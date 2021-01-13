@@ -1,0 +1,16 @@
+{
+	"name": "DD_CAD_Holidays",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SYNAP",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "HR",
+			"table": "CAD_Holidays"
+		}
+	}
+}
