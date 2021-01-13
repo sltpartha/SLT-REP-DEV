@@ -14,7 +14,7 @@
 				"fileName": "2021 Global Holidays by geo.xlsx",
 				"fileSystem": "geospecificholidays"
 			},
-			"range": "B1",
+			"range": "B1:F100",
 			"firstRowAsHeader": true
 		},
 		"schema": [
