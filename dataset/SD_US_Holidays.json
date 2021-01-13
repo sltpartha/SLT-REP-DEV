@@ -1,0 +1,43 @@
+{
+	"name": "SD_US_Holidays",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "US Holidays",
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "2021 Global Holidays by geo.xlsx",
+				"fileSystem": "geospecificholidays"
+			},
+			"range": "B1",
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "Date",
+				"type": "String"
+			},
+			{
+				"name": "Day",
+				"type": "String"
+			},
+			{
+				"name": "Holiday",
+				"type": "String"
+			},
+			{
+				"name": "Location",
+				"type": "String"
+			},
+			{
+				"name": "Comment",
+				"type": "String"
+			}
+		]
+	}
+}
