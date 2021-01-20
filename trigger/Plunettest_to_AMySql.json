@@ -33,6 +33,12 @@
 					"referenceName": "PlunettestDB_to_Azure_MySqlDB_T5",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "PlunettestDB_to_Azure_MySqlDB_T6",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
