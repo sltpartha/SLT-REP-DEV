@@ -27,6 +27,12 @@
 					"referenceName": "Azure_MySqlDB_to_Synapse_DW_T4",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Azure_MySqlDB_to_Synapse_DW_T5",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
