@@ -53,13 +53,7 @@
 									"tableOption": "autoCreate",
 									"disableMetricsCollection": false
 								},
-								"enableStaging": true,
-								"stagingSettings": {
-									"linkedServiceName": {
-										"referenceName": "AzureBlobStorage1",
-										"type": "LinkedServiceReference"
-									}
-								},
+								"enableStaging": false,
 								"translator": {
 									"value": "@item().copyActivity.translator",
 									"type": "Expression"
