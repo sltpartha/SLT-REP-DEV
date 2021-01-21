@@ -1,0 +1,26 @@
+{
+	"name": "Plunet_Azure_MySql_T5",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureMySql_SLT_test",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"cw_tableName": {
+				"type": "String"
+			}
+		},
+		"folder": {
+			"name": "Azure_MySql_to_Azure_Synapse_DW"
+		},
+		"annotations": [],
+		"type": "AzureMySqlTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": {
+				"value": "@dataset().cw_tableName",
+				"type": "Expression"
+			}
+		}
+	}
+}

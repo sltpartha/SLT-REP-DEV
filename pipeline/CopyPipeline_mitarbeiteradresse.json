@@ -1,0 +1,387 @@
+{
+	"name": "CopyPipeline_mitarbeiteradresse",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_lye",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "mitarbeiteradresse"
+					},
+					{
+						"name": "Destination",
+						"value": ".mitarbeiteradresse"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "AzureMySqlSource"
+					},
+					"sink": {
+						"type": "SqlDWSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": true,
+					"stagingSettings": {
+						"linkedServiceName": {
+							"referenceName": "AzureBlobStorage1",
+							"type": "LinkedServiceReference"
+						}
+					},
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "AdresseID",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "AdresseID",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "IDMitarbeiter",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "IDMitarbeiter",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Typ",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "Typ",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Strasse",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "Strasse",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Strasse2",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "Strasse2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PLZ",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "PLZ",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Ort",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "Ort",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PLZ_Postfach",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "PLZ_Postfach",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Postfach",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "Postfach",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "IDLand",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "IDLand",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Vorname",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "Vorname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Nachname",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "Nachname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Nickname",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "Nickname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Bundesland",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "Bundesland",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Bundesland_enc",
+									"type": "Byte[]",
+									"physicalType": "blob"
+								},
+								"sink": {
+									"name": "Bundesland_enc",
+									"type": "Byte[]"
+								}
+							},
+							{
+								"source": {
+									"name": "Nickname_enc",
+									"type": "Byte[]",
+									"physicalType": "blob"
+								},
+								"sink": {
+									"name": "Nickname_enc",
+									"type": "Byte[]"
+								}
+							},
+							{
+								"source": {
+									"name": "Nachname_enc",
+									"type": "Byte[]",
+									"physicalType": "blob"
+								},
+								"sink": {
+									"name": "Nachname_enc",
+									"type": "Byte[]"
+								}
+							},
+							{
+								"source": {
+									"name": "Vorname_enc",
+									"type": "Byte[]",
+									"physicalType": "blob"
+								},
+								"sink": {
+									"name": "Vorname_enc",
+									"type": "Byte[]"
+								}
+							},
+							{
+								"source": {
+									"name": "IDLand_enc",
+									"type": "Byte[]",
+									"physicalType": "blob"
+								},
+								"sink": {
+									"name": "IDLand_enc",
+									"type": "Byte[]"
+								}
+							},
+							{
+								"source": {
+									"name": "Postfach_enc",
+									"type": "Byte[]",
+									"physicalType": "blob"
+								},
+								"sink": {
+									"name": "Postfach_enc",
+									"type": "Byte[]"
+								}
+							},
+							{
+								"source": {
+									"name": "PLZ_Postfach_enc",
+									"type": "Byte[]",
+									"physicalType": "blob"
+								},
+								"sink": {
+									"name": "PLZ_Postfach_enc",
+									"type": "Byte[]"
+								}
+							},
+							{
+								"source": {
+									"name": "Ort_enc",
+									"type": "Byte[]",
+									"physicalType": "blob"
+								},
+								"sink": {
+									"name": "Ort_enc",
+									"type": "Byte[]"
+								}
+							},
+							{
+								"source": {
+									"name": "PLZ_enc",
+									"type": "Byte[]",
+									"physicalType": "blob"
+								},
+								"sink": {
+									"name": "PLZ_enc",
+									"type": "Byte[]"
+								}
+							},
+							{
+								"source": {
+									"name": "Strasse2_enc",
+									"type": "Byte[]",
+									"physicalType": "blob"
+								},
+								"sink": {
+									"name": "Strasse2_enc",
+									"type": "Byte[]"
+								}
+							},
+							{
+								"source": {
+									"name": "Strasse_enc",
+									"type": "Byte[]",
+									"physicalType": "blob"
+								},
+								"sink": {
+									"name": "Strasse_enc",
+									"type": "Byte[]"
+								}
+							},
+							{
+								"source": {
+									"name": "GeographischeLaenge",
+									"type": "Double",
+									"physicalType": "double"
+								},
+								"sink": {
+									"name": "GeographischeLaenge",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "GeographischeBreite",
+									"type": "Double",
+									"physicalType": "double"
+								},
+								"sink": {
+									"name": "GeographischeBreite",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "Buero",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "Buero",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VatByRegion",
+									"type": "Double",
+									"physicalType": "double"
+								},
+								"sink": {
+									"name": "VatByRegion",
+									"type": "Double"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_lye",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_lye",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}

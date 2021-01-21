@@ -1,0 +1,190 @@
+{
+	"name": "SourceDataset_lye",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureMySql_SLT_test",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureMySqlTable",
+		"schema": [
+			{
+				"name": "AdresseID",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "IDMitarbeiter",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Typ",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Strasse",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Strasse2",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "PLZ",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Ort",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "PLZ_Postfach",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Postfach",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "IDLand",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Vorname",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Nachname",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Nickname",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Bundesland",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Bundesland_enc",
+				"type": "blob",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Nickname_enc",
+				"type": "blob",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Nachname_enc",
+				"type": "blob",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Vorname_enc",
+				"type": "blob",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "IDLand_enc",
+				"type": "blob",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Postfach_enc",
+				"type": "blob",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "PLZ_Postfach_enc",
+				"type": "blob",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Ort_enc",
+				"type": "blob",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "PLZ_enc",
+				"type": "blob",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Strasse2_enc",
+				"type": "blob",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Strasse_enc",
+				"type": "blob",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "GeographischeLaenge",
+				"type": "double",
+				"precision": 0,
+				"scale": 31
+			},
+			{
+				"name": "GeographischeBreite",
+				"type": "double",
+				"precision": 0,
+				"scale": 31
+			},
+			{
+				"name": "Buero",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "VatByRegion",
+				"type": "double",
+				"precision": 0,
+				"scale": 31
+			}
+		],
+		"typeProperties": {
+			"tableName": "mitarbeiteradresse"
+		}
+	}
+}
