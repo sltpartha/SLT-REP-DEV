@@ -15,7 +15,7 @@
 		"typeProperties": {
 			"recurrence": {
 				"frequency": "Minute",
-				"interval": 1,
+				"interval": 2,
 				"startTime": "2021-01-21T13:39:00Z",
 				"timeZone": "UTC"
 			}
