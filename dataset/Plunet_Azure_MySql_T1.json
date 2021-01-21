@@ -2,7 +2,7 @@
 	"name": "Plunet_Azure_MySql_T1",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureMySql_SLT_test",
+			"referenceName": "AzureMySqlDev",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
