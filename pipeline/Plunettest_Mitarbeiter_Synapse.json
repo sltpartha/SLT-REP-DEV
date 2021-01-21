@@ -30,6 +30,7 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
+						"preCopyScript": "DROP TABLE [slt_test].[mitarbeiter]",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
