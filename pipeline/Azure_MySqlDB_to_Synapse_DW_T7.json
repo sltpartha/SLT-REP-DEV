@@ -29,7 +29,7 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"preCopyScript": "@concat('Truncate table slt_test.' , item().destination.table)",
+						"preCopyScript": "Truncate table slt_test.log_mitarbeiter",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
