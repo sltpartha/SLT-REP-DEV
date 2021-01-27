@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Mitarbeiter",
+				"name": "Log_Mitarbeiter",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -25,12 +25,10 @@
 				],
 				"typeProperties": {
 					"source": {
-						"type": "MySqlSource",
-						"query": "select \n MitarbeiterID \n      , Aktiv \n      , Status \n      , Vorname \n      , Nachname \n      , AnlageDatum \n      , MandantID \n      , CurrencyID \n,StundenerfassungPreis,\nZahlungsfrist,\narbeitsverhaeltnis,\nFirstJob\nfrom `mitarbeiter`"
+						"type": "MySqlSource"
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"preCopyScript": "truncate table slt_test.mitarbeiter",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
@@ -41,134 +39,167 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "MitarbeiterID",
+									"name": "LogID",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "MitarbeiterID",
+									"name": "LogID",
 									"type": "Int32",
-									"physicalType": "int"
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "Aktiv",
+									"name": "IDBenutzer",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "Aktiv",
+									"name": "IDBenutzer",
 									"type": "Int32",
-									"physicalType": "int"
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "Status",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "Status",
-									"type": "Int32",
-									"physicalType": "int"
-								}
-							},
-							{
-								"source": {
-									"name": "Vorname",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Vorname",
-									"type": "String",
-									"physicalType": "nvarchar"
-								}
-							},
-							{
-								"source": {
-									"name": "Nachname",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Nachname",
-									"type": "String",
-									"physicalType": "nvarchar"
-								}
-							},
-							{
-								"source": {
-									"name": "AnlageDatum",
+									"name": "Datum",
 									"type": "DateTime"
 								},
 								"sink": {
-									"name": "AnlageDatum",
+									"name": "Datum",
 									"type": "DateTime",
-									"physicalType": "datetime2"
+									"physicalType": "DateTime"
 								}
 							},
 							{
 								"source": {
-									"name": "MandantID",
+									"name": "IDPartner",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "MandantID",
+									"name": "IDPartner",
 									"type": "Int32",
-									"physicalType": "int"
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "CurrencyID",
+									"name": "IDLogAktion",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "CurrencyID",
+									"name": "IDLogAktion",
 									"type": "Int32",
-									"physicalType": "int"
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "StundenerfassungPreis",
-									"type": "Double"
-								},
-								"sink": {
-									"name": "StundenerfassungPreis",
-									"type": "Single",
-									"physicalType": "float"
-								}
-							},
-							{
-								"source": {
-									"name": "Zahlungsfrist",
+									"name": "IDLogArt",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "Zahlungsfrist",
+									"name": "IDLogArt",
 									"type": "Int32",
-									"physicalType": "int"
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "arbeitsverhaeltnis",
+									"name": "IDStatus_Alt",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "arbeitsverhaeltnis",
+									"name": "IDStatus_Alt",
 									"type": "Int32",
-									"physicalType": "int"
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "FirstJob",
+									"name": "IDStatus_Neu",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "IDStatus_Neu",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Text_Alt",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Text_Alt",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Text_Neu",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Text_Neu",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Anzeigename",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Anzeigename",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Beschreibung",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Beschreibung",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Datum_Alt",
 									"type": "DateTime"
 								},
 								"sink": {
-									"name": "FirstJob",
+									"name": "Datum_Alt",
 									"type": "DateTime",
-									"physicalType": "datetime2"
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Datum_Neu",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Datum_Neu",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "SteuerungDurch",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "SteuerungDurch",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							}
 						],
@@ -181,13 +212,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Plunettest_Mitarbeiter",
+						"referenceName": "Plunettest_log_Mitarbeiter",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "Synapse_Mitarbeiter",
+						"referenceName": "Synapse_log_Mitarbeiter",
 						"type": "DatasetReference"
 					}
 				]
