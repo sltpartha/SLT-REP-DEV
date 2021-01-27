@@ -29,7 +29,6 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"preCopyScript": "@concat('Truncate table slt_test.' , item().destination.table)",
 						"disableMetricsCollection": false
 					},
 					"enableStaging": true,
