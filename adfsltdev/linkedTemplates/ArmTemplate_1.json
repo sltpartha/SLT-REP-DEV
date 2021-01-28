@@ -13,97 +13,469 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/DS_REST_HR_EmployeeTimeOff')]",
+			"name": "[concat(parameters('factoryName'), '/Azure_PlunetDB_MySql_T6')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "LS_REST_BAMBOOHR",
+					"referenceName": "AzureMySql_SLT_test",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"cw_tableName": {
+						"type": "String"
+					}
+				},
 				"folder": {
-					"name": "HR/HR REST ENDPOINT"
+					"name": "Plunet_to_Azure_MySql"
 				},
 				"annotations": [],
-				"type": "RestResource",
+				"type": "AzureMySqlTable",
+				"schema": [],
 				"typeProperties": {
-					"relativeUrl": {
-						"value": "@concat('v1/time_off/requests/?start=2019-09-01','&end=',adddays(utcnow(),31,'yyyy-MM-dd'))",
+					"tableName": {
+						"value": "@dataset().cw_tableName",
 						"type": "Expression"
 					}
-				},
-				"schema": []
+				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/DS_REST_HR_EmploymentStatus')]",
+			"name": "[concat(parameters('factoryName'), '/Azure_PlunetDB_MySql_T7')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "LS_REST_BAMBOOHR",
+					"referenceName": "AzureMySql_SLT_test",
 					"type": "LinkedServiceReference"
 				},
-				"folder": {
-					"name": "HR/HR REST ENDPOINT"
-				},
 				"annotations": [],
-				"type": "RestResource",
+				"type": "AzureMySqlTable",
+				"schema": [
+					{
+						"name": "LogID",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDBenutzer",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Datum",
+						"type": "datetime",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDPartner",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDLogAktion",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDLogArt",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDStatus_Alt",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDStatus_Neu",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Text_Alt",
+						"type": "text",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Text_Neu",
+						"type": "text",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Anzeigename",
+						"type": "text",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Beschreibung",
+						"type": "text",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Datum_Alt",
+						"type": "datetime",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Datum_Neu",
+						"type": "datetime",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "SteuerungDurch",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					}
+				],
 				"typeProperties": {
-					"relativeUrl": "v1/employees/all/tables/employmentStatus  "
-				},
-				"schema": []
+					"tableName": "log_mitarbeiter"
+				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/DS_REST_HR_JobInformation')]",
+			"name": "[concat(parameters('factoryName'), '/Optima_BnkRozKwotyView')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "LS_REST_BAMBOOHR",
+					"referenceName": "OptimaServerLive",
 					"type": "LinkedServiceReference"
 				},
-				"folder": {
-					"name": "HR/HR REST ENDPOINT"
-				},
 				"annotations": [],
-				"type": "RestResource",
+				"type": "SqlServerTable",
+				"schema": [],
 				"typeProperties": {
-					"relativeUrl": "v1/employees/all/tables/jobInfo"
-				},
-				"schema": []
+					"schema": "CDN",
+					"table": "BnkRozKwotyView"
+				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/DS_REST_HR_who_is_out')]",
+			"name": "[concat(parameters('factoryName'), '/Optima_Synapse_BnkRozKwotyView')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "LS_REST_BAMBOOHR",
+					"referenceName": "LS_SYNAP",
 					"type": "LinkedServiceReference"
 				},
-				"folder": {
-					"name": "HR/HR REST ENDPOINT"
-				},
 				"annotations": [],
-				"type": "RestResource",
+				"type": "AzureSqlDWTable",
+				"schema": [],
 				"typeProperties": {
-					"relativeUrl": {
-						"value": "@concat('v1/time_off/whos_out/?start=2019-09-01','&end=',adddays(utcnow(),31,'yyyy-MM-dd'))",
+					"schema": "optima",
+					"table": {
+						"value": "BnkRozKwotyView",
 						"type": "Expression"
 					}
-				},
-				"schema": []
+				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/DS_SYNAPSE_HR_EmployeeCompensation')]",
+			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_MySql_T1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureMySql_SLT_test",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"cw_tableName": {
+						"type": "String"
+					}
+				},
+				"folder": {
+					"name": "Azure_MySql_to_Azure_Synapse_DW"
+				},
+				"annotations": [],
+				"type": "AzureMySqlTable",
+				"schema": [],
+				"typeProperties": {
+					"tableName": {
+						"value": "@dataset().cw_tableName",
+						"type": "Expression"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_MySql_T2')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureMySql_SLT_test",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"cw_tableName": {
+						"type": "String"
+					}
+				},
+				"folder": {
+					"name": "Azure_MySql_to_Azure_Synapse_DW"
+				},
+				"annotations": [],
+				"type": "AzureMySqlTable",
+				"schema": [],
+				"typeProperties": {
+					"tableName": {
+						"value": "@dataset().cw_tableName",
+						"type": "Expression"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_MySql_T3')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureMySql_SLT_test",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"cw_tableName": {
+						"type": "String"
+					}
+				},
+				"folder": {
+					"name": "Azure_MySql_to_Azure_Synapse_DW"
+				},
+				"annotations": [],
+				"type": "AzureMySqlTable",
+				"schema": [],
+				"typeProperties": {
+					"tableName": {
+						"value": "@dataset().cw_tableName",
+						"type": "Expression"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_MySql_T4')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureMySql_SLT_test",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"cw_tableName": {
+						"type": "String"
+					}
+				},
+				"folder": {
+					"name": "Azure_MySql_to_Azure_Synapse_DW"
+				},
+				"annotations": [],
+				"type": "AzureMySqlTable",
+				"schema": [],
+				"typeProperties": {
+					"tableName": {
+						"value": "@dataset().cw_tableName",
+						"type": "Expression"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_MySql_T5')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureMySql_SLT_test",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"cw_tableName": {
+						"type": "String"
+					}
+				},
+				"folder": {
+					"name": "Azure_MySql_to_Azure_Synapse_DW"
+				},
+				"annotations": [],
+				"type": "AzureMySqlTable",
+				"schema": [],
+				"typeProperties": {
+					"tableName": {
+						"value": "@dataset().cw_tableName",
+						"type": "Expression"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_MySql_T6')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureMySql_SLT_test",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"cw_tableName": {
+						"type": "String"
+					}
+				},
+				"folder": {
+					"name": "Azure_MySql_to_Azure_Synapse_DW"
+				},
+				"annotations": [],
+				"type": "AzureMySqlTable",
+				"schema": [],
+				"typeProperties": {
+					"tableName": {
+						"value": "@dataset().cw_tableName",
+						"type": "Expression"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_MySql_T7')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureMySql_SLT_test",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureMySqlTable",
+				"schema": [
+					{
+						"name": "LogID",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDBenutzer",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Datum",
+						"type": "datetime",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDPartner",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDLogAktion",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDLogArt",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDStatus_Alt",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDStatus_Neu",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Text_Alt",
+						"type": "text",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Text_Neu",
+						"type": "text",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Anzeigename",
+						"type": "text",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Beschreibung",
+						"type": "text",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Datum_Alt",
+						"type": "datetime",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Datum_Neu",
+						"type": "datetime",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "SteuerungDurch",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					}
+				],
+				"typeProperties": {
+					"tableName": "log_mitarbeiter"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_Synspase_T1')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -111,21 +483,29 @@
 					"referenceName": "LS_SYNAP",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"cw_table": {
+						"type": "String"
+					}
+				},
 				"folder": {
-					"name": "HR/SYNAPSE"
+					"name": "Azure_MySql_to_Azure_Synapse_DW"
 				},
 				"annotations": [],
 				"type": "AzureSqlDWTable",
 				"schema": [],
 				"typeProperties": {
-					"schema": "HR",
-					"table": "EmpCompensation"
+					"schema": "slt_test",
+					"table": {
+						"value": "@dataset().cw_table",
+						"type": "Expression"
+					}
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/DS_SYNAPSE_HR_EmployeeDirectory')]",
+			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_Synspase_T2')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -133,21 +513,29 @@
 					"referenceName": "LS_SYNAP",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"cw_table": {
+						"type": "String"
+					}
+				},
 				"folder": {
-					"name": "HR/SYNAPSE"
+					"name": "Azure_MySql_to_Azure_Synapse_DW"
 				},
 				"annotations": [],
 				"type": "AzureSqlDWTable",
 				"schema": [],
 				"typeProperties": {
-					"schema": "HR",
-					"table": "EmpDirectory"
+					"schema": "slt_test",
+					"table": {
+						"value": "@dataset().cw_table",
+						"type": "Expression"
+					}
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/DS_SYNAPSE_HR_EmployeeJobInformation')]",
+			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_Synspase_T3')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -155,21 +543,29 @@
 					"referenceName": "LS_SYNAP",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"cw_table": {
+						"type": "String"
+					}
+				},
 				"folder": {
-					"name": "HR/SYNAPSE"
+					"name": "Azure_MySql_to_Azure_Synapse_DW"
 				},
 				"annotations": [],
 				"type": "AzureSqlDWTable",
 				"schema": [],
 				"typeProperties": {
-					"schema": "HR",
-					"table": "EmpJobInformation"
+					"schema": "slt_test",
+					"table": {
+						"value": "@dataset().cw_table",
+						"type": "Expression"
+					}
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/DS_SYNAPSE_HR_EmployeeTimeOff')]",
+			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_Synspase_T4')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -177,21 +573,29 @@
 					"referenceName": "LS_SYNAP",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"cw_table": {
+						"type": "String"
+					}
+				},
 				"folder": {
-					"name": "HR/SYNAPSE"
+					"name": "Azure_MySql_to_Azure_Synapse_DW"
 				},
 				"annotations": [],
 				"type": "AzureSqlDWTable",
 				"schema": [],
 				"typeProperties": {
-					"schema": "HR",
-					"table": "EmpTimeOff"
+					"schema": "slt_test",
+					"table": {
+						"value": "@dataset().cw_table",
+						"type": "Expression"
+					}
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/DS_SYNAPSE_HR_EmploymentStatus')]",
+			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_Synspase_T5')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -199,21 +603,29 @@
 					"referenceName": "LS_SYNAP",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"cw_table": {
+						"type": "String"
+					}
+				},
 				"folder": {
-					"name": "HR/SYNAPSE"
+					"name": "Azure_MySql_to_Azure_Synapse_DW"
 				},
 				"annotations": [],
 				"type": "AzureSqlDWTable",
 				"schema": [],
 				"typeProperties": {
-					"schema": "HR",
-					"table": "EmploymentStatus"
+					"schema": "slt_test",
+					"table": {
+						"value": "@dataset().cw_table",
+						"type": "Expression"
+					}
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/DS_SYNAPSE_HR_Who_is_out')]",
+			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_Synspase_T6')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -221,3685 +633,178 @@
 					"referenceName": "LS_SYNAP",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"cw_schema": {
+						"type": "String"
+					},
+					"cw_table": {
+						"type": "String"
+					}
+				},
 				"folder": {
-					"name": "HR/SYNAPSE"
+					"name": "Azure_MySql_to_Azure_Synapse_DW"
 				},
 				"annotations": [],
 				"type": "AzureSqlDWTable",
 				"schema": [],
 				"typeProperties": {
-					"schema": "HR",
-					"table": "WhoIsOut"
+					"schema": "slt_test",
+					"table": {
+						"value": "@dataset().cw_table",
+						"type": "Expression"
+					}
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Employee Compensation')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
+			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_Synspase_T7')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"activities": [
+				"linkedServiceName": {
+					"referenceName": "LS_SYNAP",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlDWTable",
+				"schema": [
 					{
-						"name": "PL_DATA_HR_TO_ADLS_EmployeeCompensation",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [
-							{
-								"name": "Destination",
-								"value": "cntrawzonesltdev/BambooHR/FILE_BAMBOOHR"
-							}
-						],
-						"typeProperties": {
-							"source": {
-								"type": "RestSource",
-								"httpRequestTimeout": "00:01:40",
-								"requestInterval": "00.00:00:00.010",
-								"requestMethod": "GET"
-							},
-							"sink": {
-								"type": "JsonSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
-								},
-								"formatSettings": {
-									"type": "JsonWriteSettings",
-									"filePattern": "setOfObjects"
-								}
-							},
-							"enableStaging": false,
-							"validateDataConsistency": false
-						},
-						"inputs": [
-							{
-								"referenceName": "DS_REST_HR_EmployeeCompensation",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DS_ADLS_RAW_HR_EmployeeCompensation",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
+						"name": "LogID",
+						"type": "int",
+						"precision": 10
 					},
 					{
-						"name": "PL_TRANS_ADLK_HR_EmpCompensation",
-						"type": "Copy",
-						"dependsOn": [
-							{
-								"activity": "PL_DATA_HR_TO_ADLS_EmployeeCompensation",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [
-							{
-								"name": "Source",
-								"value": "cntrawzonesltdev/BambooHR/EmployeeCompensation"
-							},
-							{
-								"name": "Destination",
-								"value": "cntcuratedzonesltdev/Bamboo HR/TestCompensation"
-							}
-						],
-						"typeProperties": {
-							"source": {
-								"type": "JsonSource",
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true
-								},
-								"formatSettings": {
-									"type": "JsonReadSettings"
-								}
-							},
-							"sink": {
-								"type": "ParquetSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
-								},
-								"formatSettings": {
-									"type": "ParquetWriteSettings"
-								}
-							},
-							"enableStaging": false,
-							"validateDataConsistency": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"path": "$['id']"
-										},
-										"sink": {
-											"name": "id",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"path": "$['employeeId']"
-										},
-										"sink": {
-											"name": "employeeId",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"path": "$['startDate']"
-										},
-										"sink": {
-											"name": "startDate",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"path": "$['rate']['currency']"
-										},
-										"sink": {
-											"name": "currency",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "$['rate']['value']"
-										},
-										"sink": {
-											"name": "pay"
-										}
-									},
-									{
-										"source": {
-											"path": "$['type']"
-										},
-										"sink": {
-											"name": "type",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "$['exempt']"
-										},
-										"sink": {
-											"name": "exempt",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "$['reason']"
-										},
-										"sink": {
-											"name": "reason",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "$['comment']"
-										},
-										"sink": {
-											"name": "comment",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "$['paidPer']"
-										},
-										"sink": {
-											"name": "paidPer",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "$['paySchedule']"
-										},
-										"sink": {
-											"name": "paySchedule",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "$['overtimeRate']['currency']"
-										},
-										"sink": {
-											"name": "currencyOvertime"
-										}
-									},
-									{
-										"source": {
-											"path": "$['overtimeRate']['value']"
-										},
-										"sink": {
-											"name": "valueOvertime"
-										}
-									}
-								]
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "DS_ADLS_RAW_HR_EmployeeCompensation",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DS_ADLS_CURATED_HR",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
+						"name": "IDBenutzer",
+						"type": "int",
+						"precision": 10
 					},
 					{
-						"name": "PL_DATA_ADLS_CURATED_TO_SYNAP_EmployeeCompensation",
-						"type": "Copy",
-						"dependsOn": [
-							{
-								"activity": "PL_TRANS_ADLK_HR_EmpCompensation",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [
-							{
-								"name": "Source",
-								"value": "cntcuratedzonesltdev/Bamboo HR/EmployeeCompensation.parquet"
-							},
-							{
-								"name": "Destination",
-								"value": "HR.EmpCompensation"
-							}
-						],
-						"typeProperties": {
-							"source": {
-								"type": "ParquetSource",
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true
-								}
-							},
-							"sink": {
-								"type": "SqlDWSink",
-								"preCopyScript": "TRUNCATE TABLE HR.EmpCompensation",
-								"allowPolyBase": true,
-								"polyBaseSettings": {
-									"rejectValue": 0,
-									"rejectType": "value",
-									"useTypeDefault": false
-								},
-								"tableOption": "autoCreate",
-								"disableMetricsCollection": false
-							},
-							"enableStaging": false,
-							"parallelCopies": 3,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "id",
-											"type": "Int64"
-										},
-										"sink": {
-											"name": "id",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"name": "employeeId",
-											"type": "Int64"
-										},
-										"sink": {
-											"name": "employeeId",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"name": "startDate",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "startDate",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "currency",
-											"type": "String"
-										},
-										"sink": {
-											"name": "currency",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "pay",
-											"type": "String"
-										},
-										"sink": {
-											"name": "pay",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "type",
-											"type": "String"
-										},
-										"sink": {
-											"name": "type",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "exempt",
-											"type": "String"
-										},
-										"sink": {
-											"name": "exempt",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "reason",
-											"type": "String"
-										},
-										"sink": {
-											"name": "reason",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "comment",
-											"type": "String"
-										},
-										"sink": {
-											"name": "comment",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "paidPer",
-											"type": "String"
-										},
-										"sink": {
-											"name": "paidPer",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "paySchedule",
-											"type": "String"
-										},
-										"sink": {
-											"name": "paySchedule",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "currencyOvertime",
-											"type": "String"
-										},
-										"sink": {
-											"name": "currencyOvertime",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "valueOvertime",
-											"type": "String"
-										},
-										"sink": {
-											"name": "valueOvertime",
-											"type": "String"
-										}
-									}
-								]
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "DS_ADLS_CURATED_HR_EmployeeCompensation",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DS_SYNAPSE_HR_EmployeeCompensation",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
+						"name": "Datum",
+						"type": "datetime2",
+						"scale": 0
 					},
 					{
-						"name": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_EmployeeCompensation",
-						"type": "Copy",
-						"dependsOn": [
-							{
-								"activity": "PL_DATA_HR_TO_ADLS_EmployeeCompensation",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "JsonSource",
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true,
-									"wildcardFolderPath": "BambooHR"
-								},
-								"formatSettings": {
-									"type": "JsonReadSettings"
-								}
-							},
-							"sink": {
-								"type": "JsonSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
-								},
-								"formatSettings": {
-									"type": "JsonWriteSettings"
-								}
-							},
-							"enableStaging": false
-						},
-						"inputs": [
-							{
-								"referenceName": "DS_ADLS_RAW_HR_EmployeeCompensation",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DS_ADLS_STORAGE",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
+						"name": "IDPartner",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "IDLogAktion",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "IDLogArt",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "IDStatus_Alt",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "IDStatus_Neu",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Text_Alt",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Text_Neu",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Anzeigename",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Beschreibung",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Datum_Alt",
+						"type": "datetime2",
+						"scale": 0
+					},
+					{
+						"name": "Datum_Neu",
+						"type": "datetime2",
+						"scale": 0
+					},
+					{
+						"name": "SteuerungDurch",
+						"type": "int",
+						"precision": 10
 					}
 				],
-				"folder": {
-					"name": "HR/Master Pipelines"
-				},
-				"annotations": []
+				"typeProperties": {
+					"schema": "slt_test",
+					"table": "log_mitarbeiter"
+				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DS_SYNAPSE_HR_EmployeeCompensation')]"
-			]
+			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Employee Directory')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
+			"name": "[concat(parameters('factoryName'), '/Plunet_DB_T1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"activities": [
-					{
-						"name": "PL_DATA_HR_TO_ADLS_EmployeeDirectory",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [
-							{
-								"name": "Destination",
-								"value": "cntrawzonesltdev/BambooHR/FILE_BAMBOOHR"
-							}
-						],
-						"typeProperties": {
-							"source": {
-								"type": "RestSource",
-								"httpRequestTimeout": "00:01:40",
-								"requestInterval": "00.00:00:00.010",
-								"requestMethod": "GET"
-							},
-							"sink": {
-								"type": "JsonSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
-								},
-								"formatSettings": {
-									"type": "JsonWriteSettings",
-									"filePattern": "setOfObjects"
-								}
-							},
-							"enableStaging": false,
-							"validateDataConsistency": false
-						},
-						"inputs": [
-							{
-								"referenceName": "DS_REST_HR_EmployeeDirectory",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DS_ADLS_RAW_HR_EmployeeDirectory",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					},
-					{
-						"name": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_EmployeeDirectory",
-						"type": "Copy",
-						"dependsOn": [
-							{
-								"activity": "PL_DATA_HR_TO_ADLS_EmployeeDirectory",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "JsonSource",
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true,
-									"wildcardFolderPath": "BambooHR"
-								},
-								"formatSettings": {
-									"type": "JsonReadSettings"
-								}
-							},
-							"sink": {
-								"type": "JsonSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
-								},
-								"formatSettings": {
-									"type": "JsonWriteSettings"
-								}
-							},
-							"enableStaging": false
-						},
-						"inputs": [
-							{
-								"referenceName": "DS_ADLS_RAW_HR_EmployeeDirectory",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DS_ADLS_STORAGE",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					},
-					{
-						"name": "PL_DATA_ADLS_CURATED_TO_SYNAP_EmployeeDirectory",
-						"type": "Copy",
-						"dependsOn": [
-							{
-								"activity": "PL_TRANS_ADLK_HR_EmployeeDirectory",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [
-							{
-								"name": "Source",
-								"value": "cntcuratedzonesltdev/Bamboo HR/EmployeeCompensation.parquet"
-							},
-							{
-								"name": "Destination",
-								"value": "HR.EmpCompensation"
-							}
-						],
-						"typeProperties": {
-							"source": {
-								"type": "ParquetSource",
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true
-								}
-							},
-							"sink": {
-								"type": "SqlDWSink",
-								"allowPolyBase": true,
-								"polyBaseSettings": {
-									"rejectValue": 0,
-									"rejectType": "value",
-									"useTypeDefault": true
-								},
-								"tableOption": "autoCreate"
-							},
-							"enableStaging": false,
-							"parallelCopies": 3,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "id",
-											"type": "Int64"
-										},
-										"sink": {
-											"name": "id",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"name": "displayName",
-											"type": "String"
-										},
-										"sink": {
-											"name": "displayName",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "firstName",
-											"type": "String"
-										},
-										"sink": {
-											"name": "firstName",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "lastName",
-											"type": "String"
-										},
-										"sink": {
-											"name": "lastName",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "preferredName",
-											"type": "String"
-										},
-										"sink": {
-											"name": "preferredName",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "gender",
-											"type": "String"
-										},
-										"sink": {
-											"name": "gender",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "jobTitle",
-											"type": "String"
-										},
-										"sink": {
-											"name": "jobTitle",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "workPhone",
-											"type": "String"
-										},
-										"sink": {
-											"name": "workPhone",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "mobilePhone",
-											"type": "String"
-										},
-										"sink": {
-											"name": "mobilePhone",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "workEmail",
-											"type": "String"
-										},
-										"sink": {
-											"name": "workEmail",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "department",
-											"type": "String"
-										},
-										"sink": {
-											"name": "department",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "location",
-											"type": "String"
-										},
-										"sink": {
-											"name": "location",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "division",
-											"type": "String"
-										},
-										"sink": {
-											"name": "division",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "linkedIn",
-											"type": "String"
-										},
-										"sink": {
-											"name": "linkedIn",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "workPhoneExtension",
-											"type": "String"
-										},
-										"sink": {
-											"name": "workPhoneExtension",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "photoUploaded",
-											"type": "Boolean"
-										},
-										"sink": {
-											"name": "photoUploaded",
-											"type": "Boolean"
-										}
-									},
-									{
-										"source": {
-											"name": "photoUrl",
-											"type": "String"
-										},
-										"sink": {
-											"name": "photoUrl",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "canUploadPhoto",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "canUploadPhoto",
-											"type": "Int32"
-										}
-									}
-								]
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "DS_ADLS_CURATED_HR_EmployeeDirectory",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DS_SYNAPSE_HR_EmployeeDirectory",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					},
-					{
-						"name": "PL_TRANS_ADLK_HR_EmployeeDirectory",
-						"description": "Flattened directory data",
-						"type": "Copy",
-						"dependsOn": [
-							{
-								"activity": "PL_DATA_HR_TO_ADLS_EmployeeDirectory",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "JsonSource",
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true
-								},
-								"formatSettings": {
-									"type": "JsonReadSettings"
-								}
-							},
-							"sink": {
-								"type": "ParquetSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
-								},
-								"formatSettings": {
-									"type": "ParquetWriteSettings"
-								}
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"path": "[['id']"
-										},
-										"sink": {
-											"name": "id",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"path": "[['displayName']"
-										},
-										"sink": {
-											"name": "displayName",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "[['firstName']"
-										},
-										"sink": {
-											"name": "firstName",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "[['lastName']"
-										},
-										"sink": {
-											"name": "lastName",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "[['preferredName']"
-										},
-										"sink": {
-											"name": "preferredName",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "[['gender']"
-										},
-										"sink": {
-											"name": "gender",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "[['jobTitle']"
-										},
-										"sink": {
-											"name": "jobTitle",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "[['workPhone']"
-										},
-										"sink": {
-											"name": "workPhone",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "[['mobilePhone']"
-										},
-										"sink": {
-											"name": "mobilePhone",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "[['workEmail']"
-										},
-										"sink": {
-											"name": "workEmail",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "[['department']"
-										},
-										"sink": {
-											"name": "department",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "[['location']"
-										},
-										"sink": {
-											"name": "location",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "[['division']"
-										},
-										"sink": {
-											"name": "division",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "[['linkedIn']"
-										},
-										"sink": {
-											"name": "linkedIn",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "[['workPhoneExtension']"
-										},
-										"sink": {
-											"name": "workPhoneExtension",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "[['photoUploaded']"
-										},
-										"sink": {
-											"name": "photoUploaded",
-											"type": "Boolean"
-										}
-									},
-									{
-										"source": {
-											"path": "[['photoUrl']"
-										},
-										"sink": {
-											"name": "photoUrl",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "[['canUploadPhoto']"
-										},
-										"sink": {
-											"name": "canUploadPhoto",
-											"type": "Int16"
-										}
-									}
-								],
-								"collectionReference": "$['employees']",
-								"mapComplexValuesToString": false
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "DS_ADLS_RAW_HR_EmployeeDirectory",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DS_ADLS_CURATED_HR",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"folder": {
-					"name": "HR/Master Pipelines"
+				"linkedServiceName": {
+					"referenceName": "Plunet_Test_Database",
+					"type": "LinkedServiceReference"
 				},
-				"annotations": []
+				"parameters": {
+					"cw_tableName": {
+						"type": "String"
+					}
+				},
+				"folder": {
+					"name": "Plunet_to_Azure_MySql"
+				},
+				"annotations": [],
+				"type": "MySqlTable",
+				"schema": [],
+				"typeProperties": {
+					"tableName": {
+						"value": "@dataset().cw_tableName",
+						"type": "Expression"
+					}
+				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DS_SYNAPSE_HR_EmployeeDirectory')]"
-			]
+			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Employee Job Information')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
+			"name": "[concat(parameters('factoryName'), '/Plunet_DB_T2')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"activities": [
-					{
-						"name": "PL_DATA_HR_TO_ADLS_JobInformation",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [
-							{
-								"name": "Destination",
-								"value": "cntrawzonesltdev/BambooHR/FILE_BAMBOOHR"
-							}
-						],
-						"typeProperties": {
-							"source": {
-								"type": "RestSource",
-								"httpRequestTimeout": "00:01:40",
-								"requestInterval": "00.00:00:00.010",
-								"requestMethod": "GET"
-							},
-							"sink": {
-								"type": "JsonSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
-								},
-								"formatSettings": {
-									"type": "JsonWriteSettings",
-									"filePattern": "setOfObjects"
-								}
-							},
-							"enableStaging": false,
-							"validateDataConsistency": false
-						},
-						"inputs": [
-							{
-								"referenceName": "DS_REST_HR_JobInformation",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DS_ADLS_RAW_HR_JobInformation",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					},
-					{
-						"name": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_JobInformation",
-						"type": "Copy",
-						"dependsOn": [
-							{
-								"activity": "PL_DATA_HR_TO_ADLS_JobInformation",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "JsonSource",
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true,
-									"wildcardFolderPath": "BambooHR"
-								},
-								"formatSettings": {
-									"type": "JsonReadSettings"
-								}
-							},
-							"sink": {
-								"type": "JsonSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
-								},
-								"formatSettings": {
-									"type": "JsonWriteSettings"
-								}
-							},
-							"enableStaging": false
-						},
-						"inputs": [
-							{
-								"referenceName": "DS_ADLS_RAW_HR_JobInformation",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DS_ADLS_STORAGE",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					},
-					{
-						"name": "PL_TRANS_ADLK_HR_JobInformation",
-						"description": "Flattened directory data",
-						"type": "Copy",
-						"dependsOn": [
-							{
-								"activity": "PL_DATA_HR_TO_ADLS_JobInformation",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "JsonSource",
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true
-								},
-								"formatSettings": {
-									"type": "JsonReadSettings"
-								}
-							},
-							"sink": {
-								"type": "ParquetSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
-								},
-								"formatSettings": {
-									"type": "ParquetWriteSettings"
-								}
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"path": "$['id']"
-										},
-										"sink": {
-											"name": "id",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"path": "$['employeeId']"
-										},
-										"sink": {
-											"name": "employeeId",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"path": "$['date']"
-										},
-										"sink": {
-											"name": "date",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"path": "$['location']"
-										},
-										"sink": {
-											"name": "location",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "$['department']"
-										},
-										"sink": {
-											"name": "department",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "$['division']"
-										},
-										"sink": {
-											"name": "division",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "$['jobTitle']"
-										},
-										"sink": {
-											"name": "jobTitle",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "$['reportsTo']"
-										},
-										"sink": {
-											"name": "reportsTo",
-											"type": "String"
-										}
-									}
-								],
-								"collectionReference": "",
-								"mapComplexValuesToString": false
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "DS_ADLS_RAW_HR_JobInformation",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DS_ADLS_CURATED_HR",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					},
-					{
-						"name": "PL_DATA_ADLS_CURATED_TO_SYNAP_EmployeeJobInformation",
-						"type": "Copy",
-						"dependsOn": [
-							{
-								"activity": "PL_TRANS_ADLK_HR_JobInformation",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [
-							{
-								"name": "Source",
-								"value": "cntcuratedzonesltdev/Bamboo HR/EmployeeCompensation.parquet"
-							},
-							{
-								"name": "Destination",
-								"value": "HR.EmpCompensation"
-							}
-						],
-						"typeProperties": {
-							"source": {
-								"type": "ParquetSource",
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true
-								}
-							},
-							"sink": {
-								"type": "SqlDWSink",
-								"preCopyScript": "TRUNCATE TABLE HR.EmpCompensation",
-								"allowPolyBase": true,
-								"polyBaseSettings": {
-									"rejectValue": 0,
-									"rejectType": "value",
-									"useTypeDefault": false
-								},
-								"tableOption": "autoCreate",
-								"disableMetricsCollection": false
-							},
-							"enableStaging": false,
-							"parallelCopies": 3,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "id",
-											"type": "Int64"
-										},
-										"sink": {
-											"name": "id",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"name": "employeeId",
-											"type": "Int64"
-										},
-										"sink": {
-											"name": "employeeId",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"name": "date",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "date",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "location",
-											"type": "String"
-										},
-										"sink": {
-											"name": "location",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "department",
-											"type": "String"
-										},
-										"sink": {
-											"name": "department",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "division",
-											"type": "String"
-										},
-										"sink": {
-											"name": "division",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "jobTitle",
-											"type": "String"
-										},
-										"sink": {
-											"name": "jobTitle",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "reportsTo",
-											"type": "String"
-										},
-										"sink": {
-											"name": "reportsTo",
-											"type": "String"
-										}
-									}
-								]
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "DS_ADLS_CURATED_HR_EmployeeJobInformation",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DS_SYNAPSE_HR_EmployeeJobInformation",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"folder": {
-					"name": "HR/Master Pipelines"
+				"linkedServiceName": {
+					"referenceName": "Plunet_Test_Database",
+					"type": "LinkedServiceReference"
 				},
-				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DS_REST_HR_JobInformation')]",
-				"[concat(variables('factoryId'), '/datasets/DS_SYNAPSE_HR_EmployeeJobInformation')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Employee TimeOff')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "PL_DATA_HR_TO_ADLS_EmployeeTimeOff",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [
-							{
-								"name": "Destination",
-								"value": "cntrawzonesltdev/BambooHR/FILE_BAMBOOHR"
-							}
-						],
-						"typeProperties": {
-							"source": {
-								"type": "RestSource",
-								"httpRequestTimeout": "00:01:40",
-								"requestInterval": "00.00:00:00.010",
-								"requestMethod": "GET"
-							},
-							"sink": {
-								"type": "JsonSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
-								},
-								"formatSettings": {
-									"type": "JsonWriteSettings",
-									"filePattern": "setOfObjects"
-								}
-							},
-							"enableStaging": false,
-							"validateDataConsistency": false
-						},
-						"inputs": [
-							{
-								"referenceName": "DS_REST_HR_EmployeeTimeOff",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DS_ADLS_RAW_HR_EmployeeTimeOff",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					},
-					{
-						"name": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_EmployeeTimeOff",
-						"type": "Copy",
-						"dependsOn": [
-							{
-								"activity": "PL_DATA_HR_TO_ADLS_EmployeeTimeOff",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "JsonSource",
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true,
-									"wildcardFolderPath": "BambooHR"
-								},
-								"formatSettings": {
-									"type": "JsonReadSettings"
-								}
-							},
-							"sink": {
-								"type": "JsonSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
-								},
-								"formatSettings": {
-									"type": "JsonWriteSettings"
-								}
-							},
-							"enableStaging": false
-						},
-						"inputs": [
-							{
-								"referenceName": "DS_ADLS_RAW_HR_EmployeeTimeOff",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DS_ADLS_STORAGE",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					},
-					{
-						"name": "PL_TRANS_ADLK_HR_EmployeeTimeOff",
-						"description": "Flattened directory data",
-						"type": "Copy",
-						"dependsOn": [
-							{
-								"activity": "PL_DATA_HR_TO_ADLS_EmployeeTimeOff",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "JsonSource",
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true
-								},
-								"formatSettings": {
-									"type": "JsonReadSettings"
-								}
-							},
-							"sink": {
-								"type": "ParquetSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
-								},
-								"formatSettings": {
-									"type": "ParquetWriteSettings"
-								}
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"path": "$['id']"
-										},
-										"sink": {
-											"name": "id",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"path": "$['employeeId']"
-										},
-										"sink": {
-											"name": "employeeId",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"path": "$['status']['lastChanged']"
-										},
-										"sink": {
-											"name": "lastChanged",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"path": "$['status']['lastChangedByUserId']"
-										},
-										"sink": {
-											"name": "lastChangedByUserId",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"path": "$['status']['status']"
-										},
-										"sink": {
-											"name": "status",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "$['name']"
-										},
-										"sink": {
-											"name": "name",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "$['start']"
-										},
-										"sink": {
-											"name": "startDate",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"path": "$['end']"
-										},
-										"sink": {
-											"name": "endDate",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"path": "$['created']"
-										},
-										"sink": {
-											"name": "createdDate",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"path": "$['type']['id']"
-										},
-										"sink": {
-											"name": "TypeID",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"path": "$['type']['name']"
-										},
-										"sink": {
-											"name": "LeaveType",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "$['amount']['unit']"
-										},
-										"sink": {
-											"name": "LeaveUnit",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "$['amount']['amount']"
-										},
-										"sink": {
-											"name": "Amount",
-											"type": "Double"
-										}
-									},
-									{
-										"source": {
-											"path": "$['actions']['view']"
-										},
-										"sink": {
-											"name": "Action-view",
-											"type": "Boolean"
-										}
-									},
-									{
-										"source": {
-											"path": "$['actions']['edit']"
-										},
-										"sink": {
-											"name": "Action-edit",
-											"type": "Boolean"
-										}
-									},
-									{
-										"source": {
-											"path": "$['actions']['cancel']"
-										},
-										"sink": {
-											"name": "Action-cancel",
-											"type": "Boolean"
-										}
-									},
-									{
-										"source": {
-											"path": "$['actions']['approve']"
-										},
-										"sink": {
-											"name": "Action-approve",
-											"type": "Boolean"
-										}
-									},
-									{
-										"source": {
-											"path": "$['actions']['deny']"
-										},
-										"sink": {
-											"name": "Action-deny",
-											"type": "Boolean"
-										}
-									},
-									{
-										"source": {
-											"path": "$['actions']['bypass']"
-										},
-										"sink": {
-											"name": "Action-bypass",
-											"type": "Boolean"
-										}
-									}
-								],
-								"collectionReference": "",
-								"mapComplexValuesToString": false
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "DS_ADLS_RAW_HR_EmployeeTimeOff",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DS_ADLS_CURATED_HR",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					},
-					{
-						"name": "PL_DATA_ADLS_CURATED_TO_SYNAP_EmployeeTimeOff",
-						"type": "Copy",
-						"dependsOn": [
-							{
-								"activity": "PL_TRANS_ADLK_HR_EmployeeTimeOff",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [
-							{
-								"name": "Source",
-								"value": "cntcuratedzonesltdev/Bamboo HR/EmployeeCompensation.parquet"
-							},
-							{
-								"name": "Destination",
-								"value": "HR.EmpCompensation"
-							}
-						],
-						"typeProperties": {
-							"source": {
-								"type": "ParquetSource",
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true
-								}
-							},
-							"sink": {
-								"type": "SqlDWSink",
-								"allowPolyBase": true,
-								"polyBaseSettings": {
-									"rejectValue": 0,
-									"rejectType": "value",
-									"useTypeDefault": true
-								},
-								"tableOption": "autoCreate"
-							},
-							"enableStaging": false,
-							"parallelCopies": 3,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "id",
-											"type": "Int64"
-										},
-										"sink": {
-											"name": "id",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"name": "employeeId",
-											"type": "Int64"
-										},
-										"sink": {
-											"name": "employeeId",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"name": "lastChanged",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "lastChanged",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "lastChangedByUserId",
-											"type": "Int64"
-										},
-										"sink": {
-											"name": "lastChangedByUserId",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"name": "status",
-											"type": "String"
-										},
-										"sink": {
-											"name": "status",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "name",
-											"type": "String"
-										},
-										"sink": {
-											"name": "name",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "startDate",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "startDate",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "endDate",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "endDate",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "createdDate",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "createdDate",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "TypeID",
-											"type": "Int64"
-										},
-										"sink": {
-											"name": "TypeID",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"name": "LeaveType",
-											"type": "String"
-										},
-										"sink": {
-											"name": "LeaveType",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "LeaveUnit",
-											"type": "String"
-										},
-										"sink": {
-											"name": "LeaveUnit",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Amount",
-											"type": "Double"
-										},
-										"sink": {
-											"name": "Amount",
-											"type": "Double"
-										}
-									},
-									{
-										"source": {
-											"name": "Action-view",
-											"type": "Boolean"
-										},
-										"sink": {
-											"name": "Action-view",
-											"type": "Boolean"
-										}
-									},
-									{
-										"source": {
-											"name": "Action-edit",
-											"type": "Boolean"
-										},
-										"sink": {
-											"name": "Action-edit",
-											"type": "Boolean"
-										}
-									},
-									{
-										"source": {
-											"name": "Action-cancel",
-											"type": "Boolean"
-										},
-										"sink": {
-											"name": "Action-cancel",
-											"type": "Boolean"
-										}
-									},
-									{
-										"source": {
-											"name": "Action-approve",
-											"type": "Boolean"
-										},
-										"sink": {
-											"name": "Action-approve",
-											"type": "Boolean"
-										}
-									},
-									{
-										"source": {
-											"name": "Action-deny",
-											"type": "Boolean"
-										},
-										"sink": {
-											"name": "Action-deny",
-											"type": "Boolean"
-										}
-									},
-									{
-										"source": {
-											"name": "Action-bypass",
-											"type": "Boolean"
-										},
-										"sink": {
-											"name": "Action-bypass",
-											"type": "Boolean"
-										}
-									}
-								]
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "DS_ADLS_CURATED_HR_EmployeeTimeOff",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DS_SYNAPSE_HR_EmployeeTimeOff",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
+				"parameters": {
+					"cw_tableName": {
+						"type": "String"
 					}
-				],
-				"folder": {
-					"name": "HR/Master Pipelines"
 				},
-				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DS_REST_HR_EmployeeTimeOff')]",
-				"[concat(variables('factoryId'), '/datasets/DS_SYNAPSE_HR_EmployeeTimeOff')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Employment Status')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "PL_DATA_HR_TO_ADLS_EmploymentStatus",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [
-							{
-								"name": "Destination",
-								"value": "cntrawzonesltdev/BambooHR/FILE_BAMBOOHR"
-							}
-						],
-						"typeProperties": {
-							"source": {
-								"type": "RestSource",
-								"httpRequestTimeout": "00:01:40",
-								"requestInterval": "00.00:00:00.010",
-								"requestMethod": "GET"
-							},
-							"sink": {
-								"type": "JsonSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
-								},
-								"formatSettings": {
-									"type": "JsonWriteSettings",
-									"filePattern": "setOfObjects"
-								}
-							},
-							"enableStaging": false,
-							"validateDataConsistency": false
-						},
-						"inputs": [
-							{
-								"referenceName": "DS_REST_HR_EmploymentStatus",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DS_ADLS_RAW_HR_EmploymentStatus",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					},
-					{
-						"name": "PL_DATA_ADLS_RAW_TO_ADLS_STORAGE_EmploymentStatus",
-						"type": "Copy",
-						"dependsOn": [
-							{
-								"activity": "PL_DATA_HR_TO_ADLS_EmploymentStatus",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "JsonSource",
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true,
-									"wildcardFolderPath": "BambooHR"
-								},
-								"formatSettings": {
-									"type": "JsonReadSettings"
-								}
-							},
-							"sink": {
-								"type": "JsonSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
-								},
-								"formatSettings": {
-									"type": "JsonWriteSettings"
-								}
-							},
-							"enableStaging": false
-						},
-						"inputs": [
-							{
-								"referenceName": "DS_ADLS_RAW_HR_EmploymentStatus",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DS_ADLS_STORAGE",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					},
-					{
-						"name": "PL_TRANS_ADLK_HR_EmploymentStatus",
-						"description": "Flattened directory data",
-						"type": "Copy",
-						"dependsOn": [
-							{
-								"activity": "PL_DATA_HR_TO_ADLS_EmploymentStatus",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "JsonSource",
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true
-								},
-								"formatSettings": {
-									"type": "JsonReadSettings"
-								}
-							},
-							"sink": {
-								"type": "ParquetSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
-								},
-								"formatSettings": {
-									"type": "ParquetWriteSettings"
-								}
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"path": "$['id']"
-										},
-										"sink": {
-											"name": "id",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"path": "$['employeeId']"
-										},
-										"sink": {
-											"name": "employeeId",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"path": "$['date']"
-										},
-										"sink": {
-											"name": "date",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"path": "$['employmentStatus']"
-										},
-										"sink": {
-											"name": "employmentStatus",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "$['comment']"
-										},
-										"sink": {
-											"name": "comment",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "$['terminationReasonId']"
-										},
-										"sink": {
-											"name": "terminationReasonId",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "$['terminationTypeId']"
-										},
-										"sink": {
-											"name": "terminationTypeId",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "$['terminationRehireId']"
-										},
-										"sink": {
-											"name": "terminationRehireId",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "$['benetracStatus']"
-										},
-										"sink": {
-											"name": "benetracStatus",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"path": "$['gusto']"
-										},
-										"sink": {
-											"name": "gusto",
-											"type": "String"
-										}
-									}
-								],
-								"collectionReference": "",
-								"mapComplexValuesToString": false
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "DS_ADLS_RAW_HR_EmploymentStatus",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DS_ADLS_CURATED_HR",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					},
-					{
-						"name": "PL_DATA_ADLS_CURATED_TO_SYNAP_EmploymentStatus",
-						"type": "Copy",
-						"dependsOn": [
-							{
-								"activity": "PL_TRANS_ADLK_HR_EmploymentStatus",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [
-							{
-								"name": "Source",
-								"value": "cntcuratedzonesltdev/Bamboo HR/EmployeeCompensation.parquet"
-							},
-							{
-								"name": "Destination",
-								"value": "HR.EmpCompensation"
-							}
-						],
-						"typeProperties": {
-							"source": {
-								"type": "ParquetSource",
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true
-								}
-							},
-							"sink": {
-								"type": "SqlDWSink",
-								"allowPolyBase": true,
-								"polyBaseSettings": {
-									"rejectValue": 0,
-									"rejectType": "value",
-									"useTypeDefault": true
-								},
-								"tableOption": "autoCreate"
-							},
-							"enableStaging": false,
-							"parallelCopies": 3,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "id",
-											"type": "Int64"
-										},
-										"sink": {
-											"name": "id",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"name": "employeeId",
-											"type": "Int64"
-										},
-										"sink": {
-											"name": "employeeId",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"name": "date",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "date",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "employmentStatus",
-											"type": "String"
-										},
-										"sink": {
-											"name": "employmentStatus",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "comment",
-											"type": "String"
-										},
-										"sink": {
-											"name": "comment",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "terminationReasonId",
-											"type": "String"
-										},
-										"sink": {
-											"name": "terminationReasonId",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "terminationTypeId",
-											"type": "String"
-										},
-										"sink": {
-											"name": "terminationTypeId",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "terminationRehireId",
-											"type": "String"
-										},
-										"sink": {
-											"name": "terminationRehireId",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "benetracStatus",
-											"type": "String"
-										},
-										"sink": {
-											"name": "benetracStatus",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "gusto",
-											"type": "String"
-										},
-										"sink": {
-											"name": "gusto",
-											"type": "String"
-										}
-									}
-								]
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "DS_ADLS_CURATED_HR_EmploymentStatus",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DS_SYNAPSE_HR_EmploymentStatus",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
+				"folder": {
+					"name": "Plunet_to_Azure_MySql"
+				},
+				"annotations": [],
+				"type": "MySqlTable",
+				"schema": [],
+				"typeProperties": {
+					"tableName": {
+						"value": "@dataset().cw_tableName",
+						"type": "Expression"
 					}
-				],
-				"folder": {
-					"name": "HR/Master Pipelines"
-				},
-				"annotations": []
+				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DS_REST_HR_EmploymentStatus')]",
-				"[concat(variables('factoryId'), '/datasets/DS_SYNAPSE_HR_EmploymentStatus')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/PL_DATA_ADLS_CURATED_TO_SYNAP_EmployeeCompensation')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "PL_DATA_ADLS_CURATED_TO_SYNAP_EmployeeCompensation",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [
-							{
-								"name": "Source",
-								"value": "cntcuratedzonesltdev/Bamboo HR/EmployeeCompensation.parquet"
-							},
-							{
-								"name": "Destination",
-								"value": "HR.EmpCompensation"
-							}
-						],
-						"typeProperties": {
-							"source": {
-								"type": "ParquetSource",
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true
-								}
-							},
-							"sink": {
-								"type": "SqlDWSink",
-								"preCopyScript": "TRUNCATE TABLE HR.EmpCompensation",
-								"allowPolyBase": true,
-								"polyBaseSettings": {
-									"rejectValue": 0,
-									"rejectType": "value",
-									"useTypeDefault": false
-								},
-								"tableOption": "autoCreate",
-								"disableMetricsCollection": false
-							},
-							"enableStaging": false,
-							"parallelCopies": 3,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "id",
-											"type": "Int64"
-										},
-										"sink": {
-											"name": "id",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"name": "employeeId",
-											"type": "Int64"
-										},
-										"sink": {
-											"name": "employeeId",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"name": "startDate",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "startDate",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "currency",
-											"type": "String"
-										},
-										"sink": {
-											"name": "currency",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "pay",
-											"type": "String"
-										},
-										"sink": {
-											"name": "pay",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "type",
-											"type": "String"
-										},
-										"sink": {
-											"name": "type",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "exempt",
-											"type": "String"
-										},
-										"sink": {
-											"name": "exempt",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "reason",
-											"type": "String"
-										},
-										"sink": {
-											"name": "reason",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "comment",
-											"type": "String"
-										},
-										"sink": {
-											"name": "comment",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "paidPer",
-											"type": "String"
-										},
-										"sink": {
-											"name": "paidPer",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "paySchedule",
-											"type": "String"
-										},
-										"sink": {
-											"name": "paySchedule",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "currencyOvertime",
-											"type": "String"
-										},
-										"sink": {
-											"name": "currencyOvertime",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "valueOvertime",
-											"type": "String"
-										},
-										"sink": {
-											"name": "valueOvertime",
-											"type": "String"
-										}
-									}
-								]
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "DS_ADLS_CURATED_HR_EmployeeCompensation",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DS_SYNAPSE_HR_EmployeeCompensation",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"folder": {
-					"name": "HR/ADLS CURATED to SYNAPSE"
-				},
-				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DS_SYNAPSE_HR_EmployeeCompensation')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/PL_DATA_ADLS_CURATED_TO_SYNAP_EmployeeDirectory')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "PL_DATA_ADLS_CURATED_TO_SYNAP_EmployeeDirectory",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [
-							{
-								"name": "Source",
-								"value": "cntcuratedzonesltdev/Bamboo HR/EmployeeCompensation.parquet"
-							},
-							{
-								"name": "Destination",
-								"value": "HR.EmpCompensation"
-							}
-						],
-						"typeProperties": {
-							"source": {
-								"type": "ParquetSource",
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true
-								}
-							},
-							"sink": {
-								"type": "SqlDWSink",
-								"allowPolyBase": true,
-								"polyBaseSettings": {
-									"rejectValue": 0,
-									"rejectType": "value",
-									"useTypeDefault": true
-								},
-								"tableOption": "autoCreate"
-							},
-							"enableStaging": false,
-							"parallelCopies": 3,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "id",
-											"type": "Int64"
-										},
-										"sink": {
-											"name": "id",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"name": "displayName",
-											"type": "String"
-										},
-										"sink": {
-											"name": "displayName",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "firstName",
-											"type": "String"
-										},
-										"sink": {
-											"name": "firstName",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "lastName",
-											"type": "String"
-										},
-										"sink": {
-											"name": "lastName",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "preferredName",
-											"type": "String"
-										},
-										"sink": {
-											"name": "preferredName",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "gender",
-											"type": "String"
-										},
-										"sink": {
-											"name": "gender",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "jobTitle",
-											"type": "String"
-										},
-										"sink": {
-											"name": "jobTitle",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "workPhone",
-											"type": "String"
-										},
-										"sink": {
-											"name": "workPhone",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "mobilePhone",
-											"type": "String"
-										},
-										"sink": {
-											"name": "mobilePhone",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "workEmail",
-											"type": "String"
-										},
-										"sink": {
-											"name": "workEmail",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "department",
-											"type": "String"
-										},
-										"sink": {
-											"name": "department",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "location",
-											"type": "String"
-										},
-										"sink": {
-											"name": "location",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "division",
-											"type": "String"
-										},
-										"sink": {
-											"name": "division",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "linkedIn",
-											"type": "String"
-										},
-										"sink": {
-											"name": "linkedIn",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "workPhoneExtension",
-											"type": "String"
-										},
-										"sink": {
-											"name": "workPhoneExtension",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "photoUploaded",
-											"type": "Boolean"
-										},
-										"sink": {
-											"name": "photoUploaded",
-											"type": "Boolean"
-										}
-									},
-									{
-										"source": {
-											"name": "photoUrl",
-											"type": "String"
-										},
-										"sink": {
-											"name": "photoUrl",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "canUploadPhoto",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "canUploadPhoto",
-											"type": "Int32"
-										}
-									}
-								]
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "DS_ADLS_CURATED_HR_EmployeeDirectory",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DS_SYNAPSE_HR_EmployeeDirectory",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"folder": {
-					"name": "HR/ADLS CURATED to SYNAPSE"
-				},
-				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DS_SYNAPSE_HR_EmployeeDirectory')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/PL_DATA_ADLS_CURATED_TO_SYNAP_EmployeeJobInformation')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "PL_DATA_ADLS_CURATED_TO_SYNAP_EmployeeJobInformation",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [
-							{
-								"name": "Source",
-								"value": "cntcuratedzonesltdev/Bamboo HR/EmployeeCompensation.parquet"
-							},
-							{
-								"name": "Destination",
-								"value": "HR.EmpCompensation"
-							}
-						],
-						"typeProperties": {
-							"source": {
-								"type": "ParquetSource",
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true
-								}
-							},
-							"sink": {
-								"type": "SqlDWSink",
-								"preCopyScript": "TRUNCATE TABLE HR.EmpCompensation",
-								"allowPolyBase": true,
-								"polyBaseSettings": {
-									"rejectValue": 0,
-									"rejectType": "value",
-									"useTypeDefault": false
-								},
-								"tableOption": "autoCreate",
-								"disableMetricsCollection": false
-							},
-							"enableStaging": false,
-							"parallelCopies": 3,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "id",
-											"type": "Int64"
-										},
-										"sink": {
-											"name": "id",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"name": "employeeId",
-											"type": "Int64"
-										},
-										"sink": {
-											"name": "employeeId",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"name": "date",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "date",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "location",
-											"type": "String"
-										},
-										"sink": {
-											"name": "location",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "department",
-											"type": "String"
-										},
-										"sink": {
-											"name": "department",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "division",
-											"type": "String"
-										},
-										"sink": {
-											"name": "division",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "jobTitle",
-											"type": "String"
-										},
-										"sink": {
-											"name": "jobTitle",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "reportsTo",
-											"type": "String"
-										},
-										"sink": {
-											"name": "reportsTo",
-											"type": "String"
-										}
-									}
-								]
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "DS_ADLS_CURATED_HR_EmployeeJobInformation",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DS_SYNAPSE_HR_EmployeeJobInformation",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"folder": {
-					"name": "HR/ADLS CURATED to SYNAPSE"
-				},
-				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DS_SYNAPSE_HR_EmployeeJobInformation')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/PL_DATA_ADLS_CURATED_TO_SYNAP_EmployeeTimeOff')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "PL_DATA_ADLS_CURATED_TO_SYNAP_EmployeeTimeOff",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [
-							{
-								"name": "Source",
-								"value": "cntcuratedzonesltdev/Bamboo HR/EmployeeCompensation.parquet"
-							},
-							{
-								"name": "Destination",
-								"value": "HR.EmpCompensation"
-							}
-						],
-						"typeProperties": {
-							"source": {
-								"type": "ParquetSource",
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true
-								}
-							},
-							"sink": {
-								"type": "SqlDWSink",
-								"allowPolyBase": true,
-								"polyBaseSettings": {
-									"rejectValue": 0,
-									"rejectType": "value",
-									"useTypeDefault": true
-								},
-								"tableOption": "autoCreate"
-							},
-							"enableStaging": false,
-							"parallelCopies": 3,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "id",
-											"type": "Int64"
-										},
-										"sink": {
-											"name": "id",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"name": "employeeId",
-											"type": "Int64"
-										},
-										"sink": {
-											"name": "employeeId",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"name": "lastChanged",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "lastChanged",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "lastChangedByUserId",
-											"type": "Int64"
-										},
-										"sink": {
-											"name": "lastChangedByUserId",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"name": "status",
-											"type": "String"
-										},
-										"sink": {
-											"name": "status",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "name",
-											"type": "String"
-										},
-										"sink": {
-											"name": "name",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "startDate",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "startDate",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "endDate",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "endDate",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "createdDate",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "createdDate",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "TypeID",
-											"type": "Int64"
-										},
-										"sink": {
-											"name": "TypeID",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"name": "LeaveType",
-											"type": "String"
-										},
-										"sink": {
-											"name": "LeaveType",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "LeaveUnit",
-											"type": "String"
-										},
-										"sink": {
-											"name": "LeaveUnit",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Amount",
-											"type": "Double"
-										},
-										"sink": {
-											"name": "Amount",
-											"type": "Double"
-										}
-									},
-									{
-										"source": {
-											"name": "Action-view",
-											"type": "Boolean"
-										},
-										"sink": {
-											"name": "Action-view",
-											"type": "Boolean"
-										}
-									},
-									{
-										"source": {
-											"name": "Action-edit",
-											"type": "Boolean"
-										},
-										"sink": {
-											"name": "Action-edit",
-											"type": "Boolean"
-										}
-									},
-									{
-										"source": {
-											"name": "Action-cancel",
-											"type": "Boolean"
-										},
-										"sink": {
-											"name": "Action-cancel",
-											"type": "Boolean"
-										}
-									},
-									{
-										"source": {
-											"name": "Action-approve",
-											"type": "Boolean"
-										},
-										"sink": {
-											"name": "Action-approve",
-											"type": "Boolean"
-										}
-									},
-									{
-										"source": {
-											"name": "Action-deny",
-											"type": "Boolean"
-										},
-										"sink": {
-											"name": "Action-deny",
-											"type": "Boolean"
-										}
-									},
-									{
-										"source": {
-											"name": "Action-bypass",
-											"type": "Boolean"
-										},
-										"sink": {
-											"name": "Action-bypass",
-											"type": "Boolean"
-										}
-									}
-								]
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "DS_ADLS_CURATED_HR_EmployeeTimeOff",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DS_SYNAPSE_HR_EmployeeTimeOff",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"folder": {
-					"name": "HR/ADLS CURATED to SYNAPSE"
-				},
-				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DS_SYNAPSE_HR_EmployeeTimeOff')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/PL_DATA_ADLS_CURATED_TO_SYNAP_EmploymentStatus')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "PL_DATA_ADLS_CURATED_TO_SYNAP_EmploymentStatus",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [
-							{
-								"name": "Source",
-								"value": "cntcuratedzonesltdev/Bamboo HR/EmployeeCompensation.parquet"
-							},
-							{
-								"name": "Destination",
-								"value": "HR.EmpCompensation"
-							}
-						],
-						"typeProperties": {
-							"source": {
-								"type": "ParquetSource",
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true
-								}
-							},
-							"sink": {
-								"type": "SqlDWSink",
-								"allowPolyBase": true,
-								"polyBaseSettings": {
-									"rejectValue": 0,
-									"rejectType": "value",
-									"useTypeDefault": true
-								},
-								"tableOption": "autoCreate"
-							},
-							"enableStaging": false,
-							"parallelCopies": 3,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "id",
-											"type": "Int64"
-										},
-										"sink": {
-											"name": "id",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"name": "employeeId",
-											"type": "Int64"
-										},
-										"sink": {
-											"name": "employeeId",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"name": "date",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "date",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "employmentStatus",
-											"type": "String"
-										},
-										"sink": {
-											"name": "employmentStatus",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "comment",
-											"type": "String"
-										},
-										"sink": {
-											"name": "comment",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "terminationReasonId",
-											"type": "String"
-										},
-										"sink": {
-											"name": "terminationReasonId",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "terminationTypeId",
-											"type": "String"
-										},
-										"sink": {
-											"name": "terminationTypeId",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "terminationRehireId",
-											"type": "String"
-										},
-										"sink": {
-											"name": "terminationRehireId",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "benetracStatus",
-											"type": "String"
-										},
-										"sink": {
-											"name": "benetracStatus",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "gusto",
-											"type": "String"
-										},
-										"sink": {
-											"name": "gusto",
-											"type": "String"
-										}
-									}
-								]
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "DS_ADLS_CURATED_HR_EmploymentStatus",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DS_SYNAPSE_HR_EmploymentStatus",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"folder": {
-					"name": "HR/ADLS CURATED to SYNAPSE"
-				},
-				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DS_SYNAPSE_HR_EmploymentStatus')]"
-			]
+			"dependsOn": []
 		}
 	]
 }

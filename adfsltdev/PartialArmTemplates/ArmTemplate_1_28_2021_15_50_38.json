@@ -6,90 +6,6 @@
 			"type": "string",
 			"metadata": "Data Factory name",
 			"defaultValue": "adfsltdev"
-		},
-		"AzureBlobStorage1_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
-		},
-		"AzureDataLakeStorage1_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
-		},
-		"AzureMySql_SLT_test_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureMySql_SLT_test'"
-		},
-		"AzureSynapseAnalytics1_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureSynapseAnalytics1'"
-		},
-		"LS_ADLS_BAMBOOHR_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_BAMBOOHR'"
-		},
-		"LS_CRM_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'LS_CRM'"
-		},
-		"LS_REST_BAMBOOHR_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'LS_REST_BAMBOOHR'"
-		},
-		"LS_SQL_DB_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'LS_SQL_DB'"
-		},
-		"LS_SYNAP_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'LS_SYNAP'"
-		},
-		"OptimaServerLive_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'OptimaServerLive'"
-		},
-		"Plunet_Database_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'Plunet_Database'"
-		},
-		"Plunet_Test_Database_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'Plunet_Test_Database'"
-		},
-		"SLTMySqlDatabase_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'SLTMySqlDatabase'"
-		},
-		"SLT_Datacase_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'SLT_Datacase'"
-		},
-		"STAGING linked service_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'STAGING linked service'"
-		},
-		"AzureDataLakeStorage1_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://dlssltdev.dfs.core.windows.net"
-		},
-		"LS_ADLS_BAMBOOHR_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://dlssltdev.dfs.core.windows.net"
-		},
-		"LS_CRM_properties_typeProperties_username": {
-			"type": "string",
-			"defaultValue": "hitarth.dave@summalinguae.com"
-		},
-		"LS_REST_BAMBOOHR_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://{a59ddcc1352d59ce08383d989c273fd87a66421b}:x@api.bamboohr.com/api/gateway.php/summalinguae/"
-		},
-		"LS_REST_BAMBOOHR_properties_typeProperties_userName": {
-			"type": "string",
-			"defaultValue": "a59ddcc1352d59ce08383d989c273fd87a66421b"
-		},
-		"STAGING linked service_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://dlssltdev.dfs.core.windows.net"
 		}
 	},
 	"variables": {
@@ -1427,8 +1343,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/Plunet_Azure_MySql_T1')]",
-				"[concat(variables('factoryId'), '/datasets/Plunet_Azure_Synspase_T1')]",
-				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]"
+				"[concat(variables('factoryId'), '/datasets/Plunet_Azure_Synspase_T1')]"
 			]
 		},
 		{
@@ -4297,8 +4212,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/Plunet_Azure_MySql_T2')]",
-				"[concat(variables('factoryId'), '/datasets/Plunet_Azure_Synspase_T2')]",
-				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]"
+				"[concat(variables('factoryId'), '/datasets/Plunet_Azure_Synspase_T2')]"
 			]
 		},
 		{
@@ -7952,8 +7866,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/Plunet_Azure_MySql_T3')]",
-				"[concat(variables('factoryId'), '/datasets/Plunet_Azure_Synspase_T3')]",
-				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]"
+				"[concat(variables('factoryId'), '/datasets/Plunet_Azure_Synspase_T3')]"
 			]
 		},
 		{
@@ -10801,8 +10714,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/Plunet_Azure_MySql_T4')]",
-				"[concat(variables('factoryId'), '/datasets/Plunet_Azure_Synspase_T4')]",
-				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]"
+				"[concat(variables('factoryId'), '/datasets/Plunet_Azure_Synspase_T4')]"
 			]
 		},
 		{
@@ -11755,8 +11667,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/Plunet_Azure_MySql_T5')]",
-				"[concat(variables('factoryId'), '/datasets/Plunet_Azure_Synspase_T5')]",
-				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]"
+				"[concat(variables('factoryId'), '/datasets/Plunet_Azure_Synspase_T5')]"
 			]
 		},
 		{
@@ -12798,8 +12709,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/Plunet_Azure_MySql_T6')]",
-				"[concat(variables('factoryId'), '/datasets/Plunet_Azure_Synspase_T6')]",
-				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]"
+				"[concat(variables('factoryId'), '/datasets/Plunet_Azure_Synspase_T6')]"
 			]
 		},
 		{
@@ -13008,15 +12918,13 @@
 						"inputs": [
 							{
 								"referenceName": "Plunet_Azure_MySql_T7",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "Plunet_Azure_Synspase_T7",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					}
@@ -13028,8 +12936,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/Plunet_Azure_MySql_T7')]",
-				"[concat(variables('factoryId'), '/datasets/Plunet_Azure_Synspase_T7')]",
-				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]"
+				"[concat(variables('factoryId'), '/datasets/Plunet_Azure_Synspase_T7')]"
 			]
 		},
 		{
@@ -27271,15 +27178,13 @@
 						"inputs": [
 							{
 								"referenceName": "Plunet_DB_T7",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "Azure_PlunetDB_MySql_T7",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					}
@@ -27320,9 +27225,12 @@
 							},
 							"sink": {
 								"type": "SqlDWSink",
-								"preCopyScript": "truncate table optima.BnkRozKwotyView",
-								"tableOption": "autoCreate",
-								"disableMetricsCollection": false
+								"allowPolyBase": true,
+								"polyBaseSettings": {
+									"rejectValue": 0,
+									"rejectType": "value",
+									"useTypeDefault": true
+								}
 							},
 							"enableStaging": true,
 							"stagingSettings": {
@@ -27330,29 +27238,18 @@
 									"referenceName": "AzureBlobStorage1",
 									"type": "LinkedServiceReference"
 								}
-							},
-							"parallelCopies": 1,
-							"translator": {
-								"type": "TabularTranslator",
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
 							}
 						},
 						"inputs": [
 							{
 								"referenceName": "Optima_BnkRozKwotyView",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "Optima_Synapse_BnkRozKwotyView",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					}
@@ -27364,8 +27261,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/Optima_BnkRozKwotyView')]",
-				"[concat(variables('factoryId'), '/datasets/Optima_Synapse_BnkRozKwotyView')]",
-				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]"
+				"[concat(variables('factoryId'), '/datasets/Optima_Synapse_BnkRozKwotyView')]"
 			]
 		},
 		{
@@ -27395,9 +27291,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureMySql_SLT_test')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Azure_PlunetDB_MySql_T2')]",
@@ -27426,9 +27320,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureMySql_SLT_test')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Azure_PlunetDB_MySql_T3')]",
@@ -27457,9 +27349,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureMySql_SLT_test')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Azure_PlunetDB_MySql_T4')]",
@@ -27488,9 +27378,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureMySql_SLT_test')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Azure_PlunetDB_MySql_T5')]",
@@ -27519,9 +27407,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureMySql_SLT_test')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Azure_PlunetDB_MySql_T6')]",
@@ -27550,9 +27436,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureMySql_SLT_test')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Azure_PlunetDB_MySql_T7')]",
@@ -27661,9 +27545,7 @@
 					"tableName": "log_mitarbeiter"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureMySql_SLT_test')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Optima_BnkRozKwotyView')]",
@@ -27682,9 +27564,7 @@
 					"table": "BnkRozKwotyView"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/OptimaServerLive')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Optima_Synapse_BnkRozKwotyView')]",
@@ -27706,9 +27586,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_SYNAP')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_MySql_T1')]",
@@ -27737,9 +27615,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureMySql_SLT_test')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_MySql_T2')]",
@@ -27768,9 +27644,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureMySql_SLT_test')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_MySql_T3')]",
@@ -27799,9 +27673,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureMySql_SLT_test')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_MySql_T4')]",
@@ -27830,9 +27702,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureMySql_SLT_test')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_MySql_T5')]",
@@ -27861,9 +27731,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureMySql_SLT_test')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_MySql_T6')]",
@@ -27892,9 +27760,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureMySql_SLT_test')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_MySql_T7')]",
@@ -28003,9 +27869,7 @@
 					"tableName": "log_mitarbeiter"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureMySql_SLT_test')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_Synspase_T1')]",
@@ -28035,9 +27899,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_SYNAP')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_Synspase_T2')]",
@@ -28067,9 +27929,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_SYNAP')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_Synspase_T3')]",
@@ -28099,9 +27959,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_SYNAP')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_Synspase_T4')]",
@@ -28131,9 +27989,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_SYNAP')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_Synspase_T5')]",
@@ -28163,9 +28019,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_SYNAP')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_Synspase_T6')]",
@@ -28198,9 +28052,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_SYNAP')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_Synspase_T7')]",
@@ -28291,9 +28143,7 @@
 					"table": "log_mitarbeiter"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_SYNAP')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Plunet_DB_T1')]",
@@ -28322,9 +28172,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Plunet_Test_Database')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Plunet_DB_T2')]",
@@ -28353,9 +28201,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Plunet_Test_Database')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Plunet_DB_T3')]",
@@ -28384,9 +28230,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Plunet_Test_Database')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Plunet_DB_T4')]",
@@ -28415,9 +28259,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Plunet_Test_Database')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Plunet_DB_T5')]",
@@ -28446,9 +28288,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Plunet_Test_Database')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Plunet_DB_T6')]",
@@ -28477,9 +28317,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Plunet_Test_Database')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Plunet_DB_T7')]",
@@ -28497,21 +28335,6 @@
 					"tableName": "`log_mitarbeiter`"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Plunet_Test_Database')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureBlobStorage1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"connectionString": "[parameters('AzureBlobStorage1_connectionString')]"
-				}
-			},
 			"dependsOn": []
 		},
 		{
@@ -28522,37 +28345,11 @@
 				"annotations": [],
 				"type": "AzureBlobFS",
 				"typeProperties": {
-					"url": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]",
+					"url": "https://dlssltdev.dfs.core.windows.net",
 					"accountKey": {
 						"type": "SecureString",
-						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+						"value": "**********"
 					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureMySql_SLT_test')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureMySql",
-				"typeProperties": {
-					"connectionString": "[parameters('AzureMySql_SLT_test_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSynapseAnalytics1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureSqlDW",
-				"typeProperties": {
-					"connectionString": "[parameters('AzureSynapseAnalytics1_connectionString')]"
 				}
 			},
 			"dependsOn": []
@@ -28565,10 +28362,10 @@
 				"annotations": [],
 				"type": "AzureBlobFS",
 				"typeProperties": {
-					"url": "[parameters('LS_ADLS_BAMBOOHR_properties_typeProperties_url')]",
+					"url": "https://dlssltdev.dfs.core.windows.net",
 					"accountKey": {
 						"type": "SecureString",
-						"value": "[parameters('LS_ADLS_BAMBOOHR_accountKey')]"
+						"value": "**********"
 					}
 				}
 			},
@@ -28585,10 +28382,10 @@
 					"deploymentType": "Online",
 					"serviceUri": "https://sltdev.crm4.dynamics.com/",
 					"authenticationType": "Office365",
-					"username": "[parameters('LS_CRM_properties_typeProperties_username')]",
+					"username": "hitarth.dave@summalinguae.com",
 					"password": {
 						"type": "SecureString",
-						"value": "[parameters('LS_CRM_password')]"
+						"value": "**********"
 					}
 				}
 			},
@@ -28602,105 +28399,14 @@
 				"annotations": [],
 				"type": "RestService",
 				"typeProperties": {
-					"url": "[parameters('LS_REST_BAMBOOHR_properties_typeProperties_url')]",
+					"url": "https://{a59ddcc1352d59ce08383d989c273fd87a66421b}:x@api.bamboohr.com/api/gateway.php/summalinguae/",
 					"enableServerCertificateValidation": true,
 					"authenticationType": "Basic",
-					"userName": "[parameters('LS_REST_BAMBOOHR_properties_typeProperties_userName')]",
+					"userName": "a59ddcc1352d59ce08383d989c273fd87a66421b",
 					"password": {
 						"type": "SecureString",
-						"value": "[parameters('LS_REST_BAMBOOHR_password')]"
+						"value": "**********"
 					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_SQL_DB')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureSqlDatabase",
-				"typeProperties": {
-					"connectionString": "[parameters('LS_SQL_DB_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_SYNAP')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureSqlDW",
-				"typeProperties": {
-					"connectionString": "[parameters('LS_SYNAP_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/OptimaServerLive')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "SqlServer",
-				"typeProperties": {
-					"connectionString": "[parameters('OptimaServerLive_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_Database')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "MySql",
-				"typeProperties": {
-					"connectionString": "[parameters('Plunet_Database_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_Test_Database')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "MySql",
-				"typeProperties": {
-					"connectionString": "[parameters('Plunet_Test_Database_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/SLTMySqlDatabase')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureMySql",
-				"typeProperties": {
-					"connectionString": "[parameters('SLTMySqlDatabase_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/SLT_Datacase')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureSqlDatabase",
-				"typeProperties": {
-					"connectionString": "[parameters('SLT_Datacase_connectionString')]"
 				}
 			},
 			"dependsOn": []
@@ -28713,10 +28419,10 @@
 				"annotations": [],
 				"type": "AzureBlobFS",
 				"typeProperties": {
-					"url": "[parameters('STAGING linked service_properties_typeProperties_url')]",
+					"url": "https://dlssltdev.dfs.core.windows.net",
 					"accountKey": {
 						"type": "SecureString",
-						"value": "[parameters('STAGING linked service_accountKey')]"
+						"value": "**********"
 					}
 				}
 			},
@@ -28734,8 +28440,7 @@
 						"pipelineReference": {
 							"referenceName": "Azure_MySqlDB_to_Synapse_DW_T1",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",

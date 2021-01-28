@@ -7,29 +7,89 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "adfsltdev"
 		},
-		"optima_connectionString": {
+		"AzureBlobStorage1_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'optima'"
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
 		},
-		"optimaStorage_connectionString": {
+		"AzureDataLakeStorage1_accountKey": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'optimaStorage'"
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
 		},
-		"optimabatch_accessKey": {
+		"AzureMySql_SLT_test_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'accessKey' of 'optimabatch'"
+			"metadata": "Secure string for 'connectionString' of 'AzureMySql_SLT_test'"
 		},
-		"optimabatch_properties_typeProperties_accountName": {
-			"type": "string",
-			"defaultValue": "optima"
+		"AzureSynapseAnalytics1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSynapseAnalytics1'"
 		},
-		"optimabatch_properties_typeProperties_batchUri": {
-			"type": "string",
-			"defaultValue": "https://optima.westeurope.batch.azure.com"
+		"LS_ADLS_BAMBOOHR_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_BAMBOOHR'"
 		},
-		"optimabatch_properties_typeProperties_poolName": {
+		"LS_CRM_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_CRM'"
+		},
+		"LS_REST_BAMBOOHR_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_REST_BAMBOOHR'"
+		},
+		"LS_SQL_DB_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_SQL_DB'"
+		},
+		"LS_SYNAP_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_SYNAP'"
+		},
+		"OptimaServerLive_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'OptimaServerLive'"
+		},
+		"Plunet_Database_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Plunet_Database'"
+		},
+		"Plunet_Test_Database_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Plunet_Test_Database'"
+		},
+		"SLTMySqlDatabase_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SLTMySqlDatabase'"
+		},
+		"SLT_Datacase_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SLT_Datacase'"
+		},
+		"STAGING linked service_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'STAGING linked service'"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "Optima-engine"
+			"defaultValue": "https://dlssltdev.dfs.core.windows.net"
+		},
+		"LS_ADLS_BAMBOOHR_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlssltdev.dfs.core.windows.net"
+		},
+		"LS_CRM_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "hitarth.dave@summalinguae.com"
+		},
+		"LS_REST_BAMBOOHR_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://{a59ddcc1352d59ce08383d989c273fd87a66421b}:x@api.bamboohr.com/api/gateway.php/summalinguae/"
+		},
+		"LS_REST_BAMBOOHR_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "a59ddcc1352d59ce08383d989c273fd87a66421b"
+		},
+		"STAGING linked service_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlssltdev.dfs.core.windows.net"
 		},
 		"containerUri": {
 			"type": "string",
@@ -58,27 +118,132 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"optima_connectionString": {
-						"value": "[parameters('optima_connectionString')]"
+					"AzureBlobStorage1_connectionString": {
+						"value": "[parameters('AzureBlobStorage1_connectionString')]"
 					},
-					"optimaStorage_connectionString": {
-						"value": "[parameters('optimaStorage_connectionString')]"
+					"AzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
 					},
-					"optimabatch_accessKey": {
-						"value": "[parameters('optimabatch_accessKey')]"
+					"AzureMySql_SLT_test_connectionString": {
+						"value": "[parameters('AzureMySql_SLT_test_connectionString')]"
 					},
-					"optimabatch_properties_typeProperties_accountName": {
-						"value": "[parameters('optimabatch_properties_typeProperties_accountName')]"
+					"AzureSynapseAnalytics1_connectionString": {
+						"value": "[parameters('AzureSynapseAnalytics1_connectionString')]"
 					},
-					"optimabatch_properties_typeProperties_batchUri": {
-						"value": "[parameters('optimabatch_properties_typeProperties_batchUri')]"
+					"LS_ADLS_BAMBOOHR_accountKey": {
+						"value": "[parameters('LS_ADLS_BAMBOOHR_accountKey')]"
 					},
-					"optimabatch_properties_typeProperties_poolName": {
-						"value": "[parameters('optimabatch_properties_typeProperties_poolName')]"
+					"LS_CRM_password": {
+						"value": "[parameters('LS_CRM_password')]"
+					},
+					"LS_REST_BAMBOOHR_password": {
+						"value": "[parameters('LS_REST_BAMBOOHR_password')]"
+					},
+					"LS_SQL_DB_connectionString": {
+						"value": "[parameters('LS_SQL_DB_connectionString')]"
+					},
+					"LS_SYNAP_connectionString": {
+						"value": "[parameters('LS_SYNAP_connectionString')]"
+					},
+					"OptimaServerLive_connectionString": {
+						"value": "[parameters('OptimaServerLive_connectionString')]"
+					},
+					"Plunet_Database_connectionString": {
+						"value": "[parameters('Plunet_Database_connectionString')]"
+					},
+					"Plunet_Test_Database_connectionString": {
+						"value": "[parameters('Plunet_Test_Database_connectionString')]"
+					},
+					"SLTMySqlDatabase_connectionString": {
+						"value": "[parameters('SLTMySqlDatabase_connectionString')]"
+					},
+					"SLT_Datacase_connectionString": {
+						"value": "[parameters('SLT_Datacase_connectionString')]"
+					},
+					"STAGING linked service_accountKey": {
+						"value": "[parameters('STAGING linked service_accountKey')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"LS_ADLS_BAMBOOHR_properties_typeProperties_url": {
+						"value": "[parameters('LS_ADLS_BAMBOOHR_properties_typeProperties_url')]"
+					},
+					"LS_CRM_properties_typeProperties_username": {
+						"value": "[parameters('LS_CRM_properties_typeProperties_username')]"
+					},
+					"LS_REST_BAMBOOHR_properties_typeProperties_url": {
+						"value": "[parameters('LS_REST_BAMBOOHR_properties_typeProperties_url')]"
+					},
+					"LS_REST_BAMBOOHR_properties_typeProperties_userName": {
+						"value": "[parameters('LS_REST_BAMBOOHR_properties_typeProperties_userName')]"
+					},
+					"STAGING linked service_properties_typeProperties_url": {
+						"value": "[parameters('STAGING linked service_properties_typeProperties_url')]"
 					}
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "adfsltdev_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adfsltdev_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "adfsltdev_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adfsltdev_ArmTemplate_1')]"
+			]
+		},
+		{
+			"name": "adfsltdev_ArmTemplate_3",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_3.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adfsltdev_ArmTemplate_2')]"
+			]
 		}
 	]
 }

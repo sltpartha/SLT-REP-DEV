@@ -5,23 +5,68 @@
 		"factoryName": {
 			"value": "adfsltdev"
 		},
-		"optima_connectionString": {
+		"AzureBlobStorage1_connectionString": {
 			"value": ""
 		},
-		"optimaStorage_connectionString": {
+		"AzureDataLakeStorage1_accountKey": {
 			"value": ""
 		},
-		"optimabatch_accessKey": {
+		"AzureMySql_SLT_test_connectionString": {
 			"value": ""
 		},
-		"optimabatch_properties_typeProperties_accountName": {
-			"value": "optima"
+		"AzureSynapseAnalytics1_connectionString": {
+			"value": ""
 		},
-		"optimabatch_properties_typeProperties_batchUri": {
-			"value": "https://optima.westeurope.batch.azure.com"
+		"LS_ADLS_BAMBOOHR_accountKey": {
+			"value": ""
 		},
-		"optimabatch_properties_typeProperties_poolName": {
-			"value": "Optima-engine"
+		"LS_CRM_password": {
+			"value": ""
+		},
+		"LS_REST_BAMBOOHR_password": {
+			"value": ""
+		},
+		"LS_SQL_DB_connectionString": {
+			"value": ""
+		},
+		"LS_SYNAP_connectionString": {
+			"value": ""
+		},
+		"OptimaServerLive_connectionString": {
+			"value": ""
+		},
+		"Plunet_Database_connectionString": {
+			"value": ""
+		},
+		"Plunet_Test_Database_connectionString": {
+			"value": ""
+		},
+		"SLTMySqlDatabase_connectionString": {
+			"value": ""
+		},
+		"SLT_Datacase_connectionString": {
+			"value": ""
+		},
+		"STAGING linked service_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://dlssltdev.dfs.core.windows.net"
+		},
+		"LS_ADLS_BAMBOOHR_properties_typeProperties_url": {
+			"value": "https://dlssltdev.dfs.core.windows.net"
+		},
+		"LS_CRM_properties_typeProperties_username": {
+			"value": "hitarth.dave@summalinguae.com"
+		},
+		"LS_REST_BAMBOOHR_properties_typeProperties_url": {
+			"value": "https://{a59ddcc1352d59ce08383d989c273fd87a66421b}:x@api.bamboohr.com/api/gateway.php/summalinguae/"
+		},
+		"LS_REST_BAMBOOHR_properties_typeProperties_userName": {
+			"value": "a59ddcc1352d59ce08383d989c273fd87a66421b"
+		},
+		"STAGING linked service_properties_typeProperties_url": {
+			"value": "https://dlssltdev.dfs.core.windows.net"
 		}
 	}
 }
