@@ -1,5 +1,5 @@
 {
-	"name": "AzureMySql_to_AzureSynapse",
+	"name": "AzureMySql_to_AzureSynapse_1",
 	"properties": {
 		"annotations": [],
 		"runtimeState": "Started",
@@ -14,8 +14,8 @@
 		"type": "ScheduleTrigger",
 		"typeProperties": {
 			"recurrence": {
-				"frequency": "Minute",
-				"interval": 1,
+				"frequency": "Hour",
+				"interval": 8,
 				"startTime": "2021-01-28T09:26:00Z",
 				"timeZone": "UTC"
 			}
