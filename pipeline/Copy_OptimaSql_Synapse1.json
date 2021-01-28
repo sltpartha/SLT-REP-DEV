@@ -1,0 +1,785 @@
+{
+	"name": "Copy_OptimaSql_Synapse1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_405_copy1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"sqlReaderQuery": "select * from [CDN_SLT].[CDN].[BnkRozKwotyView]",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "SqlDWSink",
+						"allowPolyBase": true,
+						"polyBaseSettings": {
+							"rejectValue": 0,
+							"rejectType": "value",
+							"useTypeDefault": true
+						},
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": true,
+					"stagingSettings": {
+						"linkedServiceName": {
+							"referenceName": "AzureBlobStorage1",
+							"type": "LinkedServiceReference"
+						}
+					},
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "BRKV_BRKID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "BRKV_BRKID",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_Kwota",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "BRKV_Kwota",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_KwotaSysL",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "BRKV_KwotaSysL",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_KwotaSysP",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "BRKV_KwotaSysP",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_RoznicaKursowaSys",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "BRKV_RoznicaKursowaSys",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_DDfId",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "BRKV_DDfId",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_NumerString",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BRKV_NumerString",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_NumerNr",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "BRKV_NumerNr",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_NumerPelny",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BRKV_NumerPelny",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_DataDok",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "BRKV_DataDok",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_Zwloka",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "BRKV_Zwloka",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_LDokTyp",
+									"type": "Int16"
+								},
+								"sink": {
+									"name": "BRKV_LDokTyp",
+									"type": "Int16"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_LDokID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "BRKV_LDokID",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_PDokTyp",
+									"type": "Int16"
+								},
+								"sink": {
+									"name": "BRKV_PDokTyp",
+									"type": "Int16"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_PDokID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "BRKV_PDokID",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_DekId",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "BRKV_DekId",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_Dek2Id",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "BRKV_Dek2Id",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_KPRId",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "BRKV_KPRId",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_KolumnaKPR",
+									"type": "Byte"
+								},
+								"sink": {
+									"name": "BRKV_KolumnaKPR",
+									"type": "Byte"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_KontoWn1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BRKV_KontoWn1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_KontoMa1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BRKV_KontoMa1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_KontoWn2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BRKV_KontoWn2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_KontoMa2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BRKV_KontoMa2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_AutoOffLine",
+									"type": "Int16"
+								},
+								"sink": {
+									"name": "BRKV_AutoOffLine",
+									"type": "Int16"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_TS_Export",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "BRKV_TS_Export",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_ImportAppId",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BRKV_ImportAppId",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_ImportRowId",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BRKV_ImportRowId",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_OpeZalId",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "BRKV_OpeZalId",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_StaZalId",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "BRKV_StaZalId",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_TS_Zal",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "BRKV_TS_Zal",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_OpeModId",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "BRKV_OpeModId",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_StaModId",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "BRKV_StaModId",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_TS_Mod",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "BRKV_TS_Mod",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_DokumentLP",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "BRKV_DokumentLP",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_Waluta",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BRKV_Waluta",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_DokTyp1",
+									"type": "Int16"
+								},
+								"sink": {
+									"name": "BRKV_DokTyp1",
+									"type": "Int16"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_DokId1",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "BRKV_DokId1",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_Numer1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BRKV_Numer1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_Data1",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "BRKV_Data1",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_Termin1",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "BRKV_Termin1",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_BRaId1",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "BRKV_BRaId1",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_KursNumer1",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "BRKV_KursNumer1",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_KursL1",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "BRKV_KursL1",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_KursM1",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "BRKV_KursM1",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_Opis1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BRKV_Opis1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_KontoPrzeciwstawne1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BRKV_KontoPrzeciwstawne1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_PodmiotTyp1",
+									"type": "Int16"
+								},
+								"sink": {
+									"name": "BRKV_PodmiotTyp1",
+									"type": "Int16"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_PodmiotId1",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "BRKV_PodmiotId1",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_Kwota1",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "BRKV_Kwota1",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_KwotaSys1",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "BRKV_KwotaSys1",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_KwotaRozSys1",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "BRKV_KwotaRozSys1",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_Typ1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BRKV_Typ1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_Wynagrodzenie1",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "BRKV_Wynagrodzenie1",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_DokTyp2",
+									"type": "Int16"
+								},
+								"sink": {
+									"name": "BRKV_DokTyp2",
+									"type": "Int16"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_DokId2",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "BRKV_DokId2",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_Numer2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BRKV_Numer2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_Data2",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "BRKV_Data2",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_Termin2",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "BRKV_Termin2",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_BRaId2",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "BRKV_BRaId2",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_KursNumer2",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "BRKV_KursNumer2",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_KursL2",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "BRKV_KursL2",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_KursM2",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "BRKV_KursM2",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_Opis2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BRKV_Opis2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_KontoPrzeciwstawne2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BRKV_KontoPrzeciwstawne2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_PodmiotTyp2",
+									"type": "Int16"
+								},
+								"sink": {
+									"name": "BRKV_PodmiotTyp2",
+									"type": "Int16"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_PodmiotId2",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "BRKV_PodmiotId2",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_Kwota2",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "BRKV_Kwota2",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_KwotaSys2",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "BRKV_KwotaSys2",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_KwotaRozSys2",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "BRKV_KwotaRozSys2",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_Typ2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BRKV_Typ2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_Wynagrodzenie2",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "BRKV_Wynagrodzenie2",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BRKV_Automatyczny",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "BRKV_Automatyczny",
+									"type": "Int32"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_405",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_405",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Plunet_Old_Pipeline"
+		},
+		"annotations": []
+	}
+}
