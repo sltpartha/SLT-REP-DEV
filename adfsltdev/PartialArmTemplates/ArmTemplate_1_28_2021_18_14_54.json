@@ -13,104 +13,6 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/optima_pipeline')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Optima",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "SqlServerSource",
-								"queryTimeout": "02:00:00",
-								"partitionOption": "None"
-							},
-							"sink": {
-								"type": "SqlDWSink",
-								"preCopyScript": "truncate table optima.BnkRozKwotyView",
-								"tableOption": "autoCreate",
-								"disableMetricsCollection": false
-							},
-							"enableStaging": true,
-							"stagingSettings": {
-								"linkedServiceName": {
-									"referenceName": "AzureBlobStorage1",
-									"type": "LinkedServiceReference"
-								}
-							},
-							"parallelCopies": 1,
-							"translator": {
-								"type": "TabularTranslator",
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "Optima_BnkRozKwotyView",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "Optima_Synapse_BnkRozKwotyView",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"folder": {
-					"name": "Plunet_Old_Pipeline"
-				},
-				"annotations": []
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureMySql_to_AzureSynapse1')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "Azure_MySqlDB_to_Synapse_DW_T1",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
-				"type": "ScheduleTrigger",
-				"typeProperties": {
-					"recurrence": {
-						"frequency": "Hour",
-						"interval": 8,
-						"startTime": "2021-01-28T09:26:00Z",
-						"timeZone": "UTC"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/AzureMySql_to_AzureSynapse2')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
@@ -122,8 +24,7 @@
 						"pipelineReference": {
 							"referenceName": "Azure_MySqlDB_to_Synapse_DW_T2",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -150,8 +51,7 @@
 						"pipelineReference": {
 							"referenceName": "Azure_MySqlDB_to_Synapse_DW_T3",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -178,8 +78,7 @@
 						"pipelineReference": {
 							"referenceName": "Azure_MySqlDB_to_Synapse_DW_T4",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -206,8 +105,7 @@
 						"pipelineReference": {
 							"referenceName": "Azure_MySqlDB_to_Synapse_DW_T5",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -234,8 +132,7 @@
 						"pipelineReference": {
 							"referenceName": "Azure_MySqlDB_to_Synapse_DW_T6",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -262,8 +159,7 @@
 						"pipelineReference": {
 							"referenceName": "Azure_MySqlDB_to_Synapse_DW_T7",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -290,8 +186,7 @@
 						"pipelineReference": {
 							"referenceName": "PlunettestDB_to_Azure_MySqlDB_T1",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -318,8 +213,7 @@
 						"pipelineReference": {
 							"referenceName": "PlunettestDB_to_Azure_MySqlDB_T2",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -346,8 +240,7 @@
 						"pipelineReference": {
 							"referenceName": "PlunettestDB_to_Azure_MySqlDB_T3",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -374,8 +267,7 @@
 						"pipelineReference": {
 							"referenceName": "PlunettestDB_to_Azure_MySqlDB_T4",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -402,8 +294,7 @@
 						"pipelineReference": {
 							"referenceName": "PlunettestDB_to_Azure_MySqlDB_T5",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -430,8 +321,7 @@
 						"pipelineReference": {
 							"referenceName": "PlunettestDB_to_Azure_MySqlDB_T6",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -458,8 +348,7 @@
 						"pipelineReference": {
 							"referenceName": "PlunettestDB_to_Azure_MySqlDB_T7",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
