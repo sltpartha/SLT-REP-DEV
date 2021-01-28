@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_m8t",
+				"name": "Azure_MySqlDB_to_Synapse_DW_T7",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -245,6 +245,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "Plunet"
+		},
 		"annotations": []
 	}
 }
