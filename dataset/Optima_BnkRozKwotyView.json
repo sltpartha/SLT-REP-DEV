@@ -1,0 +1,16 @@
+{
+	"name": "Optima_BnkRozKwotyView",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "OptimaServerLive",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "CDN",
+			"table": "BnkRozKwotyView"
+		}
+	}
+}
