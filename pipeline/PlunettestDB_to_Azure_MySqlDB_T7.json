@@ -213,13 +213,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_yue",
+						"referenceName": "Plunet_DB_T7",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_yue",
+						"referenceName": "Azure_PlunetDB_MySql_T7",
 						"type": "DatasetReference"
 					}
 				]
