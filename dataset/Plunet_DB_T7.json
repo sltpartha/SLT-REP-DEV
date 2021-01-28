@@ -1,0 +1,15 @@
+{
+	"name": "Plunet_DB_T7",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Plunet_Test_Database",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "MySqlTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "`log_mitarbeiter`"
+		}
+	}
+}

@@ -1,0 +1,88 @@
+{
+	"name": "Plunet_Azure_Synspase_T7",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SYNAP",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [
+			{
+				"name": "LogID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "IDBenutzer",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Datum",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "IDPartner",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "IDLogAktion",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "IDLogArt",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "IDStatus_Alt",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "IDStatus_Neu",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Text_Alt",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Text_Neu",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Anzeigename",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Beschreibung",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Datum_Alt",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "Datum_Neu",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "SteuerungDurch",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "slt_test",
+			"table": "log_mitarbeiter"
+		}
+	}
+}

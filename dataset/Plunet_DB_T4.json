@@ -1,0 +1,26 @@
+{
+	"name": "Plunet_DB_T4",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Plunet_Test_Database",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"cw_tableName": {
+				"type": "String"
+			}
+		},
+		"folder": {
+			"name": "Plunet_to_Azure_MySql"
+		},
+		"annotations": [],
+		"type": "MySqlTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": {
+				"value": "@dataset().cw_tableName",
+				"type": "Expression"
+			}
+		}
+	}
+}
