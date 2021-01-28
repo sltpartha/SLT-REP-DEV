@@ -28758,8 +28758,8 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Minute",
-						"interval": 5,
+						"frequency": "Hour",
+						"interval": 8,
 						"startTime": "2021-01-28T09:26:00Z",
 						"timeZone": "UTC"
 					}
@@ -28788,8 +28788,8 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Minute",
-						"interval": 5,
+						"frequency": "Hour",
+						"interval": 8,
 						"startTime": "2021-01-28T12:30:00Z",
 						"timeZone": "UTC"
 					}
@@ -28818,8 +28818,8 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Minute",
-						"interval": 5,
+						"frequency": "Hour",
+						"interval": 8,
 						"startTime": "2021-01-28T12:31:00Z",
 						"timeZone": "UTC"
 					}
@@ -28848,8 +28848,8 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Minute",
-						"interval": 5,
+						"frequency": "Hour",
+						"interval": 8,
 						"startTime": "2021-01-28T12:31:00Z",
 						"timeZone": "UTC"
 					}
@@ -28878,8 +28878,8 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Minute",
-						"interval": 5,
+						"frequency": "Hour",
+						"interval": 8,
 						"startTime": "2021-01-28T12:32:00Z",
 						"timeZone": "UTC"
 					}
@@ -28908,8 +28908,8 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Minute",
-						"interval": 5,
+						"frequency": "Hour",
+						"interval": 8,
 						"startTime": "2021-01-28T12:33:00Z",
 						"timeZone": "UTC"
 					}
@@ -28938,8 +28938,8 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Minute",
-						"interval": 5,
+						"frequency": "Hour",
+						"interval": 8,
 						"startTime": "2021-01-28T12:33:00Z",
 						"timeZone": "UTC"
 					}
@@ -28969,7 +28969,7 @@
 				"typeProperties": {
 					"recurrence": {
 						"frequency": "Hour",
-						"interval": 7,
+						"interval": 1,
 						"startTime": "2021-01-28T12:35:00Z",
 						"timeZone": "UTC"
 					}
@@ -28999,7 +28999,7 @@
 				"typeProperties": {
 					"recurrence": {
 						"frequency": "Hour",
-						"interval": 7,
+						"interval": 1,
 						"startTime": "2021-01-28T12:38:00Z",
 						"timeZone": "UTC"
 					}
@@ -29029,7 +29029,7 @@
 				"typeProperties": {
 					"recurrence": {
 						"frequency": "Hour",
-						"interval": 7,
+						"interval": 1,
 						"startTime": "2021-01-28T12:38:00Z",
 						"timeZone": "UTC"
 					}
@@ -29059,7 +29059,7 @@
 				"typeProperties": {
 					"recurrence": {
 						"frequency": "Hour",
-						"interval": 7,
+						"interval": 1,
 						"startTime": "2021-01-28T12:39:00Z",
 						"timeZone": "UTC"
 					}
@@ -29089,7 +29089,7 @@
 				"typeProperties": {
 					"recurrence": {
 						"frequency": "Hour",
-						"interval": 7,
+						"interval": 1,
 						"startTime": "2021-01-28T12:39:00Z",
 						"timeZone": "UTC"
 					}
@@ -29119,7 +29119,7 @@
 				"typeProperties": {
 					"recurrence": {
 						"frequency": "Hour",
-						"interval": 7,
+						"interval": 1,
 						"startTime": "2021-01-28T12:40:00Z",
 						"timeZone": "UTC"
 					}
@@ -29149,7 +29149,7 @@
 				"typeProperties": {
 					"recurrence": {
 						"frequency": "Hour",
-						"interval": 7,
+						"interval": 1,
 						"startTime": "2021-01-28T12:40:00Z",
 						"timeZone": "UTC"
 					}
