@@ -1,0 +1,24 @@
+{
+	"name": "AzureMySql_to_AzureSynapse7",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Azure_MySqlDB_to_Synapse_DW_T7",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 8,
+				"startTime": "2021-01-28T12:33:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
