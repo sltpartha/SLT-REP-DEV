@@ -62,15 +62,13 @@
 						"inputs": [
 							{
 								"referenceName": "Optima_BnkRozKwotyView",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "Optima_Synapse_BnkRozKwotyView",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					}
@@ -94,8 +92,7 @@
 						"pipelineReference": {
 							"referenceName": "Azure_MySqlDB_to_Synapse_DW_T1",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
