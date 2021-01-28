@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_yue",
+				"name": "PlunettestDB_to_Azure_MySqlDB_T7",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
