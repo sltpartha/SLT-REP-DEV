@@ -1,0 +1,67 @@
+{
+	"name": "mitarbeiter_plunettest_synapse",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_9m9",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "`kunde`"
+					},
+					{
+						"name": "Destination",
+						"value": "slt_test.kunde"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "MySqlSource",
+						"query": "select \n MitarbeiterID \n      , Aktiv \n      , Status \n      , Vorname \n      , Nachname \n      , AnlageDatum \n      , MandantID \n      , CurrencyID \n,StundenerfassungPreis\n \nfrom `mitarbeiter`"
+					},
+					"sink": {
+						"type": "SqlDWSink",
+						"preCopyScript": "truncate table slt_test.mitarbeiter",
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_9m9",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_9m9",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "srija"
+		},
+		"annotations": []
+	}
+}
