@@ -1,0 +1,24 @@
+{
+	"name": "PlunetMySql_to_AzureMySql_4",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "PlunettestDB_to_Azure_MySqlDB_T4",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 7,
+				"startTime": "2021-01-28T12:39:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
