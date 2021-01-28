@@ -32,6 +32,9 @@
 		"LS_SYNAP_connectionString": {
 			"value": ""
 		},
+		"OptimaServer_connectionString": {
+			"value": ""
+		},
 		"OptimaServerLive_connectionString": {
 			"value": ""
 		},

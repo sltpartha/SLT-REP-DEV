@@ -43,6 +43,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LS_SYNAP'"
 		},
+		"OptimaServer_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'OptimaServer'"
+		},
 		"OptimaServerLive_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'OptimaServerLive'"
@@ -236,6 +240,19 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/OptimaServer')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SqlServer",
+				"typeProperties": {
+					"connectionString": "[parameters('OptimaServer_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/OptimaServerLive')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -412,37 +429,6 @@
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Azure_PlunetDB_MySql_T4')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureMySql_SLT_test",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"cw_tableName": {
-						"type": "String"
-					}
-				},
-				"folder": {
-					"name": "Plunet_to_Azure_MySql"
-				},
-				"annotations": [],
-				"type": "AzureMySqlTable",
-				"schema": [],
-				"typeProperties": {
-					"tableName": {
-						"value": "@dataset().cw_tableName",
-						"type": "Expression"
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureMySql_SLT_test')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Azure_PlunetDB_MySql_T5')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
