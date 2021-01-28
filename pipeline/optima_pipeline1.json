@@ -20,8 +20,29 @@
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
+					"sink": {
+						"type": "SqlDWSink",
+						"allowPolyBase": true,
+						"polyBaseSettings": {
+							"rejectValue": 0,
+							"rejectType": "value",
+							"useTypeDefault": true
+						}
+					},
 					"enableStaging": false
-				}
+				},
+				"inputs": [
+					{
+						"referenceName": "Optima_BnkRozKwotyView",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Optima_Synapse_BnkRozKwotyView",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"folder": {
