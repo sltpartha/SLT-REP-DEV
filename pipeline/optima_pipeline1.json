@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "Optima",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -38,13 +38,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_405",
+						"referenceName": "Optima_BnkRozKwotyView",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_405",
+						"referenceName": "Optima_Synapse_BnkRozKwotyView",
 						"type": "DatasetReference"
 					}
 				]
