@@ -1,5 +1,5 @@
 {
-	"name": "AzureMySql_to_AzureSynapse_1",
+	"name": "AzureMySql_to_AzureSynapse1",
 	"properties": {
 		"annotations": [],
 		"runtimeState": "Started",
@@ -15,7 +15,7 @@
 		"typeProperties": {
 			"recurrence": {
 				"frequency": "Hour",
-				"interval": 9,
+				"interval": 8,
 				"startTime": "2021-01-28T09:26:00Z",
 				"timeZone": "UTC"
 			}
