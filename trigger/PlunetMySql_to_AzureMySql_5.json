@@ -2,7 +2,7 @@
 	"name": "PlunetMySql_to_AzureMySql_5",
 	"properties": {
 		"annotations": [],
-		"runtimeState": "Stopped",
+		"runtimeState": "Started",
 		"pipelines": [
 			{
 				"pipelineReference": {
