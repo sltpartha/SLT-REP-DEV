@@ -149,18 +149,6 @@
 					"LS_SYNAP_connectionString": {
 						"value": "[parameters('LS_SYNAP_connectionString')]"
 					},
-					"OptimaServer_connectionString": {
-						"value": "[parameters('OptimaServer_connectionString')]"
-					},
-					"OptimaServerLive_connectionString": {
-						"value": "[parameters('OptimaServerLive_connectionString')]"
-					},
-					"Plunet_Database_connectionString": {
-						"value": "[parameters('Plunet_Database_connectionString')]"
-					},
-					"Plunet_Test_Database_connectionString": {
-						"value": "[parameters('Plunet_Test_Database_connectionString')]"
-					},
 					"SLTMySqlDatabase_connectionString": {
 						"value": "[parameters('SLTMySqlDatabase_connectionString')]"
 					},
@@ -205,6 +193,18 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"OptimaServer_connectionString": {
+						"value": "[parameters('OptimaServer_connectionString')]"
+					},
+					"OptimaServerLive_connectionString": {
+						"value": "[parameters('OptimaServerLive_connectionString')]"
+					},
+					"Plunet_Database_connectionString": {
+						"value": "[parameters('Plunet_Database_connectionString')]"
+					},
+					"Plunet_Test_Database_connectionString": {
+						"value": "[parameters('Plunet_Test_Database_connectionString')]"
 					}
 				}
 			},

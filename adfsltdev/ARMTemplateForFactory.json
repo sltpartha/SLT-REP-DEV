@@ -28653,9 +28653,15 @@
 				"type": "SqlServer",
 				"typeProperties": {
 					"connectionString": "[parameters('OptimaServer_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "PlunetOnpromises",
+					"type": "IntegrationRuntimeReference"
 				}
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/PlunetOnpromises')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/OptimaServerLive')]",
@@ -28666,9 +28672,15 @@
 				"type": "SqlServer",
 				"typeProperties": {
 					"connectionString": "[parameters('OptimaServerLive_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "PlunetOnpromises",
+					"type": "IntegrationRuntimeReference"
 				}
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/PlunetOnpromises')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Plunet_Database')]",
@@ -28679,9 +28691,15 @@
 				"type": "MySql",
 				"typeProperties": {
 					"connectionString": "[parameters('Plunet_Database_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "PlunetOnpromises",
+					"type": "IntegrationRuntimeReference"
 				}
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/PlunetOnpromises')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Plunet_Test_Database')]",
@@ -28692,9 +28710,15 @@
 				"type": "MySql",
 				"typeProperties": {
 					"connectionString": "[parameters('Plunet_Test_Database_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "PlunetOnpromises",
+					"type": "IntegrationRuntimeReference"
 				}
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/PlunetOnpromises')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/SLTMySqlDatabase')]",
@@ -28968,8 +28992,8 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 1,
+						"frequency": "Minute",
+						"interval": 5,
 						"startTime": "2021-01-28T12:35:00Z",
 						"timeZone": "UTC"
 					}
@@ -28998,8 +29022,8 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 1,
+						"frequency": "Minute",
+						"interval": 5,
 						"startTime": "2021-01-28T12:38:00Z",
 						"timeZone": "UTC"
 					}
@@ -29028,8 +29052,8 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 1,
+						"frequency": "Minute",
+						"interval": 5,
 						"startTime": "2021-01-28T12:38:00Z",
 						"timeZone": "UTC"
 					}
@@ -29058,8 +29082,8 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 1,
+						"frequency": "Minute",
+						"interval": 5,
 						"startTime": "2021-01-28T12:39:00Z",
 						"timeZone": "UTC"
 					}
@@ -29088,8 +29112,8 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 1,
+						"frequency": "Minute",
+						"interval": 5,
 						"startTime": "2021-01-28T12:39:00Z",
 						"timeZone": "UTC"
 					}
@@ -29118,8 +29142,8 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 1,
+						"frequency": "Minute",
+						"interval": 5,
 						"startTime": "2021-01-28T12:40:00Z",
 						"timeZone": "UTC"
 					}
@@ -29148,8 +29172,8 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 1,
+						"frequency": "Minute",
+						"interval": 5,
 						"startTime": "2021-01-28T12:40:00Z",
 						"timeZone": "UTC"
 					}
@@ -29158,6 +29182,16 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/pipelines/PlunettestDB_to_Azure_MySqlDB_T7')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/PlunetOnpromises')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "SelfHosted",
+				"typeProperties": {}
+			},
+			"dependsOn": []
 		}
 	]
 }
