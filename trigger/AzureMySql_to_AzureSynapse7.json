@@ -2,7 +2,7 @@
 	"name": "AzureMySql_to_AzureSynapse7",
 	"properties": {
 		"annotations": [],
-		"runtimeState": "Stopped",
+		"runtimeState": "Started",
 		"pipelines": [
 			{
 				"pipelineReference": {
