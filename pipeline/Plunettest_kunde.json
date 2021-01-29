@@ -348,17 +348,6 @@
 							},
 							{
 								"source": {
-									"name": "BetreuerMemo",
-									"type": "String"
-								},
-								"sink": {
-									"name": "BetreuerMemo",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
 									"name": "QuellspracheID",
 									"type": "Int32"
 								},
