@@ -26,11 +26,10 @@
 				"typeProperties": {
 					"source": {
 						"type": "MySqlSource",
-						"query": "select * from `job`"
+						"query": "select * from `kunde`"
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"preCopyScript": "truncate table slt_test.job",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
@@ -979,13 +978,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Plunettest_Job",
+						"referenceName": "sd_Plunettest_Kunde",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "Synapse_Job",
+						"referenceName": "dd_Synapse_Kunde",
 						"type": "DatasetReference"
 					}
 				]
