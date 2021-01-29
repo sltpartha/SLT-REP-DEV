@@ -13,314 +13,6 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/PlunettestDB_to_Azure_MySqlDB_T7')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "PlunettestDB_to_Azure_MySqlDB_T7",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [
-							{
-								"name": "Source",
-								"value": "`log_mitarbeiter`"
-							},
-							{
-								"name": "Destination",
-								"value": "log_mitarbeiter"
-							}
-						],
-						"typeProperties": {
-							"source": {
-								"type": "MySqlSource"
-							},
-							"sink": {
-								"type": "AzureMySqlSink",
-								"writeBatchSize": 10000,
-								"writeBatchTimeout": "00:00:30",
-								"preCopyScript": "Truncate table slt_test.log_mitarbeiter"
-							},
-							"enableStaging": false,
-							"validateDataConsistency": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "LogID",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "LogID",
-											"type": "Int32",
-											"physicalType": "int"
-										}
-									},
-									{
-										"source": {
-											"name": "IDBenutzer",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "IDBenutzer",
-											"type": "Int32",
-											"physicalType": "int"
-										}
-									},
-									{
-										"source": {
-											"name": "Datum",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "Datum",
-											"type": "DateTime",
-											"physicalType": "datetime"
-										}
-									},
-									{
-										"source": {
-											"name": "IDPartner",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "IDPartner",
-											"type": "Int32",
-											"physicalType": "int"
-										}
-									},
-									{
-										"source": {
-											"name": "IDLogAktion",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "IDLogAktion",
-											"type": "Int32",
-											"physicalType": "int"
-										}
-									},
-									{
-										"source": {
-											"name": "IDLogArt",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "IDLogArt",
-											"type": "Int32",
-											"physicalType": "int"
-										}
-									},
-									{
-										"source": {
-											"name": "IDStatus_Alt",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "IDStatus_Alt",
-											"type": "Int32",
-											"physicalType": "int"
-										}
-									},
-									{
-										"source": {
-											"name": "IDStatus_Neu",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "IDStatus_Neu",
-											"type": "Int32",
-											"physicalType": "int"
-										}
-									},
-									{
-										"source": {
-											"name": "Text_Alt",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Text_Alt",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Text_Neu",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Text_Neu",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Anzeigename",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Anzeigename",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Beschreibung",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Beschreibung",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Datum_Alt",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "Datum_Alt",
-											"type": "DateTime",
-											"physicalType": "datetime"
-										}
-									},
-									{
-										"source": {
-											"name": "Datum_Neu",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "Datum_Neu",
-											"type": "DateTime",
-											"physicalType": "datetime"
-										}
-									},
-									{
-										"source": {
-											"name": "SteuerungDurch",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "SteuerungDurch",
-											"type": "Int32",
-											"physicalType": "int"
-										}
-									}
-								],
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "Plunet_DB_T7",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "Azure_PlunetDB_MySql_T7",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"folder": {
-					"name": "Plunet"
-				},
-				"annotations": []
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/optima_pipeline')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Optima",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "SqlServerSource",
-								"queryTimeout": "02:00:00",
-								"partitionOption": "None"
-							},
-							"sink": {
-								"type": "SqlDWSink",
-								"preCopyScript": "truncate table optima.BnkRozKwotyView",
-								"tableOption": "autoCreate",
-								"disableMetricsCollection": false
-							},
-							"enableStaging": true,
-							"stagingSettings": {
-								"linkedServiceName": {
-									"referenceName": "AzureBlobStorage1",
-									"type": "LinkedServiceReference"
-								}
-							},
-							"parallelCopies": 1,
-							"translator": {
-								"type": "TabularTranslator",
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "Optima_BnkRozKwotyView",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "Optima_Synapse_BnkRozKwotyView",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"folder": {
-					"name": "Plunet_Old_Pipeline"
-				},
-				"annotations": []
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/AzureMySql_to_AzureSynapse1')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
@@ -332,8 +24,7 @@
 						"pipelineReference": {
 							"referenceName": "Azure_MySqlDB_to_Synapse_DW_T1",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -360,8 +51,7 @@
 						"pipelineReference": {
 							"referenceName": "Azure_MySqlDB_to_Synapse_DW_T2",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -388,8 +78,7 @@
 						"pipelineReference": {
 							"referenceName": "Azure_MySqlDB_to_Synapse_DW_T3",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -416,8 +105,7 @@
 						"pipelineReference": {
 							"referenceName": "Azure_MySqlDB_to_Synapse_DW_T4",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -444,8 +132,7 @@
 						"pipelineReference": {
 							"referenceName": "Azure_MySqlDB_to_Synapse_DW_T5",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -472,8 +159,7 @@
 						"pipelineReference": {
 							"referenceName": "Azure_MySqlDB_to_Synapse_DW_T6",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -500,8 +186,7 @@
 						"pipelineReference": {
 							"referenceName": "Azure_MySqlDB_to_Synapse_DW_T7",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -510,34 +195,6 @@
 						"frequency": "Hour",
 						"interval": 8,
 						"startTime": "2021-01-28T12:33:00Z",
-						"timeZone": "UTC"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/PlunetMySql_to_AzureMySql_1')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "PlunettestDB_to_Azure_MySqlDB_T1",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
-				"type": "ScheduleTrigger",
-				"typeProperties": {
-					"recurrence": {
-						"frequency": "Minute",
-						"interval": 5,
-						"startTime": "2021-01-28T12:35:00Z",
 						"timeZone": "UTC"
 					}
 				}
@@ -556,8 +213,7 @@
 						"pipelineReference": {
 							"referenceName": "PlunettestDB_to_Azure_MySqlDB_T2",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -584,8 +240,7 @@
 						"pipelineReference": {
 							"referenceName": "PlunettestDB_to_Azure_MySqlDB_T3",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -612,8 +267,7 @@
 						"pipelineReference": {
 							"referenceName": "PlunettestDB_to_Azure_MySqlDB_T4",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -640,8 +294,7 @@
 						"pipelineReference": {
 							"referenceName": "PlunettestDB_to_Azure_MySqlDB_T5",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -668,8 +321,7 @@
 						"pipelineReference": {
 							"referenceName": "PlunettestDB_to_Azure_MySqlDB_T6",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -696,8 +348,7 @@
 						"pipelineReference": {
 							"referenceName": "PlunettestDB_to_Azure_MySqlDB_T7",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -710,9 +361,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/PlunettestDB_to_Azure_MySqlDB_T7')]"
-			]
+			"dependsOn": []
 		}
 	]
 }
