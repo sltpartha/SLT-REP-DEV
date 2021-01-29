@@ -9,6 +9,7 @@
 		"type": "AzureSqlDWTable",
 		"schema": [],
 		"typeProperties": {
+			"schema": "slt_test",
 			"table": "kunde"
 		}
 	}
