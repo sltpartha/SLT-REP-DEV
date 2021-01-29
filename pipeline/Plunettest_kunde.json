@@ -40,282 +40,497 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "JobID",
+									"name": "KundeID",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "JobID",
-									"type": "Int32"
+									"name": "KundeID",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "IDAuftrag",
+									"name": "Aktiv",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "IDAuftrag",
-									"type": "Int32"
+									"name": "Aktiv",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "IDAssistent",
+									"name": "Anrede",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "IDAssistent",
-									"type": "Int32"
+									"name": "Anrede",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "IDLeistung",
-									"type": "Int32"
+									"name": "Vorname",
+									"type": "String"
 								},
 								"sink": {
-									"name": "IDLeistung",
-									"type": "Int32"
+									"name": "Vorname",
+									"type": "String",
+									"physicalType": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "Status",
-									"type": "Int32"
+									"name": "Titel",
+									"type": "String"
 								},
 								"sink": {
-									"name": "Status",
-									"type": "Int32"
+									"name": "Titel",
+									"type": "String",
+									"physicalType": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "IDMitarbeiter",
-									"type": "Int32"
+									"name": "Nachname",
+									"type": "String"
 								},
 								"sink": {
-									"name": "IDMitarbeiter",
-									"type": "Int32"
+									"name": "Nachname",
+									"type": "String",
+									"physicalType": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "IDPosition",
-									"type": "Int32"
+									"name": "Briefanrede",
+									"type": "String"
 								},
 								"sink": {
-									"name": "IDPosition",
-									"type": "Int32"
+									"name": "Briefanrede",
+									"type": "String",
+									"physicalType": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "JobAuftragDatum",
-									"type": "DateTime"
+									"name": "TelefonZentrale",
+									"type": "String"
 								},
 								"sink": {
-									"name": "JobAuftragDatum",
-									"type": "DateTime"
+									"name": "TelefonZentrale",
+									"type": "String",
+									"physicalType": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "TerminBis",
-									"type": "DateTime"
+									"name": "Mobil",
+									"type": "String"
 								},
 								"sink": {
-									"name": "TerminBis",
-									"type": "DateTime"
+									"name": "Mobil",
+									"type": "String",
+									"physicalType": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "TerminVon",
-									"type": "DateTime"
+									"name": "Fax",
+									"type": "String"
 								},
 								"sink": {
-									"name": "TerminVon",
-									"type": "DateTime"
+									"name": "Fax",
+									"type": "String",
+									"physicalType": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "IDZielsprache",
-									"type": "Int32"
+									"name": "eMail",
+									"type": "String"
 								},
 								"sink": {
-									"name": "IDZielsprache",
-									"type": "Int32"
+									"name": "eMail",
+									"type": "String",
+									"physicalType": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "Geliefert",
-									"type": "Int32"
+									"name": "Bankname",
+									"type": "String"
 								},
 								"sink": {
-									"name": "Geliefert",
-									"type": "Int32"
+									"name": "Bankname",
+									"type": "String",
+									"physicalType": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "Lieferdatum",
-									"type": "DateTime"
+									"name": "BLZ",
+									"type": "String"
 								},
 								"sink": {
-									"name": "Lieferdatum",
-									"type": "DateTime"
+									"name": "BLZ",
+									"type": "String",
+									"physicalType": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "VorgaengerJobID",
-									"type": "Int32"
+									"name": "KontoNr",
+									"type": "String"
 								},
 								"sink": {
-									"name": "VorgaengerJobID",
-									"type": "Int32"
+									"name": "KontoNr",
+									"type": "String",
+									"physicalType": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "KreditorID",
-									"type": "Int32"
+									"name": "Kontoinhaber",
+									"type": "String"
 								},
 								"sink": {
-									"name": "KreditorID",
-									"type": "Int32"
+									"name": "Kontoinhaber",
+									"type": "String",
+									"physicalType": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "IDEigenschaft1",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "IDEigenschaft1",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "IDWertEigenschaft1",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "IDWertEigenschaft1",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "IDEigenschaft2",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "IDEigenschaft2",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "IDWertEigenschaft2",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "IDWertEigenschaft2",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "IDEigenschaft3",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "IDEigenschaft3",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "IDWertEigenschaft3",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "IDWertEigenschaft3",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "IDEigenschaft4",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "IDEigenschaft4",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "IDWertEigenschaft4",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "IDWertEigenschaft4",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "IDEigenschaft5",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "IDEigenschaft5",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "IDWertEigenschaft5",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "IDWertEigenschaft5",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "CurrencyID",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "CurrencyID",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "Kurs",
+									"name": "Skonto",
 									"type": "Double"
 								},
 								"sink": {
-									"name": "Kurs",
-									"type": "Double"
+									"name": "Skonto",
+									"type": "Double",
+									"physicalType": "Double"
 								}
 							},
 							{
 								"source": {
-									"name": "IDQuellsprache",
+									"name": "SkontoTage",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "IDQuellsprache",
+									"name": "SkontoTage",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "PreisMemo",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PreisMemo",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "UST_ID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "UST_ID",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "AnlageDatum",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "AnlageDatum",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Internet",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Internet",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SwiftCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SwiftCode",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Bankadresse",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Bankadresse",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "IBAN",
+									"type": "String"
+								},
+								"sink": {
+									"name": "IBAN",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SortCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SortCode",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Erstkontakt",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Erstkontakt",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "KontaktHerkunft",
+									"type": "String"
+								},
+								"sink": {
+									"name": "KontaktHerkunft",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "IDBetreuer",
 									"type": "Int32"
+								},
+								"sink": {
+									"name": "IDBetreuer",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BetreuerMemo",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BetreuerMemo",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "QuellspracheID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "QuellspracheID",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ReadOnly",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ReadOnly",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "WithMemoAlert",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "WithMemoAlert",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Werbung",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Werbung",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "KontoFIBU",
+									"type": "String"
+								},
+								"sink": {
+									"name": "KontoFIBU",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "AnschriftID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "AnschriftID",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "SkypeNr",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SkypeNr",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ABA",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ABA",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ErstAuftrag",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "ErstAuftrag",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Zahlungsfrist",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Zahlungsfrist",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ZahlungsfristMahnung1",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ZahlungsfristMahnung1",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ZahlungsfristMahnung2",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ZahlungsfristMahnung2",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ErtragKonto",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ErtragKonto",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZahlungsfristMahnung3",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ZahlungsfristMahnung3",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Kreditlinie",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Kreditlinie",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Kreditvolumen",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Kreditvolumen",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -325,487 +540,580 @@
 								},
 								"sink": {
 									"name": "VorlageID",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "MitarbeiterreservierungsStatus",
+									"name": "Zeitzone",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Zeitzone",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MWStArt",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "MitarbeiterreservierungsStatus",
-									"type": "Int32"
+									"name": "MWStArt",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "ZeitPuffer",
+									"name": "IDProjektbetreuer",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "ZeitPuffer",
-									"type": "Int32"
+									"name": "IDProjektbetreuer",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "ZeitPufferArt",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "ZeitPufferArt",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "ZeitPufferTerminBis",
+									"name": "Vertragsdatum",
 									"type": "DateTime"
 								},
 								"sink": {
-									"name": "ZeitPufferTerminBis",
-									"type": "DateTime"
+									"name": "Vertragsdatum",
+									"type": "DateTime",
+									"physicalType": "DateTime"
 								}
 							},
 							{
 								"source": {
-									"name": "JobketteID",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "JobketteID",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "TextModulTextID_1",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "TextModulTextID_1",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "TextModulTextID_2",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "TextModulTextID_2",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "TextModulTextID_3",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "TextModulTextID_3",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "TextModulTextID_4",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "TextModulTextID_4",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "TextModulTextID_5",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "TextModulTextID_5",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "DruckAusgabe",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "DruckAusgabe",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "JobDatumBeauftragt",
+									"name": "VertragsdatumEnde",
 									"type": "DateTime"
 								},
 								"sink": {
-									"name": "JobDatumBeauftragt",
-									"type": "DateTime"
+									"name": "VertragsdatumEnde",
+									"type": "DateTime",
+									"physicalType": "DateTime"
 								}
 							},
 							{
 								"source": {
-									"name": "AcrossTaskTemplateID",
+									"name": "StandardPreislisteDeaktiviert",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "AcrossTaskTemplateID",
-									"type": "Int32"
+									"name": "StandardPreislisteDeaktiviert",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "PreislisteID",
+									"name": "IDBesteuerungsArt",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "PreislisteID",
-									"type": "Int32"
+									"name": "IDBesteuerungsArt",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "FolgeJobStartStatus",
+									"name": "VertragsNummer",
+									"type": "String"
+								},
+								"sink": {
+									"name": "VertragsNummer",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "IstEndkunde",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "FolgeJobStartStatus",
-									"type": "Int32"
+									"name": "IstEndkunde",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "MemoqUserRolle",
+									"name": "MemoVerwenden",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "MemoqUserRolle",
-									"type": "Int32"
+									"name": "MemoVerwenden",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "SourceDirSichtbar",
+									"name": "NurSammelrechnung",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "SourceDirSichtbar",
-									"type": "Int32"
+									"name": "NurSammelrechnung",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "RefDirSichtbar",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "RefDirSichtbar",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "Sprachabhaengig",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "Sprachabhaengig",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "MitarbeiterAP_ID",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "MitarbeiterAP_ID",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "Zusatzkosten",
+									"name": "ProvisionUmsatz",
 									"type": "Double"
 								},
 								"sink": {
-									"name": "Zusatzkosten",
-									"type": "Double"
+									"name": "ProvisionUmsatz",
+									"type": "Double",
+									"physicalType": "Double"
 								}
 							},
 							{
 								"source": {
-									"name": "IDAngebotJob",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "IDAngebotJob",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "PreiseImRohertragBeruecksichtigen",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "PreiseImRohertragBeruecksichtigen",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "MengeProZeiteinheit",
+									"name": "ProvisionRohertrag",
 									"type": "Double"
 								},
 								"sink": {
-									"name": "MengeProZeiteinheit",
-									"type": "Double"
+									"name": "ProvisionRohertrag",
+									"type": "Double",
+									"physicalType": "Double"
 								}
 							},
 							{
 								"source": {
-									"name": "MengeProZeiteinheit_Masseinheit",
+									"name": "NichtMahnen",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "MengeProZeiteinheit_Masseinheit",
-									"type": "Int32"
+									"name": "NichtMahnen",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "JobDaten_Abholdatum",
+									"name": "BestellnummerErforderlich",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "BestellnummerErforderlich",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MandantID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MandantID",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "PayPal",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PayPal",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZahlungsMethode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ZahlungsMethode",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Umsatzprognose",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "Umsatzprognose",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "Auftragswahrscheinlichkeit",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "Auftragswahrscheinlichkeit",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "ErloesKontoID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ErloesKontoID",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "CAT_Art",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "CAT_Art",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "AnschriftUebernahmeInRechnung",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "AnschriftUebernahmeInRechnung",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Zahlungsfrist_Regel",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Zahlungsfrist_Regel",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Moneybookers",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Moneybookers",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ErrorSpyAktiv",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ErrorSpyAktiv",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Zielrendite",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "Zielrendite",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "LetzterAuftrag",
 									"type": "DateTime"
 								},
 								"sink": {
-									"name": "JobDaten_Abholdatum",
-									"type": "DateTime"
+									"name": "LetzterAuftrag",
+									"type": "DateTime",
+									"physicalType": "DateTime"
 								}
 							},
 							{
 								"source": {
-									"name": "MemoqElmZuweisen",
+									"name": "CurrencyID",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "MemoqElmZuweisen",
-									"type": "Int32"
+									"name": "CurrencyID",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "AktuelleJobReklamation",
+									"name": "AnsprechpartnerID_Standard",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "AktuelleJobReklamation",
-									"type": "Int32"
+									"name": "AnsprechpartnerID_Standard",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "MemoQ_DokumentStatusArt",
+									"name": "AnsprechpartnerID_Rechnung",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "MemoQ_DokumentStatusArt",
-									"type": "Int32"
+									"name": "AnsprechpartnerID_Rechnung",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "ZuletztAktualisiert",
-									"type": "DateTime"
+									"name": "KundenzeichenErforderlich",
+									"type": "Int32"
 								},
 								"sink": {
-									"name": "ZuletztAktualisiert",
-									"type": "DateTime"
+									"name": "KundenzeichenErforderlich",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "Fortschritt",
+									"name": "MandantID_Rechnung",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MandantID_Rechnung",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "UserDefined_String1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "UserDefined_String1",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "UserDefined_String2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "UserDefined_String2",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "UserDefined_Double1",
 									"type": "Double"
 								},
 								"sink": {
-									"name": "Fortschritt",
+									"name": "UserDefined_Double1",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "KundenbetreuerBeiAuftraegen",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "KundenbetreuerBeiAuftraegen",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "KundenbetreuerProvision",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "KundenbetreuerProvision",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "VorlageID_Mahnung",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "VorlageID_Mahnung",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ExternalID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ExternalID",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Mail_Mahnung",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Mail_Mahnung",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Kostenstelle",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Kostenstelle",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "WaehrungAuftragRechnungIdentisch",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "WaehrungAuftragRechnungIdentisch",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "AngebotPruefung_Analog_Adminbereich",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "AngebotPruefung_Analog_Adminbereich",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "AngebotPruefung_Mitarbeiter_1",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "AngebotPruefung_Mitarbeiter_1",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "AngebotPruefung_Mitarbeiter_2",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "AngebotPruefung_Mitarbeiter_2",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "AngebotPruefung_Netto_1",
 									"type": "Double"
+								},
+								"sink": {
+									"name": "AngebotPruefung_Netto_1",
+									"type": "Double",
+									"physicalType": "Double"
 								}
 							},
 							{
 								"source": {
-									"name": "TradosSchablone",
-									"type": "Int32"
+									"name": "AngebotPruefung_Netto_2",
+									"type": "Double"
 								},
 								"sink": {
-									"name": "TradosSchablone",
-									"type": "Int32"
+									"name": "AngebotPruefung_Netto_2",
+									"type": "Double",
+									"physicalType": "Double"
 								}
 							},
 							{
 								"source": {
-									"name": "XTMBenutzerRolle",
+									"name": "DokumentHerkunft",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "XTMBenutzerRolle",
-									"type": "Int32"
+									"name": "DokumentHerkunft",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "Job_Als_Auftrag_AndererBuchungskreis",
-									"type": "Int32"
+									"name": "Website",
+									"type": "String"
 								},
 								"sink": {
-									"name": "Job_Als_Auftrag_AndererBuchungskreis",
-									"type": "Int32"
+									"name": "Website",
+									"type": "String",
+									"physicalType": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "Autojob_DokumentLieferungPosition",
-									"type": "Int32"
+									"name": "DossierNew",
+									"type": "String"
 								},
 								"sink": {
-									"name": "Autojob_DokumentLieferungPosition",
-									"type": "Int32"
+									"name": "DossierNew",
+									"type": "String",
+									"physicalType": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "Autojob_DokumentLieferungProjekt",
-									"type": "Int32"
+									"name": "FachgebietDossierNew",
+									"type": "String"
 								},
 								"sink": {
-									"name": "Autojob_DokumentLieferungProjekt",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "Autojob_Lieferart",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "Autojob_Lieferart",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "Autojob_LieferscheinPDF",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "Autojob_LieferscheinPDF",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "IDPosition_AndererBuchungskreis",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "IDPosition_AndererBuchungskreis",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "CATSchablone",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "CATSchablone",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "MemoQPrimaryTMID",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "MemoQPrimaryTMID",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "MemoqPermissionZuweisen",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "MemoqPermissionZuweisen",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "FolgejobKannStarten",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "FolgejobKannStarten",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "WartenAufStartsignalAllerVorgaengerjob",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "WartenAufStartsignalAllerVorgaengerjob",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "JobkostenWerdenNichtUebertragen",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "JobkostenWerdenNichtUebertragen",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "MengeBeiMitarbeiterWechselAktualisieren",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "MengeBeiMitarbeiterWechselAktualisieren",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "LiefernotizKopierenInFolgejob",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "LiefernotizKopierenInFolgejob",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "MengeAufJobKopieren",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "MengeAufJobKopieren",
-									"type": "Int32"
+									"name": "FachgebietDossierNew",
+									"type": "String",
+									"physicalType": "String"
 								}
 							},
 							{
@@ -815,157 +1123,459 @@
 								},
 								"sink": {
 									"name": "ErstellerID",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "WartenAufStartsignalVonJobsAndererPositionen",
+									"name": "MemoAuftragsabrechnung",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "WartenAufStartsignalVonJobsAndererPositionen",
-									"type": "Int32"
+									"name": "MemoAuftragsabrechnung",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "FileExchangeType",
+									"name": "MemoRechnungDrucken",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "FileExchangeType",
-									"type": "Int32"
+									"name": "MemoRechnungDrucken",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "ErinnerungAnDolmetschJob_MailAktiv",
+									"name": "DefaultMemoAlertProject",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "ErinnerungAnDolmetschJob_MailAktiv",
-									"type": "Int32"
+									"name": "DefaultMemoAlertProject",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "OrdnerZugriffAusAdminBereichUebernehmen",
-									"type": "Int32"
+									"name": "QuickBooksID",
+									"type": "String"
 								},
 								"sink": {
-									"name": "OrdnerZugriffAusAdminBereichUebernehmen",
-									"type": "Int32"
+									"name": "QuickBooksID",
+									"type": "String",
+									"physicalType": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "AufwandII_ImRohertragBeruecksichtigen",
+									"name": "PartnerGruppeID_Projektteam",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "AufwandII_ImRohertragBeruecksichtigen",
-									"type": "Int32"
+									"name": "PartnerGruppeID_Projektteam",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "SpalteWF",
+									"name": "QBTermsID",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "SpalteWF",
-									"type": "Int32"
+									"name": "QBTermsID",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "AcrossCrossGridSchablone",
-									"type": "Int32"
+									"name": "HandlingFee",
+									"type": "Double"
 								},
 								"sink": {
-									"name": "AcrossCrossGridSchablone",
-									"type": "Int32"
+									"name": "HandlingFee",
+									"type": "Double",
+									"physicalType": "Double"
 								}
 							},
 							{
 								"source": {
-									"name": "AnkuendigungStatus",
+									"name": "CAT_Schablone",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "AnkuendigungStatus",
-									"type": "Int32"
+									"name": "CAT_Schablone",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "FeedbackErforderlichFuerLieferung",
+									"name": "WorkflowInAnfrageAuswaehlbar",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "FeedbackErforderlichFuerLieferung",
-									"type": "Int32"
+									"name": "WorkflowInAnfrageAuswaehlbar",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "MemoqRefreshWorkflowPhase",
+									"name": "KundegruppeID_Endkunde",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "MemoqRefreshWorkflowPhase",
-									"type": "Int32"
+									"name": "KundegruppeID_Endkunde",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "MindestPauschaleTesten",
+									"name": "SetzeAbgenommenePos_OhneRechnung",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "MindestPauschaleTesten",
-									"type": "Int32"
+									"name": "SetzeAbgenommenePos_OhneRechnung",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "AssistentID_geloescht",
+									"name": "EndKunde_Anfrage",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "AssistentID_geloescht",
-									"type": "Int32"
+									"name": "EndKunde_Anfrage",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "MitarbeiterID_geloescht",
-									"type": "Int32"
+									"name": "TradosSchablone",
+									"type": "String"
 								},
 								"sink": {
-									"name": "MitarbeiterID_geloescht",
-									"type": "Int32"
+									"name": "TradosSchablone",
+									"type": "String",
+									"physicalType": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "AnsprechpartnerID_geloescht",
-									"type": "Int32"
+									"name": "KundeZielrenditeDolmetschen",
+									"type": "Double"
 								},
 								"sink": {
-									"name": "AnsprechpartnerID_geloescht",
-									"type": "Int32"
+									"name": "KundeZielrenditeDolmetschen",
+									"type": "Double",
+									"physicalType": "Double"
 								}
 							},
 							{
 								"source": {
-									"name": "VorlagensatzID",
+									"name": "BestellnummerInRechnungErforderlich",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "VorlagensatzID",
+									"name": "BestellnummerInRechnungErforderlich",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Exportiert",
 									"type": "Int32"
+								},
+								"sink": {
+									"name": "Exportiert",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "AnsprechpartnerID_Dolmetschen",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "AnsprechpartnerID_Dolmetschen",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "StandardPreislisteFuerPauschalAngebot",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "StandardPreislisteFuerPauschalAngebot",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Kreditkartennummer_enc",
+									"type": "Byte[]"
+								},
+								"sink": {
+									"name": "Kreditkartennummer_enc",
+									"type": "Byte[]",
+									"physicalType": "Byte[]"
+								}
+							},
+							{
+								"source": {
+									"name": "Kreditkartenverfallsdatum_enc",
+									"type": "Byte[]"
+								},
+								"sink": {
+									"name": "Kreditkartenverfallsdatum_enc",
+									"type": "Byte[]",
+									"physicalType": "Byte[]"
+								}
+							},
+							{
+								"source": {
+									"name": "CCEmpfaengerAnfrage",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CCEmpfaengerAnfrage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CCEmpfaengerAngebot",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CCEmpfaengerAngebot",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CCEmpfaengerAuftrag",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CCEmpfaengerAuftrag",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CCEmpfaengerRechnung",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CCEmpfaengerRechnung",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ProjektMaske_Kundenlogin",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ProjektMaske_Kundenlogin",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "SortingField",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SortingField",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "IDAcrossMasterServer",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "IDAcrossMasterServer",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "KostenuebertragungInPosition",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "KostenuebertragungInPosition",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "DateLastQuote",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DateLastQuote",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "isInaktiveAnsprechpartnerAnzeigen",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "isInaktiveAnsprechpartnerAnzeigen",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "isEmail_KontaktanlageEUDSGVO_versandt",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "isEmail_KontaktanlageEUDSGVO_versandt",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Datum_LoeschungBeantragt",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Datum_LoeschungBeantragt",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Datum_LetzteAktion_Anfrage",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Datum_LetzteAktion_Anfrage",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Datum_LetzteAktion_Angebot",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Datum_LetzteAktion_Angebot",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Datum_LetzteAktion_Auftrag",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Datum_LetzteAktion_Auftrag",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Datum_LetzteAktion_Job",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Datum_LetzteAktion_Job",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Datum_LetzteAktion_Rechnung",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Datum_LetzteAktion_Rechnung",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Bank_Country",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Bank_Country",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Bank_Currency",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Bank_Currency",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BezahlintegrationAktiv",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "BezahlintegrationAktiv",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "samlexternalid",
+									"type": "String"
+								},
+								"sink": {
+									"name": "samlexternalid",
+									"type": "String",
+									"physicalType": "String"
 								}
 							}
 						],
