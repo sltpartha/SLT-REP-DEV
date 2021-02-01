@@ -31,7 +31,8 @@
 					"sink": {
 						"type": "AzureMySqlSink",
 						"writeBatchSize": 10000,
-						"writeBatchTimeout": "00:00:30"
+						"writeBatchTimeout": "00:00:30",
+						"preCopyScript": "truncate table slt_test.account_subservice"
 					},
 					"enableStaging": false,
 					"validateDataConsistency": false,
@@ -87,7 +88,14 @@
 			{
 				"name": "MSQL_to_Synapse",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "PL_CRM_TO_MSQL_Account_subservice",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -104,7 +112,9 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"tableOption": "autoCreate"
+						"preCopyScript": "truncate table CRM.Account_Subservice",
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
@@ -170,7 +180,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "AzureSynapseAnalyticsTable1",
+						"referenceName": "DD_CRM_Synapse_Subservice",
 						"type": "DatasetReference"
 					}
 				]
