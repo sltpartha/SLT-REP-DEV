@@ -26,14 +26,12 @@
 				],
 				"typeProperties": {
 					"source": {
-						"type": "DynamicsCrmSource",
-						"query": "<fetch>\n<entity name = \"account\">\n<accountid , erb_subservice>\n</entity>"
+						"type": "DynamicsCrmSource"
 					},
 					"sink": {
-						"type": "SqlDWSink",
-						"preCopyScript": "Truncate table sltsqldbdev.account",
-						"tableOption": "autoCreate",
-						"disableMetricsCollection": false
+						"type": "AzureMySqlSink",
+						"writeBatchSize": 10000,
+						"writeBatchTimeout": "00:00:30"
 					},
 					"enableStaging": false,
 					"validateDataConsistency": false,
@@ -2301,7 +2299,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_Synapse_CRM",
+						"referenceName": "CRM_MySQL_Subservice",
 						"type": "DatasetReference"
 					}
 				]
