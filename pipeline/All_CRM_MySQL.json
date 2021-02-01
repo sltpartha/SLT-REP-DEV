@@ -131,6 +131,19 @@
 					},
 					"waitOnCompletion": true
 				}
+			},
+			{
+				"name": "Account_Subservice",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "PL_CRM_TO_SYNAPSE_Account_subservice",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"folder": {
