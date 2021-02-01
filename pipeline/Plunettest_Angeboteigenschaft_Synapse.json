@@ -1,0 +1,124 @@
+{
+	"name": "Plunettest_Angeboteigenschaft_Synapse",
+	"properties": {
+		"activities": [
+			{
+				"name": "Angeboteigenschaft",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "`job`"
+					},
+					{
+						"name": "Destination",
+						"value": "slt_test.Job"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "MySqlSource",
+						"query": "select * from `angeboteigenschaft`"
+					},
+					"sink": {
+						"type": "SqlDWSink",
+						"preCopyScript": "truncate table slt_test.angeboteigenschaft",
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "EigenschaftID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "EigenschaftID",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "IDProjekt",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "IDProjekt",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "IDEigenschaft",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "IDEigenschaft",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "IDWert",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "IDWert",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Reihenfolge",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Reihenfolge",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Plunettest_Angeboteigenschaft",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Synapse_Angeboteigenschaft",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Sreeja"
+		},
+		"annotations": []
+	}
+}

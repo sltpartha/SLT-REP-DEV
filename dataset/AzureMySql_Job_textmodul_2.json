@@ -1,0 +1,15 @@
+{
+	"name": "AzureMySql_Job_textmodul_2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SLTMySqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Sreeja Dataset"
+		},
+		"annotations": [],
+		"type": "AzureMySqlTable",
+		"schema": []
+	}
+}
