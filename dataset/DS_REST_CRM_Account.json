@@ -12,7 +12,7 @@
 		"type": "DynamicsCrmEntity",
 		"schema": [],
 		"typeProperties": {
-			"entityName": "is_annualbusinesspotential"
+			"entityName": "account"
 		}
 	}
 }
