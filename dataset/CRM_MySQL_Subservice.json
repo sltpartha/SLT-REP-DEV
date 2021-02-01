@@ -9,7 +9,7 @@
 		"type": "AzureMySqlTable",
 		"schema": [],
 		"typeProperties": {
-			"tableName": "Account_Subservice"
+			"tableName": "slt_test.Account_Subservice"
 		}
 	}
 }
