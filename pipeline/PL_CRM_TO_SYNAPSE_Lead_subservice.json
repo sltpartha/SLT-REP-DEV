@@ -122,11 +122,11 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "Accountid",
+									"name": "Leadid",
 									"type": "String"
 								},
 								"sink": {
-									"name": "Accountid",
+									"name": "Leadid",
 									"type": "String",
 									"physicalType": "String"
 								}
