@@ -1,5 +1,5 @@
 {
-	"name": "DD_CRM_Synapse_Subservice",
+	"name": "DD_CRM_Account_Synapse_Subservice",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureSynapseAnalytics2",
