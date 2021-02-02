@@ -1,5 +1,5 @@
 {
-	"name": "PL_CRM_TO_SYNAPSE_Opportunity_subservice_copy2",
+	"name": "PL_CRM_TO_SYNAPSE_Opportunity_subservice",
 	"properties": {
 		"description": "Moving CRM data to MS SQL DB",
 		"activities": [
