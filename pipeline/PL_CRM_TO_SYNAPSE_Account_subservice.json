@@ -111,9 +111,10 @@
 						"queryTimeout": "02:00:00"
 					},
 					"sink": {
-						"type": "AzureMySqlSink",
-						"writeBatchSize": 10000,
-						"writeBatchTimeout": "00:00:30"
+						"type": "SqlDWSink",
+						"preCopyScript": "Truncate table slt_test.Account_subservice",
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
@@ -179,7 +180,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "CRM_MySQL_Subservice",
+						"referenceName": "DD_CRM_Account_Synapse_Subservice",
 						"type": "DatasetReference"
 					}
 				]
