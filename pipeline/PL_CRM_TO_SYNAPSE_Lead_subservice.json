@@ -4,7 +4,7 @@
 		"description": "Moving CRM data to MS SQL DB",
 		"activities": [
 			{
-				"name": "PL_CRM_TO_MSQL_Account_subservice",
+				"name": "PL_CRM_TO_MSQL_Lead_subservice",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -90,7 +90,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "PL_CRM_TO_MSQL_Account_subservice",
+						"activity": "PL_CRM_TO_MSQL_Lead_subservice",
 						"dependencyConditions": [
 							"Succeeded"
 						]
