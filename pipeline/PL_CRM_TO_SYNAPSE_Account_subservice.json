@@ -112,7 +112,7 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"preCopyScript": "Truncate table slt_test.Account_subservice",
+						"preCopyScript": "Truncate table CRM.account_Subservice",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
