@@ -1,5 +1,5 @@
 {
-	"name": "CRM_MySQL_Opportunity_Subservice_copy1",
+	"name": "CRM_MySQL_Opportunity_Subservice",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_MySQL_Plunet",
@@ -9,7 +9,7 @@
 		"type": "AzureMySqlTable",
 		"schema": [],
 		"typeProperties": {
-			"tableName": "slt_test.Account_Subservice"
+			"tableName": "slt_test.Opportunity_Subservice"
 		}
 	}
 }
