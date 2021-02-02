@@ -13,7 +13,7 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "sltsqldbdev",
-			"table": "Account_subservice"
+			"table": "Account"
 		}
 	}
 }
