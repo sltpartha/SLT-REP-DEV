@@ -1,0 +1,16 @@
+{
+	"name": "DD_CRM_Synapse_Lead_Subservice",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSynapseAnalytics2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "CRM",
+			"table": "Lead_Subservice"
+		}
+	}
+}
