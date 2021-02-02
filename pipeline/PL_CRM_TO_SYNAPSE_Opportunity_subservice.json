@@ -41,11 +41,11 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "accountid",
+									"name": "opportunityid",
 									"type": "Guid"
 								},
 								"sink": {
-									"name": "Accountid",
+									"name": "Opportunityid",
 									"type": "String"
 								}
 							},
@@ -122,11 +122,11 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "Accountid",
+									"name": "Opportunityid",
 									"type": "String"
 								},
 								"sink": {
-									"name": "Accountid",
+									"name": "Opportunityid",
 									"type": "String",
 									"physicalType": "String"
 								}
