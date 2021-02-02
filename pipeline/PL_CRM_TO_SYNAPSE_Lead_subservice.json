@@ -32,7 +32,7 @@
 						"type": "AzureMySqlSink",
 						"writeBatchSize": 10000,
 						"writeBatchTimeout": "00:00:30",
-						"preCopyScript": "truncate table slt_test.account_subservice"
+						"preCopyScript": "truncate table slt_test.Lead_subservice"
 					},
 					"enableStaging": false,
 					"validateDataConsistency": false,
@@ -74,13 +74,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_REST_CRM_Account",
+						"referenceName": "DS_REST_CRM_Lead",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "CRM_MySQL_Subservice",
+						"referenceName": "CRM_MySQL_lead_Subservice",
 						"type": "DatasetReference"
 					}
 				]
@@ -107,12 +107,12 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureMySqlSource",
-						"query": "select\n   at.*,\n  SUBSTRING_INDEX(SUBSTRING_INDEX(AT.subservice, ',', numbers.n), ',', -1) SubService_NEW\nfrom\n  (select 1 n union all\n   select 2 union all select 3 union all\n   select 4 union all select 5 union all\n   select 6 union all select 7 union all\n   select 8 union all select 9) numbers INNER JOIN slt_test.Account_subservice at\n  on CHAR_LENGTH(AT.subservice)\n     -CHAR_LENGTH(REPLACE(AT.subservice, ',', ''))>=numbers.n-1",
+						"query": "select\n   at.*,\n  SUBSTRING_INDEX(SUBSTRING_INDEX(AT.subservice, ',', numbers.n), ',', -1) SubService_NEW\nfrom\n  (select 1 n union all\n   select 2 union all select 3 union all\n   select 4 union all select 5 union all\n   select 6 union all select 7 union all\n   select 8 union all select 9) numbers INNER JOIN slt_test.lead_subservice at\n  on CHAR_LENGTH(AT.subservice)\n     -CHAR_LENGTH(REPLACE(AT.subservice, ',', ''))>=numbers.n-1",
 						"queryTimeout": "02:00:00"
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"preCopyScript": "truncate table CRM.Account_Subservice",
+						"preCopyScript": "truncate table CRM.Lead_Subservice",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
@@ -174,13 +174,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "CRM_MySQL_Subservice",
+						"referenceName": "CRM_MySQL_lead_Subservice",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DD_CRM_Synapse_Subservice",
+						"referenceName": "DD_CRM_Synapse_Lead_Subservice",
 						"type": "DatasetReference"
 					}
 				]
