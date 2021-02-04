@@ -193,18 +193,6 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
-					},
-					"OptimaServer_connectionString": {
-						"value": "[parameters('OptimaServer_connectionString')]"
-					},
-					"OptimaServerLive_connectionString": {
-						"value": "[parameters('OptimaServerLive_connectionString')]"
-					},
-					"Plunet_Database_connectionString": {
-						"value": "[parameters('Plunet_Database_connectionString')]"
-					},
-					"Plunet_Test_Database_connectionString": {
-						"value": "[parameters('Plunet_Test_Database_connectionString')]"
 					}
 				}
 			},
@@ -225,6 +213,18 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"OptimaServer_connectionString": {
+						"value": "[parameters('OptimaServer_connectionString')]"
+					},
+					"OptimaServerLive_connectionString": {
+						"value": "[parameters('OptimaServerLive_connectionString')]"
+					},
+					"Plunet_Database_connectionString": {
+						"value": "[parameters('Plunet_Database_connectionString')]"
+					},
+					"Plunet_Test_Database_connectionString": {
+						"value": "[parameters('Plunet_Test_Database_connectionString')]"
 					}
 				}
 			},
@@ -250,6 +250,66 @@
 			},
 			"dependsOn": [
 				"[resourceId('Microsoft.Resources/deployments', 'adfsltdev_ArmTemplate_2')]"
+			]
+		},
+		{
+			"name": "adfsltdev_ArmTemplate_4",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_4.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adfsltdev_ArmTemplate_3')]"
+			]
+		},
+		{
+			"name": "adfsltdev_ArmTemplate_5",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_5.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adfsltdev_ArmTemplate_4')]"
+			]
+		},
+		{
+			"name": "adfsltdev_ArmTemplate_6",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_6.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adfsltdev_ArmTemplate_5')]"
 			]
 		}
 	]
