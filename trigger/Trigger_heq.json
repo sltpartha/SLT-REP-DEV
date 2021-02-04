@@ -1,0 +1,24 @@
+{
+	"name": "Trigger_heq",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Quickbooks_Azure_to_SFTP",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 24,
+				"startTime": "2021-02-04T11:49:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
