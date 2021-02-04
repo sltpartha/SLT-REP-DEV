@@ -1,0 +1,24 @@
+{
+	"name": "Plunet_to_Azure_13",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Plunettest_Textmodul_Quote_Synapse",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 8,
+				"startTime": "2021-02-04T08:15:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
