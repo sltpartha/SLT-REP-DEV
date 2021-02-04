@@ -144,6 +144,32 @@
 					},
 					"waitOnCompletion": true
 				}
+			},
+			{
+				"name": "Lead_Subservice",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "PL_CRM_TO_SYNAPSE_Lead_subservice",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Opportunity Subservice",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "PL_CRM_TO_SYNAPSE_Opportunity_subservice",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"folder": {
