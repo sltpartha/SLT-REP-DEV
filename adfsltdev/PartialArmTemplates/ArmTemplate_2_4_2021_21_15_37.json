@@ -13,62 +13,6 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/PlunetMySql_to_AzureMySql_6')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "PlunettestDB_to_Azure_MySqlDB_T6",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
-				"type": "ScheduleTrigger",
-				"typeProperties": {
-					"recurrence": {
-						"frequency": "Hour",
-						"interval": 7,
-						"startTime": "2021-01-28T08:15:00Z",
-						"timeZone": "UTC"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/PlunetMySql_to_AzureMySql_7')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "PlunettestDB_to_Azure_MySqlDB_T7",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
-				"type": "ScheduleTrigger",
-				"typeProperties": {
-					"recurrence": {
-						"frequency": "Hour",
-						"interval": 7,
-						"startTime": "2021-01-28T08:15:00Z",
-						"timeZone": "UTC"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/Plunet_to_Azure_1')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
@@ -80,8 +24,7 @@
 						"pipelineReference": {
 							"referenceName": "PL_Plunet_Address_Land",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -108,8 +51,7 @@
 						"pipelineReference": {
 							"referenceName": "Plunettest_log_Mitarbeiter_Synapse",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -136,8 +78,7 @@
 						"pipelineReference": {
 							"referenceName": "Plunettest_Mitarbeiter_Synapse",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -164,8 +105,7 @@
 						"pipelineReference": {
 							"referenceName": "Plunettest_Order_Textmodul_Synapse",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -192,8 +132,7 @@
 						"pipelineReference": {
 							"referenceName": "Plunettest_Textmodul_Quote_Synapse",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -220,8 +159,7 @@
 						"pipelineReference": {
 							"referenceName": "Plunettest_Adresse_Synapse",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -248,8 +186,7 @@
 						"pipelineReference": {
 							"referenceName": "Plunettest_Angebot_Synapse",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -276,8 +213,7 @@
 						"pipelineReference": {
 							"referenceName": "Plunettest_Angeboteigenschaft_Synapse",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -304,8 +240,7 @@
 						"pipelineReference": {
 							"referenceName": "Plunettest_Invoice_Textmodul_Synapse",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -332,8 +267,7 @@
 						"pipelineReference": {
 							"referenceName": "Plunettest_Job_Synapse",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -360,8 +294,7 @@
 						"pipelineReference": {
 							"referenceName": "Plunettest_Job_textmodul_Synapse",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -388,8 +321,7 @@
 						"pipelineReference": {
 							"referenceName": "Plunettest_kunde",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -416,8 +348,7 @@
 						"pipelineReference": {
 							"referenceName": "Plunettest_Land_Synapse",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
