@@ -1,0 +1,21 @@
+{
+	"name": "DestinationDataset_heq",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SFTP_SLT",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "SftpLocation",
+				"folderPath": "/var/www/Powerup/Powerup_Data/Test"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
