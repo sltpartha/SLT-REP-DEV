@@ -47,7 +47,7 @@
 								"sink": {
 									"name": "MitarbeiterID",
 									"type": "Int32",
-									"physicalType": "int"
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -58,7 +58,7 @@
 								"sink": {
 									"name": "Aktiv",
 									"type": "Int32",
-									"physicalType": "int"
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -69,7 +69,7 @@
 								"sink": {
 									"name": "Status",
 									"type": "Int32",
-									"physicalType": "int"
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -80,7 +80,7 @@
 								"sink": {
 									"name": "Vorname",
 									"type": "String",
-									"physicalType": "nvarchar"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -91,7 +91,7 @@
 								"sink": {
 									"name": "Nachname",
 									"type": "String",
-									"physicalType": "nvarchar"
+									"physicalType": "String"
 								}
 							},
 							{
@@ -102,7 +102,7 @@
 								"sink": {
 									"name": "AnlageDatum",
 									"type": "DateTime",
-									"physicalType": "datetime2"
+									"physicalType": "DateTime"
 								}
 							},
 							{
@@ -113,7 +113,7 @@
 								"sink": {
 									"name": "MandantID",
 									"type": "Int32",
-									"physicalType": "int"
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -124,7 +124,7 @@
 								"sink": {
 									"name": "CurrencyID",
 									"type": "Int32",
-									"physicalType": "int"
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -134,8 +134,8 @@
 								},
 								"sink": {
 									"name": "StundenerfassungPreis",
-									"type": "Single",
-									"physicalType": "float"
+									"type": "Double",
+									"physicalType": "Double"
 								}
 							},
 							{
@@ -146,7 +146,7 @@
 								"sink": {
 									"name": "Zahlungsfrist",
 									"type": "Int32",
-									"physicalType": "int"
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -157,7 +157,7 @@
 								"sink": {
 									"name": "arbeitsverhaeltnis",
 									"type": "Int32",
-									"physicalType": "int"
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -168,7 +168,18 @@
 								"sink": {
 									"name": "FirstJob",
 									"type": "DateTime",
-									"physicalType": "datetime2"
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "externalid",
+									"type": "String"
+								},
+								"sink": {
+									"name": "externalid",
+									"type": "String",
+									"physicalType": "String"
 								}
 							}
 						],
