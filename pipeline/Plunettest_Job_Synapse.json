@@ -30,7 +30,6 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"preCopyScript": "truncate table slt_test.job",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
@@ -46,7 +45,19 @@
 								},
 								"sink": {
 									"name": "JobID",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "JobNr",
 									"type": "Int32"
+								},
+								"sink": {
+									"name": "JobNr",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -56,7 +67,8 @@
 								},
 								"sink": {
 									"name": "IDAuftrag",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -66,7 +78,19 @@
 								},
 								"sink": {
 									"name": "IDAssistent",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Kurzform",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Kurzform",
+									"type": "String",
+									"physicalType": "String"
 								}
 							},
 							{
@@ -76,7 +100,30 @@
 								},
 								"sink": {
 									"name": "IDLeistung",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Gegenstand",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Gegenstand",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Beschreibung",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Beschreibung",
+									"type": "String",
+									"physicalType": "String"
 								}
 							},
 							{
@@ -86,7 +133,8 @@
 								},
 								"sink": {
 									"name": "Status",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -96,7 +144,8 @@
 								},
 								"sink": {
 									"name": "IDMitarbeiter",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -106,7 +155,8 @@
 								},
 								"sink": {
 									"name": "IDPosition",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -116,7 +166,8 @@
 								},
 								"sink": {
 									"name": "JobAuftragDatum",
-									"type": "DateTime"
+									"type": "DateTime",
+									"physicalType": "DateTime"
 								}
 							},
 							{
@@ -126,7 +177,8 @@
 								},
 								"sink": {
 									"name": "TerminBis",
-									"type": "DateTime"
+									"type": "DateTime",
+									"physicalType": "DateTime"
 								}
 							},
 							{
@@ -136,7 +188,8 @@
 								},
 								"sink": {
 									"name": "TerminVon",
-									"type": "DateTime"
+									"type": "DateTime",
+									"physicalType": "DateTime"
 								}
 							},
 							{
@@ -146,7 +199,19 @@
 								},
 								"sink": {
 									"name": "IDZielsprache",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MitarbeiterMemo",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MitarbeiterMemo",
+									"type": "String",
+									"physicalType": "String"
 								}
 							},
 							{
@@ -156,7 +221,8 @@
 								},
 								"sink": {
 									"name": "Geliefert",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -166,7 +232,8 @@
 								},
 								"sink": {
 									"name": "Lieferdatum",
-									"type": "DateTime"
+									"type": "DateTime",
+									"physicalType": "DateTime"
 								}
 							},
 							{
@@ -176,7 +243,8 @@
 								},
 								"sink": {
 									"name": "VorgaengerJobID",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -186,7 +254,8 @@
 								},
 								"sink": {
 									"name": "KreditorID",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -196,7 +265,8 @@
 								},
 								"sink": {
 									"name": "IDEigenschaft1",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -206,7 +276,8 @@
 								},
 								"sink": {
 									"name": "IDWertEigenschaft1",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -216,7 +287,8 @@
 								},
 								"sink": {
 									"name": "IDEigenschaft2",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -226,7 +298,8 @@
 								},
 								"sink": {
 									"name": "IDWertEigenschaft2",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -236,7 +309,8 @@
 								},
 								"sink": {
 									"name": "IDEigenschaft3",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -246,7 +320,8 @@
 								},
 								"sink": {
 									"name": "IDWertEigenschaft3",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -256,7 +331,8 @@
 								},
 								"sink": {
 									"name": "IDEigenschaft4",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -266,7 +342,8 @@
 								},
 								"sink": {
 									"name": "IDWertEigenschaft4",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -276,7 +353,8 @@
 								},
 								"sink": {
 									"name": "IDEigenschaft5",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -286,7 +364,8 @@
 								},
 								"sink": {
 									"name": "IDWertEigenschaft5",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -296,7 +375,8 @@
 								},
 								"sink": {
 									"name": "CurrencyID",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -306,7 +386,8 @@
 								},
 								"sink": {
 									"name": "Kurs",
-									"type": "Double"
+									"type": "Double",
+									"physicalType": "Double"
 								}
 							},
 							{
@@ -316,7 +397,8 @@
 								},
 								"sink": {
 									"name": "IDQuellsprache",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -326,7 +408,8 @@
 								},
 								"sink": {
 									"name": "VorlageID",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -336,7 +419,8 @@
 								},
 								"sink": {
 									"name": "MitarbeiterreservierungsStatus",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -346,7 +430,8 @@
 								},
 								"sink": {
 									"name": "ZeitPuffer",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -356,7 +441,8 @@
 								},
 								"sink": {
 									"name": "ZeitPufferArt",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -366,7 +452,8 @@
 								},
 								"sink": {
 									"name": "ZeitPufferTerminBis",
-									"type": "DateTime"
+									"type": "DateTime",
+									"physicalType": "DateTime"
 								}
 							},
 							{
@@ -376,7 +463,8 @@
 								},
 								"sink": {
 									"name": "JobketteID",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -386,7 +474,8 @@
 								},
 								"sink": {
 									"name": "TextModulTextID_1",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -396,7 +485,8 @@
 								},
 								"sink": {
 									"name": "TextModulTextID_2",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -406,7 +496,8 @@
 								},
 								"sink": {
 									"name": "TextModulTextID_3",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -416,7 +507,8 @@
 								},
 								"sink": {
 									"name": "TextModulTextID_4",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -426,7 +518,63 @@
 								},
 								"sink": {
 									"name": "TextModulTextID_5",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "TextModulText_1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TextModulText_1",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TextModulText_2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TextModulText_2",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TextModulText_3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TextModulText_3",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TextModulText_4",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TextModulText_4",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TextModulText_5",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TextModulText_5",
+									"type": "String",
+									"physicalType": "String"
 								}
 							},
 							{
@@ -436,7 +584,8 @@
 								},
 								"sink": {
 									"name": "DruckAusgabe",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -446,7 +595,8 @@
 								},
 								"sink": {
 									"name": "JobDatumBeauftragt",
-									"type": "DateTime"
+									"type": "DateTime",
+									"physicalType": "DateTime"
 								}
 							},
 							{
@@ -456,7 +606,8 @@
 								},
 								"sink": {
 									"name": "AcrossTaskTemplateID",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -466,7 +617,8 @@
 								},
 								"sink": {
 									"name": "PreislisteID",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -476,7 +628,8 @@
 								},
 								"sink": {
 									"name": "FolgeJobStartStatus",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -486,7 +639,8 @@
 								},
 								"sink": {
 									"name": "MemoqUserRolle",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -496,7 +650,8 @@
 								},
 								"sink": {
 									"name": "SourceDirSichtbar",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -506,7 +661,30 @@
 								},
 								"sink": {
 									"name": "RefDirSichtbar",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "InDirSichtbar",
+									"type": "String"
+								},
+								"sink": {
+									"name": "InDirSichtbar",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Zeitzone",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Zeitzone",
+									"type": "String",
+									"physicalType": "String"
 								}
 							},
 							{
@@ -516,7 +694,8 @@
 								},
 								"sink": {
 									"name": "Sprachabhaengig",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -526,7 +705,8 @@
 								},
 								"sink": {
 									"name": "MitarbeiterAP_ID",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -536,7 +716,19 @@
 								},
 								"sink": {
 									"name": "Zusatzkosten",
-									"type": "Double"
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "Dir_Sonstige",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Dir_Sonstige",
+									"type": "String",
+									"physicalType": "String"
 								}
 							},
 							{
@@ -546,7 +738,19 @@
 								},
 								"sink": {
 									"name": "IDAngebotJob",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "TM_AnalyseDatei",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TM_AnalyseDatei",
+									"type": "String",
+									"physicalType": "String"
 								}
 							},
 							{
@@ -556,7 +760,8 @@
 								},
 								"sink": {
 									"name": "PreiseImRohertragBeruecksichtigen",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -566,7 +771,8 @@
 								},
 								"sink": {
 									"name": "MengeProZeiteinheit",
-									"type": "Double"
+									"type": "Double",
+									"physicalType": "Double"
 								}
 							},
 							{
@@ -576,7 +782,19 @@
 								},
 								"sink": {
 									"name": "MengeProZeiteinheit_Masseinheit",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "DirekteInDirSichtbar",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DirekteInDirSichtbar",
+									"type": "String",
+									"physicalType": "String"
 								}
 							},
 							{
@@ -586,7 +804,19 @@
 								},
 								"sink": {
 									"name": "JobDaten_Abholdatum",
-									"type": "DateTime"
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "MitarbeiterMemo_ImSpeicher",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MitarbeiterMemo_ImSpeicher",
+									"type": "String",
+									"physicalType": "String"
 								}
 							},
 							{
@@ -596,7 +826,8 @@
 								},
 								"sink": {
 									"name": "MemoqElmZuweisen",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -606,7 +837,8 @@
 								},
 								"sink": {
 									"name": "AktuelleJobReklamation",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -616,7 +848,8 @@
 								},
 								"sink": {
 									"name": "MemoQ_DokumentStatusArt",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -626,7 +859,8 @@
 								},
 								"sink": {
 									"name": "ZuletztAktualisiert",
-									"type": "DateTime"
+									"type": "DateTime",
+									"physicalType": "DateTime"
 								}
 							},
 							{
@@ -636,7 +870,8 @@
 								},
 								"sink": {
 									"name": "Fortschritt",
-									"type": "Double"
+									"type": "Double",
+									"physicalType": "Double"
 								}
 							},
 							{
@@ -646,7 +881,8 @@
 								},
 								"sink": {
 									"name": "TradosSchablone",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -656,7 +892,8 @@
 								},
 								"sink": {
 									"name": "XTMBenutzerRolle",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -666,7 +903,8 @@
 								},
 								"sink": {
 									"name": "Job_Als_Auftrag_AndererBuchungskreis",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -676,7 +914,8 @@
 								},
 								"sink": {
 									"name": "Autojob_DokumentLieferungPosition",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -686,7 +925,8 @@
 								},
 								"sink": {
 									"name": "Autojob_DokumentLieferungProjekt",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -696,7 +936,8 @@
 								},
 								"sink": {
 									"name": "Autojob_Lieferart",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -706,7 +947,8 @@
 								},
 								"sink": {
 									"name": "Autojob_LieferscheinPDF",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -716,7 +958,8 @@
 								},
 								"sink": {
 									"name": "IDPosition_AndererBuchungskreis",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -726,7 +969,8 @@
 								},
 								"sink": {
 									"name": "CATSchablone",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -736,7 +980,19 @@
 								},
 								"sink": {
 									"name": "MemoQPrimaryTMID",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ArbeitsanweisungDynamisch",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ArbeitsanweisungDynamisch",
+									"type": "String",
+									"physicalType": "String"
 								}
 							},
 							{
@@ -746,7 +1002,8 @@
 								},
 								"sink": {
 									"name": "MemoqPermissionZuweisen",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -756,7 +1013,8 @@
 								},
 								"sink": {
 									"name": "FolgejobKannStarten",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -766,7 +1024,8 @@
 								},
 								"sink": {
 									"name": "WartenAufStartsignalAllerVorgaengerjob",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -776,7 +1035,8 @@
 								},
 								"sink": {
 									"name": "JobkostenWerdenNichtUebertragen",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -786,7 +1046,8 @@
 								},
 								"sink": {
 									"name": "MengeBeiMitarbeiterWechselAktualisieren",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -796,7 +1057,8 @@
 								},
 								"sink": {
 									"name": "LiefernotizKopierenInFolgejob",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -806,7 +1068,8 @@
 								},
 								"sink": {
 									"name": "MengeAufJobKopieren",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -816,7 +1079,8 @@
 								},
 								"sink": {
 									"name": "ErstellerID",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -826,7 +1090,8 @@
 								},
 								"sink": {
 									"name": "WartenAufStartsignalVonJobsAndererPositionen",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -836,7 +1101,8 @@
 								},
 								"sink": {
 									"name": "FileExchangeType",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -846,7 +1112,8 @@
 								},
 								"sink": {
 									"name": "ErinnerungAnDolmetschJob_MailAktiv",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -856,7 +1123,8 @@
 								},
 								"sink": {
 									"name": "OrdnerZugriffAusAdminBereichUebernehmen",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -866,7 +1134,8 @@
 								},
 								"sink": {
 									"name": "AufwandII_ImRohertragBeruecksichtigen",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -876,7 +1145,8 @@
 								},
 								"sink": {
 									"name": "SpalteWF",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -886,7 +1156,8 @@
 								},
 								"sink": {
 									"name": "AcrossCrossGridSchablone",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -896,7 +1167,41 @@
 								},
 								"sink": {
 									"name": "AnkuendigungStatus",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "KundeDownloadOrdner",
+									"type": "String"
+								},
+								"sink": {
+									"name": "KundeDownloadOrdner",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "IndirekterKundeDownloadOrdner",
+									"type": "String"
+								},
+								"sink": {
+									"name": "IndirekterKundeDownloadOrdner",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FreigegebenerPositionsOrdner",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FreigegebenerPositionsOrdner",
+									"type": "String",
+									"physicalType": "String"
 								}
 							},
 							{
@@ -906,7 +1211,8 @@
 								},
 								"sink": {
 									"name": "FeedbackErforderlichFuerLieferung",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -916,7 +1222,8 @@
 								},
 								"sink": {
 									"name": "MemoqRefreshWorkflowPhase",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -926,7 +1233,8 @@
 								},
 								"sink": {
 									"name": "MindestPauschaleTesten",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -936,7 +1244,8 @@
 								},
 								"sink": {
 									"name": "AssistentID_geloescht",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -946,7 +1255,8 @@
 								},
 								"sink": {
 									"name": "MitarbeiterID_geloescht",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -956,7 +1266,8 @@
 								},
 								"sink": {
 									"name": "AnsprechpartnerID_geloescht",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
@@ -966,7 +1277,8 @@
 								},
 								"sink": {
 									"name": "VorlagensatzID",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							}
 						],
