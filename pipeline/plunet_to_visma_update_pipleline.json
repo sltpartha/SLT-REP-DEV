@@ -16,6 +16,12 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"command": "python3 plunet_to_visma.py",
+					"resourceLinkedService": {
+						"referenceName": "AzureBlobStoragebatchvisma",
+						"type": "LinkedServiceReference"
+					},
+					"folderPath": "optima-input",
 					"referenceObjects": {
 						"linkedServices": [],
 						"datasets": []
