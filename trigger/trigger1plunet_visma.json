@@ -1,0 +1,25 @@
+{
+	"name": "trigger1plunet_visma",
+	"properties": {
+		"description": "plunet to visma data transfer",
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "plunet_to_visma_update_pipleline",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 1,
+				"startTime": "2021-02-09T10:57:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}

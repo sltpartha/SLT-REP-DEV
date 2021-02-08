@@ -1,0 +1,38 @@
+{
+	"name": "plunet_to_visma_update_pipleline",
+	"properties": {
+		"description": "Plunet to visma intermediate order details update",
+		"activities": [
+			{
+				"name": "plunet_to_visma_update_batch",
+				"type": "Custom",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"command": "python3 plunet_to_visma.py",
+					"resourceLinkedService": {
+						"referenceName": "AzureBlobStoragebatchvisma",
+						"type": "LinkedServiceReference"
+					},
+					"folderPath": "optima-input",
+					"referenceObjects": {
+						"linkedServices": [],
+						"datasets": []
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "AzurebatchVisma",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"annotations": []
+	}
+}
