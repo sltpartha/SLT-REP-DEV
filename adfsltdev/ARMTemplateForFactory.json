@@ -39235,10 +39235,18 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 8,
-						"startTime": "2021-01-28T12:30:00Z",
-						"timeZone": "UTC"
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-01-28T02:30:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								30
+							],
+							"hours": [
+								2
+							]
+						}
 					}
 				}
 			},
@@ -39265,10 +39273,18 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 8,
-						"startTime": "2021-01-28T12:31:00Z",
-						"timeZone": "UTC"
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-01-28T02:30:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								30
+							],
+							"hours": [
+								2
+							]
+						}
 					}
 				}
 			},
@@ -39295,10 +39311,18 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 8,
-						"startTime": "2021-01-28T12:31:00Z",
-						"timeZone": "UTC"
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-01-28T02:30:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								30
+							],
+							"hours": [
+								2
+							]
+						}
 					}
 				}
 			},
@@ -39325,10 +39349,18 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 8,
-						"startTime": "2021-01-28T12:32:00Z",
-						"timeZone": "UTC"
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-01-28T02:30:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								30
+							],
+							"hours": [
+								2
+							]
+						}
 					}
 				}
 			},
@@ -39355,10 +39387,18 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 8,
-						"startTime": "2021-01-28T12:33:00Z",
-						"timeZone": "UTC"
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-01-28T02:30:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								30
+							],
+							"hours": [
+								2
+							]
+						}
 					}
 				}
 			},
@@ -39385,10 +39425,18 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 8,
-						"startTime": "2021-01-28T12:33:00Z",
-						"timeZone": "UTC"
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-01-28T02:30:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								30
+							],
+							"hours": [
+								2
+							]
+						}
 					}
 				}
 			},
@@ -39445,10 +39493,18 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 7,
-						"startTime": "2021-01-28T08:15:00Z",
-						"timeZone": "UTC"
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-01-28T01:00:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								10
+							],
+							"hours": [
+								1
+							]
+						}
 					}
 				}
 			},
@@ -39475,10 +39531,18 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 7,
-						"startTime": "2021-01-28T08:15:00Z",
-						"timeZone": "UTC"
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-01-28T01:00:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								15
+							],
+							"hours": [
+								1
+							]
+						}
 					}
 				}
 			},
@@ -39505,10 +39569,18 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 7,
-						"startTime": "2021-01-28T08:15:00Z",
-						"timeZone": "UTC"
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-01-28T01:00:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								20
+							],
+							"hours": [
+								1
+							]
+						}
 					}
 				}
 			},
@@ -39535,10 +39607,18 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 7,
-						"startTime": "2021-01-28T08:15:00Z",
-						"timeZone": "UTC"
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-01-28T01:00:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								25
+							],
+							"hours": [
+								1
+							]
+						}
 					}
 				}
 			},
@@ -39565,10 +39645,18 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 7,
-						"startTime": "2021-01-28T08:15:00Z",
-						"timeZone": "UTC"
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-01-28T01:00:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								30
+							],
+							"hours": [
+								1
+							]
+						}
 					}
 				}
 			},
@@ -39595,10 +39683,18 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 7,
-						"startTime": "2021-01-28T08:15:00Z",
-						"timeZone": "UTC"
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-01-28T01:00:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								35
+							],
+							"hours": [
+								1
+							]
+						}
 					}
 				}
 			},
@@ -39625,10 +39721,18 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 7,
-						"startTime": "2021-01-28T08:15:00Z",
-						"timeZone": "UTC"
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-01-28T01:00:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								40
+							],
+							"hours": [
+								1
+							]
+						}
 					}
 				}
 			},
@@ -39655,10 +39759,18 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 8,
-						"startTime": "2021-02-04T08:15:00Z",
-						"timeZone": "UTC"
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-02-04T01:00:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								10
+							],
+							"hours": [
+								1
+							]
+						}
 					}
 				}
 			},
@@ -39685,10 +39797,18 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 8,
-						"startTime": "2021-02-04T08:15:00Z",
-						"timeZone": "UTC"
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-02-04T01:00:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								10
+							],
+							"hours": [
+								1
+							]
+						}
 					}
 				}
 			},
@@ -39715,10 +39835,18 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 8,
+						"frequency": "Day",
+						"interval": 1,
 						"startTime": "2021-02-04T08:15:00Z",
-						"timeZone": "UTC"
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								10
+							],
+							"hours": [
+								1
+							]
+						}
 					}
 				}
 			},
@@ -39745,10 +39873,18 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 8,
-						"startTime": "2021-02-04T08:15:00Z",
-						"timeZone": "UTC"
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-02-04T01:00:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								10
+							],
+							"hours": [
+								1
+							]
+						}
 					}
 				}
 			},
@@ -39775,10 +39911,18 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 8,
-						"startTime": "2021-02-04T08:15:00Z",
-						"timeZone": "UTC"
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-02-04T01:00:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								10
+							],
+							"hours": [
+								1
+							]
+						}
 					}
 				}
 			},
@@ -39805,10 +39949,18 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 8,
-						"startTime": "2021-02-04T08:15:00Z",
-						"timeZone": "UTC"
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-02-04T01:00:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								10
+							],
+							"hours": [
+								1
+							]
+						}
 					}
 				}
 			},
@@ -39835,10 +39987,18 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 8,
-						"startTime": "2021-02-04T08:15:00Z",
-						"timeZone": "UTC"
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-02-04T01:00:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								10
+							],
+							"hours": [
+								1
+							]
+						}
 					}
 				}
 			},
@@ -39865,10 +40025,18 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 8,
-						"startTime": "2021-02-04T08:15:00Z",
-						"timeZone": "UTC"
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-02-04T01:00:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								10
+							],
+							"hours": [
+								1
+							]
+						}
 					}
 				}
 			},
@@ -39895,10 +40063,18 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 8,
-						"startTime": "2021-02-04T08:15:00Z",
-						"timeZone": "UTC"
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-02-04T01:00:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								10
+							],
+							"hours": [
+								1
+							]
+						}
 					}
 				}
 			},
@@ -39925,10 +40101,18 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 8,
-						"startTime": "2021-02-04T08:15:00Z",
-						"timeZone": "UTC"
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-02-04T01:00:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								10
+							],
+							"hours": [
+								1
+							]
+						}
 					}
 				}
 			},
@@ -39955,10 +40139,18 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 8,
-						"startTime": "2021-02-04T08:15:00Z",
-						"timeZone": "UTC"
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-02-04T01:00:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								10
+							],
+							"hours": [
+								1
+							]
+						}
 					}
 				}
 			},
@@ -39985,10 +40177,18 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 8,
-						"startTime": "2021-02-04T08:15:00Z",
-						"timeZone": "UTC"
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-02-04T01:00:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								10
+							],
+							"hours": [
+								1
+							]
+						}
 					}
 				}
 			},
@@ -40015,10 +40215,18 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 8,
-						"startTime": "2021-02-04T08:15:00Z",
-						"timeZone": "UTC"
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-02-04T01:00:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								10
+							],
+							"hours": [
+								1
+							]
+						}
 					}
 				}
 			},
