@@ -29,12 +29,9 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"allowPolyBase": true,
-						"polyBaseSettings": {
-							"rejectValue": 0,
-							"rejectType": "value",
-							"useTypeDefault": true
-						}
+						"preCopyScript": "Truncate table slt_test.log_mitarbeiter",
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
 					},
 					"enableStaging": true,
 					"stagingSettings": {
@@ -49,165 +46,200 @@
 							{
 								"source": {
 									"name": "LogID",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "int"
 								},
 								"sink": {
 									"name": "LogID",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "int"
 								}
 							},
 							{
 								"source": {
 									"name": "IDBenutzer",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "int"
 								},
 								"sink": {
 									"name": "IDBenutzer",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "int"
 								}
 							},
 							{
 								"source": {
 									"name": "Datum",
-									"type": "DateTime"
+									"type": "DateTime",
+									"physicalType": "datetime"
 								},
 								"sink": {
 									"name": "Datum",
-									"type": "DateTime"
+									"type": "DateTime",
+									"physicalType": "datetime2"
 								}
 							},
 							{
 								"source": {
 									"name": "IDPartner",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "int"
 								},
 								"sink": {
 									"name": "IDPartner",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "int"
 								}
 							},
 							{
 								"source": {
 									"name": "IDLogAktion",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "int"
 								},
 								"sink": {
 									"name": "IDLogAktion",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "int"
 								}
 							},
 							{
 								"source": {
 									"name": "IDLogArt",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "int"
 								},
 								"sink": {
 									"name": "IDLogArt",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "int"
 								}
 							},
 							{
 								"source": {
 									"name": "IDStatus_Alt",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "int"
 								},
 								"sink": {
 									"name": "IDStatus_Alt",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "int"
 								}
 							},
 							{
 								"source": {
 									"name": "IDStatus_Neu",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "int"
 								},
 								"sink": {
 									"name": "IDStatus_Neu",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "int"
 								}
 							},
 							{
 								"source": {
 									"name": "Text_Alt",
-									"type": "String"
+									"type": "String",
+									"physicalType": "text"
 								},
 								"sink": {
 									"name": "Text_Alt",
-									"type": "String"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
 								"source": {
 									"name": "Text_Neu",
-									"type": "String"
+									"type": "String",
+									"physicalType": "text"
 								},
 								"sink": {
 									"name": "Text_Neu",
-									"type": "String"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
 								"source": {
 									"name": "Anzeigename",
-									"type": "String"
+									"type": "String",
+									"physicalType": "text"
 								},
 								"sink": {
 									"name": "Anzeigename",
-									"type": "String"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
 								"source": {
 									"name": "Beschreibung",
-									"type": "String"
+									"type": "String",
+									"physicalType": "text"
 								},
 								"sink": {
 									"name": "Beschreibung",
-									"type": "String"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
 								"source": {
 									"name": "Datum_Alt",
-									"type": "DateTime"
+									"type": "DateTime",
+									"physicalType": "datetime"
 								},
 								"sink": {
 									"name": "Datum_Alt",
-									"type": "DateTime"
+									"type": "DateTime",
+									"physicalType": "datetime2"
 								}
 							},
 							{
 								"source": {
 									"name": "Datum_Neu",
-									"type": "DateTime"
+									"type": "DateTime",
+									"physicalType": "datetime"
 								},
 								"sink": {
 									"name": "Datum_Neu",
-									"type": "DateTime"
+									"type": "DateTime",
+									"physicalType": "datetime2"
 								}
 							},
 							{
 								"source": {
 									"name": "SteuerungDurch",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "int"
 								},
 								"sink": {
 									"name": "SteuerungDurch",
-									"type": "Int32"
+									"type": "Int32",
+									"physicalType": "int"
 								}
 							}
-						]
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
 					}
 				},
 				"inputs": [
 					{
-						"referenceName": "Plunet_Azure_MySql_T7",
+						"referenceName": "SourceDataset_m8t",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "Plunet_Azure_Synspase_T7",
+						"referenceName": "DestinationDataset_m8t",
 						"type": "DatasetReference"
 					}
 				]
