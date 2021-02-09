@@ -11,6 +11,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
 		},
+		"AzureBlobStoragebatchvisma_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStoragebatchvisma'"
+		},
 		"AzureDataLakeStorage1_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
@@ -22,6 +26,10 @@
 		"AzureSynapseAnalytics1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSynapseAnalytics1'"
+		},
+		"AzurebatchVisma_accessKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessKey' of 'AzurebatchVisma'"
 		},
 		"LS_ADLS_BAMBOOHR_accountKey": {
 			"type": "secureString",
@@ -42,10 +50,6 @@
 		"LS_SYNAP_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LS_SYNAP'"
-		},
-		"OptimaServer_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'OptimaServer'"
 		},
 		"OptimaServerLive_connectionString": {
 			"type": "secureString",
@@ -74,6 +78,18 @@
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://dlssltdev.dfs.core.windows.net"
+		},
+		"AzurebatchVisma_properties_typeProperties_accountName": {
+			"type": "string",
+			"defaultValue": "optima"
+		},
+		"AzurebatchVisma_properties_typeProperties_batchUri": {
+			"type": "string",
+			"defaultValue": "https://optima.westeurope.batch.azure.com"
+		},
+		"AzurebatchVisma_properties_typeProperties_poolName": {
+			"type": "string",
+			"defaultValue": "Optima-engine"
 		},
 		"LS_ADLS_BAMBOOHR_properties_typeProperties_url": {
 			"type": "string",
@@ -125,6 +141,9 @@
 					"AzureBlobStorage1_connectionString": {
 						"value": "[parameters('AzureBlobStorage1_connectionString')]"
 					},
+					"AzureBlobStoragebatchvisma_connectionString": {
+						"value": "[parameters('AzureBlobStoragebatchvisma_connectionString')]"
+					},
 					"AzureDataLakeStorage1_accountKey": {
 						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
 					},
@@ -148,6 +167,15 @@
 					},
 					"LS_SYNAP_connectionString": {
 						"value": "[parameters('LS_SYNAP_connectionString')]"
+					},
+					"OptimaServerLive_connectionString": {
+						"value": "[parameters('OptimaServerLive_connectionString')]"
+					},
+					"Plunet_Database_connectionString": {
+						"value": "[parameters('Plunet_Database_connectionString')]"
+					},
+					"Plunet_Test_Database_connectionString": {
+						"value": "[parameters('Plunet_Test_Database_connectionString')]"
 					},
 					"SLTMySqlDatabase_connectionString": {
 						"value": "[parameters('SLTMySqlDatabase_connectionString')]"
@@ -213,18 +241,6 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
-					},
-					"OptimaServer_connectionString": {
-						"value": "[parameters('OptimaServer_connectionString')]"
-					},
-					"OptimaServerLive_connectionString": {
-						"value": "[parameters('OptimaServerLive_connectionString')]"
-					},
-					"Plunet_Database_connectionString": {
-						"value": "[parameters('Plunet_Database_connectionString')]"
-					},
-					"Plunet_Test_Database_connectionString": {
-						"value": "[parameters('Plunet_Test_Database_connectionString')]"
 					}
 				}
 			},
@@ -245,6 +261,18 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"AzurebatchVisma_accessKey": {
+						"value": "[parameters('AzurebatchVisma_accessKey')]"
+					},
+					"AzurebatchVisma_properties_typeProperties_accountName": {
+						"value": "[parameters('AzurebatchVisma_properties_typeProperties_accountName')]"
+					},
+					"AzurebatchVisma_properties_typeProperties_batchUri": {
+						"value": "[parameters('AzurebatchVisma_properties_typeProperties_batchUri')]"
+					},
+					"AzurebatchVisma_properties_typeProperties_poolName": {
+						"value": "[parameters('AzurebatchVisma_properties_typeProperties_poolName')]"
 					}
 				}
 			},

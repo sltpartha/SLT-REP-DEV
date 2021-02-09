@@ -193,7 +193,7 @@
 						"typeProperties": {
 							"source": {
 								"type": "MySqlSource",
-								"query": "select \n MitarbeiterID \n      , Aktiv \n      , Status \n      , Vorname \n      , Nachname \n      , AnlageDatum \n      , MandantID \n      , CurrencyID \n,StundenerfassungPreis,\nZahlungsfrist,\narbeitsverhaeltnis,\nFirstJob\nfrom `mitarbeiter`"
+								"query": "select \n MitarbeiterID \n      , Aktiv \n      , Status \n      , Vorname \n      , Nachname \n      , AnlageDatum \n      , MandantID \n      , CurrencyID \n,StundenerfassungPreis,\nZahlungsfrist,\narbeitsverhaeltnis,\nFirstJob,\nexternalid\nfrom `mitarbeiter`"
 							},
 							"sink": {
 								"type": "SqlDWSink",
@@ -214,7 +214,7 @@
 										"sink": {
 											"name": "MitarbeiterID",
 											"type": "Int32",
-											"physicalType": "int"
+											"physicalType": "Int32"
 										}
 									},
 									{
@@ -225,7 +225,7 @@
 										"sink": {
 											"name": "Aktiv",
 											"type": "Int32",
-											"physicalType": "int"
+											"physicalType": "Int32"
 										}
 									},
 									{
@@ -236,7 +236,7 @@
 										"sink": {
 											"name": "Status",
 											"type": "Int32",
-											"physicalType": "int"
+											"physicalType": "Int32"
 										}
 									},
 									{
@@ -247,7 +247,7 @@
 										"sink": {
 											"name": "Vorname",
 											"type": "String",
-											"physicalType": "nvarchar"
+											"physicalType": "String"
 										}
 									},
 									{
@@ -258,7 +258,7 @@
 										"sink": {
 											"name": "Nachname",
 											"type": "String",
-											"physicalType": "nvarchar"
+											"physicalType": "String"
 										}
 									},
 									{
@@ -269,7 +269,7 @@
 										"sink": {
 											"name": "AnlageDatum",
 											"type": "DateTime",
-											"physicalType": "datetime2"
+											"physicalType": "DateTime"
 										}
 									},
 									{
@@ -280,7 +280,7 @@
 										"sink": {
 											"name": "MandantID",
 											"type": "Int32",
-											"physicalType": "int"
+											"physicalType": "Int32"
 										}
 									},
 									{
@@ -291,7 +291,7 @@
 										"sink": {
 											"name": "CurrencyID",
 											"type": "Int32",
-											"physicalType": "int"
+											"physicalType": "Int32"
 										}
 									},
 									{
@@ -301,8 +301,8 @@
 										},
 										"sink": {
 											"name": "StundenerfassungPreis",
-											"type": "Single",
-											"physicalType": "float"
+											"type": "Double",
+											"physicalType": "Double"
 										}
 									},
 									{
@@ -313,7 +313,7 @@
 										"sink": {
 											"name": "Zahlungsfrist",
 											"type": "Int32",
-											"physicalType": "int"
+											"physicalType": "Int32"
 										}
 									},
 									{
@@ -324,7 +324,7 @@
 										"sink": {
 											"name": "arbeitsverhaeltnis",
 											"type": "Int32",
-											"physicalType": "int"
+											"physicalType": "Int32"
 										}
 									},
 									{
@@ -335,7 +335,18 @@
 										"sink": {
 											"name": "FirstJob",
 											"type": "DateTime",
-											"physicalType": "datetime2"
+											"physicalType": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "externalid",
+											"type": "String"
+										},
+										"sink": {
+											"name": "externalid",
+											"type": "String",
+											"physicalType": "String"
 										}
 									}
 								],
@@ -2820,10 +2831,18 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 8,
-						"startTime": "2021-01-28T09:26:00Z",
-						"timeZone": "UTC"
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-01-28T02:30:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								30
+							],
+							"hours": [
+								2
+							]
+						}
 					}
 				}
 			},
