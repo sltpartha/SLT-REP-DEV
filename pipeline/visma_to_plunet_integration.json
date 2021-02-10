@@ -1,0 +1,39 @@
+{
+	"name": "visma_to_plunet_integration",
+	"properties": {
+		"description": "visma_to_plunet_integration",
+		"activities": [
+			{
+				"name": "visma_to_plunet_integration",
+				"description": "visma_to_plunet_integration",
+				"type": "Custom",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"command": "python3 visma_to_plunet.py",
+					"resourceLinkedService": {
+						"referenceName": "AzureBlobStorageVisma",
+						"type": "LinkedServiceReference"
+					},
+					"folderPath": "optima-input",
+					"referenceObjects": {
+						"linkedServices": [],
+						"datasets": []
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "plunet_vIsma_Batch1",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"annotations": []
+	}
+}
