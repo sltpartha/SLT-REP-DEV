@@ -6,7 +6,7 @@
 		"pipelines": [
 			{
 				"pipelineReference": {
-					"referenceName": "visma_to_plunet_integration",
+					"referenceName": "Visma_to_Plunet_Integration",
 					"type": "PipelineReference"
 				}
 			}
