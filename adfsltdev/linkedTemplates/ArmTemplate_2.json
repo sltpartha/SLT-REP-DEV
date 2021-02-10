@@ -13,6 +13,115 @@
 	},
 	"resources": [
 		{
+			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_MySql_T7')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureMySql_SLT_test",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureMySqlTable",
+				"schema": [
+					{
+						"name": "LogID",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDBenutzer",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Datum",
+						"type": "datetime",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDPartner",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDLogAktion",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDLogArt",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDStatus_Alt",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDStatus_Neu",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Text_Alt",
+						"type": "text",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Text_Neu",
+						"type": "text",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Anzeigename",
+						"type": "text",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Beschreibung",
+						"type": "text",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Datum_Alt",
+						"type": "datetime",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Datum_Neu",
+						"type": "datetime",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "SteuerungDurch",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					}
+				],
+				"typeProperties": {
+					"tableName": "log_mitarbeiter"
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_Synspase_T1')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -578,27 +687,6 @@
 				"type": "MySqlTable",
 				"schema": [],
 				"typeProperties": {}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Plunettest_Land')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "Plunet_Test_Database",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Sreeja Dataset"
-				},
-				"annotations": [],
-				"type": "MySqlTable",
-				"schema": [],
-				"typeProperties": {
-					"tableName": "`land`"
-				}
 			},
 			"dependsOn": []
 		}

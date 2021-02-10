@@ -11,6 +11,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
 		},
+		"AzureBlobStorageVisma_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorageVisma'"
+		},
 		"AzureBlobStoragebatchvisma_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStoragebatchvisma'"
@@ -75,6 +79,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'STAGING linked service'"
 		},
+		"plunet_vIsma_Batch1_accessKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessKey' of 'plunet_vIsma_Batch1'"
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://dlssltdev.dfs.core.windows.net"
@@ -110,6 +118,18 @@
 		"STAGING linked service_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://dlssltdev.dfs.core.windows.net"
+		},
+		"plunet_vIsma_Batch1_properties_typeProperties_accountName": {
+			"type": "string",
+			"defaultValue": "optima"
+		},
+		"plunet_vIsma_Batch1_properties_typeProperties_batchUri": {
+			"type": "string",
+			"defaultValue": "https://optima.westeurope.batch.azure.com"
+		},
+		"plunet_vIsma_Batch1_properties_typeProperties_poolName": {
+			"type": "string",
+			"defaultValue": "Optima-engine"
 		}
 	},
 	"variables": {
@@ -12855,12 +12875,14 @@
 							},
 							"sink": {
 								"type": "SqlDWSink",
+								"preCopyScript": "Truncate table slt_test.log_mitarbeiter",
 								"allowPolyBase": true,
 								"polyBaseSettings": {
 									"rejectValue": 0,
 									"rejectType": "value",
 									"useTypeDefault": true
-								}
+								},
+								"disableMetricsCollection": false
 							},
 							"enableStaging": true,
 							"stagingSettings": {
@@ -36925,6 +36947,96 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/plunet_to_visma_integration')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "plunet to visma integration",
+				"activities": [
+					{
+						"name": "plunet_visma_integration",
+						"description": "plunet_visma_integration",
+						"type": "Custom",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"command": "python3 plunet_to_visma.py",
+							"resourceLinkedService": {
+								"referenceName": "AzureBlobStorageVisma",
+								"type": "LinkedServiceReference"
+							},
+							"folderPath": "optima-input",
+							"referenceObjects": {
+								"linkedServices": [],
+								"datasets": []
+							}
+						},
+						"linkedServiceName": {
+							"referenceName": "plunet_vIsma_Batch1",
+							"type": "LinkedServiceReference"
+						}
+					}
+				],
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageVisma')]",
+				"[concat(variables('factoryId'), '/linkedServices/plunet_vIsma_Batch1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/visma_to_plunet_integration')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "visma_to_plunet_integration",
+				"activities": [
+					{
+						"name": "visma_to_plunet_integration",
+						"description": "visma_to_plunet_integration",
+						"type": "Custom",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"command": "python3 visma_to_plunet.py",
+							"resourceLinkedService": {
+								"referenceName": "AzureBlobStorageVisma",
+								"type": "LinkedServiceReference"
+							},
+							"folderPath": "optima-input",
+							"referenceObjects": {
+								"linkedServices": [],
+								"datasets": []
+							}
+						},
+						"linkedServiceName": {
+							"referenceName": "plunet_vIsma_Batch1",
+							"type": "LinkedServiceReference"
+						}
+					}
+				],
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageVisma')]",
+				"[concat(variables('factoryId'), '/linkedServices/plunet_vIsma_Batch1')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/AzureMySqlTable2_Invoice_Textmodule')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -38933,6 +39045,20 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/AzureBlobStorageVisma')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "AzureBlobStorageVisma",
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureBlobStorageVisma_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/AzureBlobStoragebatchvisma')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -39177,6 +39303,32 @@
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/plunet_vIsma_Batch1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "plunet_vIsma_Batch1",
+				"annotations": [],
+				"type": "AzureBatch",
+				"typeProperties": {
+					"accountName": "[parameters('plunet_vIsma_Batch1_properties_typeProperties_accountName')]",
+					"accessKey": {
+						"type": "SecureString",
+						"value": "[parameters('plunet_vIsma_Batch1_accessKey')]"
+					},
+					"batchUri": "[parameters('plunet_vIsma_Batch1_properties_typeProperties_batchUri')]",
+					"poolName": "[parameters('plunet_vIsma_Batch1_properties_typeProperties_poolName')]",
+					"linkedServiceName": {
+						"referenceName": "AzureBlobStorageVisma",
+						"type": "LinkedServiceReference"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageVisma')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/AzureMySql_to_AzureSynapse1')]",
@@ -40232,6 +40384,82 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/pipelines/Plunettest_Land_Synapse')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Plunet_to_Visma')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "plunet_to_visma_integration",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-02-10T02:30:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								30
+							],
+							"hours": [
+								2
+							]
+						}
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/plunet_to_visma_integration')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Visma_to_Plunet')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "visma_to_plunet_integration",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-02-10T13:00:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								10
+							],
+							"hours": [
+								13
+							]
+						}
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/visma_to_plunet_integration')]"
 			]
 		}
 	]

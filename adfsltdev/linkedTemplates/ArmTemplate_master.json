@@ -11,6 +11,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
 		},
+		"AzureBlobStorageVisma_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorageVisma'"
+		},
 		"AzureBlobStoragebatchvisma_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStoragebatchvisma'"
@@ -75,6 +79,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'STAGING linked service'"
 		},
+		"plunet_vIsma_Batch1_accessKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessKey' of 'plunet_vIsma_Batch1'"
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://dlssltdev.dfs.core.windows.net"
@@ -111,6 +119,18 @@
 			"type": "string",
 			"defaultValue": "https://dlssltdev.dfs.core.windows.net"
 		},
+		"plunet_vIsma_Batch1_properties_typeProperties_accountName": {
+			"type": "string",
+			"defaultValue": "optima"
+		},
+		"plunet_vIsma_Batch1_properties_typeProperties_batchUri": {
+			"type": "string",
+			"defaultValue": "https://optima.westeurope.batch.azure.com"
+		},
+		"plunet_vIsma_Batch1_properties_typeProperties_poolName": {
+			"type": "string",
+			"defaultValue": "Optima-engine"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -140,6 +160,9 @@
 					},
 					"AzureBlobStorage1_connectionString": {
 						"value": "[parameters('AzureBlobStorage1_connectionString')]"
+					},
+					"AzureBlobStorageVisma_connectionString": {
+						"value": "[parameters('AzureBlobStorageVisma_connectionString')]"
 					},
 					"AzureBlobStoragebatchvisma_connectionString": {
 						"value": "[parameters('AzureBlobStoragebatchvisma_connectionString')]"
@@ -293,6 +316,18 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"plunet_vIsma_Batch1_accessKey": {
+						"value": "[parameters('plunet_vIsma_Batch1_accessKey')]"
+					},
+					"plunet_vIsma_Batch1_properties_typeProperties_accountName": {
+						"value": "[parameters('plunet_vIsma_Batch1_properties_typeProperties_accountName')]"
+					},
+					"plunet_vIsma_Batch1_properties_typeProperties_batchUri": {
+						"value": "[parameters('plunet_vIsma_Batch1_properties_typeProperties_batchUri')]"
+					},
+					"plunet_vIsma_Batch1_properties_typeProperties_poolName": {
+						"value": "[parameters('plunet_vIsma_Batch1_properties_typeProperties_poolName')]"
 					}
 				}
 			},
@@ -338,6 +373,26 @@
 			},
 			"dependsOn": [
 				"[resourceId('Microsoft.Resources/deployments', 'adfsltdev_ArmTemplate_5')]"
+			]
+		},
+		{
+			"name": "adfsltdev_ArmTemplate_7",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_7.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adfsltdev_ArmTemplate_6')]"
 			]
 		}
 	]

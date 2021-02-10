@@ -1,0 +1,428 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adfsltdev"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/Azure_MySqlDB_to_Synapse_DW_T7')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Azure_MySqlDB_to_Synapse_DW_T7",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [
+							{
+								"name": "Source",
+								"value": "log_mitarbeiter"
+							},
+							{
+								"name": "Destination",
+								"value": "slt_test.log_mitarbeiter"
+							}
+						],
+						"typeProperties": {
+							"source": {
+								"type": "AzureMySqlSource"
+							},
+							"sink": {
+								"type": "SqlDWSink",
+								"preCopyScript": "Truncate table slt_test.log_mitarbeiter",
+								"allowPolyBase": true,
+								"polyBaseSettings": {
+									"rejectValue": 0,
+									"rejectType": "value",
+									"useTypeDefault": true
+								},
+								"disableMetricsCollection": false
+							},
+							"enableStaging": true,
+							"stagingSettings": {
+								"linkedServiceName": {
+									"referenceName": "AzureBlobStorage1",
+									"type": "LinkedServiceReference"
+								}
+							},
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "LogID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "LogID",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "IDBenutzer",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "IDBenutzer",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Datum",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Datum",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "IDPartner",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "IDPartner",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "IDLogAktion",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "IDLogAktion",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "IDLogArt",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "IDLogArt",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "IDStatus_Alt",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "IDStatus_Alt",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "IDStatus_Neu",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "IDStatus_Neu",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Text_Alt",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Text_Alt",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Text_Neu",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Text_Neu",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Anzeigename",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Anzeigename",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Beschreibung",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Beschreibung",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Datum_Alt",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Datum_Alt",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "Datum_Neu",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Datum_Neu",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "SteuerungDurch",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "SteuerungDurch",
+											"type": "Int32"
+										}
+									}
+								]
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "Plunet_Azure_MySql_T7",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "Plunet_Azure_Synspase_T7",
+								"type": "DatasetReference"
+							}
+						]
+					}
+				],
+				"folder": {
+					"name": "Plunet"
+				},
+				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/plunet_to_visma_integration')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "plunet to visma integration",
+				"activities": [
+					{
+						"name": "plunet_visma_integration",
+						"description": "plunet_visma_integration",
+						"type": "Custom",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"command": "python3 plunet_to_visma.py",
+							"resourceLinkedService": {
+								"referenceName": "AzureBlobStorageVisma",
+								"type": "LinkedServiceReference"
+							},
+							"folderPath": "optima-input",
+							"referenceObjects": {
+								"linkedServices": [],
+								"datasets": []
+							}
+						},
+						"linkedServiceName": {
+							"referenceName": "plunet_vIsma_Batch1",
+							"type": "LinkedServiceReference"
+						}
+					}
+				],
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/plunet_vIsma_Batch1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/visma_to_plunet_integration')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "visma_to_plunet_integration",
+				"activities": [
+					{
+						"name": "visma_to_plunet_integration",
+						"description": "visma_to_plunet_integration",
+						"type": "Custom",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"command": "python3 visma_to_plunet.py",
+							"resourceLinkedService": {
+								"referenceName": "AzureBlobStorageVisma",
+								"type": "LinkedServiceReference"
+							},
+							"folderPath": "optima-input",
+							"referenceObjects": {
+								"linkedServices": [],
+								"datasets": []
+							}
+						},
+						"linkedServiceName": {
+							"referenceName": "plunet_vIsma_Batch1",
+							"type": "LinkedServiceReference"
+						}
+					}
+				],
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/plunet_vIsma_Batch1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/plunet_vIsma_Batch1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "plunet_vIsma_Batch1",
+				"annotations": [],
+				"type": "AzureBatch",
+				"typeProperties": {
+					"accountName": "optima",
+					"accessKey": {
+						"type": "SecureString",
+						"value": "**********"
+					},
+					"batchUri": "https://optima.westeurope.batch.azure.com",
+					"poolName": "Optima-engine",
+					"linkedServiceName": {
+						"referenceName": "AzureBlobStorageVisma",
+						"type": "LinkedServiceReference"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Plunet_to_Visma')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "plunet_to_visma_integration",
+							"type": "PipelineReference"
+						}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-02-10T02:30:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								30
+							],
+							"hours": [
+								2
+							]
+						}
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/plunet_to_visma_integration')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Visma_to_Plunet')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "visma_to_plunet_integration",
+							"type": "PipelineReference"
+						}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-02-10T13:00:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								10
+							],
+							"hours": [
+								13
+							]
+						}
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/visma_to_plunet_integration')]"
+			]
+		}
+	]
+}

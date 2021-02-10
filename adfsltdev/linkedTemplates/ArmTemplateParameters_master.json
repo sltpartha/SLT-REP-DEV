@@ -8,6 +8,9 @@
 		"AzureBlobStorage1_connectionString": {
 			"value": ""
 		},
+		"AzureBlobStorageVisma_connectionString": {
+			"value": ""
+		},
 		"AzureBlobStoragebatchvisma_connectionString": {
 			"value": ""
 		},
@@ -56,6 +59,9 @@
 		"STAGING linked service_accountKey": {
 			"value": ""
 		},
+		"plunet_vIsma_Batch1_accessKey": {
+			"value": ""
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://dlssltdev.dfs.core.windows.net"
 		},
@@ -82,6 +88,15 @@
 		},
 		"STAGING linked service_properties_typeProperties_url": {
 			"value": "https://dlssltdev.dfs.core.windows.net"
+		},
+		"plunet_vIsma_Batch1_properties_typeProperties_accountName": {
+			"value": "optima"
+		},
+		"plunet_vIsma_Batch1_properties_typeProperties_batchUri": {
+			"value": "https://optima.westeurope.batch.azure.com"
+		},
+		"plunet_vIsma_Batch1_properties_typeProperties_poolName": {
+			"value": "Optima-engine"
 		},
 		"containerUri": {
 			"value": ""

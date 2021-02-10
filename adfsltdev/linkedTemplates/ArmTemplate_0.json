@@ -11,6 +11,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
 		},
+		"AzureBlobStorageVisma_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorageVisma'"
+		},
 		"AzureBlobStoragebatchvisma_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStoragebatchvisma'"
@@ -109,6 +113,20 @@
 				"type": "AzureBlobStorage",
 				"typeProperties": {
 					"connectionString": "[parameters('AzureBlobStorage1_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureBlobStorageVisma')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "AzureBlobStorageVisma",
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureBlobStorageVisma_connectionString')]"
 				}
 			},
 			"dependsOn": []
@@ -427,60 +445,6 @@
 				"type": "AzureMySqlTable",
 				"schema": [],
 				"typeProperties": {}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/SLTMySqlDatabase')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureMySql_Order_Textmodul')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "SLTMySqlDatabase",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Sreeja Dataset"
-				},
-				"annotations": [],
-				"type": "AzureMySqlTable",
-				"schema": [
-					{
-						"name": "TextModulVerwendungID",
-						"type": "int",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "IDTextModul",
-						"type": "int",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "IDMain",
-						"type": "int",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Inhalt",
-						"type": "text",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Inhalt_Datum",
-						"type": "datetime",
-						"precision": 0,
-						"scale": 0
-					}
-				],
-				"typeProperties": {
-					"tableName": "auftrag_textmodul "
-				}
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/SLTMySqlDatabase')]"
