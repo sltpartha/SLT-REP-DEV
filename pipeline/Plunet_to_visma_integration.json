@@ -1,5 +1,5 @@
 {
-	"name": "plunet_to_visma_integration",
+	"name": "Plunet_to_visma_integration",
 	"properties": {
 		"description": "plunet to visma integration",
 		"activities": [
@@ -34,6 +34,9 @@
 				}
 			}
 		],
+		"folder": {
+			"name": "Visma"
+		},
 		"annotations": []
 	}
 }
