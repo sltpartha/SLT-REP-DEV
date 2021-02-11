@@ -17,7 +17,7 @@
 		"type": "MySqlTable",
 		"schema": [],
 		"typeProperties": {
-			"tableName": "`land`"
+			"tableName": "@dataset().cw_tableName"
 		}
 	}
 }
