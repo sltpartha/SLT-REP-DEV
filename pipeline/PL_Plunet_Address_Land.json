@@ -36,11 +36,7 @@
 							],
 							"typeProperties": {
 								"source": {
-									"type": "MySqlSource",
-									"query": {
-										"value": "@item().copySource.query",
-										"type": "Expression"
-									}
+									"type": "MySqlSource"
 								},
 								"sink": {
 									"type": "AzureMySqlSink",
@@ -61,10 +57,7 @@
 							"inputs": [
 								{
 									"referenceName": "Plunet_DB_T1",
-									"type": "DatasetReference",
-									"parameters": {
-										"cw_tableName": "@item().source.tableName"
-									}
+									"type": "DatasetReference"
 								}
 							],
 							"outputs": [
