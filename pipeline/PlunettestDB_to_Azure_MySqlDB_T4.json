@@ -283,17 +283,6 @@
 											"type": "Int32",
 											"physicalType": "int"
 										}
-									},
-									{
-										"source": {
-											"name": "KO_Kriterium_Prozent_Int",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "KO_Kriterium_Prozent_Int",
-											"type": "Int32",
-											"physicalType": "int"
-										}
 									}
 								],
 								"typeConversion": true,
@@ -471,17 +460,6 @@
 											"type": "Int32",
 											"physicalType": "int"
 										}
-									},
-									{
-										"source": {
-											"name": "KO_Kriterium_Prozent_Int",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "KO_Kriterium_Prozent_Int",
-											"type": "Int32",
-											"physicalType": "int"
-										}
 									}
 								],
 								"typeConversion": true,
@@ -656,17 +634,6 @@
 										},
 										"sink": {
 											"name": "Aktiv",
-											"type": "Int32",
-											"physicalType": "int"
-										}
-									},
-									{
-										"source": {
-											"name": "KO_Kriterium_Prozent_Int",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "KO_Kriterium_Prozent_Int",
 											"type": "Int32",
 											"physicalType": "int"
 										}
