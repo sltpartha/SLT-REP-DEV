@@ -3225,17 +3225,6 @@
 											"type": "Double",
 											"physicalType": "double"
 										}
-									},
-									{
-										"source": {
-											"name": "DatumEingang",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "DatumEingang",
-											"type": "DateTime",
-											"physicalType": "datetime"
-										}
 									}
 								],
 								"typeConversion": true,
