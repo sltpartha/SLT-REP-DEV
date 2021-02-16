@@ -2453,17 +2453,6 @@
 											"type": "String",
 											"physicalType": "varchar"
 										}
-									},
-									{
-										"source": {
-											"name": "PfadArchiv",
-											"type": "String"
-										},
-										"sink": {
-											"name": "PfadArchiv",
-											"type": "String",
-											"physicalType": "varchar"
-										}
 									}
 								],
 								"typeConversion": true,
