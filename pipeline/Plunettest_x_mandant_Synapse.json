@@ -30,7 +30,6 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"preCopyScript": "truncate table slt_test.job",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
@@ -1298,7 +1297,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Synapse_Job",
+						"referenceName": "Synapse_x_mandant",
 						"type": "DatasetReference"
 					}
 				]
