@@ -40,7 +40,6 @@
 								},
 								"sink": {
 									"type": "SqlDWSink",
-									"preCopyScript": "@concat('Truncate table slt_test.' , item().destination.table)",
 									"allowPolyBase": true,
 									"polyBaseSettings": {
 										"rejectValue": 0,
