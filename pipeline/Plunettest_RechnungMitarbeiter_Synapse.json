@@ -1297,7 +1297,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Synapse_Job",
+						"referenceName": "Synapse_rechnungMitarbeiter",
 						"type": "DatasetReference"
 					}
 				]
