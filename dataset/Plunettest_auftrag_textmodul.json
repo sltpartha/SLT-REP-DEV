@@ -1,5 +1,5 @@
 {
-	"name": "Plunettest_Order_Textmodul",
+	"name": "Plunettest_auftrag_textmodul",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Plunet_Test_Database",
@@ -10,6 +10,9 @@
 		},
 		"annotations": [],
 		"type": "MySqlTable",
-		"schema": []
+		"schema": [],
+		"typeProperties": {
+			"tableName": "`auftrag_textmodul`"
+		}
 	}
 }
