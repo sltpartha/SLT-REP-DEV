@@ -1,5 +1,5 @@
 {
-	"name": "Synapse_Order_Textmodul",
+	"name": "Synapse_auftrag_textmodul",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_SYNAP",
