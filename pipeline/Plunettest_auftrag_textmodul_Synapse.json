@@ -1,9 +1,9 @@
 {
-	"name": "Plunettest_Order_Textmodul_Synapse",
+	"name": "Plunettest_auftrag_textmodul_Synapse",
 	"properties": {
 		"activities": [
 			{
-				"name": "Order_Textmodul",
+				"name": "auftrag_textmodul",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -99,13 +99,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Plunettest_Order_Textmodul",
+						"referenceName": "Plunettest_auftrag_textmodul",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "AzureMySql_Order_Textmodul",
+						"referenceName": "AzureMySql_auftrag_textmodul",
 						"type": "DatasetReference"
 					}
 				]
@@ -115,7 +115,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Order_Textmodul",
+						"activity": "auftrag_textmodul",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -231,13 +231,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "AzureMySql_Order_Textmodul_2",
+						"referenceName": "AzureMySql_auftrag_textmodul_2",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "Synapse_Order_Textmodul",
+						"referenceName": "Synapse_auftrag_textmodul",
 						"type": "DatasetReference"
 					}
 				]
