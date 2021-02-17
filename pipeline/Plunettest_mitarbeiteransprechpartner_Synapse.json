@@ -30,6 +30,7 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
+						"preCopyScript": "truncate table slt_test.mitarbeiteransprechpartner",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
