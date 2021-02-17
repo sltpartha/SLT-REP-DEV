@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Job",
+				"name": "mitarbeiteransprechpartner",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -26,11 +26,10 @@
 				"typeProperties": {
 					"source": {
 						"type": "MySqlSource",
-						"query": "select * from `job`"
+						"query": "select * from `mitarbeiteransprechpartner`"
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"preCopyScript": "truncate table slt_test.job",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
@@ -1292,13 +1291,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Plunettest_Job",
+						"referenceName": "Plunettest_mitarbeiteransprechpartner",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "Synapse_Job",
+						"referenceName": "Synapse_mitarbeiteransprechpartner",
 						"type": "DatasetReference"
 					}
 				]
