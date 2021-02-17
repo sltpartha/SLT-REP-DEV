@@ -1,5 +1,5 @@
 {
-	"name": "AzureMySql_Order_Textmodul",
+	"name": "AzureMySql_auftrag_textmodul",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "SLTMySqlDatabase",
@@ -43,7 +43,7 @@
 			}
 		],
 		"typeProperties": {
-			"tableName": "auftrag_textmodul "
+			"tableName": "auftrag_textmodul"
 		}
 	}
 }
