@@ -26,7 +26,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "MySqlSource",
-						"query": "select * from `job`"
+						"query": "select * from `mitarbeiter_textmodu`"
 					},
 					"sink": {
 						"type": "SqlDWSink",
