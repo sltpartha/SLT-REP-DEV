@@ -323,16 +323,6 @@
 											"name": "Aktiv",
 											"type": "Int32"
 										}
-									},
-									{
-										"source": {
-											"name": "KO_Kriterium_Prozent_Int",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "KO_Kriterium_Prozent_Int",
-											"type": "Int32"
-										}
 									}
 								]
 							}
@@ -426,16 +416,6 @@
 										},
 										"sink": {
 											"name": "Aktiv",
-											"type": "Int32"
-										}
-									},
-									{
-										"source": {
-											"name": "KO_Kriterium_Prozent_Int",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "KO_Kriterium_Prozent_Int",
 											"type": "Int32"
 										}
 									}
@@ -591,16 +571,6 @@
 										},
 										"sink": {
 											"name": "Aktiv",
-											"type": "Int32"
-										}
-									},
-									{
-										"source": {
-											"name": "KO_Kriterium_Prozent_Int",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "KO_Kriterium_Prozent_Int",
 											"type": "Int32"
 										}
 									}
@@ -2216,16 +2186,6 @@
 										},
 										"sink": {
 											"name": "DATEV_Festschreibungskennzeichen",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "PfadArchiv",
-											"type": "String"
-										},
-										"sink": {
-											"name": "PfadArchiv",
 											"type": "String"
 										}
 									}
