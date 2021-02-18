@@ -1,9 +1,9 @@
 {
-	"name": "Plunettest_mitarbeiter_textmodu_Synapse_copy1",
+	"name": "Plunettest_mitarbeiter_textmodul_Synapse_copy1",
 	"properties": {
 		"activities": [
 			{
-				"name": "mitarbeiter_textmodu",
+				"name": "mitarbeiter_textmodul",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -30,7 +30,6 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"preCopyScript": "truncate table slt_test.job",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
@@ -1292,13 +1291,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Plunettest_Job",
+						"referenceName": "Plunettest_mitarbeiter_textmodul",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "Synapse_Job",
+						"referenceName": "Synapse_mitarbeiter_textmodul",
 						"type": "DatasetReference"
 					}
 				]
