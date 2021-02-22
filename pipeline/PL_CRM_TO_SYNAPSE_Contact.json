@@ -29,6 +29,7 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
+						"preCopyScript": "Truncate table sltsqldbdev.Contact",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
