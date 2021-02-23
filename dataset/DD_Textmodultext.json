@@ -1,5 +1,5 @@
 {
-	"name": "DD_Test",
+	"name": "DD_Textmodultext",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_SYNAP",
@@ -13,7 +13,7 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "slt_test",
-			"table": "Test"
+			"table": "Textmodultext"
 		}
 	}
 }
