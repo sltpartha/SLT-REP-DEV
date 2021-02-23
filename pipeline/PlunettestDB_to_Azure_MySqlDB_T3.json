@@ -46,10 +46,7 @@
 									"type": "AzureMySqlSink",
 									"writeBatchSize": 10000,
 									"writeBatchTimeout": "00:00:30",
-									"preCopyScript": {
-										"value": "@concat('Truncate table ' , item().destination.tableName)",
-										"type": "Expression"
-									}
+									"preCopyScript": "@concat('Truncate table ' , item().destination.tableName)"
 								},
 								"enableStaging": false,
 								"validateDataConsistency": false,
@@ -3227,17 +3224,6 @@
 											"name": "MWStBasisR",
 											"type": "Double",
 											"physicalType": "double"
-										}
-									},
-									{
-										"source": {
-											"name": "DatumEingang",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "DatumEingang",
-											"type": "DateTime",
-											"physicalType": "datetime"
 										}
 									}
 								],

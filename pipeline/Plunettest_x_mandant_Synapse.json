@@ -1,0 +1,1829 @@
+{
+	"name": "Plunettest_x_mandant_Synapse",
+	"properties": {
+		"activities": [
+			{
+				"name": "x_mandant",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "`job`"
+					},
+					{
+						"name": "Destination",
+						"value": "slt_test.Job"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "MySqlSource",
+						"query": "select * from `x_mandant`"
+					},
+					"sink": {
+						"type": "SqlDWSink",
+						"preCopyScript": "truncate table slt_test.x_mandant",
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "MandantID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MandantID",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Bez",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Bez",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MinRechnungNr",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MinRechnungNr",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "RechnungNrFormat",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "RechnungNrFormat",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "PrefixRechnungsNr",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PrefixRechnungsNr",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MinGutschriftNr",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MinGutschriftNr",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "GutschriftNrFormat",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "GutschriftNrFormat",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "PrefixGutschriftNr",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PrefixGutschriftNr",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZahlfristGutschrift",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ZahlfristGutschrift",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "KNrAlsDebitorenkonto",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "KNrAlsDebitorenkonto",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "RechnungAnlegenOhneKontoMoeglich",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "RechnungAnlegenOhneKontoMoeglich",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "RechnungGegenKonto",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "RechnungGegenKonto",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Zahlungsfrist",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Zahlungsfrist",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "AufwandKonto",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "AufwandKonto",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ZahlungsfristMahnung",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ZahlungsfristMahnung",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ZahlungsfristMahnung2",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ZahlungsfristMahnung2",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ZahlungsfristMahnung3",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ZahlungsfristMahnung3",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BetragMahngebuehr1",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "BetragMahngebuehr1",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "BetragMahngebuehr2",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "BetragMahngebuehr2",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "BetragMahngebuehr3",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "BetragMahngebuehr3",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "MahnungIPreisEinheitID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MahnungIPreisEinheitID",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MahnungIIPreisEinheitID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MahnungIIPreisEinheitID",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MahnungIIIPreisEinheitID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MahnungIIIPreisEinheitID",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "DATEV_BeraterNummer",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DATEV_BeraterNummer",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DATEV_BeraterName",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DATEV_BeraterName",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DATEV_MandantenNummer",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DATEV_MandantenNummer",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DATEV_DFV_Kennzeichen",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DATEV_DFV_Kennzeichen",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DATEV_Datentraegernummer",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DATEV_Datentraegernummer",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DATEV_Abrechnungsnummer",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DATEV_Abrechnungsnummer",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DATEV_Passwort",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DATEV_Passwort",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DATEV_Kontonummernerweiterung",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DATEV_Kontonummernerweiterung",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DATEV_Kontonummernlaenge",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DATEV_Kontonummernlaenge",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RegistrierungsNummer",
+									"type": "String"
+								},
+								"sink": {
+									"name": "RegistrierungsNummer",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RegistrierungsAmt",
+									"type": "String"
+								},
+								"sink": {
+									"name": "RegistrierungsAmt",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MwstMahnung1",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MwstMahnung1",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MwstMahnung2",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MwstMahnung2",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MwstMahnung3",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MwstMahnung3",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MWStSatz1",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "MWStSatz1",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "MWStSatz2",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "MWStSatz2",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "MWStSatz3",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "MWStSatz3",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "MWStSatz4",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "MWStSatz4",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "ErloesKontoID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ErloesKontoID",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "AufwandsKontoID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "AufwandsKontoID",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "QuickBooks_Version",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "QuickBooks_Version",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "PfadAnfrage",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PfadAnfrage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PfadAngebot",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PfadAngebot",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PfadAuftrag",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PfadAuftrag",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "QB_FormatName",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "QB_FormatName",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Zahlungsfrist_Regel_Debitor",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Zahlungsfrist_Regel_Debitor",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Aktiv",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Aktiv",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MWST_NAME_0",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MWST_NAME_0",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MWST_NAME_1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MWST_NAME_1",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MWST_NAME_2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MWST_NAME_2",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MWST_NAME_3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MWST_NAME_3",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MWST_BASIS_1",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MWST_BASIS_1",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ShowNullValue",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ShowNullValue",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "KundeID_Verrechnung",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "KundeID_Verrechnung",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ZahlungszielZusatzkosten",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ZahlungszielZusatzkosten",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BerechnungZusatzkosten",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "BerechnungZusatzkosten",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ZahlfristDebitor_Zusatztage",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ZahlfristDebitor_Zusatztage",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ZahlfristZusatzkosten_Zusatztage",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ZahlfristZusatzkosten_Zusatztage",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Gutschrift_KeinNummerkreis",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Gutschrift_KeinNummerkreis",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Listbox_General",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Listbox_General",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Listbox_Invoice",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Listbox_Invoice",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "AttachDocumentsCollectiveReminder",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "AttachDocumentsCollectiveReminder",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "SteuerZahlInterval",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "SteuerZahlInterval",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "NaechsterSteuerZahlTermin",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "NaechsterSteuerZahlTermin",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "MWStSatz5",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "MWStSatz5",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "MWST_NAME_4",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MWST_NAME_4",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Mahnungsgebuehren_ImmerBerechnen",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Mahnungsgebuehren_ImmerBerechnen",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "PfadRechnung",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PfadRechnung",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BezKurzform",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BezKurzform",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "IBAN",
+									"type": "String"
+								},
+								"sink": {
+									"name": "IBAN",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MwSt_Satz1_EK_KontoNr",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MwSt_Satz1_EK_KontoNr",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MwSt_Satz1_VK_KontoNr",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MwSt_Satz1_VK_KontoNr",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MwSt_Satz2_EK_KontoNr",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MwSt_Satz2_EK_KontoNr",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MwSt_Satz2_VK_KontoNr",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MwSt_Satz2_VK_KontoNr",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MwSt_Satz3_EK_KontoNr",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MwSt_Satz3_EK_KontoNr",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MwSt_Satz3_VK_KontoNr",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MwSt_Satz3_VK_KontoNr",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MwSt_Satz4_EK_KontoNr",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MwSt_Satz4_EK_KontoNr",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MwSt_Satz4_VK_KontoNr",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MwSt_Satz4_VK_KontoNr",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MwSt_Satz5_EK_KontoNr",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MwSt_Satz5_EK_KontoNr",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MwSt_Satz5_VK_KontoNr",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MwSt_Satz5_VK_KontoNr",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "QBTaxableItemCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "QBTaxableItemCode",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "QBNonTaxableItemCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "QBNonTaxableItemCode",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "QBTermsID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "QBTermsID",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "QB_IsAuftragNrLevel",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "QB_IsAuftragNrLevel",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ZielURINachLogout",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ZielURINachLogout",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "QB_MitBlankLine",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "QB_MitBlankLine",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "QB_MitZeilenpreisMemo",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "QB_MitZeilenpreisMemo",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "QB_IsMitMultiCurrency",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "QB_IsMitMultiCurrency",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "QB_IsMitKundeMitarbeiterWaehrung",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "QB_IsMitKundeMitarbeiterWaehrung",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MwSt_Satz1_QBTaxCodeID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MwSt_Satz1_QBTaxCodeID",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MwSt_Satz2_QBTaxCodeID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MwSt_Satz2_QBTaxCodeID",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MwSt_Satz3_QBTaxCodeID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MwSt_Satz3_QBTaxCodeID",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MwSt_Satz4_QBTaxCodeID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MwSt_Satz4_QBTaxCodeID",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MwSt_Satz5_QBTaxCodeID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MwSt_Satz5_QBTaxCodeID",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "QuickBooks_NonTaxableItemCodeID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "QuickBooks_NonTaxableItemCodeID",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "QuickBooks_IsTaxAktiv",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "QuickBooks_IsTaxAktiv",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MitarbeiterID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MitarbeiterID",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "TransitJamesSystemEinstellungID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "TransitJamesSystemEinstellungID",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Addison_MandantName",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Addison_MandantName",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "QuickBooks_IsTruncateEnabled",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "QuickBooks_IsTruncateEnabled",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "LokalKopieren",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "LokalKopieren",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "PfadEingangsrechnung",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PfadEingangsrechnung",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RechnungCheckbox_Jahresanfang",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "RechnungCheckbox_Jahresanfang",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "RechnungCheckbox_Monatsanfang",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "RechnungCheckbox_Monatsanfang",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "RechnungInputTextErhoehung_Jahresanfang",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "RechnungInputTextErhoehung_Jahresanfang",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "RechnungInputTextErhoehung_Monatsanfang",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "RechnungInputTextErhoehung_Monatsanfang",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "RechnungBoxAufrundung_Jahresanfang",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "RechnungBoxAufrundung_Jahresanfang",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "RechnungBoxAufrundung_Monatsanfang",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "RechnungBoxAufrundung_Monatsanfang",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "RechnungGueltigAb",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "RechnungGueltigAb",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "GutschriftCheckbox_Jahresanfang",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "GutschriftCheckbox_Jahresanfang",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "GutschriftCheckbox_Monatsanfang",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "GutschriftCheckbox_Monatsanfang",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "GutschriftInputTextErhoehung_Jahresanfang",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "GutschriftInputTextErhoehung_Jahresanfang",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "GutschriftInputTextErhoehung_Monatsanfang",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "GutschriftInputTextErhoehung_Monatsanfang",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "GutschriftBoxAufrundung_Jahresanfang",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "GutschriftBoxAufrundung_Jahresanfang",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "GutschriftBoxAufrundung_Monatsanfang",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "GutschriftBoxAufrundung_Monatsanfang",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "GutschriftGueltigAb",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "GutschriftGueltigAb",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "VAT_FROM_0",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "VAT_FROM_0",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "VAT_TO_0",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "VAT_TO_0",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "VAT_FROM_1",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "VAT_FROM_1",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "VAT_TO_1",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "VAT_TO_1",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "VAT_FROM_2",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "VAT_FROM_2",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "VAT_TO_2",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "VAT_TO_2",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "VAT_FROM_3",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "VAT_FROM_3",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "VAT_TO_3",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "VAT_TO_3",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "VAT_FROM_4",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "VAT_FROM_4",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "VAT_TO_4",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "VAT_TO_4",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "QuickBooks_ExportExternalInvoiceNo",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "QuickBooks_ExportExternalInvoiceNo",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "QuickBooks_JobNameTyp",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "QuickBooks_JobNameTyp",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MwSt_Satz1_Rundung",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MwSt_Satz1_Rundung",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MwSt_Satz2_Rundung",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MwSt_Satz2_Rundung",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MwSt_Satz3_Rundung",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MwSt_Satz3_Rundung",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MwSt_Satz4_Rundung",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MwSt_Satz4_Rundung",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MwSt_Satz5_Rundung",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MwSt_Satz5_Rundung",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "DATEV_Passwort_enc",
+									"type": "Byte[]"
+								},
+								"sink": {
+									"name": "DATEV_Passwort_enc",
+									"type": "Byte[]",
+									"physicalType": "Byte[]"
+								}
+							},
+							{
+								"source": {
+									"name": "NeukundenBetreuer",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "NeukundenBetreuer",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "IsKundenbetreuerImProjektteamAlsStandard",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "IsKundenbetreuerImProjektteamAlsStandard",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MWST_Aktiv_0",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MWST_Aktiv_0",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MWST_Aktiv_1",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MWST_Aktiv_1",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MWST_Aktiv_2",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MWST_Aktiv_2",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MWST_Aktiv_3",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MWST_Aktiv_3",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MWST_Aktiv_4",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MWST_Aktiv_4",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MWST_BASIS_2",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MWST_BASIS_2",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MWST_BASIS_3",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MWST_BASIS_3",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MWST_BASIS_4",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MWST_BASIS_4",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Zahlfrist_Kreditor",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Zahlfrist_Kreditor",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Zahlfrist_Kreditor_ZumMonatsEnde",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Zahlfrist_Kreditor_ZumMonatsEnde",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Zahlfrist_Kreditor_Zusatztage",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Zahlfrist_Kreditor_Zusatztage",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MWST_NAME_R",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MWST_NAME_R",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MWST_BASIS_R",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MWST_BASIS_R",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "VAT_FROM_R",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "VAT_FROM_R",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "VAT_TO_R",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "VAT_TO_R",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "MwSt_R_EK_KontoNr",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MwSt_R_EK_KontoNr",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MwSt_R_VK_KontoNr",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MwSt_R_VK_KontoNr",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MwSt_R_QBTaxCodeID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MwSt_R_QBTaxCodeID",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MwSt_R_Rundung",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MwSt_R_Rundung",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MWST_Aktiv_R",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MWST_Aktiv_R",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "DATEV_Festschreibungskennzeichen",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DATEV_Festschreibungskennzeichen",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Plunettest_x_mandant",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Synapse_x_mandant",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Sreeja"
+		},
+		"annotations": []
+	}
+}

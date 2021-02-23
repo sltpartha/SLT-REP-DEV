@@ -1,0 +1,19 @@
+{
+	"name": "Synapse_rechnungMitarbeiter",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SYNAP",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Sreeja Dataset"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "slt_test",
+			"table": "rechnungMitarbeiter"
+		}
+	}
+}

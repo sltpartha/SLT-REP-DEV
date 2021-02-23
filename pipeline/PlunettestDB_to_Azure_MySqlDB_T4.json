@@ -46,10 +46,7 @@
 									"type": "AzureMySqlSink",
 									"writeBatchSize": 10000,
 									"writeBatchTimeout": "00:00:30",
-									"preCopyScript": {
-										"value": "@concat('Truncate table ' , item().destination.tableName)",
-										"type": "Expression"
-									}
+									"preCopyScript": "@concat('Truncate table ' , item().destination.tableName)"
 								},
 								"enableStaging": false,
 								"validateDataConsistency": false,
@@ -286,17 +283,6 @@
 											"type": "Int32",
 											"physicalType": "int"
 										}
-									},
-									{
-										"source": {
-											"name": "KO_Kriterium_Prozent_Int",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "KO_Kriterium_Prozent_Int",
-											"type": "Int32",
-											"physicalType": "int"
-										}
 									}
 								],
 								"typeConversion": true,
@@ -474,17 +460,6 @@
 											"type": "Int32",
 											"physicalType": "int"
 										}
-									},
-									{
-										"source": {
-											"name": "KO_Kriterium_Prozent_Int",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "KO_Kriterium_Prozent_Int",
-											"type": "Int32",
-											"physicalType": "int"
-										}
 									}
 								],
 								"typeConversion": true,
@@ -659,17 +634,6 @@
 										},
 										"sink": {
 											"name": "Aktiv",
-											"type": "Int32",
-											"physicalType": "int"
-										}
-									},
-									{
-										"source": {
-											"name": "KO_Kriterium_Prozent_Int",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "KO_Kriterium_Prozent_Int",
 											"type": "Int32",
 											"physicalType": "int"
 										}
@@ -2453,17 +2417,6 @@
 										},
 										"sink": {
 											"name": "DATEV_Festschreibungskennzeichen",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "PfadArchiv",
-											"type": "String"
-										},
-										"sink": {
-											"name": "PfadArchiv",
 											"type": "String",
 											"physicalType": "varchar"
 										}

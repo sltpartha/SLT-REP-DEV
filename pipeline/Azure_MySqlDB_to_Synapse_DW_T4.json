@@ -40,16 +40,13 @@
 								},
 								"sink": {
 									"type": "SqlDWSink",
-									"preCopyScript": {
-										"value": "@concat('Truncate table slt_test.' , item().destination.table)",
-										"type": "Expression"
-									},
 									"allowPolyBase": true,
 									"polyBaseSettings": {
 										"rejectValue": 0,
 										"rejectType": "value",
 										"useTypeDefault": false
 									},
+									"tableOption": "autoCreate",
 									"disableMetricsCollection": false
 								},
 								"enableStaging": true,
@@ -326,16 +323,6 @@
 											"name": "Aktiv",
 											"type": "Int32"
 										}
-									},
-									{
-										"source": {
-											"name": "KO_Kriterium_Prozent_Int",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "KO_Kriterium_Prozent_Int",
-											"type": "Int32"
-										}
 									}
 								]
 							}
@@ -429,16 +416,6 @@
 										},
 										"sink": {
 											"name": "Aktiv",
-											"type": "Int32"
-										}
-									},
-									{
-										"source": {
-											"name": "KO_Kriterium_Prozent_Int",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "KO_Kriterium_Prozent_Int",
 											"type": "Int32"
 										}
 									}
@@ -594,16 +571,6 @@
 										},
 										"sink": {
 											"name": "Aktiv",
-											"type": "Int32"
-										}
-									},
-									{
-										"source": {
-											"name": "KO_Kriterium_Prozent_Int",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "KO_Kriterium_Prozent_Int",
 											"type": "Int32"
 										}
 									}
@@ -2219,16 +2186,6 @@
 										},
 										"sink": {
 											"name": "DATEV_Festschreibungskennzeichen",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "PfadArchiv",
-											"type": "String"
-										},
-										"sink": {
-											"name": "PfadArchiv",
 											"type": "String"
 										}
 									}

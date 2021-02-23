@@ -1,0 +1,542 @@
+{
+	"name": "Plunettest_mitarbeiteransprechpartner_Synapse",
+	"properties": {
+		"activities": [
+			{
+				"name": "mitarbeiteransprechpartner",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "`job`"
+					},
+					{
+						"name": "Destination",
+						"value": "slt_test.Job"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "MySqlSource",
+						"query": "select * from `mitarbeiteransprechpartner`"
+					},
+					"sink": {
+						"type": "SqlDWSink",
+						"preCopyScript": "truncate table slt_test.mitarbeiteransprechpartner",
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "AnsprechpartnerID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "AnsprechpartnerID",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "IDMitarbeiter",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "IDMitarbeiter",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Anrede",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Anrede",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Titel",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Titel",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Nachname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Nachname",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Vorname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Vorname",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TelefonDurchwahl",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TelefonDurchwahl",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TelefonPrivat",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TelefonPrivat",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Mobil",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Mobil",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Fax",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Fax",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "eMail",
+									"type": "String"
+								},
+								"sink": {
+									"name": "eMail",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Geburtsdatum",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Geburtsdatum",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Aufgabengebiet",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Aufgabengebiet",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Briefanrede",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Briefanrede",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Aktiv",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Aktiv",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Abteilung",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Abteilung",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Standard",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Standard",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Werbung",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Werbung",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "AnschriftID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "AnschriftID",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "SkypeNr",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SkypeNr",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VorlageID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "VorlageID",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Funktion",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Funktion",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Hervorheben",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Hervorheben",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BetreuerMemo",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BetreuerMemo",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "WithMemoAlert",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "WithMemoAlert",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ExternalID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ExternalID",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Kostenstelle",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Kostenstelle",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Vertretung",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Vertretung",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MemoInProjektKopieren",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MemoInProjektKopieren",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Zeitzone",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Zeitzone",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Anlagedatum",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Anlagedatum",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "SortingField",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SortingField",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CCEmpfaengerMA_JobanfrageEmails",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CCEmpfaengerMA_JobanfrageEmails",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CCEmpfaengerMA_JobbeauftragungEmails",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CCEmpfaengerMA_JobbeauftragungEmails",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CCEmpfaengerMA_RechnungEmails",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CCEmpfaengerMA_RechnungEmails",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "KontaktHerkunft",
+									"type": "String"
+								},
+								"sink": {
+									"name": "KontaktHerkunft",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "isEmail_KontaktanlageEUDSGVO_versandt",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "isEmail_KontaktanlageEUDSGVO_versandt",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Datum_LoeschungBeantragt",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Datum_LoeschungBeantragt",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Datum_LetzteAktion_Anfrage",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Datum_LetzteAktion_Anfrage",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Datum_LetzteAktion_Angebot",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Datum_LetzteAktion_Angebot",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Datum_LetzteAktion_Auftrag",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Datum_LetzteAktion_Auftrag",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Datum_LetzteAktion_Job",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Datum_LetzteAktion_Job",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Datum_LetzteAktion_Rechnung",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Datum_LetzteAktion_Rechnung",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Plunettest_mitarbeiteransprechpartner",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Synapse_mitarbeiteransprechpartner",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Sreeja"
+		},
+		"annotations": []
+	}
+}

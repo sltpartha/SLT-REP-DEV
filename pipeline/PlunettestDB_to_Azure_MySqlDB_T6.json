@@ -714,17 +714,6 @@
 											"type": "DateTime",
 											"physicalType": "datetime"
 										}
-									},
-									{
-										"source": {
-											"name": "samlexternalid",
-											"type": "String"
-										},
-										"sink": {
-											"name": "samlexternalid",
-											"type": "String",
-											"physicalType": "varchar"
-										}
 									}
 								],
 								"typeConversion": true,
