@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Adresse",
+				"name": "test",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -29,7 +29,6 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"preCopyScript": "truncate table slt_test.Adresse",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
@@ -40,244 +39,156 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "AdresseID",
+									"name": "TextModulTextID",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "AdresseID",
+									"name": "TextModulTextID",
 									"type": "Int32",
 									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "IDKunde",
+									"name": "TextModulID",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "IDKunde",
+									"name": "TextModulID",
 									"type": "Int32",
 									"physicalType": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "Typ",
+									"name": "Deutsch",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Deutsch",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "English",
+									"type": "String"
+								},
+								"sink": {
+									"name": "English",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZusatzSprache1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ZusatzSprache1",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZusatzSprache2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ZusatzSprache2",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZusatzSprache3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ZusatzSprache3",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Bezeichnung_Deutsch",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Bezeichnung_Deutsch",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Bezeichnung_Englisch",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Bezeichnung_Englisch",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Bezeichnung_ZusatzSprache1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Bezeichnung_ZusatzSprache1",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Bezeichnung_ZusatzSprache2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Bezeichnung_ZusatzSprache2",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Bezeichnung_ZusatzSprache3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Bezeichnung_ZusatzSprache3",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HauptDropDownAuswahl",
+									"type": "String"
+								},
+								"sink": {
+									"name": "HauptDropDownAuswahl",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Reihenfolge",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "Typ",
+									"name": "Reihenfolge",
 									"type": "Int32",
 									"physicalType": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "Strasse",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Strasse",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "Strasse2",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Strasse2",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "PLZ",
-									"type": "String"
-								},
-								"sink": {
-									"name": "PLZ",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "Ort",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Ort",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "PLZ_Postfach",
-									"type": "String"
-								},
-								"sink": {
-									"name": "PLZ_Postfach",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "Postfach",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Postfach",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "IDLand",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "IDLand",
-									"type": "Int32",
-									"physicalType": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "Vorname",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Vorname",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "Nachname",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Nachname",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "Nickname",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Nickname",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "Bundesland",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Bundesland",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "ErtragKonto",
-									"type": "String"
-								},
-								"sink": {
-									"name": "ErtragKonto",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "KontoFIBU",
-									"type": "String"
-								},
-								"sink": {
-									"name": "KontoFIBU",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "IDBesteuerungsArt",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "IDBesteuerungsArt",
-									"type": "Int32",
-									"physicalType": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "UST_ID",
-									"type": "String"
-								},
-								"sink": {
-									"name": "UST_ID",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "ErloesKontoID",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "ErloesKontoID",
-									"type": "Int32",
-									"physicalType": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "Buero",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Buero",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "CostCenter1",
-									"type": "String"
-								},
-								"sink": {
-									"name": "CostCenter1",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "VatByRegion",
-									"type": "Double"
-								},
-								"sink": {
-									"name": "VatByRegion",
-									"type": "Double",
-									"physicalType": "Double"
 								}
 							}
 						],
@@ -290,13 +201,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Plunettest_Adresse",
+						"referenceName": "SD_test",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "Synspse_Adresse",
+						"referenceName": "DD_Test",
 						"type": "DatasetReference"
 					}
 				]
