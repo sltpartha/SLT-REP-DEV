@@ -13,145 +13,6 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_MySql_T7')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureMySql_SLT_test",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureMySqlTable",
-				"schema": [
-					{
-						"name": "LogID",
-						"type": "int",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "IDBenutzer",
-						"type": "int",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Datum",
-						"type": "datetime",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "IDPartner",
-						"type": "int",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "IDLogAktion",
-						"type": "int",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "IDLogArt",
-						"type": "int",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "IDStatus_Alt",
-						"type": "int",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "IDStatus_Neu",
-						"type": "int",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Text_Alt",
-						"type": "text",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Text_Neu",
-						"type": "text",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Anzeigename",
-						"type": "text",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Beschreibung",
-						"type": "text",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Datum_Alt",
-						"type": "datetime",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Datum_Neu",
-						"type": "datetime",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "SteuerungDurch",
-						"type": "int",
-						"precision": 0,
-						"scale": 0
-					}
-				],
-				"typeProperties": {
-					"tableName": "log_mitarbeiter"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_Synspase_T1')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_SYNAP",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"cw_table": {
-						"type": "String"
-					}
-				},
-				"folder": {
-					"name": "Azure_MySql_to_Azure_Synapse_DW"
-				},
-				"annotations": [],
-				"type": "AzureSqlDWTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": "slt_test",
-					"table": {
-						"value": "@dataset().cw_table",
-						"type": "Expression"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_Synspase_T2')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -396,297 +257,310 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_DB_T1')]",
+			"name": "[concat(parameters('factoryName'), '/Synapse_Angebot')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "Plunet_Test_Database",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"cw_tableName": {
-						"type": "String"
-					}
-				},
-				"folder": {
-					"name": "Plunet_to_Azure_MySql"
-				},
-				"annotations": [],
-				"type": "MySqlTable",
-				"schema": [],
-				"typeProperties": {
-					"tableName": {
-						"value": "@dataset().cw_tableName",
-						"type": "Expression"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_DB_T2')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "Plunet_Test_Database",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"cw_tableName": {
-						"type": "String"
-					}
-				},
-				"folder": {
-					"name": "Plunet_to_Azure_MySql"
-				},
-				"annotations": [],
-				"type": "MySqlTable",
-				"schema": [],
-				"typeProperties": {
-					"tableName": {
-						"value": "@dataset().cw_tableName",
-						"type": "Expression"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_DB_T3')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "Plunet_Test_Database",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"cw_tableName": {
-						"type": "String"
-					}
-				},
-				"folder": {
-					"name": "Plunet_to_Azure_MySql"
-				},
-				"annotations": [],
-				"type": "MySqlTable",
-				"schema": [],
-				"typeProperties": {
-					"tableName": {
-						"value": "@dataset().cw_tableName",
-						"type": "Expression"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_DB_T4')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "Plunet_Test_Database",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"cw_tableName": {
-						"type": "String"
-					}
-				},
-				"folder": {
-					"name": "Plunet_to_Azure_MySql"
-				},
-				"annotations": [],
-				"type": "MySqlTable",
-				"schema": [],
-				"typeProperties": {
-					"tableName": {
-						"value": "@dataset().cw_tableName",
-						"type": "Expression"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_DB_T5')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "Plunet_Test_Database",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"cw_tableName": {
-						"type": "String"
-					}
-				},
-				"folder": {
-					"name": "Plunet_to_Azure_MySql"
-				},
-				"annotations": [],
-				"type": "MySqlTable",
-				"schema": [],
-				"typeProperties": {
-					"tableName": {
-						"value": "@dataset().cw_tableName",
-						"type": "Expression"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_DB_T6')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "Plunet_Test_Database",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"cw_tableName": {
-						"type": "String"
-					}
-				},
-				"folder": {
-					"name": "Plunet_to_Azure_MySql"
-				},
-				"annotations": [],
-				"type": "MySqlTable",
-				"schema": [],
-				"typeProperties": {
-					"tableName": {
-						"value": "@dataset().cw_tableName",
-						"type": "Expression"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_DB_T7')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "Plunet_Test_Database",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "MySqlTable",
-				"schema": [],
-				"typeProperties": {
-					"tableName": "`log_mitarbeiter`"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Plunettest_Adresse')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "Plunet_Test_Database",
+					"referenceName": "LS_SYNAP",
 					"type": "LinkedServiceReference"
 				},
 				"folder": {
 					"name": "Sreeja Dataset"
 				},
 				"annotations": [],
-				"type": "MySqlTable",
+				"type": "AzureSqlDWTable",
 				"schema": [],
 				"typeProperties": {
-					"tableName": "`adresse`"
+					"schema": "slt_test",
+					"table": "angebot"
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Plunettest_Angebot')]",
+			"name": "[concat(parameters('factoryName'), '/Synapse_Angeboteigenschaft')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "Plunet_Test_Database",
+					"referenceName": "LS_SYNAP",
 					"type": "LinkedServiceReference"
 				},
 				"folder": {
 					"name": "Sreeja Dataset"
 				},
 				"annotations": [],
-				"type": "MySqlTable",
+				"type": "AzureSqlDWTable",
 				"schema": [],
 				"typeProperties": {
-					"tableName": "`angebot`"
+					"schema": "slt_test",
+					"table": "angeboteigenschaft"
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Plunettest_Angeboteigenschaft')]",
+			"name": "[concat(parameters('factoryName'), '/Synapse_Job')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "Plunet_Test_Database",
+					"referenceName": "LS_SYNAP",
 					"type": "LinkedServiceReference"
 				},
 				"folder": {
 					"name": "Sreeja Dataset"
 				},
 				"annotations": [],
-				"type": "MySqlTable",
+				"type": "AzureSqlDWTable",
 				"schema": [],
 				"typeProperties": {
-					"tableName": "`angeboteigenschaft`"
+					"schema": "slt_test",
+					"table": "Job"
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Plunettest_Job')]",
+			"name": "[concat(parameters('factoryName'), '/Synapse_Job_textmodul')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "Plunet_Test_Database",
+					"referenceName": "LS_SYNAP",
 					"type": "LinkedServiceReference"
 				},
 				"folder": {
 					"name": "Sreeja Dataset"
 				},
 				"annotations": [],
-				"type": "MySqlTable",
+				"type": "AzureSqlDWTable",
 				"schema": [],
 				"typeProperties": {
-					"tableName": "`job`"
+					"schema": "slt_test",
+					"table": "auftragjob_textmodul"
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Plunettest_Job_textmodul')]",
+			"name": "[concat(parameters('factoryName'), '/Synapse_Land')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "Plunet_Test_Database",
+					"referenceName": "LS_SYNAP",
 					"type": "LinkedServiceReference"
 				},
 				"folder": {
 					"name": "Sreeja Dataset"
 				},
 				"annotations": [],
-				"type": "MySqlTable",
+				"type": "AzureSqlDWTable",
 				"schema": [],
-				"typeProperties": {}
+				"typeProperties": {
+					"schema": "slt_test",
+					"table": "Land"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Synapse_Mitarbeiter')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_SYNAP",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sreeja Dataset"
+				},
+				"annotations": [],
+				"type": "AzureSqlDWTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "slt_test",
+					"table": "mitarbeiter"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Synapse_Order_Textmodul')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_SYNAP",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sreeja Dataset"
+				},
+				"annotations": [],
+				"type": "AzureSqlDWTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "slt_test",
+					"table": "auftrag_textmodul"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Synapse_Textmodul_Quote')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_SYNAP",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sreeja Dataset"
+				},
+				"annotations": [],
+				"type": "AzureSqlDWTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "slt_test",
+					"table": "angebot_textmodul"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Synapse_invoice_textmodule')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_SYNAP",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sreeja Dataset"
+				},
+				"annotations": [],
+				"type": "AzureSqlDWTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "slt_test",
+					"table": "ausgangsrechnung_textmodul"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Synapse_log_Mitarbeiter')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_SYNAP",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sreeja Dataset"
+				},
+				"annotations": [],
+				"type": "AzureSqlDWTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "slt_test",
+					"table": "log_mitarbeiter"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Synapse_mitarbeiter_textmodul')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_SYNAP",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sreeja Dataset"
+				},
+				"annotations": [],
+				"type": "AzureSqlDWTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "slt_test",
+					"table": "mitarbeiter_textmodul"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Synapse_mitarbeiteransprechpartner')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_SYNAP",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sreeja Dataset"
+				},
+				"annotations": [],
+				"type": "AzureSqlDWTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "slt_test",
+					"table": "mitarbeiteransprechpartner"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Synapse_rechnungMitarbeiter')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_SYNAP",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sreeja Dataset"
+				},
+				"annotations": [],
+				"type": "AzureSqlDWTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "slt_test",
+					"table": "rechnungMitarbeiter"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Synapse_x_mandant')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_SYNAP",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sreeja Dataset"
+				},
+				"annotations": [],
+				"type": "AzureSqlDWTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "slt_test",
+					"table": "x_mandant"
+				}
 			},
 			"dependsOn": []
 		}

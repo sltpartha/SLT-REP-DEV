@@ -191,15 +191,6 @@
 					"LS_SYNAP_connectionString": {
 						"value": "[parameters('LS_SYNAP_connectionString')]"
 					},
-					"OptimaServerLive_connectionString": {
-						"value": "[parameters('OptimaServerLive_connectionString')]"
-					},
-					"Plunet_Database_connectionString": {
-						"value": "[parameters('Plunet_Database_connectionString')]"
-					},
-					"Plunet_Test_Database_connectionString": {
-						"value": "[parameters('Plunet_Test_Database_connectionString')]"
-					},
 					"SLTMySqlDatabase_connectionString": {
 						"value": "[parameters('SLTMySqlDatabase_connectionString')]"
 					},
@@ -288,6 +279,18 @@
 					"AzurebatchVisma_accessKey": {
 						"value": "[parameters('AzurebatchVisma_accessKey')]"
 					},
+					"OptimaServerLive_connectionString": {
+						"value": "[parameters('OptimaServerLive_connectionString')]"
+					},
+					"Plunet_Database_connectionString": {
+						"value": "[parameters('Plunet_Database_connectionString')]"
+					},
+					"Plunet_Test_Database_connectionString": {
+						"value": "[parameters('Plunet_Test_Database_connectionString')]"
+					},
+					"plunet_vIsma_Batch1_accessKey": {
+						"value": "[parameters('plunet_vIsma_Batch1_accessKey')]"
+					},
 					"AzurebatchVisma_properties_typeProperties_accountName": {
 						"value": "[parameters('AzurebatchVisma_properties_typeProperties_accountName')]"
 					},
@@ -296,6 +299,15 @@
 					},
 					"AzurebatchVisma_properties_typeProperties_poolName": {
 						"value": "[parameters('AzurebatchVisma_properties_typeProperties_poolName')]"
+					},
+					"plunet_vIsma_Batch1_properties_typeProperties_accountName": {
+						"value": "[parameters('plunet_vIsma_Batch1_properties_typeProperties_accountName')]"
+					},
+					"plunet_vIsma_Batch1_properties_typeProperties_batchUri": {
+						"value": "[parameters('plunet_vIsma_Batch1_properties_typeProperties_batchUri')]"
+					},
+					"plunet_vIsma_Batch1_properties_typeProperties_poolName": {
+						"value": "[parameters('plunet_vIsma_Batch1_properties_typeProperties_poolName')]"
 					}
 				}
 			},
@@ -316,18 +328,6 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
-					},
-					"plunet_vIsma_Batch1_accessKey": {
-						"value": "[parameters('plunet_vIsma_Batch1_accessKey')]"
-					},
-					"plunet_vIsma_Batch1_properties_typeProperties_accountName": {
-						"value": "[parameters('plunet_vIsma_Batch1_properties_typeProperties_accountName')]"
-					},
-					"plunet_vIsma_Batch1_properties_typeProperties_batchUri": {
-						"value": "[parameters('plunet_vIsma_Batch1_properties_typeProperties_batchUri')]"
-					},
-					"plunet_vIsma_Batch1_properties_typeProperties_poolName": {
-						"value": "[parameters('plunet_vIsma_Batch1_properties_typeProperties_poolName')]"
 					}
 				}
 			},
