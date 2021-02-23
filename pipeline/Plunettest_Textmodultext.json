@@ -1,9 +1,9 @@
 {
-	"name": "Test",
+	"name": "Plunettest_Textmodultext",
 	"properties": {
 		"activities": [
 			{
-				"name": "test",
+				"name": "Textmodultext",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -29,6 +29,7 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
+						"preCopyScript": "truncate table slt_test.textmodultext",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
@@ -201,13 +202,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SD_test",
+						"referenceName": "SD_Textmodultext",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DD_Test",
+						"referenceName": "DD_Textmodultext",
 						"type": "DatasetReference"
 					}
 				]
