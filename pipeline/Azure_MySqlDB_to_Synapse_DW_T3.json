@@ -12,6 +12,7 @@
 						"value": "@pipeline().parameters.cw_items",
 						"type": "Expression"
 					},
+					"isSequential": true,
 					"activities": [
 						{
 							"name": "Azure_MySqlDB_to_Synapse_DW_T3",
