@@ -9,6 +9,12 @@
 					"referenceName": "PL_CRM_TO_SYNAPSE_Currency",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "PL_CRM_TO_SYNAPSE_Industry",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
