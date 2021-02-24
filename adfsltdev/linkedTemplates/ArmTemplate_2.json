@@ -13,7 +13,45 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_Synspase_T2')]",
+			"name": "[concat(parameters('factoryName'), '/DD_CRM_Synapse_Lead_Subservice')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSynapseAnalytics2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlDWTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "CRM",
+					"table": "Lead_Subservice"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DD_CRM_Synapse_Opportunity_Subservice')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSynapseAnalytics2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlDWTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "CRM",
+					"table": "Opportunity_Subservice"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DD_Textmodultext')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -21,19 +59,251 @@
 					"referenceName": "LS_SYNAP",
 					"type": "LinkedServiceReference"
 				},
-				"parameters": {
-					"cw_table": {
-						"type": "String"
-					}
-				},
 				"folder": {
-					"name": "Azure_MySql_to_Azure_Synapse_DW"
+					"name": "Sreeja Dataset"
 				},
 				"annotations": [],
 				"type": "AzureSqlDWTable",
 				"schema": [],
 				"typeProperties": {
 					"schema": "slt_test",
+					"table": "Textmodultext"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DS_REST_CRM_Account')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_CRM",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "CRM REST EndPoints"
+				},
+				"annotations": [],
+				"type": "DynamicsCrmEntity",
+				"schema": [],
+				"typeProperties": {
+					"entityName": "account"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DS_REST_CRM_Business_Potential')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_CRM",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "CRM REST EndPoints"
+				},
+				"annotations": [],
+				"type": "DynamicsCrmEntity",
+				"schema": [],
+				"typeProperties": {
+					"entityName": "is_annualbusinesspotential"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DS_REST_CRM_Contact')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_CRM",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "CRM REST EndPoints"
+				},
+				"annotations": [],
+				"type": "DynamicsCrmEntity",
+				"schema": [],
+				"typeProperties": {
+					"entityName": "contact"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DS_REST_CRM_Currency')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_CRM",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "CRM REST EndPoints"
+				},
+				"annotations": [],
+				"type": "DynamicsCrmEntity",
+				"schema": [],
+				"typeProperties": {
+					"entityName": "transactioncurrency"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DS_REST_CRM_Customer_Address')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_CRM",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "CRM REST EndPoints"
+				},
+				"annotations": [],
+				"type": "DynamicsCrmEntity",
+				"schema": [],
+				"typeProperties": {
+					"entityName": "customeraddress"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DS_REST_CRM_Industry')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_CRM",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "CRM REST EndPoints"
+				},
+				"annotations": [],
+				"type": "DynamicsCrmEntity",
+				"schema": [],
+				"typeProperties": {
+					"entityName": "is_industry"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DS_REST_CRM_Lead')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_CRM",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "CRM REST EndPoints"
+				},
+				"annotations": [],
+				"type": "DynamicsCrmEntity",
+				"schema": [],
+				"typeProperties": {
+					"entityName": "lead"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DS_REST_CRM_Opportunity')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_CRM",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "CRM REST EndPoints"
+				},
+				"annotations": [],
+				"type": "DynamicsCrmEntity",
+				"schema": [],
+				"typeProperties": {
+					"entityName": "opportunity"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DS_REST_CRM_SubDomain')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_CRM",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "CRM REST EndPoints"
+				},
+				"annotations": [],
+				"type": "DynamicsCrmEntity",
+				"schema": [],
+				"typeProperties": {
+					"entityName": "is_subdomain"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DS_REST_CRM_USER')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_CRM",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "CRM REST EndPoints"
+				},
+				"annotations": [],
+				"type": "DynamicsCrmEntity",
+				"schema": [],
+				"typeProperties": {
+					"entityName": "systemuser"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DS_SQL_CRM')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_SQL_DB",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"cw_table": {
+						"type": "string"
+					}
+				},
+				"folder": {
+					"name": "CRM REST EndPoints"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "sltsqldbdev",
 					"table": {
 						"value": "@dataset().cw_table",
 						"type": "Expression"
@@ -43,523 +313,133 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_Synspase_T3')]",
+			"name": "[concat(parameters('factoryName'), '/DS_SQL_CRM_Account')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "LS_SYNAP",
+					"referenceName": "LS_SQL_DB",
 					"type": "LinkedServiceReference"
 				},
-				"parameters": {
-					"cw_table": {
-						"type": "String"
-					}
-				},
 				"folder": {
-					"name": "Azure_MySql_to_Azure_Synapse_DW"
+					"name": "CRM SQL Datasets"
 				},
 				"annotations": [],
-				"type": "AzureSqlDWTable",
+				"type": "AzureSqlTable",
 				"schema": [],
 				"typeProperties": {
-					"schema": "slt_test",
-					"table": {
-						"value": "@dataset().cw_table",
-						"type": "Expression"
-					}
+					"schema": "sltsqldbdev",
+					"table": "account"
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_Synspase_T4')]",
+			"name": "[concat(parameters('factoryName'), '/DS_SQL_CRM_Business_Potential')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "LS_SYNAP",
+					"referenceName": "LS_SQL_DB",
 					"type": "LinkedServiceReference"
 				},
-				"parameters": {
-					"cw_table": {
-						"type": "String"
-					}
-				},
 				"folder": {
-					"name": "Azure_MySql_to_Azure_Synapse_DW"
+					"name": "CRM SQL Datasets"
 				},
 				"annotations": [],
-				"type": "AzureSqlDWTable",
+				"type": "AzureSqlTable",
 				"schema": [],
 				"typeProperties": {
-					"schema": "slt_test",
-					"table": {
-						"value": "@dataset().cw_table",
-						"type": "Expression"
-					}
+					"schema": "sltsqldbdev",
+					"table": "Business_Potential"
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_Synspase_T5')]",
+			"name": "[concat(parameters('factoryName'), '/DS_SQL_CRM_Contact')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "LS_SYNAP",
+					"referenceName": "LS_SQL_DB",
 					"type": "LinkedServiceReference"
 				},
-				"parameters": {
-					"cw_table": {
-						"type": "String"
-					}
-				},
 				"folder": {
-					"name": "Azure_MySql_to_Azure_Synapse_DW"
+					"name": "CRM SQL Datasets"
 				},
 				"annotations": [],
-				"type": "AzureSqlDWTable",
+				"type": "AzureSqlTable",
 				"schema": [],
 				"typeProperties": {
-					"schema": "slt_test",
-					"table": {
-						"value": "@dataset().cw_table",
-						"type": "Expression"
-					}
+					"schema": "sltsqldbdev",
+					"table": "contact"
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_Synspase_T6')]",
+			"name": "[concat(parameters('factoryName'), '/DS_SQL_CRM_Currency')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "LS_SYNAP",
+					"referenceName": "LS_SQL_DB",
 					"type": "LinkedServiceReference"
 				},
-				"parameters": {
-					"cw_schema": {
-						"type": "String"
-					},
-					"cw_table": {
-						"type": "String"
-					}
-				},
 				"folder": {
-					"name": "Azure_MySql_to_Azure_Synapse_DW"
+					"name": "CRM SQL Datasets"
 				},
 				"annotations": [],
-				"type": "AzureSqlDWTable",
+				"type": "AzureSqlTable",
 				"schema": [],
 				"typeProperties": {
-					"schema": "slt_test",
-					"table": {
-						"value": "@dataset().cw_table",
-						"type": "Expression"
-					}
+					"schema": "sltsqldbdev",
+					"table": "Currency"
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_Synspase_T7')]",
+			"name": "[concat(parameters('factoryName'), '/DS_SQL_CRM_Customer_Address')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "LS_SYNAP",
+					"referenceName": "LS_SQL_DB",
 					"type": "LinkedServiceReference"
 				},
+				"folder": {
+					"name": "CRM SQL Datasets"
+				},
 				"annotations": [],
-				"type": "AzureSqlDWTable",
-				"schema": [
-					{
-						"name": "LogID",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "IDBenutzer",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Datum",
-						"type": "datetime2",
-						"scale": 0
-					},
-					{
-						"name": "IDPartner",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "IDLogAktion",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "IDLogArt",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "IDStatus_Alt",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "IDStatus_Neu",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Text_Alt",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Text_Neu",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Anzeigename",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Beschreibung",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Datum_Alt",
-						"type": "datetime2",
-						"scale": 0
-					},
-					{
-						"name": "Datum_Neu",
-						"type": "datetime2",
-						"scale": 0
-					},
-					{
-						"name": "SteuerungDurch",
-						"type": "int",
-						"precision": 10
-					}
-				],
+				"type": "AzureSqlTable",
+				"schema": [],
 				"typeProperties": {
-					"schema": "slt_test",
-					"table": "log_mitarbeiter"
+					"schema": "sltsqldbdev",
+					"table": "customeraddress"
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Synapse_Angebot')]",
+			"name": "[concat(parameters('factoryName'), '/DS_SQL_CRM_Indusrty')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "LS_SYNAP",
+					"referenceName": "LS_SQL_DB",
 					"type": "LinkedServiceReference"
 				},
 				"folder": {
-					"name": "Sreeja Dataset"
+					"name": "CRM SQL Datasets"
 				},
 				"annotations": [],
-				"type": "AzureSqlDWTable",
+				"type": "AzureSqlTable",
 				"schema": [],
 				"typeProperties": {
-					"schema": "slt_test",
-					"table": "angebot"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Synapse_Angeboteigenschaft')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_SYNAP",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Sreeja Dataset"
-				},
-				"annotations": [],
-				"type": "AzureSqlDWTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": "slt_test",
-					"table": "angeboteigenschaft"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Synapse_Job')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_SYNAP",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Sreeja Dataset"
-				},
-				"annotations": [],
-				"type": "AzureSqlDWTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": "slt_test",
-					"table": "Job"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Synapse_Job_textmodul')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_SYNAP",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Sreeja Dataset"
-				},
-				"annotations": [],
-				"type": "AzureSqlDWTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": "slt_test",
-					"table": "auftragjob_textmodul"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Synapse_Land')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_SYNAP",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Sreeja Dataset"
-				},
-				"annotations": [],
-				"type": "AzureSqlDWTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": "slt_test",
-					"table": "Land"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Synapse_Mitarbeiter')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_SYNAP",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Sreeja Dataset"
-				},
-				"annotations": [],
-				"type": "AzureSqlDWTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": "slt_test",
-					"table": "mitarbeiter"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Synapse_Order_Textmodul')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_SYNAP",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Sreeja Dataset"
-				},
-				"annotations": [],
-				"type": "AzureSqlDWTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": "slt_test",
-					"table": "auftrag_textmodul"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Synapse_Textmodul_Quote')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_SYNAP",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Sreeja Dataset"
-				},
-				"annotations": [],
-				"type": "AzureSqlDWTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": "slt_test",
-					"table": "angebot_textmodul"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Synapse_invoice_textmodule')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_SYNAP",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Sreeja Dataset"
-				},
-				"annotations": [],
-				"type": "AzureSqlDWTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": "slt_test",
-					"table": "ausgangsrechnung_textmodul"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Synapse_log_Mitarbeiter')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_SYNAP",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Sreeja Dataset"
-				},
-				"annotations": [],
-				"type": "AzureSqlDWTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": "slt_test",
-					"table": "log_mitarbeiter"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Synapse_mitarbeiter_textmodul')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_SYNAP",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Sreeja Dataset"
-				},
-				"annotations": [],
-				"type": "AzureSqlDWTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": "slt_test",
-					"table": "mitarbeiter_textmodul"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Synapse_mitarbeiteransprechpartner')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_SYNAP",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Sreeja Dataset"
-				},
-				"annotations": [],
-				"type": "AzureSqlDWTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": "slt_test",
-					"table": "mitarbeiteransprechpartner"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Synapse_rechnungMitarbeiter')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_SYNAP",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Sreeja Dataset"
-				},
-				"annotations": [],
-				"type": "AzureSqlDWTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": "slt_test",
-					"table": "rechnungMitarbeiter"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Synapse_x_mandant')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_SYNAP",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Sreeja Dataset"
-				},
-				"annotations": [],
-				"type": "AzureSqlDWTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": "slt_test",
-					"table": "x_mandant"
+					"schema": "sltsqldbdev",
+					"table": "industry"
 				}
 			},
 			"dependsOn": []

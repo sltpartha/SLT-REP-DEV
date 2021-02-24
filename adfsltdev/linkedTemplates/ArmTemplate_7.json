@@ -13,469 +13,482 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/PlunetMySql_to_AzureMySql_7')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
+			"name": "[concat(parameters('factoryName'), '/Visma_to_Plunet_Integration')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
+				"description": "visma_to_plunet_integration",
+				"activities": [
 					{
-						"pipelineReference": {
-							"referenceName": "PlunettestDB_to_Azure_MySqlDB_T7",
-							"type": "PipelineReference"
+						"name": "visma_to_plunet_integration",
+						"description": "visma_to_plunet_integration",
+						"type": "Custom",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
 						},
-						"parameters": {}
+						"userProperties": [],
+						"typeProperties": {
+							"command": "python3 visma_to_plunet.py",
+							"resourceLinkedService": {
+								"referenceName": "AzureBlobStorageVisma",
+								"type": "LinkedServiceReference"
+							},
+							"folderPath": "optima-input",
+							"referenceObjects": {
+								"linkedServices": [],
+								"datasets": []
+							}
+						},
+						"linkedServiceName": {
+							"referenceName": "plunet_vIsma_Batch1",
+							"type": "LinkedServiceReference"
+						}
 					}
 				],
-				"type": "ScheduleTrigger",
+				"folder": {
+					"name": "Visma"
+				},
+				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Optima_BnkRozKwotyView')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "OptimaServerLive",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [],
 				"typeProperties": {
-					"recurrence": {
-						"frequency": "Day",
-						"interval": 1,
-						"startTime": "2021-01-28T01:00:00Z",
-						"timeZone": "UTC",
-						"schedule": {
-							"minutes": [
-								40
-							],
-							"hours": [
-								1
-							]
-						}
+					"schema": "CDN",
+					"table": "BnkRozKwotyView"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Plunet_DB_T1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Plunet_Test_Database",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"cw_tableName": {
+						"type": "String"
+					}
+				},
+				"folder": {
+					"name": "Plunet_to_Azure_MySql"
+				},
+				"annotations": [],
+				"type": "MySqlTable",
+				"schema": [],
+				"typeProperties": {
+					"tableName": {
+						"value": "@dataset().cw_tableName",
+						"type": "Expression"
 					}
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_to_Azure_10')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
+			"name": "[concat(parameters('factoryName'), '/Plunet_DB_T2')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "Plunettest_log_Mitarbeiter_Synapse",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
+				"linkedServiceName": {
+					"referenceName": "Plunet_Test_Database",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"cw_tableName": {
+						"type": "String"
 					}
-				],
-				"type": "ScheduleTrigger",
+				},
+				"folder": {
+					"name": "Plunet_to_Azure_MySql"
+				},
+				"annotations": [],
+				"type": "MySqlTable",
+				"schema": [],
 				"typeProperties": {
-					"recurrence": {
-						"frequency": "Day",
-						"interval": 1,
-						"startTime": "2021-02-04T01:00:00Z",
-						"timeZone": "UTC",
-						"schedule": {
-							"minutes": [
-								10
-							],
-							"hours": [
-								1
-							]
-						}
+					"tableName": {
+						"value": "@dataset().cw_tableName",
+						"type": "Expression"
 					}
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_to_Azure_11')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
+			"name": "[concat(parameters('factoryName'), '/Plunet_DB_T3')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "Plunettest_Mitarbeiter_Synapse",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
+				"linkedServiceName": {
+					"referenceName": "Plunet_Test_Database",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"cw_tableName": {
+						"type": "String"
 					}
-				],
-				"type": "ScheduleTrigger",
+				},
+				"folder": {
+					"name": "Plunet_to_Azure_MySql"
+				},
+				"annotations": [],
+				"type": "MySqlTable",
+				"schema": [],
 				"typeProperties": {
-					"recurrence": {
-						"frequency": "Day",
-						"interval": 1,
-						"startTime": "2021-02-04T08:15:00Z",
-						"timeZone": "UTC",
-						"schedule": {
-							"minutes": [
-								10
-							],
-							"hours": [
-								1
-							]
-						}
+					"tableName": {
+						"value": "@dataset().cw_tableName",
+						"type": "Expression"
 					}
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_to_Azure_12')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
+			"name": "[concat(parameters('factoryName'), '/Plunet_DB_T4')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "Plunettest_Order_Textmodul_Synapse",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
+				"linkedServiceName": {
+					"referenceName": "Plunet_Test_Database",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"cw_tableName": {
+						"type": "String"
 					}
-				],
-				"type": "ScheduleTrigger",
+				},
+				"folder": {
+					"name": "Plunet_to_Azure_MySql"
+				},
+				"annotations": [],
+				"type": "MySqlTable",
+				"schema": [],
 				"typeProperties": {
-					"recurrence": {
-						"frequency": "Day",
-						"interval": 1,
-						"startTime": "2021-02-04T01:00:00Z",
-						"timeZone": "UTC",
-						"schedule": {
-							"minutes": [
-								10
-							],
-							"hours": [
-								1
-							]
-						}
+					"tableName": {
+						"value": "@dataset().cw_tableName",
+						"type": "Expression"
 					}
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_to_Azure_13')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
+			"name": "[concat(parameters('factoryName'), '/Plunet_DB_T5')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "Plunettest_Textmodul_Quote_Synapse",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
+				"linkedServiceName": {
+					"referenceName": "Plunet_Test_Database",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"cw_tableName": {
+						"type": "String"
 					}
-				],
-				"type": "ScheduleTrigger",
+				},
+				"folder": {
+					"name": "Plunet_to_Azure_MySql"
+				},
+				"annotations": [],
+				"type": "MySqlTable",
+				"schema": [],
 				"typeProperties": {
-					"recurrence": {
-						"frequency": "Day",
-						"interval": 1,
-						"startTime": "2021-02-04T01:00:00Z",
-						"timeZone": "UTC",
-						"schedule": {
-							"minutes": [
-								10
-							],
-							"hours": [
-								1
-							]
-						}
+					"tableName": {
+						"value": "@dataset().cw_tableName",
+						"type": "Expression"
 					}
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_to_Azure_2')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
+			"name": "[concat(parameters('factoryName'), '/Plunet_DB_T6')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "Plunettest_Adresse_Synapse",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
+				"linkedServiceName": {
+					"referenceName": "Plunet_Test_Database",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"cw_tableName": {
+						"type": "String"
 					}
-				],
-				"type": "ScheduleTrigger",
+				},
+				"folder": {
+					"name": "Plunet_to_Azure_MySql"
+				},
+				"annotations": [],
+				"type": "MySqlTable",
+				"schema": [],
 				"typeProperties": {
-					"recurrence": {
-						"frequency": "Day",
-						"interval": 1,
-						"startTime": "2021-02-04T01:00:00Z",
-						"timeZone": "UTC",
-						"schedule": {
-							"minutes": [
-								10
-							],
-							"hours": [
-								1
-							]
-						}
+					"tableName": {
+						"value": "@dataset().cw_tableName",
+						"type": "Expression"
 					}
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_to_Azure_3')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
+			"name": "[concat(parameters('factoryName'), '/Plunet_DB_T7')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Plunet_Test_Database",
+					"type": "LinkedServiceReference"
+				},
 				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "Plunettest_Angebot_Synapse",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
-				"type": "ScheduleTrigger",
+				"type": "MySqlTable",
+				"schema": [],
 				"typeProperties": {
-					"recurrence": {
-						"frequency": "Day",
-						"interval": 1,
-						"startTime": "2021-02-04T01:00:00Z",
-						"timeZone": "UTC",
-						"schedule": {
-							"minutes": [
-								10
-							],
-							"hours": [
-								1
-							]
-						}
-					}
+					"tableName": "`log_mitarbeiter`"
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_to_Azure_4')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
+			"name": "[concat(parameters('factoryName'), '/Plunettest_Adresse')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Plunet_Test_Database",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sreeja Dataset"
+				},
 				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "Plunettest_Angeboteigenschaft_Synapse",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
-				"type": "ScheduleTrigger",
+				"type": "MySqlTable",
+				"schema": [],
 				"typeProperties": {
-					"recurrence": {
-						"frequency": "Day",
-						"interval": 1,
-						"startTime": "2021-02-04T01:00:00Z",
-						"timeZone": "UTC",
-						"schedule": {
-							"minutes": [
-								10
-							],
-							"hours": [
-								1
-							]
-						}
-					}
+					"tableName": "`adresse`"
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_to_Azure_5')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
+			"name": "[concat(parameters('factoryName'), '/Plunettest_Angebot')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Plunet_Test_Database",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sreeja Dataset"
+				},
 				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "Plunettest_Invoice_Textmodul_Synapse",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
-				"type": "ScheduleTrigger",
+				"type": "MySqlTable",
+				"schema": [],
 				"typeProperties": {
-					"recurrence": {
-						"frequency": "Day",
-						"interval": 1,
-						"startTime": "2021-02-04T01:00:00Z",
-						"timeZone": "UTC",
-						"schedule": {
-							"minutes": [
-								10
-							],
-							"hours": [
-								1
-							]
-						}
-					}
+					"tableName": "`angebot`"
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_to_Azure_6')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
+			"name": "[concat(parameters('factoryName'), '/Plunettest_Angeboteigenschaft')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Plunet_Test_Database",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sreeja Dataset"
+				},
 				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "Plunettest_Job_Synapse",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
-				"type": "ScheduleTrigger",
+				"type": "MySqlTable",
+				"schema": [],
 				"typeProperties": {
-					"recurrence": {
-						"frequency": "Day",
-						"interval": 1,
-						"startTime": "2021-02-04T01:00:00Z",
-						"timeZone": "UTC",
-						"schedule": {
-							"minutes": [
-								10
-							],
-							"hours": [
-								1
-							]
-						}
-					}
+					"tableName": "`angeboteigenschaft`"
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_to_Azure_7')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
+			"name": "[concat(parameters('factoryName'), '/Plunettest_Job')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Plunet_Test_Database",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sreeja Dataset"
+				},
 				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "Plunettest_Job_textmodul_Synapse",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
-				"type": "ScheduleTrigger",
+				"type": "MySqlTable",
+				"schema": [],
 				"typeProperties": {
-					"recurrence": {
-						"frequency": "Day",
-						"interval": 1,
-						"startTime": "2021-02-04T01:00:00Z",
-						"timeZone": "UTC",
-						"schedule": {
-							"minutes": [
-								10
-							],
-							"hours": [
-								1
-							]
-						}
-					}
+					"tableName": "`job`"
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_to_Azure_8')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
+			"name": "[concat(parameters('factoryName'), '/Plunettest_Job_textmodul')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Plunet_Test_Database",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sreeja Dataset"
+				},
 				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "Plunettest_kunde",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
-				"type": "ScheduleTrigger",
+				"type": "MySqlTable",
+				"schema": [],
+				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Plunettest_Land')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Plunet_Test_Database",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sreeja Dataset"
+				},
+				"annotations": [],
+				"type": "MySqlTable",
+				"schema": [],
 				"typeProperties": {
-					"recurrence": {
-						"frequency": "Day",
-						"interval": 1,
-						"startTime": "2021-02-04T01:00:00Z",
-						"timeZone": "UTC",
-						"schedule": {
-							"minutes": [
-								10
-							],
-							"hours": [
-								1
-							]
-						}
-					}
+					"tableName": "`land`"
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_to_Azure_9')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
+			"name": "[concat(parameters('factoryName'), '/Plunettest_Mitarbeiter')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Plunet_Test_Database",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sreeja Dataset"
+				},
 				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "Plunettest_Land_Synapse",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
-				"type": "ScheduleTrigger",
+				"type": "MySqlTable",
+				"schema": [],
 				"typeProperties": {
-					"recurrence": {
-						"frequency": "Day",
-						"interval": 1,
-						"startTime": "2021-02-04T01:00:00Z",
-						"timeZone": "UTC",
-						"schedule": {
-							"minutes": [
-								10
-							],
-							"hours": [
-								1
-							]
-						}
-					}
+					"tableName": "`mitarbeiter`"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Plunettest_Order_Textmodul')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Plunet_Test_Database",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sreeja Dataset"
+				},
+				"annotations": [],
+				"type": "MySqlTable",
+				"schema": [],
+				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Plunettest_Textmodul_Quote')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Plunet_Test_Database",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sreeja Dataset"
+				},
+				"annotations": [],
+				"type": "MySqlTable",
+				"schema": [],
+				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Plunettest_invoice_textmodule')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Plunet_Test_Database",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sreeja Dataset"
+				},
+				"annotations": [],
+				"type": "MySqlTable",
+				"schema": [],
+				"typeProperties": {
+					"tableName": "`ausgangsrechnung_textmodul`"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Plunettest_log_Mitarbeiter')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Plunet_Test_Database",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sreeja Dataset"
+				},
+				"annotations": [],
+				"type": "MySqlTable",
+				"schema": [],
+				"typeProperties": {
+					"tableName": "`log_mitarbeiter`"
 				}
 			},
 			"dependsOn": []

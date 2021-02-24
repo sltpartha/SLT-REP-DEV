@@ -31,6 +31,18 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSynapseAnalytics1'"
 		},
+		"AzureSynapseAnalytics2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSynapseAnalytics2'"
+		},
+		"CRM_REST_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'CRM_REST'"
+		},
+		"DynamicsCrm1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'DynamicsCrm1'"
+		},
 		"LS_ADLS_BAMBOOHR_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_BAMBOOHR'"
@@ -38,6 +50,10 @@
 		"LS_CRM_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_CRM'"
+		},
+		"LS_MySQL_Plunet_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_MySQL_Plunet'"
 		},
 		"LS_REST_BAMBOOHR_password": {
 			"type": "secureString",
@@ -66,6 +82,18 @@
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://dlssltdev.dfs.core.windows.net"
+		},
+		"CRM_REST_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://sltdev.api.crm4.dynamics.com/api/data/v9.1/is_annualbusinesspotentials?$select=is_quarter1,is_quarter2,is_quarter3,is_quarter4,is_fiscalyear,is_annualbusinesspotential,_transactioncurrencyid_value,createdon,_is_account_value&$expand=is_Account($select=name,is_clienttype,telephone1,emailaddress1,erb_subservice)"
+		},
+		"CRM_REST_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "hitarth.dave@summalinguae.com"
+		},
+		"DynamicsCrm1_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "hitarth.dave@summalinguae.com"
 		},
 		"LS_ADLS_BAMBOOHR_properties_typeProperties_url": {
 			"type": "string",
@@ -176,6 +204,59 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/AzureSynapseAnalytics2')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDW",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureSynapseAnalytics2_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/CRM_REST')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "RestService",
+				"typeProperties": {
+					"url": "[parameters('CRM_REST_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Basic",
+					"userName": "[parameters('CRM_REST_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('CRM_REST_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DynamicsCrm1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "DynamicsCrm",
+				"typeProperties": {
+					"deploymentType": "Online",
+					"serviceUri": "https://sltdev.api.crm4.dynamics.com/api/data/v9.1/is_annualbusinesspotentials?$select=is_quarter1,is_quarter2,is_quarter3,is_quarter4,is_fiscalyear,is_annualbusinesspotential,_transactioncurrencyid_value,createdon,_is_account_value&$expand=is_Account($select=name,is_clienttype,telephone1,emailaddress1,erb_subservice)",
+					"authenticationType": "Office365",
+					"username": "[parameters('DynamicsCrm1_properties_typeProperties_username')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('DynamicsCrm1_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/LS_ADLS_BAMBOOHR')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -208,6 +289,19 @@
 						"type": "SecureString",
 						"value": "[parameters('LS_CRM_password')]"
 					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_MySQL_Plunet')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureMySql",
+				"typeProperties": {
+					"connectionString": "[parameters('LS_MySQL_Plunet_connectionString')]"
 				}
 			},
 			"dependsOn": []
@@ -338,158 +432,6 @@
 				"typeProperties": {}
 			},
 			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureMySqlTable2_Invoice_Textmodule')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "SLTMySqlDatabase",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Sreeja Dataset"
-				},
-				"annotations": [],
-				"type": "AzureMySqlTable",
-				"schema": [],
-				"typeProperties": {
-					"tableName": "ausgangsrechnung_textmodul"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/SLTMySqlDatabase')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureMySql_Job_textmodul')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "SLTMySqlDatabase",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Sreeja Dataset"
-				},
-				"annotations": [],
-				"type": "AzureMySqlTable",
-				"schema": [
-					{
-						"name": "TextModulVerwendungID",
-						"type": "int",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "IDTextModul",
-						"type": "int",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "IDMain",
-						"type": "int",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Inhalt",
-						"type": "text",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Inhalt_Datum",
-						"type": "datetime",
-						"precision": 0,
-						"scale": 0
-					}
-				],
-				"typeProperties": {
-					"tableName": "auftragjob_textmodul "
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/SLTMySqlDatabase')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureMySql_Job_textmodul_2')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "SLTMySqlDatabase",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Sreeja Dataset"
-				},
-				"annotations": [],
-				"type": "AzureMySqlTable",
-				"schema": [],
-				"typeProperties": {}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/SLTMySqlDatabase')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureMySql_Order_Textmodul')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "SLTMySqlDatabase",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Sreeja Dataset"
-				},
-				"annotations": [],
-				"type": "AzureMySqlTable",
-				"schema": [
-					{
-						"name": "TextModulVerwendungID",
-						"type": "int",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "IDTextModul",
-						"type": "int",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "IDMain",
-						"type": "int",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Inhalt",
-						"type": "text",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Inhalt_Datum",
-						"type": "datetime",
-						"precision": 0,
-						"scale": 0
-					}
-				],
-				"typeProperties": {
-					"tableName": "auftrag_textmodul "
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/SLTMySqlDatabase')]"
-			]
 		}
 	]
 }

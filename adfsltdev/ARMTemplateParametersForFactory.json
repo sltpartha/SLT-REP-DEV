@@ -23,13 +23,25 @@
 		"AzureSynapseAnalytics1_connectionString": {
 			"value": ""
 		},
+		"AzureSynapseAnalytics2_connectionString": {
+			"value": ""
+		},
 		"AzurebatchVisma_accessKey": {
+			"value": ""
+		},
+		"CRM_REST_password": {
+			"value": ""
+		},
+		"DynamicsCrm1_password": {
 			"value": ""
 		},
 		"LS_ADLS_BAMBOOHR_accountKey": {
 			"value": ""
 		},
 		"LS_CRM_password": {
+			"value": ""
+		},
+		"LS_MySQL_Plunet_connectionString": {
 			"value": ""
 		},
 		"LS_REST_BAMBOOHR_password": {
@@ -73,6 +85,15 @@
 		},
 		"AzurebatchVisma_properties_typeProperties_poolName": {
 			"value": "Optima-engine"
+		},
+		"CRM_REST_properties_typeProperties_url": {
+			"value": "https://sltdev.api.crm4.dynamics.com/api/data/v9.1/is_annualbusinesspotentials?$select=is_quarter1,is_quarter2,is_quarter3,is_quarter4,is_fiscalyear,is_annualbusinesspotential,_transactioncurrencyid_value,createdon,_is_account_value&$expand=is_Account($select=name,is_clienttype,telephone1,emailaddress1,erb_subservice)"
+		},
+		"CRM_REST_properties_typeProperties_userName": {
+			"value": "hitarth.dave@summalinguae.com"
+		},
+		"DynamicsCrm1_properties_typeProperties_username": {
+			"value": "hitarth.dave@summalinguae.com"
 		},
 		"LS_ADLS_BAMBOOHR_properties_typeProperties_url": {
 			"value": "https://dlssltdev.dfs.core.windows.net"

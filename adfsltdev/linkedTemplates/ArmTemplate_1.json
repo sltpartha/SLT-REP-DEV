@@ -13,6 +13,150 @@
 	},
 	"resources": [
 		{
+			"name": "[concat(parameters('factoryName'), '/AzureMySqlTable2_Invoice_Textmodule')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "SLTMySqlDatabase",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sreeja Dataset"
+				},
+				"annotations": [],
+				"type": "AzureMySqlTable",
+				"schema": [],
+				"typeProperties": {
+					"tableName": "ausgangsrechnung_textmodul"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureMySql_Job_textmodul')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "SLTMySqlDatabase",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sreeja Dataset"
+				},
+				"annotations": [],
+				"type": "AzureMySqlTable",
+				"schema": [
+					{
+						"name": "TextModulVerwendungID",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDTextModul",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDMain",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Inhalt",
+						"type": "text",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Inhalt_Datum",
+						"type": "datetime",
+						"precision": 0,
+						"scale": 0
+					}
+				],
+				"typeProperties": {
+					"tableName": "auftragjob_textmodul "
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureMySql_Job_textmodul_2')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "SLTMySqlDatabase",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sreeja Dataset"
+				},
+				"annotations": [],
+				"type": "AzureMySqlTable",
+				"schema": [],
+				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureMySql_Order_Textmodul')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "SLTMySqlDatabase",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sreeja Dataset"
+				},
+				"annotations": [],
+				"type": "AzureMySqlTable",
+				"schema": [
+					{
+						"name": "TextModulVerwendungID",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDTextModul",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDMain",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Inhalt",
+						"type": "text",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Inhalt_Datum",
+						"type": "datetime",
+						"precision": 0,
+						"scale": 0
+					}
+				],
+				"typeProperties": {
+					"tableName": "auftrag_textmodul "
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/AzureMySql_Order_Textmodul_2')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -152,6 +296,25 @@
 				],
 				"typeProperties": {
 					"tableName": "ausgangsrechnung_textmodul"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSynapseAnalyticsTable1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSynapseAnalytics2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlDWTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "CRM",
+					"table": "Account_Subservice"
 				}
 			},
 			"dependsOn": []
@@ -440,336 +603,74 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Optima_Synapse_BnkRozKwotyView')]",
+			"name": "[concat(parameters('factoryName'), '/CRM_MySQL_Opportunity_Subservice')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "LS_SYNAP",
+					"referenceName": "LS_MySQL_Plunet",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureMySqlTable",
+				"schema": [],
+				"typeProperties": {
+					"tableName": "slt_test.Opportunity_Subservice"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/CRM_MySQL_Subservice')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_MySQL_Plunet",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureMySqlTable",
+				"schema": [],
+				"typeProperties": {
+					"tableName": "slt_test.Account_Subservice"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/CRM_MySQL_lead_Subservice')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_MySQL_Plunet",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureMySqlTable",
+				"schema": [],
+				"typeProperties": {
+					"tableName": "slt_test.Lead_Subservice"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DD_CRM_Account_Synapse_Subservice')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSynapseAnalytics2",
 					"type": "LinkedServiceReference"
 				},
 				"annotations": [],
 				"type": "AzureSqlDWTable",
 				"schema": [],
 				"typeProperties": {
-					"schema": "optima",
-					"table": {
-						"value": "BnkRozKwotyView",
-						"type": "Expression"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_MySql_T1')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureMySql_SLT_test",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"cw_tableName": {
-						"type": "String"
-					}
-				},
-				"folder": {
-					"name": "Azure_MySql_to_Azure_Synapse_DW"
-				},
-				"annotations": [],
-				"type": "AzureMySqlTable",
-				"schema": [],
-				"typeProperties": {
-					"tableName": {
-						"value": "@dataset().cw_tableName",
-						"type": "Expression"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_MySql_T2')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureMySql_SLT_test",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"cw_tableName": {
-						"type": "String"
-					}
-				},
-				"folder": {
-					"name": "Azure_MySql_to_Azure_Synapse_DW"
-				},
-				"annotations": [],
-				"type": "AzureMySqlTable",
-				"schema": [],
-				"typeProperties": {
-					"tableName": {
-						"value": "@dataset().cw_tableName",
-						"type": "Expression"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_MySql_T3')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureMySql_SLT_test",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"cw_tableName": {
-						"type": "String"
-					}
-				},
-				"folder": {
-					"name": "Azure_MySql_to_Azure_Synapse_DW"
-				},
-				"annotations": [],
-				"type": "AzureMySqlTable",
-				"schema": [],
-				"typeProperties": {
-					"tableName": {
-						"value": "@dataset().cw_tableName",
-						"type": "Expression"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_MySql_T4')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureMySql_SLT_test",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"cw_tableName": {
-						"type": "String"
-					}
-				},
-				"folder": {
-					"name": "Azure_MySql_to_Azure_Synapse_DW"
-				},
-				"annotations": [],
-				"type": "AzureMySqlTable",
-				"schema": [],
-				"typeProperties": {
-					"tableName": {
-						"value": "@dataset().cw_tableName",
-						"type": "Expression"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_MySql_T5')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureMySql_SLT_test",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"cw_tableName": {
-						"type": "String"
-					}
-				},
-				"folder": {
-					"name": "Azure_MySql_to_Azure_Synapse_DW"
-				},
-				"annotations": [],
-				"type": "AzureMySqlTable",
-				"schema": [],
-				"typeProperties": {
-					"tableName": {
-						"value": "@dataset().cw_tableName",
-						"type": "Expression"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_MySql_T6')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureMySql_SLT_test",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"cw_tableName": {
-						"type": "String"
-					}
-				},
-				"folder": {
-					"name": "Azure_MySql_to_Azure_Synapse_DW"
-				},
-				"annotations": [],
-				"type": "AzureMySqlTable",
-				"schema": [],
-				"typeProperties": {
-					"tableName": {
-						"value": "@dataset().cw_tableName",
-						"type": "Expression"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_MySql_T7')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureMySql_SLT_test",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureMySqlTable",
-				"schema": [
-					{
-						"name": "LogID",
-						"type": "int",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "IDBenutzer",
-						"type": "int",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Datum",
-						"type": "datetime",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "IDPartner",
-						"type": "int",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "IDLogAktion",
-						"type": "int",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "IDLogArt",
-						"type": "int",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "IDStatus_Alt",
-						"type": "int",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "IDStatus_Neu",
-						"type": "int",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Text_Alt",
-						"type": "text",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Text_Neu",
-						"type": "text",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Anzeigename",
-						"type": "text",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Beschreibung",
-						"type": "text",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Datum_Alt",
-						"type": "datetime",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Datum_Neu",
-						"type": "datetime",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "SteuerungDurch",
-						"type": "int",
-						"precision": 0,
-						"scale": 0
-					}
-				],
-				"typeProperties": {
-					"tableName": "log_mitarbeiter"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_Synspase_T1')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_SYNAP",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"cw_table": {
-						"type": "String"
-					}
-				},
-				"folder": {
-					"name": "Azure_MySql_to_Azure_Synapse_DW"
-				},
-				"annotations": [],
-				"type": "AzureSqlDWTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": "slt_test",
-					"table": {
-						"value": "@dataset().cw_table",
-						"type": "Expression"
-					}
+					"schema": "CRM",
+					"table": "Account_Subservice"
 				}
 			},
 			"dependsOn": []
