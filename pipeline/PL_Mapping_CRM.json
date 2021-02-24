@@ -97,6 +97,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "CRM"
+		},
 		"annotations": []
 	}
 }

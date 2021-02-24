@@ -403,6 +403,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "CRM"
+		},
 		"annotations": []
 	}
 }

@@ -170,6 +170,19 @@
 					},
 					"waitOnCompletion": true
 				}
+			},
+			{
+				"name": "UOM",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "PL_UnitOFMeasurement",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"folder": {
