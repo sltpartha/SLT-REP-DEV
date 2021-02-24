@@ -21,6 +21,12 @@
 					"referenceName": "PL_CRM_TO_Synapse_Lead_Selected_Cols",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "PL_CRM_TO_SYNAPSE_Account",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
