@@ -40,7 +40,10 @@
 								},
 								"sink": {
 									"type": "SqlDWSink",
-									"preCopyScript": "@concat('Truncate table slt_test.' , item().destination.table)",
+									"preCopyScript": {
+										"value": "@concat('Truncate table slt_test.' , item().destination.table)",
+										"type": "Expression"
+									},
 									"tableOption": {
 										"value": "@item().copySink.tableOption",
 										"type": "Expression"
@@ -50,7 +53,7 @@
 								"enableStaging": true,
 								"stagingSettings": {
 									"linkedServiceName": {
-										"referenceName": "AzureBlobStorage1",
+										"referenceName": "AzureDataLakeStorage1",
 										"type": "LinkedServiceReference"
 									}
 								},
