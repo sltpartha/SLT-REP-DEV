@@ -1,0 +1,53 @@
+{
+	"name": "SourceDataset_m2j",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "account-customer mapping.csv",
+				"fileSystem": "accountcustomermap"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "Last name",
+				"type": "String"
+			},
+			{
+				"name": " First name",
+				"type": "String"
+			},
+			{
+				"name": "Employment Status",
+				"type": "String"
+			},
+			{
+				"name": "Job Title",
+				"type": "String"
+			},
+			{
+				"name": "Division",
+				"type": "String"
+			},
+			{
+				"name": "Department",
+				"type": "String"
+			},
+			{
+				"name": "Cost Center 1",
+				"type": "String"
+			},
+			{
+				"name": "Cost Center 2",
+				"type": "String"
+			}
+		]
+	}
+}

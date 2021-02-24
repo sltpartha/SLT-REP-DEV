@@ -1,0 +1,226 @@
+{
+	"name": "PL_Plunet_Waehrung",
+	"properties": {
+		"activities": [
+			{
+				"name": "Plunet_SampleTables_Move",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "mitarbeiter"
+					},
+					{
+						"name": "Destination",
+						"value": "PLUNET.mitarbeiter"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "AzureMySqlSource",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "SqlDWSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": true,
+					"stagingSettings": {
+						"linkedServiceName": {
+							"referenceName": "AzureDataLakeStorage1",
+							"type": "LinkedServiceReference"
+						},
+						"path": "stagingplunet"
+					},
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "WaehrungID",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "WaehrungID",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Bezeichnung",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "Bezeichnung",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Kurs",
+									"type": "Double",
+									"physicalType": "double"
+								},
+								"sink": {
+									"name": "Kurs",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "Datum",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "Datum",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "MindestEinheit",
+									"type": "Double",
+									"physicalType": "double"
+								},
+								"sink": {
+									"name": "MindestEinheit",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "SymbolVorBetrag",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "SymbolVorBetrag",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "NeuerKurs",
+									"type": "Double",
+									"physicalType": "double"
+								},
+								"sink": {
+									"name": "NeuerKurs",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "AendernAm",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "AendernAm",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Nachkommastellen",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "Nachkommastellen",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ISOCode",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "ISOCode",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Charges",
+									"type": "Double",
+									"physicalType": "double"
+								},
+								"sink": {
+									"name": "Charges",
+									"type": "Double",
+									"physicalType": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "AutomatischeAktualisierung",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "AutomatischeAktualisierung",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "KursAufBasisHeimatWaehrungAnzeigen",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "KursAufBasisHeimatWaehrungAnzeigen",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_Plunet_Waehrung",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_DW_Waehrung",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}

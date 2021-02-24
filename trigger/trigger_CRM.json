@@ -1,0 +1,60 @@
+{
+	"name": "trigger_CRM",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "PL_CRM_TO_MSQL_Account",
+					"type": "PipelineReference"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "PL_CRM_TO_MSQL_Address",
+					"type": "PipelineReference"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "PL_CRM_TO_MSQL_Contact",
+					"type": "PipelineReference"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "PL_CRM_TO_MSQL_Currency",
+					"type": "PipelineReference"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "PL_CRM_TO_MSQL_Industry",
+					"type": "PipelineReference"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "PL_CRM_TO_MSQL_Opportunity",
+					"type": "PipelineReference"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "PL_CRM_TO_MSQL_Sub_Domain",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2020-09-30T02:30:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}

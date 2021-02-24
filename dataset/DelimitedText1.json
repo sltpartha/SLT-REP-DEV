@@ -1,0 +1,136 @@
+{
+	"name": "DelimitedText1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "UnitOfMeasurement.csv",
+				"fileSystem": "unitofmeasurement"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "PreisEinheitID",
+				"type": "String"
+			},
+			{
+				"name": "Deutsch",
+				"type": "String"
+			},
+			{
+				"name": "English",
+				"type": "String"
+			},
+			{
+				"name": "ZusatzSprache1",
+				"type": "String"
+			},
+			{
+				"name": "NormZeit",
+				"type": "String"
+			},
+			{
+				"name": "PreisAnzeigen",
+				"type": "String"
+			},
+			{
+				"name": "ZusatzSprache2",
+				"type": "String"
+			},
+			{
+				"name": "ZusatzSprache3",
+				"type": "String"
+			},
+			{
+				"name": "ServiceID",
+				"type": "String"
+			},
+			{
+				"name": "NormEinheit",
+				"type": "String"
+			},
+			{
+				"name": "BezugEinheit",
+				"type": "String"
+			},
+			{
+				"name": "isBezugsPreis",
+				"type": "String"
+			},
+			{
+				"name": "MemoDeutsch",
+				"type": "String"
+			},
+			{
+				"name": "MemoEnglish",
+				"type": "String"
+			},
+			{
+				"name": "MemoZusatzSprache1",
+				"type": "String"
+			},
+			{
+				"name": "MemoZusatzSprache2",
+				"type": "String"
+			},
+			{
+				"name": "MemoZusatzSprache3",
+				"type": "String"
+			},
+			{
+				"name": "BeiRegistrierungAktiv",
+				"type": "String"
+			},
+			{
+				"name": "RegistrierungMengeProEinheit",
+				"type": "String"
+			},
+			{
+				"name": "RundungArt",
+				"type": "String"
+			},
+			{
+				"name": "MindestEinheit",
+				"type": "String"
+			},
+			{
+				"name": "ProzGewichtung",
+				"type": "String"
+			},
+			{
+				"name": "NormMengeH",
+				"type": "String"
+			},
+			{
+				"name": "IDQBLineItem",
+				"type": "String"
+			},
+			{
+				"name": "Artikelnummer",
+				"type": "String"
+			},
+			{
+				"name": "NormZeitDouble",
+				"type": "String"
+			},
+			{
+				"name": "Exportiert",
+				"type": "String"
+			},
+			{
+				"name": "IgnoreTimeInPlanning",
+				"type": "String"
+			}
+		]
+	}
+}

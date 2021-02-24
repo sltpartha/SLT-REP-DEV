@@ -1,0 +1,922 @@
+{
+	"name": "DS_Plunet_Waehrung",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_MySQL_Plunet",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureMySqlTable",
+		"schema": [
+			{
+				"name": "MitarbeiterID",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Aktiv",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Status",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Anrede",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Vorname",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Titel",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Nachname",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Briefanrede",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Geburtsdatum",
+				"type": "datetime",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "BewertungSprachlich",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "BewertungFachlich",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "BewertungTechnisch",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "BewertungTerminlich",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "BewertungFlexibilitaet",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Memo",
+				"type": "longtext",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Telefon",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Mobil",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Fax",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "eMail",
+				"type": "longtext",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Bankname",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "BLZ",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "KontoNr",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Kontoinhaber",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Dossier",
+				"type": "longtext",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "NichtVerfuegbarVon",
+				"type": "datetime",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "NichtVerfuegbarBis",
+				"type": "datetime",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "UST_ID",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "AnlageDatum",
+				"type": "datetime",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "ArbeitszeitVon",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "ArbeitszeitBis",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Internet",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "SwiftCode",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Bankadresse",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "IBAN",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "SortCode",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "FachgebietDossier",
+				"type": "longtext",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "ReadOnly",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "WithMemoAlert",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "SkypeNr",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "PreisMemo",
+				"type": "longtext",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "ABA",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "KontoFIBU",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "AufwandKonto",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "NormStunden",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "UrlaubsFlag",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "VorlageID",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "ProvisionUmsatz",
+				"type": "double",
+				"precision": 0,
+				"scale": 31
+			},
+			{
+				"name": "ProvisionRohertrag",
+				"type": "double",
+				"precision": 0,
+				"scale": 31
+			},
+			{
+				"name": "Zeitzone",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Arbeitsverhaeltnis",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "MWStArt",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "TextModulTextID_1",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "TextModulTextID_2",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "TextModulTextID_3",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "TextModulTextID_4",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "TextModulTextID_5",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "AnschriftID",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Vertragsdatum",
+				"type": "datetime",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "VertragsdatumEnde",
+				"type": "datetime",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "StandardPreislisteDeaktiviert",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "TextModulText_1",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "TextModulText_2",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "TextModulText_3",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "TextModulText_4",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "TextModulText_5",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "IDBesteuerungsArt",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "VertragsNummer",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "MemoVerwenden",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "StundenerfassungPreis",
+				"type": "double",
+				"precision": 0,
+				"scale": 31
+			},
+			{
+				"name": "Zahlungsfrist",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "MandantID",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "PayPal",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "BenutzerVorhanden",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "ZahlungsMethode",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "AufwandsKontoID",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Austrittsdatum",
+				"type": "datetime",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "BewertungID",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Zahlungsfrist_Regel",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Moneybookers",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Kreditkartennummer",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Kreditkartenpruefziffer",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Kreditkartenverfallsdatum",
+				"type": "datetime",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "LetzterJob",
+				"type": "datetime",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Zusatzkosten",
+				"type": "double",
+				"precision": 0,
+				"scale": 31
+			},
+			{
+				"name": "CurrencyID",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "AnsprechpartnerID_Standard",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "UserDefined_String1",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "UserDefined_String2",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "UserDefined_String3",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "UserDefined_String4",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Memo_Abwesenheit",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Vorname_enc",
+				"type": "blob",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Nachname_enc",
+				"type": "blob",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Telefon_enc",
+				"type": "blob",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Geburtsdatum_enc",
+				"type": "blob",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "ExternalID",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Kostenstelle",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "AngebotPruefungMitarbeiter_1",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "AngebotPruefungMitarbeiter_2",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Budget",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Vorgesetzter1",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Vorgesetzter2",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Website",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "DossierNew",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "FachgebietDossierNew",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "AutomaticPaymentEnabled",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "MinimumAutoPayment",
+				"type": "double",
+				"precision": 0,
+				"scale": 31
+			},
+			{
+				"name": "FasterPaymentEnabled",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "ErstellerID",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "ProjektRolleID",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "QuickBooksID",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "QBTermsID",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "IsAgentur",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "RoyaltyTaxEnabled",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "MandantID_Is_Mitarbeiter",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Kleinauftrag_QuellSpracheID",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Kleinauftrag_ZielSpracheID",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Abteilung",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Berufsbezeichnung",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Kreditkartennummer_enc",
+				"type": "blob",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Kreditkartenverfallsdatum_enc",
+				"type": "blob",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "AngebotPruefung_Siehe_Adminbereich",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "AngebotPruefungNetto_1",
+				"type": "double",
+				"precision": 0,
+				"scale": 31
+			},
+			{
+				"name": "AngebotPruefungNetto_2",
+				"type": "double",
+				"precision": 0,
+				"scale": 31
+			},
+			{
+				"name": "FileExchangeType",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "SortingField",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "DurchschnittlichesJobFeedback",
+				"type": "double",
+				"precision": 0,
+				"scale": 31
+			},
+			{
+				"name": "AnzahlJobFeedback",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "IDAcrossTrustedServer",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "AutomatischerBonusAufgrundJobFeedbackAktiv",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "RegistrierungAbgeschlossen",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "CCEmpfaengerMA_JobanfrageEmails",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "CCEmpfaengerMA_JobbeauftragungEmails",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "CCEmpfaengerMA_RechnungEmails",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "isInaktiveAnsprechpartnerAnzeigen",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Abrechnungsart",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "AbrechnungsartTagSammelrechnung",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "FirstJob",
+				"type": "datetime",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "KontaktHerkunft",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "isEmail_KontaktanlageEUDSGVO_versandt",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Datum_LoeschungBeantragt",
+				"type": "datetime",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Datum_LetzteAktion_Anfrage",
+				"type": "datetime",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Datum_LetzteAktion_Angebot",
+				"type": "datetime",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Datum_LetzteAktion_Auftrag",
+				"type": "datetime",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Datum_LetzteAktion_Job",
+				"type": "datetime",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Datum_LetzteAktion_Rechnung",
+				"type": "datetime",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "MandantID_Rechnung",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Bank_Country",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Bank_Currency",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Skonto",
+				"type": "double",
+				"precision": 0,
+				"scale": 31
+			},
+			{
+				"name": "SkontoTage",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"tableName": "waehrung"
+		}
+	}
+}

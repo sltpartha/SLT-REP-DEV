@@ -1,0 +1,16 @@
+{
+	"name": "testsynap",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSynapseAnalytics2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "sltsqldbdev",
+			"table": "lead"
+		}
+	}
+}

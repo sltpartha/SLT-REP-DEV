@@ -1,0 +1,38 @@
+{
+	"name": "Excel1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "account-customer mapping",
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "account-customer mapping.xlsx",
+				"fileSystem": "accountcustomermap"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "crm_account_name",
+				"type": "String"
+			},
+			{
+				"name": "crm_account_id",
+				"type": "String"
+			},
+			{
+				"name": "plunet_customer_name",
+				"type": "String"
+			},
+			{
+				"name": "plunet_customer_id",
+				"type": "String"
+			}
+		]
+	}
+}
