@@ -45,6 +45,12 @@
 					"referenceName": "PL_CRM_TO_SYNAPSE_USER",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "PL_Mapping_CRM",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
