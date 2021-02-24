@@ -57,6 +57,12 @@
 					"referenceName": "PL_UnitOFMeasurement",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "SQL_to_Synapse",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
