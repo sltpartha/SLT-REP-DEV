@@ -1,0 +1,19 @@
+{
+	"name": "DS_Synapse_CRM_Sub_Domain",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSynapseAnalytics1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "CRM SQL Datasets"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "sltsqldbdev",
+			"table": "SubDomain"
+		}
+	}
+}

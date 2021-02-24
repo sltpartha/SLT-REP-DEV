@@ -1,0 +1,194 @@
+{
+	"name": "PL_CRM_TO_SYNAPSE_Account_subservice",
+	"properties": {
+		"description": "Moving CRM data to MS SQL DB",
+		"activities": [
+			{
+				"name": "PL_CRM_TO_MSQL_Account_subservice",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "account"
+					},
+					{
+						"name": "Destination",
+						"value": "dbo.account"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "DynamicsCrmSource"
+					},
+					"sink": {
+						"type": "AzureMySqlSink",
+						"writeBatchSize": 10000,
+						"writeBatchTimeout": "00:00:30",
+						"preCopyScript": "truncate table slt_test.account_subservice"
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "accountid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "Accountid",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "erb_selectedsubservices",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SubService",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "erb_selectedsubservicestext",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SubService_Text",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_REST_CRM_Account",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "CRM_MySQL_Subservice",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "MSQL_to_Synapse",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "PL_CRM_TO_MSQL_Account_subservice",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureMySqlSource",
+						"query": "select\n   at.*,\n  SUBSTRING_INDEX(SUBSTRING_INDEX(AT.subservice, ',', numbers.n), ',', -1) SubService_NEW\nfrom\n  (select 1 n union all\n   select 2 union all select 3 union all\n   select 4 union all select 5 union all\n   select 6 union all select 7 union all\n   select 8 union all select 9) numbers INNER JOIN slt_test.Account_subservice at\n  on CHAR_LENGTH(AT.subservice)\n     -CHAR_LENGTH(REPLACE(AT.subservice, ',', ''))>=numbers.n-1",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "SqlDWSink",
+						"preCopyScript": "Truncate table CRM.account_Subservice",
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Accountid",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Accountid",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SubService",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SubService",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SubService_Text",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SubService_Text",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SubService_NEW",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SubService_NEW",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "CRM_MySQL_Subservice",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DD_CRM_Account_Synapse_Subservice",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "CRM"
+		},
+		"annotations": []
+	}
+}

@@ -34,8 +34,13 @@
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
-					"enableStaging": false,
-					"validateDataConsistency": false,
+					"enableStaging": true,
+					"stagingSettings": {
+						"linkedServiceName": {
+							"referenceName": "AzureDataLakeStorage1",
+							"type": "LinkedServiceReference"
+						}
+					},
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
@@ -1267,17 +1272,6 @@
 								},
 								"sink": {
 									"name": "AnsprechpartnerID_geloescht",
-									"type": "Int32",
-									"physicalType": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "VorlagensatzID",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "VorlagensatzID",
 									"type": "Int32",
 									"physicalType": "Int32"
 								}

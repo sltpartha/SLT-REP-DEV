@@ -1,0 +1,24 @@
+{
+	"name": "DS_SQL_CRM",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQL_DB",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"cw_table": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "CRM REST EndPoints"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "sltsqldbdev",
+			"table": "@dataset().cw_table"
+		}
+	}
+}

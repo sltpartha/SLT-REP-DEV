@@ -1,0 +1,533 @@
+{
+	"name": "PL_CRM_TO_SYNAPSE_Business_Potential",
+	"properties": {
+		"activities": [
+			{
+				"name": "PL_CRM_TO_MSQL_Industry",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "is_industry"
+					},
+					{
+						"name": "Destination",
+						"value": "sltsqldbdev.is_industry"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "DynamicsCrmSource"
+					},
+					"sink": {
+						"type": "SqlDWSink",
+						"preCopyScript": "Truncate table  sltsqldbdev.business_potential",
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "createdby",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "createdby",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "createdbyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "createdbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "createdbyyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "createdbyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "createdon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "createdon",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "createdonbehalfby",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "createdonbehalfby",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "createdonbehalfbyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "createdonbehalfbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "createdonbehalfbyyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "createdonbehalfbyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "exchangerate",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "exchangerate",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "importsequencenumber",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "importsequencenumber",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "is_account",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "is_account",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "is_accountname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "is_accountname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "is_accountyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "is_accountyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "is_annualbusinesspotential",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "is_annualbusinesspotential",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "is_annualbusinesspotential_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "is_annualbusinesspotential_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "is_annualbusinesspotentialid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "is_annualbusinesspotentialid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "is_fiscalyear",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "is_fiscalyear",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "is_name",
+									"type": "String"
+								},
+								"sink": {
+									"name": "is_name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "is_quarter1",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "is_quarter1",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "is_quarter1_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "is_quarter1_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "is_quarter2",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "is_quarter2",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "is_quarter2_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "is_quarter2_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "is_quarter3",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "is_quarter3",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "is_quarter3_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "is_quarter3_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "is_quarter4",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "is_quarter4",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "is_quarter4_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "is_quarter4_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedby",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "modifiedby",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedbyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "modifiedbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedbyyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "modifiedbyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "modifiedon",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedonbehalfby",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "modifiedonbehalfby",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedonbehalfbyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "modifiedonbehalfbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedonbehalfbyyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "modifiedonbehalfbyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "overriddencreatedon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "overriddencreatedon",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "ownerid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "ownerid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "owneridname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "owneridname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "owneridtype",
+									"type": "String"
+								},
+								"sink": {
+									"name": "owneridtype",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "owneridyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "owneridyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "owningbusinessunit",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "owningbusinessunit",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "owningteam",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "owningteam",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "owninguser",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "owninguser",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "statecode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "statecode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "statuscode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "statuscode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "timezoneruleversionnumber",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "timezoneruleversionnumber",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "transactioncurrencyid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "transactioncurrencyid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "transactioncurrencyidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "transactioncurrencyidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "utcconversiontimezonecode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "utcconversiontimezonecode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "versionnumber",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "versionnumber",
+									"type": "Int64"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_REST_CRM_Business_Potential",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_Synapse_CRM_Business_Potential",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "CRM"
+		},
+		"annotations": []
+	}
+}
