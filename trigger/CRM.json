@@ -56,10 +56,18 @@
 		"type": "ScheduleTrigger",
 		"typeProperties": {
 			"recurrence": {
-				"frequency": "Minute",
+				"frequency": "Day",
 				"interval": 1,
-				"startTime": "2021-02-24T13:00:00Z",
-				"timeZone": "UTC"
+				"startTime": "2021-02-24T02:30:00Z",
+				"timeZone": "UTC",
+				"schedule": {
+					"minutes": [
+						30
+					],
+					"hours": [
+						2
+					]
+				}
 			}
 		}
 	}
