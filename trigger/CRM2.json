@@ -51,6 +51,12 @@
 					"referenceName": "PL_Mapping_CRM",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "PL_UnitOFMeasurement",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
