@@ -27,6 +27,12 @@
 					"referenceName": "PL_CRM_TO_SYNAPSE_Opportunity",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "PL_CRM_TO_SYNAPSE_Opportunity_subservice",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
