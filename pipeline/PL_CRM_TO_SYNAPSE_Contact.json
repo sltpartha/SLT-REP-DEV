@@ -1,0 +1,58 @@
+{
+	"name": "PL_CRM_TO_SYNAPSE_Contact",
+	"properties": {
+		"activities": [
+			{
+				"name": "PL_CRM_TO_MSQL_Contact",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "contact"
+					},
+					{
+						"name": "Destination",
+						"value": "sltsqldbdev.contact"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "DynamicsCrmSource"
+					},
+					"sink": {
+						"type": "SqlDWSink",
+						"preCopyScript": "Truncate table sltsqldbdev.Contact",
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_REST_CRM_Contact",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_Synapse_CRM_Contact",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "CRM"
+		},
+		"annotations": []
+	}
+}

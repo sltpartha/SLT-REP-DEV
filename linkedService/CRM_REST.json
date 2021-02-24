@@ -1,0 +1,15 @@
+{
+	"name": "CRM_REST",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://sltdev.api.crm4.dynamics.com/api/data/v9.1/is_annualbusinesspotentials?$select=is_quarter1,is_quarter2,is_quarter3,is_quarter4,is_fiscalyear,is_annualbusinesspotential,_transactioncurrencyid_value,createdon,_is_account_value&$expand=is_Account($select=name,is_clienttype,telephone1,emailaddress1,erb_subservice)",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Basic",
+			"userName": "hitarth.dave@summalinguae.com",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkFERlNMVERFVl9hNDQxODJkMS01ZDU5LTRkNGUtODQ2OC04ZjgwNGNkZTc0MjMiDQp9"
+		}
+	}
+}

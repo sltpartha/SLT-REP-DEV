@@ -1,0 +1,15 @@
+{
+	"name": "CRM_MySQL_lead_Subservice",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_MySQL_Plunet",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureMySqlTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "slt_test.Lead_Subservice"
+		}
+	}
+}
