@@ -39,7 +39,13 @@
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
-					"enableStaging": false,
+					"enableStaging": true,
+					"stagingSettings": {
+						"linkedServiceName": {
+							"referenceName": "AzureDataLakeStorage1",
+							"type": "LinkedServiceReference"
+						}
+					},
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
@@ -155,6 +161,16 @@
 							},
 							{
 								"source": {
+									"name": "Dossier",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Dossier",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
 									"name": "Bankname",
 									"type": "String"
 								},
@@ -295,6 +311,16 @@
 							},
 							{
 								"source": {
+									"name": "FachgebietDossier",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FachgebietDossier",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
 									"name": "Erstkontakt",
 									"type": "DateTime"
 								},
@@ -321,6 +347,16 @@
 								"sink": {
 									"name": "IDBetreuer",
 									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BetreuerMemo",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BetreuerMemo",
+									"type": "String"
 								}
 							},
 							{
@@ -515,6 +551,56 @@
 							},
 							{
 								"source": {
+									"name": "TextModulTextID_1",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "TextModulTextID_1",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "TextModulTextID_2",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "TextModulTextID_2",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "TextModulTextID_3",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "TextModulTextID_3",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "TextModulTextID_4",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "TextModulTextID_4",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "TextModulTextID_5",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "TextModulTextID_5",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
 									"name": "IDProjektbetreuer",
 									"type": "Int32"
 								},
@@ -551,6 +637,56 @@
 								"sink": {
 									"name": "StandardPreislisteDeaktiviert",
 									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "TextModulText_1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TextModulText_1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TextModulText_2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TextModulText_2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TextModulText_3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TextModulText_3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TextModulText_4",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TextModulText_4",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TextModulText_5",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TextModulText_5",
+									"type": "String"
 								}
 							},
 							{
@@ -741,6 +877,36 @@
 								"sink": {
 									"name": "Moneybookers",
 									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Kreditkartennummer",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Kreditkartennummer",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Kreditkartenpruefziffer",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Kreditkartenpruefziffer",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Kreditkartenverfallsdatum",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Kreditkartenverfallsdatum",
+									"type": "DateTime"
 								}
 							},
 							{
@@ -1085,6 +1251,16 @@
 							},
 							{
 								"source": {
+									"name": "JobkettenAuswahlSpezifisch",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "JobkettenAuswahlSpezifisch",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
 									"name": "HandlingFee",
 									"type": "Double"
 								},
@@ -1120,6 +1296,16 @@
 								},
 								"sink": {
 									"name": "KundegruppeID_Endkunde",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "KundeKannWorkflowAutomatischStarten",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "KundeKannWorkflowAutomatischStarten",
 									"type": "Int32"
 								}
 							},
@@ -1421,16 +1607,6 @@
 								"sink": {
 									"name": "BezahlintegrationAktiv",
 									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "samlexternalid",
-									"type": "String"
-								},
-								"sink": {
-									"name": "samlexternalid",
-									"type": "String"
 								}
 							}
 						]
