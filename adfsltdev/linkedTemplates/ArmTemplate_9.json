@@ -6948,7 +6948,7 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Plunet_to_Visma')]",
+			"name": "[concat(parameters('factoryName'), '/CRM2')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -6957,7 +6957,70 @@
 				"pipelines": [
 					{
 						"pipelineReference": {
-							"referenceName": "Plunet_to_Visma_Integration",
+							"referenceName": "PL_CRM_TO_SYNAPSE_Currency",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PL_CRM_TO_SYNAPSE_Industry",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PL_CRM_TO_SYNAPSE_Lead_subservice",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PL_CRM_TO_SYNAPSE_Opportunity",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PL_CRM_TO_SYNAPSE_Opportunity_subservice",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PL_CRM_TO_SYNAPSE_Sub_Domain",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PL_CRM_TO_SYNAPSE_USER",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PL_Mapping_CRM",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PL_UnitOFMeasurement",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "SQL_to_Synapse",
 							"type": "PipelineReference"
 						},
 						"parameters": {}
@@ -6968,7 +7031,7 @@
 					"recurrence": {
 						"frequency": "Day",
 						"interval": 1,
-						"startTime": "2021-02-10T02:30:00Z",
+						"startTime": "2021-02-24T02:30:00Z",
 						"timeZone": "UTC",
 						"schedule": {
 							"minutes": [

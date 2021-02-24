@@ -49641,22 +49641,180 @@
 							"type": "PipelineReference"
 						},
 						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PL_CRM_TO_SYNAPSE_Account",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PL_CRM_TO_SYNAPSE_Account_subservice",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PL_CRM_TO_SYNAPSE_Address",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PL_CRM_TO_SYNAPSE_Business_Potential",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PL_CRM_TO_SYNAPSE_Contact",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
 					}
 				],
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Minute",
+						"frequency": "Day",
 						"interval": 1,
-						"startTime": "2021-02-24T13:00:00Z",
-						"timeZone": "UTC"
+						"startTime": "2021-02-24T02:30:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								30
+							],
+							"hours": [
+								2
+							]
+						}
 					}
 				}
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/pipelines/All_CRM_MySQL')]",
 				"[concat(variables('factoryId'), '/pipelines/Master_CRM')]",
-				"[concat(variables('factoryId'), '/pipelines/PL_CRM_TO_Synapse_Lead_Selected_Cols')]"
+				"[concat(variables('factoryId'), '/pipelines/PL_CRM_TO_Synapse_Lead_Selected_Cols')]",
+				"[concat(variables('factoryId'), '/pipelines/PL_CRM_TO_SYNAPSE_Account')]",
+				"[concat(variables('factoryId'), '/pipelines/PL_CRM_TO_SYNAPSE_Account_subservice')]",
+				"[concat(variables('factoryId'), '/pipelines/PL_CRM_TO_SYNAPSE_Address')]",
+				"[concat(variables('factoryId'), '/pipelines/PL_CRM_TO_SYNAPSE_Business_Potential')]",
+				"[concat(variables('factoryId'), '/pipelines/PL_CRM_TO_SYNAPSE_Contact')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/CRM2')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "PL_CRM_TO_SYNAPSE_Currency",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PL_CRM_TO_SYNAPSE_Industry",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PL_CRM_TO_SYNAPSE_Lead_subservice",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PL_CRM_TO_SYNAPSE_Opportunity",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PL_CRM_TO_SYNAPSE_Opportunity_subservice",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PL_CRM_TO_SYNAPSE_Sub_Domain",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PL_CRM_TO_SYNAPSE_USER",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PL_Mapping_CRM",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PL_UnitOFMeasurement",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "SQL_to_Synapse",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-02-24T02:30:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								30
+							],
+							"hours": [
+								2
+							]
+						}
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/PL_CRM_TO_SYNAPSE_Currency')]",
+				"[concat(variables('factoryId'), '/pipelines/PL_CRM_TO_SYNAPSE_Industry')]",
+				"[concat(variables('factoryId'), '/pipelines/PL_CRM_TO_SYNAPSE_Lead_subservice')]",
+				"[concat(variables('factoryId'), '/pipelines/PL_CRM_TO_SYNAPSE_Opportunity')]",
+				"[concat(variables('factoryId'), '/pipelines/PL_CRM_TO_SYNAPSE_Opportunity_subservice')]",
+				"[concat(variables('factoryId'), '/pipelines/PL_CRM_TO_SYNAPSE_Sub_Domain')]",
+				"[concat(variables('factoryId'), '/pipelines/PL_CRM_TO_SYNAPSE_USER')]",
+				"[concat(variables('factoryId'), '/pipelines/PL_Mapping_CRM')]",
+				"[concat(variables('factoryId'), '/pipelines/PL_UnitOFMeasurement')]",
+				"[concat(variables('factoryId'), '/pipelines/SQL_to_Synapse')]"
 			]
 		},
 		{
