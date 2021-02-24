@@ -30,11 +30,16 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
+						"allowPolyBase": true,
+						"polyBaseSettings": {
+							"rejectValue": 0,
+							"rejectType": "value",
+							"useTypeDefault": true
+						},
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
-					"validateDataConsistency": false,
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
@@ -45,8 +50,7 @@
 								},
 								"sink": {
 									"name": "KundeID",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -56,8 +60,7 @@
 								},
 								"sink": {
 									"name": "Aktiv",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -67,8 +70,7 @@
 								},
 								"sink": {
 									"name": "Anrede",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -78,8 +80,7 @@
 								},
 								"sink": {
 									"name": "Vorname",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -89,8 +90,7 @@
 								},
 								"sink": {
 									"name": "Titel",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -100,8 +100,7 @@
 								},
 								"sink": {
 									"name": "Nachname",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -111,8 +110,7 @@
 								},
 								"sink": {
 									"name": "Briefanrede",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -122,8 +120,7 @@
 								},
 								"sink": {
 									"name": "TelefonZentrale",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -133,8 +130,7 @@
 								},
 								"sink": {
 									"name": "Mobil",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -144,8 +140,7 @@
 								},
 								"sink": {
 									"name": "Fax",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -155,8 +150,7 @@
 								},
 								"sink": {
 									"name": "eMail",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -166,8 +160,7 @@
 								},
 								"sink": {
 									"name": "Bankname",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -177,8 +170,7 @@
 								},
 								"sink": {
 									"name": "BLZ",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -188,8 +180,7 @@
 								},
 								"sink": {
 									"name": "KontoNr",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -199,8 +190,7 @@
 								},
 								"sink": {
 									"name": "Kontoinhaber",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -210,8 +200,7 @@
 								},
 								"sink": {
 									"name": "Skonto",
-									"type": "Double",
-									"physicalType": "Double"
+									"type": "Double"
 								}
 							},
 							{
@@ -221,8 +210,7 @@
 								},
 								"sink": {
 									"name": "SkontoTage",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -232,8 +220,7 @@
 								},
 								"sink": {
 									"name": "PreisMemo",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -243,8 +230,7 @@
 								},
 								"sink": {
 									"name": "UST_ID",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -254,8 +240,7 @@
 								},
 								"sink": {
 									"name": "AnlageDatum",
-									"type": "DateTime",
-									"physicalType": "DateTime"
+									"type": "DateTime"
 								}
 							},
 							{
@@ -265,8 +250,7 @@
 								},
 								"sink": {
 									"name": "Internet",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -276,8 +260,7 @@
 								},
 								"sink": {
 									"name": "SwiftCode",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -287,8 +270,7 @@
 								},
 								"sink": {
 									"name": "Bankadresse",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -298,8 +280,7 @@
 								},
 								"sink": {
 									"name": "IBAN",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -309,8 +290,7 @@
 								},
 								"sink": {
 									"name": "SortCode",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -320,8 +300,7 @@
 								},
 								"sink": {
 									"name": "Erstkontakt",
-									"type": "DateTime",
-									"physicalType": "DateTime"
+									"type": "DateTime"
 								}
 							},
 							{
@@ -331,8 +310,7 @@
 								},
 								"sink": {
 									"name": "KontaktHerkunft",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -342,8 +320,7 @@
 								},
 								"sink": {
 									"name": "IDBetreuer",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -353,8 +330,7 @@
 								},
 								"sink": {
 									"name": "QuellspracheID",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -364,8 +340,7 @@
 								},
 								"sink": {
 									"name": "ReadOnly",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -375,8 +350,7 @@
 								},
 								"sink": {
 									"name": "WithMemoAlert",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -386,8 +360,7 @@
 								},
 								"sink": {
 									"name": "Werbung",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -397,8 +370,7 @@
 								},
 								"sink": {
 									"name": "KontoFIBU",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -408,8 +380,7 @@
 								},
 								"sink": {
 									"name": "AnschriftID",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -419,8 +390,7 @@
 								},
 								"sink": {
 									"name": "SkypeNr",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -430,8 +400,7 @@
 								},
 								"sink": {
 									"name": "ABA",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -441,8 +410,7 @@
 								},
 								"sink": {
 									"name": "ErstAuftrag",
-									"type": "DateTime",
-									"physicalType": "DateTime"
+									"type": "DateTime"
 								}
 							},
 							{
@@ -452,8 +420,7 @@
 								},
 								"sink": {
 									"name": "Zahlungsfrist",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -463,8 +430,7 @@
 								},
 								"sink": {
 									"name": "ZahlungsfristMahnung1",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -474,8 +440,7 @@
 								},
 								"sink": {
 									"name": "ZahlungsfristMahnung2",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -485,8 +450,7 @@
 								},
 								"sink": {
 									"name": "ErtragKonto",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -496,8 +460,7 @@
 								},
 								"sink": {
 									"name": "ZahlungsfristMahnung3",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -507,8 +470,7 @@
 								},
 								"sink": {
 									"name": "Kreditlinie",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -518,8 +480,7 @@
 								},
 								"sink": {
 									"name": "Kreditvolumen",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -529,8 +490,7 @@
 								},
 								"sink": {
 									"name": "VorlageID",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -540,8 +500,7 @@
 								},
 								"sink": {
 									"name": "Zeitzone",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -551,8 +510,7 @@
 								},
 								"sink": {
 									"name": "MWStArt",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -562,8 +520,7 @@
 								},
 								"sink": {
 									"name": "IDProjektbetreuer",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -573,8 +530,7 @@
 								},
 								"sink": {
 									"name": "Vertragsdatum",
-									"type": "DateTime",
-									"physicalType": "DateTime"
+									"type": "DateTime"
 								}
 							},
 							{
@@ -584,8 +540,7 @@
 								},
 								"sink": {
 									"name": "VertragsdatumEnde",
-									"type": "DateTime",
-									"physicalType": "DateTime"
+									"type": "DateTime"
 								}
 							},
 							{
@@ -595,8 +550,7 @@
 								},
 								"sink": {
 									"name": "StandardPreislisteDeaktiviert",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -606,8 +560,7 @@
 								},
 								"sink": {
 									"name": "IDBesteuerungsArt",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -617,8 +570,7 @@
 								},
 								"sink": {
 									"name": "VertragsNummer",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -628,8 +580,7 @@
 								},
 								"sink": {
 									"name": "IstEndkunde",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -639,8 +590,7 @@
 								},
 								"sink": {
 									"name": "MemoVerwenden",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -650,8 +600,7 @@
 								},
 								"sink": {
 									"name": "NurSammelrechnung",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -661,8 +610,7 @@
 								},
 								"sink": {
 									"name": "ProvisionUmsatz",
-									"type": "Double",
-									"physicalType": "Double"
+									"type": "Double"
 								}
 							},
 							{
@@ -672,8 +620,7 @@
 								},
 								"sink": {
 									"name": "ProvisionRohertrag",
-									"type": "Double",
-									"physicalType": "Double"
+									"type": "Double"
 								}
 							},
 							{
@@ -683,8 +630,7 @@
 								},
 								"sink": {
 									"name": "NichtMahnen",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -694,8 +640,7 @@
 								},
 								"sink": {
 									"name": "BestellnummerErforderlich",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -705,8 +650,7 @@
 								},
 								"sink": {
 									"name": "MandantID",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -716,8 +660,7 @@
 								},
 								"sink": {
 									"name": "PayPal",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -727,8 +670,7 @@
 								},
 								"sink": {
 									"name": "ZahlungsMethode",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -738,8 +680,7 @@
 								},
 								"sink": {
 									"name": "Umsatzprognose",
-									"type": "Double",
-									"physicalType": "Double"
+									"type": "Double"
 								}
 							},
 							{
@@ -749,8 +690,7 @@
 								},
 								"sink": {
 									"name": "Auftragswahrscheinlichkeit",
-									"type": "Double",
-									"physicalType": "Double"
+									"type": "Double"
 								}
 							},
 							{
@@ -760,8 +700,7 @@
 								},
 								"sink": {
 									"name": "ErloesKontoID",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -771,8 +710,7 @@
 								},
 								"sink": {
 									"name": "CAT_Art",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -782,8 +720,7 @@
 								},
 								"sink": {
 									"name": "AnschriftUebernahmeInRechnung",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -793,8 +730,7 @@
 								},
 								"sink": {
 									"name": "Zahlungsfrist_Regel",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -804,8 +740,7 @@
 								},
 								"sink": {
 									"name": "Moneybookers",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -815,8 +750,7 @@
 								},
 								"sink": {
 									"name": "ErrorSpyAktiv",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -826,8 +760,7 @@
 								},
 								"sink": {
 									"name": "Zielrendite",
-									"type": "Double",
-									"physicalType": "Double"
+									"type": "Double"
 								}
 							},
 							{
@@ -837,8 +770,7 @@
 								},
 								"sink": {
 									"name": "LetzterAuftrag",
-									"type": "DateTime",
-									"physicalType": "DateTime"
+									"type": "DateTime"
 								}
 							},
 							{
@@ -848,8 +780,7 @@
 								},
 								"sink": {
 									"name": "CurrencyID",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -859,8 +790,7 @@
 								},
 								"sink": {
 									"name": "AnsprechpartnerID_Standard",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -870,8 +800,7 @@
 								},
 								"sink": {
 									"name": "AnsprechpartnerID_Rechnung",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -881,8 +810,7 @@
 								},
 								"sink": {
 									"name": "KundenzeichenErforderlich",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -892,8 +820,7 @@
 								},
 								"sink": {
 									"name": "MandantID_Rechnung",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -903,8 +830,7 @@
 								},
 								"sink": {
 									"name": "UserDefined_String1",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -914,8 +840,7 @@
 								},
 								"sink": {
 									"name": "UserDefined_String2",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -925,8 +850,7 @@
 								},
 								"sink": {
 									"name": "UserDefined_Double1",
-									"type": "Double",
-									"physicalType": "Double"
+									"type": "Double"
 								}
 							},
 							{
@@ -936,8 +860,7 @@
 								},
 								"sink": {
 									"name": "KundenbetreuerBeiAuftraegen",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -947,8 +870,7 @@
 								},
 								"sink": {
 									"name": "KundenbetreuerProvision",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -958,8 +880,7 @@
 								},
 								"sink": {
 									"name": "VorlageID_Mahnung",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -969,8 +890,7 @@
 								},
 								"sink": {
 									"name": "ExternalID",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -980,8 +900,7 @@
 								},
 								"sink": {
 									"name": "Mail_Mahnung",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -991,8 +910,7 @@
 								},
 								"sink": {
 									"name": "Kostenstelle",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -1002,8 +920,7 @@
 								},
 								"sink": {
 									"name": "WaehrungAuftragRechnungIdentisch",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -1013,8 +930,7 @@
 								},
 								"sink": {
 									"name": "AngebotPruefung_Analog_Adminbereich",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -1024,8 +940,7 @@
 								},
 								"sink": {
 									"name": "AngebotPruefung_Mitarbeiter_1",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -1035,8 +950,7 @@
 								},
 								"sink": {
 									"name": "AngebotPruefung_Mitarbeiter_2",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -1046,8 +960,7 @@
 								},
 								"sink": {
 									"name": "AngebotPruefung_Netto_1",
-									"type": "Double",
-									"physicalType": "Double"
+									"type": "Double"
 								}
 							},
 							{
@@ -1057,8 +970,7 @@
 								},
 								"sink": {
 									"name": "AngebotPruefung_Netto_2",
-									"type": "Double",
-									"physicalType": "Double"
+									"type": "Double"
 								}
 							},
 							{
@@ -1068,8 +980,7 @@
 								},
 								"sink": {
 									"name": "DokumentHerkunft",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -1079,8 +990,7 @@
 								},
 								"sink": {
 									"name": "Website",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -1090,8 +1000,7 @@
 								},
 								"sink": {
 									"name": "DossierNew",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -1101,8 +1010,7 @@
 								},
 								"sink": {
 									"name": "FachgebietDossierNew",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -1112,8 +1020,7 @@
 								},
 								"sink": {
 									"name": "ErstellerID",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -1123,8 +1030,7 @@
 								},
 								"sink": {
 									"name": "MemoAuftragsabrechnung",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -1134,8 +1040,7 @@
 								},
 								"sink": {
 									"name": "MemoRechnungDrucken",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -1145,8 +1050,7 @@
 								},
 								"sink": {
 									"name": "DefaultMemoAlertProject",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -1156,8 +1060,7 @@
 								},
 								"sink": {
 									"name": "QuickBooksID",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -1167,8 +1070,7 @@
 								},
 								"sink": {
 									"name": "PartnerGruppeID_Projektteam",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -1178,8 +1080,7 @@
 								},
 								"sink": {
 									"name": "QBTermsID",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -1189,8 +1090,7 @@
 								},
 								"sink": {
 									"name": "HandlingFee",
-									"type": "Double",
-									"physicalType": "Double"
+									"type": "Double"
 								}
 							},
 							{
@@ -1200,8 +1100,7 @@
 								},
 								"sink": {
 									"name": "CAT_Schablone",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -1211,8 +1110,7 @@
 								},
 								"sink": {
 									"name": "WorkflowInAnfrageAuswaehlbar",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -1222,8 +1120,7 @@
 								},
 								"sink": {
 									"name": "KundegruppeID_Endkunde",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -1233,8 +1130,7 @@
 								},
 								"sink": {
 									"name": "SetzeAbgenommenePos_OhneRechnung",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -1244,8 +1140,7 @@
 								},
 								"sink": {
 									"name": "EndKunde_Anfrage",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -1255,8 +1150,7 @@
 								},
 								"sink": {
 									"name": "TradosSchablone",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -1266,8 +1160,7 @@
 								},
 								"sink": {
 									"name": "KundeZielrenditeDolmetschen",
-									"type": "Double",
-									"physicalType": "Double"
+									"type": "Double"
 								}
 							},
 							{
@@ -1277,8 +1170,7 @@
 								},
 								"sink": {
 									"name": "BestellnummerInRechnungErforderlich",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -1288,8 +1180,7 @@
 								},
 								"sink": {
 									"name": "Exportiert",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -1299,8 +1190,7 @@
 								},
 								"sink": {
 									"name": "AnsprechpartnerID_Dolmetschen",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -1310,8 +1200,7 @@
 								},
 								"sink": {
 									"name": "StandardPreislisteFuerPauschalAngebot",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -1321,8 +1210,7 @@
 								},
 								"sink": {
 									"name": "Kreditkartennummer_enc",
-									"type": "Byte[]",
-									"physicalType": "Byte[]"
+									"type": "Byte[]"
 								}
 							},
 							{
@@ -1332,8 +1220,7 @@
 								},
 								"sink": {
 									"name": "Kreditkartenverfallsdatum_enc",
-									"type": "Byte[]",
-									"physicalType": "Byte[]"
+									"type": "Byte[]"
 								}
 							},
 							{
@@ -1343,8 +1230,7 @@
 								},
 								"sink": {
 									"name": "CCEmpfaengerAnfrage",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -1354,8 +1240,7 @@
 								},
 								"sink": {
 									"name": "CCEmpfaengerAngebot",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -1365,8 +1250,7 @@
 								},
 								"sink": {
 									"name": "CCEmpfaengerAuftrag",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -1376,8 +1260,7 @@
 								},
 								"sink": {
 									"name": "CCEmpfaengerRechnung",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -1387,8 +1270,7 @@
 								},
 								"sink": {
 									"name": "ProjektMaske_Kundenlogin",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -1398,8 +1280,7 @@
 								},
 								"sink": {
 									"name": "SortingField",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							},
 							{
@@ -1409,8 +1290,7 @@
 								},
 								"sink": {
 									"name": "IDAcrossMasterServer",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -1420,8 +1300,7 @@
 								},
 								"sink": {
 									"name": "KostenuebertragungInPosition",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -1431,8 +1310,7 @@
 								},
 								"sink": {
 									"name": "DateLastQuote",
-									"type": "DateTime",
-									"physicalType": "DateTime"
+									"type": "DateTime"
 								}
 							},
 							{
@@ -1442,8 +1320,7 @@
 								},
 								"sink": {
 									"name": "isInaktiveAnsprechpartnerAnzeigen",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -1453,8 +1330,7 @@
 								},
 								"sink": {
 									"name": "isEmail_KontaktanlageEUDSGVO_versandt",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -1464,8 +1340,7 @@
 								},
 								"sink": {
 									"name": "Datum_LoeschungBeantragt",
-									"type": "DateTime",
-									"physicalType": "DateTime"
+									"type": "DateTime"
 								}
 							},
 							{
@@ -1475,8 +1350,7 @@
 								},
 								"sink": {
 									"name": "Datum_LetzteAktion_Anfrage",
-									"type": "DateTime",
-									"physicalType": "DateTime"
+									"type": "DateTime"
 								}
 							},
 							{
@@ -1486,8 +1360,7 @@
 								},
 								"sink": {
 									"name": "Datum_LetzteAktion_Angebot",
-									"type": "DateTime",
-									"physicalType": "DateTime"
+									"type": "DateTime"
 								}
 							},
 							{
@@ -1497,8 +1370,7 @@
 								},
 								"sink": {
 									"name": "Datum_LetzteAktion_Auftrag",
-									"type": "DateTime",
-									"physicalType": "DateTime"
+									"type": "DateTime"
 								}
 							},
 							{
@@ -1508,8 +1380,7 @@
 								},
 								"sink": {
 									"name": "Datum_LetzteAktion_Job",
-									"type": "DateTime",
-									"physicalType": "DateTime"
+									"type": "DateTime"
 								}
 							},
 							{
@@ -1519,8 +1390,7 @@
 								},
 								"sink": {
 									"name": "Datum_LetzteAktion_Rechnung",
-									"type": "DateTime",
-									"physicalType": "DateTime"
+									"type": "DateTime"
 								}
 							},
 							{
@@ -1530,8 +1400,7 @@
 								},
 								"sink": {
 									"name": "Bank_Country",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -1541,8 +1410,7 @@
 								},
 								"sink": {
 									"name": "Bank_Currency",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -1552,8 +1420,7 @@
 								},
 								"sink": {
 									"name": "BezahlintegrationAktiv",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								}
 							},
 							{
@@ -1563,16 +1430,10 @@
 								},
 								"sink": {
 									"name": "samlexternalid",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								}
 							}
-						],
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
+						]
 					}
 				},
 				"inputs": [
