@@ -1,54 +1,66 @@
 {
-	"name": "CRM",
+	"name": "CRM2",
 	"properties": {
 		"annotations": [],
 		"runtimeState": "Started",
 		"pipelines": [
 			{
 				"pipelineReference": {
-					"referenceName": "All_CRM_MySQL",
+					"referenceName": "PL_CRM_TO_SYNAPSE_Currency",
 					"type": "PipelineReference"
 				}
 			},
 			{
 				"pipelineReference": {
-					"referenceName": "Master_CRM",
+					"referenceName": "PL_CRM_TO_SYNAPSE_Industry",
 					"type": "PipelineReference"
 				}
 			},
 			{
 				"pipelineReference": {
-					"referenceName": "PL_CRM_TO_Synapse_Lead_Selected_Cols",
+					"referenceName": "PL_CRM_TO_SYNAPSE_Lead_subservice",
 					"type": "PipelineReference"
 				}
 			},
 			{
 				"pipelineReference": {
-					"referenceName": "PL_CRM_TO_SYNAPSE_Account",
+					"referenceName": "PL_CRM_TO_SYNAPSE_Opportunity",
 					"type": "PipelineReference"
 				}
 			},
 			{
 				"pipelineReference": {
-					"referenceName": "PL_CRM_TO_SYNAPSE_Account_subservice",
+					"referenceName": "PL_CRM_TO_SYNAPSE_Opportunity_subservice",
 					"type": "PipelineReference"
 				}
 			},
 			{
 				"pipelineReference": {
-					"referenceName": "PL_CRM_TO_SYNAPSE_Address",
+					"referenceName": "PL_CRM_TO_SYNAPSE_Sub_Domain",
 					"type": "PipelineReference"
 				}
 			},
 			{
 				"pipelineReference": {
-					"referenceName": "PL_CRM_TO_SYNAPSE_Business_Potential",
+					"referenceName": "PL_CRM_TO_SYNAPSE_USER",
 					"type": "PipelineReference"
 				}
 			},
 			{
 				"pipelineReference": {
-					"referenceName": "PL_CRM_TO_SYNAPSE_Contact",
+					"referenceName": "PL_Mapping_CRM",
+					"type": "PipelineReference"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "PL_UnitOFMeasurement",
+					"type": "PipelineReference"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "SQL_to_Synapse",
 					"type": "PipelineReference"
 				}
 			}
