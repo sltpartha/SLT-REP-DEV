@@ -5,6 +5,9 @@
 			"referenceName": "Plunet_Test_Database",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "Plunet_to_Azure_MySql"
+		},
 		"annotations": [],
 		"type": "MySqlTable",
 		"schema": [],

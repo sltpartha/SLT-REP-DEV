@@ -5,6 +5,9 @@
 			"referenceName": "AzureMySql_SLT_test",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "Azure_MySql_to_Azure_Synapse_DW"
+		},
 		"annotations": [],
 		"type": "AzureMySqlTable",
 		"schema": [
