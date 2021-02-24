@@ -33,6 +33,12 @@
 					"referenceName": "PL_CRM_TO_SYNAPSE_Account_subservice",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "PL_CRM_TO_SYNAPSE_Address",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
