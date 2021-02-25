@@ -181,6 +181,17 @@
 									"type": "String",
 									"physicalType": "String"
 								}
+							},
+							{
+								"source": {
+									"name": "MWSTArt",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MWSTArt",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
 							}
 						],
 						"typeConversion": true,
