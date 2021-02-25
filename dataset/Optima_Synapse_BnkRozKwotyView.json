@@ -5,6 +5,9 @@
 			"referenceName": "LS_SYNAP",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "Optima"
+		},
 		"annotations": [],
 		"type": "AzureSqlDWTable",
 		"schema": [],

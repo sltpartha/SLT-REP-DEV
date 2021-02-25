@@ -5,6 +5,9 @@
 			"referenceName": "OptimaServerLive",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "Optima"
+		},
 		"annotations": [],
 		"type": "SqlServerTable",
 		"schema": [],

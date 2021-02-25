@@ -5,6 +5,9 @@
 			"referenceName": "LS_MySQL_Plunet",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "CRM"
+		},
 		"annotations": [],
 		"type": "AzureMySqlTable",
 		"schema": [],
