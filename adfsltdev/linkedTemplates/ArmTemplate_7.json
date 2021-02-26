@@ -13,51 +13,6 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/Visma_to_Plunet_Integration')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"description": "visma_to_plunet_integration",
-				"activities": [
-					{
-						"name": "visma_to_plunet_integration",
-						"description": "visma_to_plunet_integration",
-						"type": "Custom",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"command": "python3 visma_to_plunet.py",
-							"resourceLinkedService": {
-								"referenceName": "AzureBlobStorageVisma",
-								"type": "LinkedServiceReference"
-							},
-							"folderPath": "optima-input",
-							"referenceObjects": {
-								"linkedServices": [],
-								"datasets": []
-							}
-						},
-						"linkedServiceName": {
-							"referenceName": "plunet_vIsma_Batch1",
-							"type": "LinkedServiceReference"
-						}
-					}
-				],
-				"folder": {
-					"name": "Visma"
-				},
-				"annotations": []
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/Optima_BnkRozKwotyView')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -65,6 +20,9 @@
 				"linkedServiceName": {
 					"referenceName": "OptimaServerLive",
 					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Optima"
 				},
 				"annotations": [],
 				"type": "SqlServerTable",
@@ -258,6 +216,9 @@
 				"linkedServiceName": {
 					"referenceName": "Plunet_Test_Database",
 					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Plunet_to_Azure_MySql"
 				},
 				"annotations": [],
 				"type": "MySqlTable",
@@ -489,6 +450,27 @@
 				"schema": [],
 				"typeProperties": {
 					"tableName": "`log_mitarbeiter`"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Plunettest_mitarbeiter_textmodul')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Plunet_Test_Database",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sreeja Dataset"
+				},
+				"annotations": [],
+				"type": "MySqlTable",
+				"schema": [],
+				"typeProperties": {
+					"tableName": "`mitarbeiter_textmodul`"
 				}
 			},
 			"dependsOn": []

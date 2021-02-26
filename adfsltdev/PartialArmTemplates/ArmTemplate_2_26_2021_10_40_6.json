@@ -1,0 +1,2437 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adfsltdev"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/Azure_MySqlDB_to_Synapse_DW_T6')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "MySql_Synapse_T6",
+						"type": "ForEach",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"items": {
+								"value": "@pipeline().parameters.cw_items",
+								"type": "Expression"
+							},
+							"activities": [
+								{
+									"name": "Azure_MySqlDB_to_Synapse_DW_T6",
+									"type": "Copy",
+									"dependsOn": [],
+									"policy": {
+										"timeout": "7.00:00:00",
+										"retry": 0,
+										"retryIntervalInSeconds": 30,
+										"secureOutput": false,
+										"secureInput": false
+									},
+									"userProperties": [
+										{
+											"name": "Source",
+											"value": "@{item().source.tableName}"
+										},
+										{
+											"name": "Destination",
+											"value": "@{item().destination.schema}.@{item().destination.table}"
+										}
+									],
+									"typeProperties": {
+										"source": {
+											"type": "AzureMySqlSource"
+										},
+										"sink": {
+											"type": "SqlDWSink",
+											"preCopyScript": {
+												"value": "@concat('Truncate table slt_test.' , item().destination.table)",
+												"type": "Expression"
+											},
+											"tableOption": {
+												"value": "@item().copySink.tableOption",
+												"type": "Expression"
+											},
+											"disableMetricsCollection": false
+										},
+										"enableStaging": true,
+										"stagingSettings": {
+											"linkedServiceName": {
+												"referenceName": "AzureDataLakeStorage1",
+												"type": "LinkedServiceReference"
+											}
+										},
+										"translator": {
+											"value": "@item().copyActivity.translator",
+											"type": "Expression"
+										}
+									},
+									"inputs": [
+										{
+											"referenceName": "Plunet_Azure_MySql_T6",
+											"type": "DatasetReference",
+											"parameters": {
+												"cw_tableName": "@item().source.tableName"
+											}
+										}
+									],
+									"outputs": [
+										{
+											"referenceName": "Plunet_Azure_Synspase_T6",
+											"type": "DatasetReference",
+											"parameters": {
+												"cw_schema": "@item().destination.schema",
+												"cw_table": "@item().destination.table"
+											}
+										}
+									]
+								}
+							]
+						}
+					}
+				],
+				"parameters": {
+					"cw_items": {
+						"type": "Array",
+						"defaultValue": [
+							{
+								"source": {
+									"tableName": "eingangsrechnung_textmodul"
+								},
+								"destination": {
+									"schema": null,
+									"table": "eingangsrechnung_textmodul"
+								},
+								"copySink": {
+									"tableOption": "autoCreate"
+								},
+								"copyActivity": {
+									"translator": {
+										"type": "TabularTranslator",
+										"mappings": [
+											{
+												"source": {
+													"name": "TextModulVerwendungID",
+													"type": "Int32",
+													"physicalType": "int"
+												},
+												"sink": {
+													"name": "TextModulVerwendungID",
+													"type": "Int32"
+												}
+											},
+											{
+												"source": {
+													"name": "IDTextModul",
+													"type": "Int32",
+													"physicalType": "int"
+												},
+												"sink": {
+													"name": "IDTextModul",
+													"type": "Int32"
+												}
+											},
+											{
+												"source": {
+													"name": "IDMain",
+													"type": "Int32",
+													"physicalType": "int"
+												},
+												"sink": {
+													"name": "IDMain",
+													"type": "Int32"
+												}
+											},
+											{
+												"source": {
+													"name": "Inhalt",
+													"type": "String",
+													"physicalType": "text"
+												},
+												"sink": {
+													"name": "Inhalt",
+													"type": "String"
+												}
+											},
+											{
+												"source": {
+													"name": "Inhalt_Datum",
+													"type": "DateTime",
+													"physicalType": "datetime"
+												},
+												"sink": {
+													"name": "Inhalt_Datum",
+													"type": "DateTime"
+												}
+											}
+										],
+										"typeConversion": true,
+										"typeConversionSettings": {
+											"allowDataTruncation": true,
+											"treatBooleanAsNumber": false
+										}
+									}
+								}
+							},
+							{
+								"source": {
+									"tableName": "rechnungmitarbeiterposition"
+								},
+								"destination": {
+									"schema": "slt_test",
+									"table": "rechnungmitarbeiterposition"
+								},
+								"copySink": {
+									"tableOption": null
+								},
+								"copyActivity": {
+									"translator": {
+										"type": "TabularTranslator",
+										"mappings": [
+											{
+												"source": {
+													"name": "RechnungMitarbeiterPositionID",
+													"type": "Int32",
+													"physicalType": "int"
+												},
+												"sink": {
+													"name": "RechnungMitarbeiterPositionID",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											},
+											{
+												"source": {
+													"name": "RechnungMitarbeiterID",
+													"type": "Int32",
+													"physicalType": "int"
+												},
+												"sink": {
+													"name": "RechnungMitarbeiterID",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											},
+											{
+												"source": {
+													"name": "JobID",
+													"type": "Int32",
+													"physicalType": "int"
+												},
+												"sink": {
+													"name": "JobID",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											},
+											{
+												"source": {
+													"name": "PosPreis",
+													"type": "Double",
+													"physicalType": "double"
+												},
+												"sink": {
+													"name": "PosPreis",
+													"type": "Double",
+													"physicalType": "float"
+												}
+											},
+											{
+												"source": {
+													"name": "MWStArt",
+													"type": "Int32",
+													"physicalType": "int"
+												},
+												"sink": {
+													"name": "MWStArt",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											},
+											{
+												"source": {
+													"name": "Gegenstand",
+													"type": "String",
+													"physicalType": "longtext"
+												},
+												"sink": {
+													"name": "Gegenstand",
+													"type": "String",
+													"physicalType": "nvarchar"
+												}
+											},
+											{
+												"source": {
+													"name": "Menge1",
+													"type": "Double",
+													"physicalType": "double"
+												},
+												"sink": {
+													"name": "Menge1",
+													"type": "Double",
+													"physicalType": "float"
+												}
+											},
+											{
+												"source": {
+													"name": "Menge2",
+													"type": "Double",
+													"physicalType": "double"
+												},
+												"sink": {
+													"name": "Menge2",
+													"type": "Double",
+													"physicalType": "float"
+												}
+											},
+											{
+												"source": {
+													"name": "Menge3",
+													"type": "Double",
+													"physicalType": "double"
+												},
+												"sink": {
+													"name": "Menge3",
+													"type": "Double",
+													"physicalType": "float"
+												}
+											},
+											{
+												"source": {
+													"name": "PreisEinheitID1",
+													"type": "Int32",
+													"physicalType": "int"
+												},
+												"sink": {
+													"name": "PreisEinheitID1",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											},
+											{
+												"source": {
+													"name": "PreisEinheitID2",
+													"type": "Int32",
+													"physicalType": "int"
+												},
+												"sink": {
+													"name": "PreisEinheitID2",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											},
+											{
+												"source": {
+													"name": "PreisEinheitID3",
+													"type": "Int32",
+													"physicalType": "int"
+												},
+												"sink": {
+													"name": "PreisEinheitID3",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											},
+											{
+												"source": {
+													"name": "PreisProEinheit1",
+													"type": "Double",
+													"physicalType": "double"
+												},
+												"sink": {
+													"name": "PreisProEinheit1",
+													"type": "Double",
+													"physicalType": "float"
+												}
+											},
+											{
+												"source": {
+													"name": "PreisProEinheit2",
+													"type": "Double",
+													"physicalType": "double"
+												},
+												"sink": {
+													"name": "PreisProEinheit2",
+													"type": "Double",
+													"physicalType": "float"
+												}
+											},
+											{
+												"source": {
+													"name": "PreisProEinheit3",
+													"type": "Double",
+													"physicalType": "double"
+												},
+												"sink": {
+													"name": "PreisProEinheit3",
+													"type": "Double",
+													"physicalType": "float"
+												}
+											},
+											{
+												"source": {
+													"name": "EinheitsMenge1",
+													"type": "Double",
+													"physicalType": "double"
+												},
+												"sink": {
+													"name": "EinheitsMenge1",
+													"type": "Double",
+													"physicalType": "float"
+												}
+											},
+											{
+												"source": {
+													"name": "EinheitsMenge2",
+													"type": "Double",
+													"physicalType": "double"
+												},
+												"sink": {
+													"name": "EinheitsMenge2",
+													"type": "Double",
+													"physicalType": "float"
+												}
+											},
+											{
+												"source": {
+													"name": "EinheitsMenge3",
+													"type": "Double",
+													"physicalType": "double"
+												},
+												"sink": {
+													"name": "EinheitsMenge3",
+													"type": "Double",
+													"physicalType": "float"
+												}
+											},
+											{
+												"source": {
+													"name": "PositionID",
+													"type": "Int32",
+													"physicalType": "int"
+												},
+												"sink": {
+													"name": "PositionID",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											},
+											{
+												"source": {
+													"name": "ProjektArt",
+													"type": "Int32",
+													"physicalType": "int"
+												},
+												"sink": {
+													"name": "ProjektArt",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											}
+										],
+										"typeConversion": true,
+										"typeConversionSettings": {
+											"allowDataTruncation": true,
+											"treatBooleanAsNumber": false
+										}
+									}
+								}
+							}
+						]
+					}
+				},
+				"folder": {
+					"name": "Plunet"
+				},
+				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/PlunettestDB_to_Azure_MySqlDB_T6')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Plunet_Azure_MySql_T6",
+						"type": "ForEach",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"items": {
+								"value": "@pipeline().parameters.cw_items",
+								"type": "Expression"
+							},
+							"activities": [
+								{
+									"name": "PlunettestDB_to_Azure_MySqlDB_T6",
+									"type": "Copy",
+									"dependsOn": [],
+									"policy": {
+										"timeout": "7.00:00:00",
+										"retry": 0,
+										"retryIntervalInSeconds": 30,
+										"secureOutput": false,
+										"secureInput": false
+									},
+									"userProperties": [
+										{
+											"name": "Source",
+											"value": "@{item().source.tableName}"
+										},
+										{
+											"name": "Destination",
+											"value": "@{item().destination.tableName}"
+										}
+									],
+									"typeProperties": {
+										"source": {
+											"type": "MySqlSource"
+										},
+										"sink": {
+											"type": "AzureMySqlSink",
+											"writeBatchSize": 10000,
+											"writeBatchTimeout": "00:00:30",
+											"preCopyScript": {
+												"value": "@concat('Truncate table ' , item().destination.tableName)",
+												"type": "Expression"
+											}
+										},
+										"enableStaging": false,
+										"validateDataConsistency": false,
+										"translator": {
+											"value": "@item().copyActivity.translator",
+											"type": "Expression"
+										}
+									},
+									"inputs": [
+										{
+											"referenceName": "Plunet_DB_T6",
+											"type": "DatasetReference",
+											"parameters": {
+												"cw_tableName": "@item().source.tableName"
+											}
+										}
+									],
+									"outputs": [
+										{
+											"referenceName": "Azure_PlunetDB_MySql_T6",
+											"type": "DatasetReference",
+											"parameters": {
+												"cw_tableName": "@item().destination.tableName"
+											}
+										}
+									]
+								}
+							]
+						}
+					}
+				],
+				"parameters": {
+					"cw_items": {
+						"type": "Array",
+						"defaultValue": [
+							{
+								"source": {
+									"tableName": "`eingangsrechnung_textmodul`"
+								},
+								"destination": {
+									"tableName": "eingangsrechnung_textmodul"
+								},
+								"copyActivity": {
+									"translator": {
+										"type": "TabularTranslator",
+										"mappings": [
+											{
+												"source": {
+													"name": "TextModulVerwendungID",
+													"type": "Int32"
+												},
+												"sink": {
+													"name": "TextModulVerwendungID",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											},
+											{
+												"source": {
+													"name": "IDTextModul",
+													"type": "Int32"
+												},
+												"sink": {
+													"name": "IDTextModul",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											},
+											{
+												"source": {
+													"name": "IDMain",
+													"type": "Int32"
+												},
+												"sink": {
+													"name": "IDMain",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											},
+											{
+												"source": {
+													"name": "Inhalt",
+													"type": "String"
+												},
+												"sink": {
+													"name": "Inhalt",
+													"type": "String",
+													"physicalType": "text"
+												}
+											},
+											{
+												"source": {
+													"name": "Inhalt_Datum",
+													"type": "DateTime"
+												},
+												"sink": {
+													"name": "Inhalt_Datum",
+													"type": "DateTime",
+													"physicalType": "datetime"
+												}
+											}
+										],
+										"typeConversion": true,
+										"typeConversionSettings": {
+											"allowDataTruncation": true,
+											"treatBooleanAsNumber": false
+										}
+									}
+								}
+							},
+							{
+								"source": {
+									"tableName": "`mitarbeiteransprechpartner`"
+								},
+								"destination": {
+									"tableName": "mitarbeiteransprechpartner"
+								},
+								"copyActivity": {
+									"translator": {
+										"type": "TabularTranslator",
+										"mappings": [
+											{
+												"source": {
+													"name": "AnsprechpartnerID",
+													"type": "Int32"
+												},
+												"sink": {
+													"name": "AnsprechpartnerID",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											},
+											{
+												"source": {
+													"name": "IDMitarbeiter",
+													"type": "Int32"
+												},
+												"sink": {
+													"name": "IDMitarbeiter",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											},
+											{
+												"source": {
+													"name": "Anrede",
+													"type": "Int32"
+												},
+												"sink": {
+													"name": "Anrede",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											},
+											{
+												"source": {
+													"name": "Titel",
+													"type": "String"
+												},
+												"sink": {
+													"name": "Titel",
+													"type": "String",
+													"physicalType": "varchar"
+												}
+											},
+											{
+												"source": {
+													"name": "Nachname",
+													"type": "String"
+												},
+												"sink": {
+													"name": "Nachname",
+													"type": "String",
+													"physicalType": "varchar"
+												}
+											},
+											{
+												"source": {
+													"name": "Vorname",
+													"type": "String"
+												},
+												"sink": {
+													"name": "Vorname",
+													"type": "String",
+													"physicalType": "varchar"
+												}
+											},
+											{
+												"source": {
+													"name": "TelefonDurchwahl",
+													"type": "String"
+												},
+												"sink": {
+													"name": "TelefonDurchwahl",
+													"type": "String",
+													"physicalType": "varchar"
+												}
+											},
+											{
+												"source": {
+													"name": "TelefonPrivat",
+													"type": "String"
+												},
+												"sink": {
+													"name": "TelefonPrivat",
+													"type": "String",
+													"physicalType": "varchar"
+												}
+											},
+											{
+												"source": {
+													"name": "Mobil",
+													"type": "String"
+												},
+												"sink": {
+													"name": "Mobil",
+													"type": "String",
+													"physicalType": "text"
+												}
+											},
+											{
+												"source": {
+													"name": "Fax",
+													"type": "String"
+												},
+												"sink": {
+													"name": "Fax",
+													"type": "String",
+													"physicalType": "varchar"
+												}
+											},
+											{
+												"source": {
+													"name": "eMail",
+													"type": "String"
+												},
+												"sink": {
+													"name": "eMail",
+													"type": "String",
+													"physicalType": "longtext"
+												}
+											},
+											{
+												"source": {
+													"name": "Geburtsdatum",
+													"type": "DateTime"
+												},
+												"sink": {
+													"name": "Geburtsdatum",
+													"type": "DateTime",
+													"physicalType": "datetime"
+												}
+											},
+											{
+												"source": {
+													"name": "Aufgabengebiet",
+													"type": "String"
+												},
+												"sink": {
+													"name": "Aufgabengebiet",
+													"type": "String",
+													"physicalType": "varchar"
+												}
+											},
+											{
+												"source": {
+													"name": "Briefanrede",
+													"type": "String"
+												},
+												"sink": {
+													"name": "Briefanrede",
+													"type": "String",
+													"physicalType": "varchar"
+												}
+											},
+											{
+												"source": {
+													"name": "Aktiv",
+													"type": "Int32"
+												},
+												"sink": {
+													"name": "Aktiv",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											},
+											{
+												"source": {
+													"name": "Abteilung",
+													"type": "String"
+												},
+												"sink": {
+													"name": "Abteilung",
+													"type": "String",
+													"physicalType": "varchar"
+												}
+											},
+											{
+												"source": {
+													"name": "Standard",
+													"type": "Int32"
+												},
+												"sink": {
+													"name": "Standard",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											},
+											{
+												"source": {
+													"name": "Werbung",
+													"type": "Int32"
+												},
+												"sink": {
+													"name": "Werbung",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											},
+											{
+												"source": {
+													"name": "AnschriftID",
+													"type": "Int32"
+												},
+												"sink": {
+													"name": "AnschriftID",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											},
+											{
+												"source": {
+													"name": "SkypeNr",
+													"type": "String"
+												},
+												"sink": {
+													"name": "SkypeNr",
+													"type": "String",
+													"physicalType": "text"
+												}
+											},
+											{
+												"source": {
+													"name": "VorlageID",
+													"type": "Int32"
+												},
+												"sink": {
+													"name": "VorlageID",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											},
+											{
+												"source": {
+													"name": "Funktion",
+													"type": "String"
+												},
+												"sink": {
+													"name": "Funktion",
+													"type": "String",
+													"physicalType": "varchar"
+												}
+											},
+											{
+												"source": {
+													"name": "Hervorheben",
+													"type": "Int32"
+												},
+												"sink": {
+													"name": "Hervorheben",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											},
+											{
+												"source": {
+													"name": "BetreuerMemo",
+													"type": "String"
+												},
+												"sink": {
+													"name": "BetreuerMemo",
+													"type": "String",
+													"physicalType": "text"
+												}
+											},
+											{
+												"source": {
+													"name": "WithMemoAlert",
+													"type": "Int32"
+												},
+												"sink": {
+													"name": "WithMemoAlert",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											},
+											{
+												"source": {
+													"name": "ExternalID",
+													"type": "String"
+												},
+												"sink": {
+													"name": "ExternalID",
+													"type": "String",
+													"physicalType": "varchar"
+												}
+											},
+											{
+												"source": {
+													"name": "Kostenstelle",
+													"type": "String"
+												},
+												"sink": {
+													"name": "Kostenstelle",
+													"type": "String",
+													"physicalType": "varchar"
+												}
+											},
+											{
+												"source": {
+													"name": "Vertretung",
+													"type": "Int32"
+												},
+												"sink": {
+													"name": "Vertretung",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											},
+											{
+												"source": {
+													"name": "MemoInProjektKopieren",
+													"type": "Int32"
+												},
+												"sink": {
+													"name": "MemoInProjektKopieren",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											},
+											{
+												"source": {
+													"name": "Zeitzone",
+													"type": "String"
+												},
+												"sink": {
+													"name": "Zeitzone",
+													"type": "String",
+													"physicalType": "varchar"
+												}
+											},
+											{
+												"source": {
+													"name": "Anlagedatum",
+													"type": "DateTime"
+												},
+												"sink": {
+													"name": "Anlagedatum",
+													"type": "DateTime",
+													"physicalType": "datetime"
+												}
+											},
+											{
+												"source": {
+													"name": "SortingField",
+													"type": "String"
+												},
+												"sink": {
+													"name": "SortingField",
+													"type": "String",
+													"physicalType": "text"
+												}
+											},
+											{
+												"source": {
+													"name": "CCEmpfaengerMA_JobanfrageEmails",
+													"type": "String"
+												},
+												"sink": {
+													"name": "CCEmpfaengerMA_JobanfrageEmails",
+													"type": "String",
+													"physicalType": "text"
+												}
+											},
+											{
+												"source": {
+													"name": "CCEmpfaengerMA_JobbeauftragungEmails",
+													"type": "String"
+												},
+												"sink": {
+													"name": "CCEmpfaengerMA_JobbeauftragungEmails",
+													"type": "String",
+													"physicalType": "text"
+												}
+											},
+											{
+												"source": {
+													"name": "CCEmpfaengerMA_RechnungEmails",
+													"type": "String"
+												},
+												"sink": {
+													"name": "CCEmpfaengerMA_RechnungEmails",
+													"type": "String",
+													"physicalType": "text"
+												}
+											},
+											{
+												"source": {
+													"name": "KontaktHerkunft",
+													"type": "String"
+												},
+												"sink": {
+													"name": "KontaktHerkunft",
+													"type": "String",
+													"physicalType": "text"
+												}
+											},
+											{
+												"source": {
+													"name": "isEmail_KontaktanlageEUDSGVO_versandt",
+													"type": "Int32"
+												},
+												"sink": {
+													"name": "isEmail_KontaktanlageEUDSGVO_versandt",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											},
+											{
+												"source": {
+													"name": "Datum_LoeschungBeantragt",
+													"type": "DateTime"
+												},
+												"sink": {
+													"name": "Datum_LoeschungBeantragt",
+													"type": "DateTime",
+													"physicalType": "datetime"
+												}
+											},
+											{
+												"source": {
+													"name": "Datum_LetzteAktion_Anfrage",
+													"type": "DateTime"
+												},
+												"sink": {
+													"name": "Datum_LetzteAktion_Anfrage",
+													"type": "DateTime",
+													"physicalType": "datetime"
+												}
+											},
+											{
+												"source": {
+													"name": "Datum_LetzteAktion_Angebot",
+													"type": "DateTime"
+												},
+												"sink": {
+													"name": "Datum_LetzteAktion_Angebot",
+													"type": "DateTime",
+													"physicalType": "datetime"
+												}
+											},
+											{
+												"source": {
+													"name": "Datum_LetzteAktion_Auftrag",
+													"type": "DateTime"
+												},
+												"sink": {
+													"name": "Datum_LetzteAktion_Auftrag",
+													"type": "DateTime",
+													"physicalType": "datetime"
+												}
+											},
+											{
+												"source": {
+													"name": "Datum_LetzteAktion_Job",
+													"type": "DateTime"
+												},
+												"sink": {
+													"name": "Datum_LetzteAktion_Job",
+													"type": "DateTime",
+													"physicalType": "datetime"
+												}
+											},
+											{
+												"source": {
+													"name": "Datum_LetzteAktion_Rechnung",
+													"type": "DateTime"
+												},
+												"sink": {
+													"name": "Datum_LetzteAktion_Rechnung",
+													"type": "DateTime",
+													"physicalType": "datetime"
+												}
+											}
+										],
+										"typeConversion": true,
+										"typeConversionSettings": {
+											"allowDataTruncation": true,
+											"treatBooleanAsNumber": false
+										}
+									}
+								}
+							},
+							{
+								"source": {
+									"tableName": "`rechnungmitarbeiterposition`"
+								},
+								"destination": {
+									"tableName": "rechnungmitarbeiterposition"
+								},
+								"copyActivity": {
+									"translator": {
+										"type": "TabularTranslator",
+										"mappings": [
+											{
+												"source": {
+													"name": "RechnungMitarbeiterPositionID",
+													"type": "Int32"
+												},
+												"sink": {
+													"name": "RechnungMitarbeiterPositionID",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											},
+											{
+												"source": {
+													"name": "RechnungMitarbeiterID",
+													"type": "Int32"
+												},
+												"sink": {
+													"name": "RechnungMitarbeiterID",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											},
+											{
+												"source": {
+													"name": "JobID",
+													"type": "Int32"
+												},
+												"sink": {
+													"name": "JobID",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											},
+											{
+												"source": {
+													"name": "PosPreis",
+													"type": "Double"
+												},
+												"sink": {
+													"name": "PosPreis",
+													"type": "Double",
+													"physicalType": "double"
+												}
+											},
+											{
+												"source": {
+													"name": "MWStArt",
+													"type": "Int32"
+												},
+												"sink": {
+													"name": "MWStArt",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											},
+											{
+												"source": {
+													"name": "Gegenstand",
+													"type": "String"
+												},
+												"sink": {
+													"name": "Gegenstand",
+													"type": "String",
+													"physicalType": "longtext"
+												}
+											},
+											{
+												"source": {
+													"name": "Menge1",
+													"type": "Double"
+												},
+												"sink": {
+													"name": "Menge1",
+													"type": "Double",
+													"physicalType": "double"
+												}
+											},
+											{
+												"source": {
+													"name": "Menge2",
+													"type": "Double"
+												},
+												"sink": {
+													"name": "Menge2",
+													"type": "Double",
+													"physicalType": "double"
+												}
+											},
+											{
+												"source": {
+													"name": "Menge3",
+													"type": "Double"
+												},
+												"sink": {
+													"name": "Menge3",
+													"type": "Double",
+													"physicalType": "double"
+												}
+											},
+											{
+												"source": {
+													"name": "PreisEinheitID1",
+													"type": "Int32"
+												},
+												"sink": {
+													"name": "PreisEinheitID1",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											},
+											{
+												"source": {
+													"name": "PreisEinheitID2",
+													"type": "Int32"
+												},
+												"sink": {
+													"name": "PreisEinheitID2",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											},
+											{
+												"source": {
+													"name": "PreisEinheitID3",
+													"type": "Int32"
+												},
+												"sink": {
+													"name": "PreisEinheitID3",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											},
+											{
+												"source": {
+													"name": "PreisProEinheit1",
+													"type": "Double"
+												},
+												"sink": {
+													"name": "PreisProEinheit1",
+													"type": "Double",
+													"physicalType": "double"
+												}
+											},
+											{
+												"source": {
+													"name": "PreisProEinheit2",
+													"type": "Double"
+												},
+												"sink": {
+													"name": "PreisProEinheit2",
+													"type": "Double",
+													"physicalType": "double"
+												}
+											},
+											{
+												"source": {
+													"name": "PreisProEinheit3",
+													"type": "Double"
+												},
+												"sink": {
+													"name": "PreisProEinheit3",
+													"type": "Double",
+													"physicalType": "double"
+												}
+											},
+											{
+												"source": {
+													"name": "EinheitsMenge1",
+													"type": "Double"
+												},
+												"sink": {
+													"name": "EinheitsMenge1",
+													"type": "Double",
+													"physicalType": "double"
+												}
+											},
+											{
+												"source": {
+													"name": "EinheitsMenge2",
+													"type": "Double"
+												},
+												"sink": {
+													"name": "EinheitsMenge2",
+													"type": "Double",
+													"physicalType": "double"
+												}
+											},
+											{
+												"source": {
+													"name": "EinheitsMenge3",
+													"type": "Double"
+												},
+												"sink": {
+													"name": "EinheitsMenge3",
+													"type": "Double",
+													"physicalType": "double"
+												}
+											},
+											{
+												"source": {
+													"name": "PositionID",
+													"type": "Int32"
+												},
+												"sink": {
+													"name": "PositionID",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											},
+											{
+												"source": {
+													"name": "ProjektArt",
+													"type": "Int32"
+												},
+												"sink": {
+													"name": "ProjektArt",
+													"type": "Int32",
+													"physicalType": "int"
+												}
+											}
+										],
+										"typeConversion": true,
+										"typeConversionSettings": {
+											"allowDataTruncation": true,
+											"treatBooleanAsNumber": false
+										}
+									}
+								}
+							}
+						]
+					}
+				},
+				"folder": {
+					"name": "Plunet"
+				},
+				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Plunettest_Mitarbeiter_Synapse')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Mitarbeiter",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [
+							{
+								"name": "Source",
+								"value": "`kunde`"
+							},
+							{
+								"name": "Destination",
+								"value": "slt_test.kunde"
+							}
+						],
+						"typeProperties": {
+							"source": {
+								"type": "MySqlSource",
+								"query": "select \n MitarbeiterID \n      , Aktiv \n      , Status \n      , Vorname \n      , Nachname \n      , AnlageDatum \n      , MandantID \n      , CurrencyID \n,StundenerfassungPreis,\nZahlungsfrist,\narbeitsverhaeltnis,\nFirstJob,\nexternalid,\nMWSTArt\nfrom `mitarbeiter`"
+							},
+							"sink": {
+								"type": "SqlDWSink",
+								"preCopyScript": "truncate table slt_test.mitarbeiter",
+								"tableOption": "autoCreate",
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"validateDataConsistency": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "MitarbeiterID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "MitarbeiterID",
+											"type": "Int32",
+											"physicalType": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Aktiv",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Aktiv",
+											"type": "Int32",
+											"physicalType": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Status",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Status",
+											"type": "Int32",
+											"physicalType": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Vorname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Vorname",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Nachname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Nachname",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "AnlageDatum",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "AnlageDatum",
+											"type": "DateTime",
+											"physicalType": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "MandantID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "MandantID",
+											"type": "Int32",
+											"physicalType": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "CurrencyID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "CurrencyID",
+											"type": "Int32",
+											"physicalType": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "StundenerfassungPreis",
+											"type": "Double"
+										},
+										"sink": {
+											"name": "StundenerfassungPreis",
+											"type": "Double",
+											"physicalType": "Double"
+										}
+									},
+									{
+										"source": {
+											"name": "Zahlungsfrist",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Zahlungsfrist",
+											"type": "Int32",
+											"physicalType": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "arbeitsverhaeltnis",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "arbeitsverhaeltnis",
+											"type": "Int32",
+											"physicalType": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "FirstJob",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "FirstJob",
+											"type": "DateTime",
+											"physicalType": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "externalid",
+											"type": "String"
+										},
+										"sink": {
+											"name": "externalid",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "MWSTArt",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "MWSTArt",
+											"type": "Int32",
+											"physicalType": "Int32"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "Plunettest_Mitarbeiter",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "Synapse_Mitarbeiter",
+								"type": "DatasetReference"
+							}
+						]
+					}
+				],
+				"folder": {
+					"name": "Sreeja"
+				},
+				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSynapseAnalyticsTable1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSynapseAnalytics2",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "CRM"
+				},
+				"annotations": [],
+				"type": "AzureSqlDWTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "CRM",
+					"table": "Account_Subservice"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Azure_PlunetDB_MySql_T7')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureMySql_SLT_test",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Plunet_to_Azure_MySql"
+				},
+				"annotations": [],
+				"type": "AzureMySqlTable",
+				"schema": [
+					{
+						"name": "LogID",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDBenutzer",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Datum",
+						"type": "datetime",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDPartner",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDLogAktion",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDLogArt",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDStatus_Alt",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDStatus_Neu",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Text_Alt",
+						"type": "text",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Text_Neu",
+						"type": "text",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Anzeigename",
+						"type": "text",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Beschreibung",
+						"type": "text",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Datum_Alt",
+						"type": "datetime",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Datum_Neu",
+						"type": "datetime",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "SteuerungDurch",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					}
+				],
+				"typeProperties": {
+					"tableName": "log_mitarbeiter"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/CRM_MySQL_Opportunity_Subservice')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_MySQL_Plunet",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "CRM"
+				},
+				"annotations": [],
+				"type": "AzureMySqlTable",
+				"schema": [],
+				"typeProperties": {
+					"tableName": "slt_test.Opportunity_Subservice"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/CRM_MySQL_Subservice')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_MySQL_Plunet",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "CRM"
+				},
+				"annotations": [],
+				"type": "AzureMySqlTable",
+				"schema": [],
+				"typeProperties": {
+					"tableName": "slt_test.Account_Subservice"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/CRM_MySQL_lead_Subservice')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_MySQL_Plunet",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "CRM"
+				},
+				"annotations": [],
+				"type": "AzureMySqlTable",
+				"schema": [],
+				"typeProperties": {
+					"tableName": "slt_test.Lead_Subservice"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DD_CRM_Account_Synapse_Subservice')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSynapseAnalytics2",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "CRM"
+				},
+				"annotations": [],
+				"type": "AzureSqlDWTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "CRM",
+					"table": "Account_Subservice"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DD_CRM_Synapse_Lead_Subservice')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSynapseAnalytics2",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "CRM"
+				},
+				"annotations": [],
+				"type": "AzureSqlDWTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "CRM",
+					"table": "Lead_Subservice"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DD_CRM_Synapse_Opportunity_Subservice')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSynapseAnalytics2",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "CRM"
+				},
+				"annotations": [],
+				"type": "AzureSqlDWTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "CRM",
+					"table": "Opportunity_Subservice"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedText1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "CRM"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": "UnitOfMeasurement.csv",
+						"fileSystem": "unitofmeasurement"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "PreisEinheitID",
+						"type": "String"
+					},
+					{
+						"name": "Deutsch",
+						"type": "String"
+					},
+					{
+						"name": "English",
+						"type": "String"
+					},
+					{
+						"name": "ZusatzSprache1",
+						"type": "String"
+					},
+					{
+						"name": "NormZeit",
+						"type": "String"
+					},
+					{
+						"name": "PreisAnzeigen",
+						"type": "String"
+					},
+					{
+						"name": "ZusatzSprache2",
+						"type": "String"
+					},
+					{
+						"name": "ZusatzSprache3",
+						"type": "String"
+					},
+					{
+						"name": "ServiceID",
+						"type": "String"
+					},
+					{
+						"name": "NormEinheit",
+						"type": "String"
+					},
+					{
+						"name": "BezugEinheit",
+						"type": "String"
+					},
+					{
+						"name": "isBezugsPreis",
+						"type": "String"
+					},
+					{
+						"name": "MemoDeutsch",
+						"type": "String"
+					},
+					{
+						"name": "MemoEnglish",
+						"type": "String"
+					},
+					{
+						"name": "MemoZusatzSprache1",
+						"type": "String"
+					},
+					{
+						"name": "MemoZusatzSprache2",
+						"type": "String"
+					},
+					{
+						"name": "MemoZusatzSprache3",
+						"type": "String"
+					},
+					{
+						"name": "BeiRegistrierungAktiv",
+						"type": "String"
+					},
+					{
+						"name": "RegistrierungMengeProEinheit",
+						"type": "String"
+					},
+					{
+						"name": "RundungArt",
+						"type": "String"
+					},
+					{
+						"name": "MindestEinheit",
+						"type": "String"
+					},
+					{
+						"name": "ProzGewichtung",
+						"type": "String"
+					},
+					{
+						"name": "NormMengeH",
+						"type": "String"
+					},
+					{
+						"name": "IDQBLineItem",
+						"type": "String"
+					},
+					{
+						"name": "Artikelnummer",
+						"type": "String"
+					},
+					{
+						"name": "NormZeitDouble",
+						"type": "String"
+					},
+					{
+						"name": "Exportiert",
+						"type": "String"
+					},
+					{
+						"name": "IgnoreTimeInPlanning",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DestinationDataset_z3z')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSynapseAnalytics2",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "CRM"
+				},
+				"annotations": [],
+				"type": "AzureSqlDWTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "sltdbdev",
+					"table": "CRM_Mapping"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DynamicsCrmEntity1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_CRM",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "CRM"
+				},
+				"annotations": [],
+				"type": "DynamicsCrmEntity",
+				"schema": [],
+				"typeProperties": {
+					"entityName": "lead"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Optima_BnkRozKwotyView')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "OptimaServerLive",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Optima"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "CDN",
+					"table": "BnkRozKwotyView"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Optima_Synapse_BnkRozKwotyView')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_SYNAP",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Optima"
+				},
+				"annotations": [],
+				"type": "AzureSqlDWTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "optima",
+					"table": {
+						"value": "BnkRozKwotyView",
+						"type": "Expression"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_MySql_T7')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureMySql_SLT_test",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Azure_MySql_to_Azure_Synapse_DW"
+				},
+				"annotations": [],
+				"type": "AzureMySqlTable",
+				"schema": [
+					{
+						"name": "LogID",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDBenutzer",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Datum",
+						"type": "datetime",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDPartner",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDLogAktion",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDLogArt",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDStatus_Alt",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IDStatus_Neu",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Text_Alt",
+						"type": "text",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Text_Neu",
+						"type": "text",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Anzeigename",
+						"type": "text",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Beschreibung",
+						"type": "text",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Datum_Alt",
+						"type": "datetime",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "Datum_Neu",
+						"type": "datetime",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "SteuerungDurch",
+						"type": "int",
+						"precision": 0,
+						"scale": 0
+					}
+				],
+				"typeProperties": {
+					"tableName": "log_mitarbeiter"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Plunet_Azure_Synspase_T7')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_SYNAP",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Azure_MySql_to_Azure_Synapse_DW"
+				},
+				"annotations": [],
+				"type": "AzureSqlDWTable",
+				"schema": [
+					{
+						"name": "LogID",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "IDBenutzer",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Datum",
+						"type": "datetime2",
+						"scale": 0
+					},
+					{
+						"name": "IDPartner",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "IDLogAktion",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "IDLogArt",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "IDStatus_Alt",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "IDStatus_Neu",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Text_Alt",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Text_Neu",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Anzeigename",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Beschreibung",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Datum_Alt",
+						"type": "datetime2",
+						"scale": 0
+					},
+					{
+						"name": "Datum_Neu",
+						"type": "datetime2",
+						"scale": 0
+					},
+					{
+						"name": "SteuerungDurch",
+						"type": "int",
+						"precision": 10
+					}
+				],
+				"typeProperties": {
+					"schema": "slt_test",
+					"table": "log_mitarbeiter"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Plunet_DB_T7')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Plunet_Test_Database",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Plunet_to_Azure_MySql"
+				},
+				"annotations": [],
+				"type": "MySqlTable",
+				"schema": [],
+				"typeProperties": {
+					"tableName": "`log_mitarbeiter`"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SourceDataset_z3z')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "CRM"
+				},
+				"annotations": [],
+				"type": "Excel",
+				"typeProperties": {
+					"sheetName": "Sheet1",
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": "CRM_Mapping.xlsx",
+						"fileSystem": "mappingcrm"
+					},
+					"firstRowAsHeader": true
+				},
+				"schema": [
+					{
+						"name": "Category",
+						"type": "String"
+					},
+					{
+						"name": "Field",
+						"type": "String"
+					},
+					{
+						"name": "Value",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/CRM2')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "PL_CRM_TO_SYNAPSE_Currency",
+							"type": "PipelineReference"
+						}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PL_CRM_TO_SYNAPSE_Industry",
+							"type": "PipelineReference"
+						}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PL_CRM_TO_SYNAPSE_Lead_subservice",
+							"type": "PipelineReference"
+						}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PL_CRM_TO_SYNAPSE_Opportunity",
+							"type": "PipelineReference"
+						}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PL_CRM_TO_SYNAPSE_Opportunity_subservice",
+							"type": "PipelineReference"
+						}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PL_CRM_TO_SYNAPSE_Sub_Domain",
+							"type": "PipelineReference"
+						}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PL_CRM_TO_SYNAPSE_USER",
+							"type": "PipelineReference"
+						}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PL_Mapping_CRM",
+							"type": "PipelineReference"
+						}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PL_UnitOFMeasurement",
+							"type": "PipelineReference"
+						}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-02-24T02:30:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								30
+							],
+							"hours": [
+								2
+							]
+						}
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

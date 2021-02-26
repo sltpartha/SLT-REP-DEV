@@ -1058,90 +1058,6 @@
 						"defaultValue": [
 							{
 								"source": {
-									"tableName": "ausgangsrechnung_textmodul"
-								},
-								"destination": {
-									"schema": "slt_test",
-									"table": "ausgangsrechnung_textmodul"
-								},
-								"copySink": {
-									"tableOption": null
-								},
-								"copyActivity": {
-									"translator": {
-										"type": "TabularTranslator",
-										"mappings": [
-											{
-												"source": {
-													"name": "TextModulVerwendungID",
-													"type": "Int32",
-													"physicalType": "int"
-												},
-												"sink": {
-													"name": "TextModulVerwendungID",
-													"type": "Int32",
-													"physicalType": "int"
-												}
-											},
-											{
-												"source": {
-													"name": "IDTextModul",
-													"type": "Int32",
-													"physicalType": "int"
-												},
-												"sink": {
-													"name": "IDTextModul",
-													"type": "Int32",
-													"physicalType": "int"
-												}
-											},
-											{
-												"source": {
-													"name": "IDMain",
-													"type": "Int32",
-													"physicalType": "int"
-												},
-												"sink": {
-													"name": "IDMain",
-													"type": "Int32",
-													"physicalType": "int"
-												}
-											},
-											{
-												"source": {
-													"name": "Inhalt",
-													"type": "String",
-													"physicalType": "text"
-												},
-												"sink": {
-													"name": "Inhalt",
-													"type": "String",
-													"physicalType": "nvarchar"
-												}
-											},
-											{
-												"source": {
-													"name": "Inhalt_Datum",
-													"type": "DateTime",
-													"physicalType": "datetime"
-												},
-												"sink": {
-													"name": "Inhalt_Datum",
-													"type": "DateTime",
-													"physicalType": "datetime2"
-												}
-											}
-										],
-										"typeConversion": true,
-										"typeConversionSettings": {
-											"allowDataTruncation": true,
-											"treatBooleanAsNumber": false
-										}
-									}
-								}
-							},
-							{
-								"source": {
 									"tableName": "eingangsrechnung_textmodul"
 								},
 								"destination": {
@@ -10421,145 +10337,45 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/SQL_to_Synapse')]",
+			"name": "[concat(parameters('factoryName'), '/Visma_to_Plunet_Integration')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
+				"description": "visma_to_plunet_integration",
 				"activities": [
 					{
-						"name": "ForEach_cox",
-						"type": "ForEach",
+						"name": "visma_to_plunet_integration",
+						"description": "visma_to_plunet_integration",
+						"type": "Custom",
 						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
 						"userProperties": [],
 						"typeProperties": {
-							"items": {
-								"value": "@pipeline().parameters.cw_items",
-								"type": "Expression"
+							"command": "python3 visma_to_plunet.py",
+							"resourceLinkedService": {
+								"referenceName": "AzureBlobStorageVisma",
+								"type": "LinkedServiceReference"
 							},
-							"activities": [
-								{
-									"name": "Copy_cox",
-									"type": "Copy",
-									"dependsOn": [],
-									"policy": {
-										"timeout": "7.00:00:00",
-										"retry": 0,
-										"retryIntervalInSeconds": 30,
-										"secureOutput": false,
-										"secureInput": false
-									},
-									"userProperties": [
-										{
-											"name": "Source",
-											"value": "sltsqldbdev.@{item().source.table}"
-										},
-										{
-											"name": "Destination",
-											"value": "sltsqldbdev.@{item().destination.table}"
-										}
-									],
-									"typeProperties": {
-										"source": {
-											"type": "AzureSqlSource",
-											"partitionOption": "None"
-										},
-										"sink": {
-											"type": "SqlDWSink",
-											"preCopyScript": {
-												"value": "@concat('TRUNCATE TABLE sltsqldbdev.',item().destination.table)",
-												"type": "Expression"
-											},
-											"tableOption": "autoCreate",
-											"disableMetricsCollection": false
-										},
-										"enableStaging": false
-									},
-									"inputs": [
-										{
-											"referenceName": "DS_SQL_CRM",
-											"type": "DatasetReference",
-											"parameters": {
-												"cw_table": "@item().destination.table"
-											}
-										}
-									],
-									"outputs": [
-										{
-											"referenceName": "DS_Synapse_CRM",
-											"type": "DatasetReference",
-											"parameters": {}
-										}
-									]
-								}
-							]
+							"folderPath": "optima-input",
+							"referenceObjects": {
+								"linkedServices": [],
+								"datasets": []
+							}
+						},
+						"linkedServiceName": {
+							"referenceName": "plunet_vIsma_Batch1",
+							"type": "LinkedServiceReference"
 						}
 					}
 				],
-				"parameters": {
-					"cw_items": {
-						"type": "Array",
-						"defaultValue": [
-							{
-								"source": {
-									"table": "account"
-								},
-								"destination": {
-									"table": "account"
-								}
-							},
-							{
-								"source": {
-									"table": "contact"
-								},
-								"destination": {
-									"table": "contact"
-								}
-							},
-							{
-								"source": {
-									"table": "Currency"
-								},
-								"destination": {
-									"table": "Currency"
-								}
-							},
-							{
-								"source": {
-									"table": "customeraddress"
-								},
-								"destination": {
-									"table": "customeraddress"
-								}
-							},
-							{
-								"source": {
-									"table": "industry"
-								},
-								"destination": {
-									"table": "industry"
-								}
-							},
-							{
-								"source": {
-									"table": "opportunity"
-								},
-								"destination": {
-									"table": "opportunity"
-								}
-							},
-							{
-								"source": {
-									"table": "SubDomain"
-								},
-								"destination": {
-									"table": "SubDomain"
-								}
-							}
-						]
-					}
-				},
 				"folder": {
-					"name": "CRM"
+					"name": "Visma"
 				},
 				"annotations": []
 			},

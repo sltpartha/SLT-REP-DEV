@@ -13,27 +13,6 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/Plunettest_mitarbeiter_textmodul')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "Plunet_Test_Database",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Sreeja Dataset"
-				},
-				"annotations": [],
-				"type": "MySqlTable",
-				"schema": [],
-				"typeProperties": {
-					"tableName": "`mitarbeiter_textmodul`"
-				}
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/Plunettest_mitarbeiteransprechpartner')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -13383,81 +13362,6 @@
 						"defaultValue": [
 							{
 								"source": {
-									"tableName": "`ausgangsrechnung_textmodul`"
-								},
-								"destination": {
-									"tableName": "ausgangsrechnung_textmodul"
-								},
-								"copyActivity": {
-									"translator": {
-										"type": "TabularTranslator",
-										"mappings": [
-											{
-												"source": {
-													"name": "TextModulVerwendungID",
-													"type": "Int32"
-												},
-												"sink": {
-													"name": "TextModulVerwendungID",
-													"type": "Int32",
-													"physicalType": "int"
-												}
-											},
-											{
-												"source": {
-													"name": "IDTextModul",
-													"type": "Int32"
-												},
-												"sink": {
-													"name": "IDTextModul",
-													"type": "Int32",
-													"physicalType": "int"
-												}
-											},
-											{
-												"source": {
-													"name": "IDMain",
-													"type": "Int32"
-												},
-												"sink": {
-													"name": "IDMain",
-													"type": "Int32",
-													"physicalType": "int"
-												}
-											},
-											{
-												"source": {
-													"name": "Inhalt",
-													"type": "String"
-												},
-												"sink": {
-													"name": "Inhalt",
-													"type": "String",
-													"physicalType": "text"
-												}
-											},
-											{
-												"source": {
-													"name": "Inhalt_Datum",
-													"type": "DateTime"
-												},
-												"sink": {
-													"name": "Inhalt_Datum",
-													"type": "DateTime",
-													"physicalType": "datetime"
-												}
-											}
-										],
-										"typeConversion": true,
-										"typeConversionSettings": {
-											"allowDataTruncation": true,
-											"treatBooleanAsNumber": false
-										}
-									}
-								}
-							},
-							{
-								"source": {
 									"tableName": "`eingangsrechnung_textmodul`"
 								},
 								"destination": {
@@ -18309,6 +18213,157 @@
 						"outputs": [
 							{
 								"referenceName": "Synapse_Job_textmodul",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"folder": {
+					"name": "Sreeja"
+				},
+				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Plunettest_Land_Synapse')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Land",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [
+							{
+								"name": "Source",
+								"value": "`job`"
+							},
+							{
+								"name": "Destination",
+								"value": "slt_test.Job"
+							}
+						],
+						"typeProperties": {
+							"source": {
+								"type": "MySqlSource",
+								"query": "select * from `land`"
+							},
+							"sink": {
+								"type": "SqlDWSink",
+								"preCopyScript": "truncate table slt_test.land",
+								"tableOption": "autoCreate",
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"validateDataConsistency": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "LandID",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "LandID",
+											"type": "Int32",
+											"physicalType": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Deutsch",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Deutsch",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "English",
+											"type": "String"
+										},
+										"sink": {
+											"name": "English",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ZusatzSprache1",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ZusatzSprache1",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ZusatzSprache2",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ZusatzSprache2",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ZusatzSprache3",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ZusatzSprache3",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ISOCode",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ISOCode",
+											"type": "String",
+											"physicalType": "String"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "Plunettest_Land",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "Synapse_Land",
 								"type": "DatasetReference",
 								"parameters": {}
 							}

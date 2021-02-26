@@ -195,6 +195,9 @@
 					"referenceName": "AzureMySql_SLT_test",
 					"type": "LinkedServiceReference"
 				},
+				"folder": {
+					"name": "Azure_MySql_to_Azure_Synapse_DW"
+				},
 				"annotations": [],
 				"type": "AzureMySqlTable",
 				"schema": [
@@ -487,6 +490,9 @@
 					"referenceName": "LS_SYNAP",
 					"type": "LinkedServiceReference"
 				},
+				"folder": {
+					"name": "Azure_MySql_to_Azure_Synapse_DW"
+				},
 				"annotations": [],
 				"type": "AzureSqlDWTable",
 				"schema": [
@@ -577,6 +583,9 @@
 				"linkedServiceName": {
 					"referenceName": "AzureDataLakeStorage1",
 					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "CRM"
 				},
 				"annotations": [],
 				"type": "Excel",

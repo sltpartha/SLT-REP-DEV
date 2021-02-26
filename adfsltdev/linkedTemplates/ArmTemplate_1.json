@@ -309,6 +309,9 @@
 					"referenceName": "AzureSynapseAnalytics2",
 					"type": "LinkedServiceReference"
 				},
+				"folder": {
+					"name": "CRM"
+				},
 				"annotations": [],
 				"type": "AzureSqlDWTable",
 				"schema": [],
@@ -502,6 +505,9 @@
 					"referenceName": "AzureMySql_SLT_test",
 					"type": "LinkedServiceReference"
 				},
+				"folder": {
+					"name": "Plunet_to_Azure_MySql"
+				},
 				"annotations": [],
 				"type": "AzureMySqlTable",
 				"schema": [
@@ -611,6 +617,9 @@
 					"referenceName": "LS_MySQL_Plunet",
 					"type": "LinkedServiceReference"
 				},
+				"folder": {
+					"name": "CRM"
+				},
 				"annotations": [],
 				"type": "AzureMySqlTable",
 				"schema": [],
@@ -628,6 +637,9 @@
 				"linkedServiceName": {
 					"referenceName": "LS_MySQL_Plunet",
 					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "CRM"
 				},
 				"annotations": [],
 				"type": "AzureMySqlTable",
@@ -647,6 +659,9 @@
 					"referenceName": "LS_MySQL_Plunet",
 					"type": "LinkedServiceReference"
 				},
+				"folder": {
+					"name": "CRM"
+				},
 				"annotations": [],
 				"type": "AzureMySqlTable",
 				"schema": [],
@@ -664,6 +679,9 @@
 				"linkedServiceName": {
 					"referenceName": "AzureSynapseAnalytics2",
 					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "CRM"
 				},
 				"annotations": [],
 				"type": "AzureSqlDWTable",

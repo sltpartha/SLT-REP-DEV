@@ -21,6 +21,9 @@
 					"referenceName": "AzureSynapseAnalytics2",
 					"type": "LinkedServiceReference"
 				},
+				"folder": {
+					"name": "CRM"
+				},
 				"annotations": [],
 				"type": "AzureSqlDWTable",
 				"schema": [],
@@ -39,6 +42,9 @@
 				"linkedServiceName": {
 					"referenceName": "AzureSynapseAnalytics2",
 					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "CRM"
 				},
 				"annotations": [],
 				"type": "AzureSqlDWTable",

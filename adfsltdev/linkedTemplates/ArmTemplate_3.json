@@ -373,6 +373,9 @@
 					"referenceName": "AzureDataLakeStorage1",
 					"type": "LinkedServiceReference"
 				},
+				"folder": {
+					"name": "CRM"
+				},
 				"annotations": [],
 				"type": "DelimitedText",
 				"typeProperties": {
@@ -512,6 +515,9 @@
 					"referenceName": "AzureSynapseAnalytics2",
 					"type": "LinkedServiceReference"
 				},
+				"folder": {
+					"name": "CRM"
+				},
 				"annotations": [],
 				"type": "AzureSqlDWTable",
 				"schema": [],
@@ -531,6 +537,9 @@
 					"referenceName": "LS_CRM",
 					"type": "LinkedServiceReference"
 				},
+				"folder": {
+					"name": "CRM"
+				},
 				"annotations": [],
 				"type": "DynamicsCrmEntity",
 				"schema": [],
@@ -548,6 +557,9 @@
 				"linkedServiceName": {
 					"referenceName": "LS_SYNAP",
 					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Optima"
 				},
 				"annotations": [],
 				"type": "AzureSqlDWTable",
