@@ -26,7 +26,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "MySqlSource",
-						"query": "select \n MitarbeiterID \n      , Aktiv \n      , Status \n      , Vorname \n      , Nachname \n      , AnlageDatum \n      , MandantID \n      , CurrencyID \n,StundenerfassungPreis,\nZahlungsfrist,\narbeitsverhaeltnis,\nFirstJob,\nexternalid\nfrom `mitarbeiter`"
+						"query": "select \n MitarbeiterID \n      , Aktiv \n      , Status \n      , Vorname \n      , Nachname \n      , AnlageDatum \n      , MandantID \n      , CurrencyID \n,StundenerfassungPreis,\nZahlungsfrist,\narbeitsverhaeltnis,\nFirstJob,\nexternalid,\nMWSTArt\nfrom `mitarbeiter`"
 					},
 					"sink": {
 						"type": "SqlDWSink",
@@ -180,6 +180,17 @@
 									"name": "externalid",
 									"type": "String",
 									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MWSTArt",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MWSTArt",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							}
 						],
