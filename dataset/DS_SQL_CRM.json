@@ -18,7 +18,11 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "sltsqldbdev",
-			"table": "@dataset().cw_table"
+			"table": {
+				"value": "@dataset().cw_table",
+				"type": "Expression"
+			}
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

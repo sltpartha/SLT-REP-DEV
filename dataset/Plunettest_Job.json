@@ -14,5 +14,6 @@
 		"typeProperties": {
 			"tableName": "`job`"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

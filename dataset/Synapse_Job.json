@@ -15,5 +15,6 @@
 			"schema": "slt_test",
 			"table": "Job"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

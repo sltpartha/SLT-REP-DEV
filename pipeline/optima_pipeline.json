@@ -60,6 +60,8 @@
 		"folder": {
 			"name": "Plunet_Old_Pipeline"
 		},
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2021-01-28T10:46:58Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }

@@ -14,5 +14,6 @@
 		"typeProperties": {
 			"entityName": "is_annualbusinesspotential"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

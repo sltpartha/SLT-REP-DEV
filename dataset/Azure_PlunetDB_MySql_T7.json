@@ -105,5 +105,6 @@
 		"typeProperties": {
 			"tableName": "log_mitarbeiter"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

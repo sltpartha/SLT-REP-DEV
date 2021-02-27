@@ -1,0 +1,239 @@
+{
+	"name": "PL_TRANS_ADLK_HR_EmployeeTimeOff",
+	"properties": {
+		"activities": [
+			{
+				"name": "PL_TRANS_ADLK_HR_EmployeeTimeOff",
+				"description": "Flattened directory data",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['id']"
+								},
+								"sink": {
+									"name": "id",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"path": "$['employeeId']"
+								},
+								"sink": {
+									"name": "employeeId",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"path": "$['status']['lastChanged']"
+								},
+								"sink": {
+									"name": "lastChanged",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['status']['lastChangedByUserId']"
+								},
+								"sink": {
+									"name": "lastChangedByUserId",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"path": "$['status']['status']"
+								},
+								"sink": {
+									"name": "status",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['name']"
+								},
+								"sink": {
+									"name": "name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['start']"
+								},
+								"sink": {
+									"name": "startDate",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['end']"
+								},
+								"sink": {
+									"name": "endDate",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['created']"
+								},
+								"sink": {
+									"name": "createdDate",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['type']['id']"
+								},
+								"sink": {
+									"name": "TypeID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"path": "$['type']['name']"
+								},
+								"sink": {
+									"name": "LeaveType",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['amount']['unit']"
+								},
+								"sink": {
+									"name": "LeaveUnit",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['amount']['amount']"
+								},
+								"sink": {
+									"name": "Amount",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"path": "$['actions']['view']"
+								},
+								"sink": {
+									"name": "Action-view",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"path": "$['actions']['edit']"
+								},
+								"sink": {
+									"name": "Action-edit",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"path": "$['actions']['cancel']"
+								},
+								"sink": {
+									"name": "Action-cancel",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"path": "$['actions']['approve']"
+								},
+								"sink": {
+									"name": "Action-approve",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"path": "$['actions']['deny']"
+								},
+								"sink": {
+									"name": "Action-deny",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"path": "$['actions']['bypass']"
+								},
+								"sink": {
+									"name": "Action-bypass",
+									"type": "Boolean"
+								}
+							}
+						],
+						"collectionReference": "",
+						"mapComplexValuesToString": false
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_ADLS_RAW_HR_EmployeeTimeOff",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_ADLS_CURATED_HR",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "HR/ADLS RAW to ADLS CURATED"
+		},
+		"annotations": [],
+		"lastPublishTime": "2020-09-29T11:02:21Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

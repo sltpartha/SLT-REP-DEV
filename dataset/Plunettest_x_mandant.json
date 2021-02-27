@@ -14,5 +14,6 @@
 		"typeProperties": {
 			"tableName": "`x_mandant`"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

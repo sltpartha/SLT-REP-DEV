@@ -1,0 +1,189 @@
+{
+	"name": "PL_TRANS_ADLK_HR_EmpCompensation",
+	"properties": {
+		"activities": [
+			{
+				"name": "PL_TRANS_ADLK_HR_EmpCompensation",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "cntrawzonesltdev/BambooHR/EmployeeCompensation"
+					},
+					{
+						"name": "Destination",
+						"value": "cntcuratedzonesltdev/Bamboo HR/TestCompensation"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['id']"
+								},
+								"sink": {
+									"name": "id",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"path": "$['employeeId']"
+								},
+								"sink": {
+									"name": "employeeId",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"path": "$['startDate']"
+								},
+								"sink": {
+									"name": "startDate",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['rate']['currency']"
+								},
+								"sink": {
+									"name": "currency",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['rate']['value']"
+								},
+								"sink": {
+									"name": "pay"
+								}
+							},
+							{
+								"source": {
+									"path": "$['type']"
+								},
+								"sink": {
+									"name": "type",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['exempt']"
+								},
+								"sink": {
+									"name": "exempt",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['reason']"
+								},
+								"sink": {
+									"name": "reason",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['comment']"
+								},
+								"sink": {
+									"name": "comment",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['paidPer']"
+								},
+								"sink": {
+									"name": "paidPer",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['paySchedule']"
+								},
+								"sink": {
+									"name": "paySchedule",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['overtimeRate']['currency']"
+								},
+								"sink": {
+									"name": "currencyOvertime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['overtimeRate']['value']"
+								},
+								"sink": {
+									"name": "valueOvertime"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_ADLS_RAW_HR_EmployeeCompensation",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_ADLS_CURATED_HR",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "HR/ADLS RAW to ADLS CURATED"
+		},
+		"annotations": [],
+		"lastPublishTime": "2020-09-29T11:02:20Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

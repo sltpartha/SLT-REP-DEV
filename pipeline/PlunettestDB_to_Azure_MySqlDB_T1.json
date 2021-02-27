@@ -46,7 +46,10 @@
 									"type": "AzureMySqlSink",
 									"writeBatchSize": 10000,
 									"writeBatchTimeout": "00:00:30",
-									"preCopyScript": "@concat('Truncate table ' , item().destination.tableName)"
+									"preCopyScript": {
+										"value": "@concat('Truncate table ' , item().destination.tableName)",
+										"type": "Expression"
+									}
 								},
 								"enableStaging": false,
 								"validateDataConsistency": false,
@@ -1457,6 +1460,8 @@
 		"folder": {
 			"name": "Plunet"
 		},
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2021-02-24T17:48:06Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }

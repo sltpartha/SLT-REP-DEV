@@ -15,5 +15,6 @@
 			"schema": "sltsqldbdev",
 			"table": "Opportunity"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

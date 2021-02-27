@@ -15,5 +15,6 @@
 			"schema": "CRM",
 			"table": "Opportunity_Subservice"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

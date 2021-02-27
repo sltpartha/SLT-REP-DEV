@@ -15,5 +15,6 @@
 			"schema": "sltsqldbdev",
 			"table": "industry"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

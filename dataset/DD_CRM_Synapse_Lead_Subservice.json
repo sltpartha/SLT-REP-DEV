@@ -15,5 +15,6 @@
 			"schema": "CRM",
 			"table": "Lead_Subservice"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

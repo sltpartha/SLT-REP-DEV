@@ -15,5 +15,6 @@
 			"schema": "sltsqldbdev",
 			"table": "Address"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

@@ -15,5 +15,6 @@
 			"schema": "sltsqldbdev",
 			"table": "SubDomain"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

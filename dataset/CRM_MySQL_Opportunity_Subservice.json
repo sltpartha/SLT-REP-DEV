@@ -14,5 +14,6 @@
 		"typeProperties": {
 			"tableName": "slt_test.Opportunity_Subservice"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

@@ -1,0 +1,58 @@
+{
+	"name": "PL_CRM_TO_MSQL_Industry",
+	"properties": {
+		"activities": [
+			{
+				"name": "PL_CRM_TO_MSQL_Industry",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "is_industry"
+					},
+					{
+						"name": "Destination",
+						"value": "sltsqldbdev.is_industry"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "DynamicsCrmSource"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_REST_CRM_Industry",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_SQL_CRM_Indusrty",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "CRM"
+		},
+		"annotations": [],
+		"lastPublishTime": "2020-10-01T11:32:40Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

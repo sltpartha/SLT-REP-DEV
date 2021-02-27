@@ -15,5 +15,6 @@
 			"schema": "sltsqldbdev",
 			"table": "Business_Potential"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

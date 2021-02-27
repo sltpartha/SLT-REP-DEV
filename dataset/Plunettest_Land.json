@@ -14,5 +14,6 @@
 		"typeProperties": {
 			"tableName": "`land`"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

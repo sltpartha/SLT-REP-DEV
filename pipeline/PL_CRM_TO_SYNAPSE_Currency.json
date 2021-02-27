@@ -358,6 +358,8 @@
 		"folder": {
 			"name": "CRM"
 		},
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2021-02-24T17:48:08Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }

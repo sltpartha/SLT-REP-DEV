@@ -944,6 +944,8 @@
 		"folder": {
 			"name": "Sreeja"
 		},
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2021-02-23T07:09:59Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }

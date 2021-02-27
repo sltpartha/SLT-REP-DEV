@@ -14,5 +14,6 @@
 		"typeProperties": {
 			"tableName": "`angebot`"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

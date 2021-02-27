@@ -942,6 +942,8 @@
 		"folder": {
 			"name": "Plunet"
 		},
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2021-01-28T10:20:21Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }

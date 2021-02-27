@@ -1,0 +1,24 @@
+{
+	"name": "DS_ADLS_RAW_HR_who_is_out",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_BAMBOOHR",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "HR/ADLS RAW"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "who_is_out",
+				"folderPath": "BambooHR",
+				"fileSystem": "cntrawzonesltdev"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

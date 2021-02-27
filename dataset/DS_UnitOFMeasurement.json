@@ -15,5 +15,6 @@
 			"schema": "PLUNET",
 			"table": "Unit_Of_Measurement"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

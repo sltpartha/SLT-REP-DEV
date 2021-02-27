@@ -37,6 +37,8 @@
 		"folder": {
 			"name": "Visma"
 		},
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2021-02-23T07:09:57Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }

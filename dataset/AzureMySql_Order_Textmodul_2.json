@@ -14,5 +14,6 @@
 		"typeProperties": {
 			"tableName": "auftrag_textmodul"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

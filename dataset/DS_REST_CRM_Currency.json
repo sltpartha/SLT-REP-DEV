@@ -14,5 +14,6 @@
 		"typeProperties": {
 			"entityName": "transactioncurrency"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

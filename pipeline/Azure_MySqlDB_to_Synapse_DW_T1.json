@@ -40,7 +40,10 @@
 								},
 								"sink": {
 									"type": "SqlDWSink",
-									"preCopyScript": "@concat('Truncate table slt_test.' , item().destination.table)",
+									"preCopyScript": {
+										"value": "@concat('Truncate table slt_test.' , item().destination.table)",
+										"type": "Expression"
+									},
 									"allowPolyBase": true,
 									"polyBaseSettings": {
 										"rejectValue": 0,
@@ -1320,6 +1323,8 @@
 		"folder": {
 			"name": "Plunet"
 		},
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2021-02-24T17:48:06Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }

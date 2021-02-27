@@ -15,5 +15,6 @@
 			"schema": "slt_test",
 			"table": "rechnungMitarbeiter"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

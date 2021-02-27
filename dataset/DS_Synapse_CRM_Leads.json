@@ -15,5 +15,6 @@
 			"schema": "CRM",
 			"table": "LeadSelectedCols"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

@@ -1,0 +1,22 @@
+{
+	"name": "DS_REST_HR_who_is_out",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_REST_BAMBOOHR",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "HR/HR REST ENDPOINT"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": {
+				"value": "@concat('v1/time_off/whos_out/?start=2019-09-01','&end=',adddays(utcnow(),31,'yyyy-MM-dd'))",
+				"type": "Expression"
+			}
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

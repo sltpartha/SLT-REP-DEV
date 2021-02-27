@@ -15,5 +15,6 @@
 			"schema": "sltsqldbdev",
 			"table": "contact"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

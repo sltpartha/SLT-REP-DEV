@@ -14,5 +14,6 @@
 		"typeProperties": {
 			"entityName": "is_subdomain"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

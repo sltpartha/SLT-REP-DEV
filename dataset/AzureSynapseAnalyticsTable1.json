@@ -15,5 +15,6 @@
 			"schema": "CRM",
 			"table": "Account_Subservice"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

@@ -15,5 +15,6 @@
 			"schema": "sltsqldbdev",
 			"table": "Account"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

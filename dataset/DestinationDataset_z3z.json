@@ -15,5 +15,6 @@
 			"schema": "sltdbdev",
 			"table": "CRM_Mapping"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

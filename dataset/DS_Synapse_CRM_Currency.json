@@ -15,5 +15,6 @@
 			"schema": "sltsqldbdev",
 			"table": "Currency"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

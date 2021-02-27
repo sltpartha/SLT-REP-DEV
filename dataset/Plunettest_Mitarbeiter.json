@@ -14,5 +14,6 @@
 		"typeProperties": {
 			"tableName": "`mitarbeiter`"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

@@ -1,0 +1,158 @@
+{
+	"name": "PL_TRANS_ADLK_HR_EmploymentStatus",
+	"properties": {
+		"activities": [
+			{
+				"name": "PL_TRANS_ADLK_HR_EmploymentStatus",
+				"description": "Flattened directory data",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['id']"
+								},
+								"sink": {
+									"name": "id",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"path": "$['employeeId']"
+								},
+								"sink": {
+									"name": "employeeId",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"path": "$['date']"
+								},
+								"sink": {
+									"name": "date",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['employmentStatus']"
+								},
+								"sink": {
+									"name": "employmentStatus",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['comment']"
+								},
+								"sink": {
+									"name": "comment",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['terminationReasonId']"
+								},
+								"sink": {
+									"name": "terminationReasonId",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['terminationTypeId']"
+								},
+								"sink": {
+									"name": "terminationTypeId",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['terminationRehireId']"
+								},
+								"sink": {
+									"name": "terminationRehireId",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['benetracStatus']"
+								},
+								"sink": {
+									"name": "benetracStatus",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['gusto']"
+								},
+								"sink": {
+									"name": "gusto",
+									"type": "String"
+								}
+							}
+						],
+						"collectionReference": "",
+						"mapComplexValuesToString": false
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_ADLS_RAW_HR_EmploymentStatus",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_ADLS_CURATED_HR",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "HR/ADLS RAW to ADLS CURATED"
+		},
+		"annotations": [],
+		"lastPublishTime": "2020-09-29T11:02:20Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

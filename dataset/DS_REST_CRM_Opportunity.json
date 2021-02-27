@@ -14,5 +14,6 @@
 		"typeProperties": {
 			"entityName": "opportunity"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

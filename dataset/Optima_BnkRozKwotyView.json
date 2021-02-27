@@ -15,5 +15,6 @@
 			"schema": "CDN",
 			"table": "BnkRozKwotyView"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }
