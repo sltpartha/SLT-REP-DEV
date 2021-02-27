@@ -1,0 +1,12 @@
+{
+	"name": "Dataset_metadata_dev_prod",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Metadata_LS_Dev",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": []
+	}
+}

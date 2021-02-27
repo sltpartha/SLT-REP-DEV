@@ -1,0 +1,30 @@
+{
+	"name": "DS2_Metadata_dev_to_prod",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Metadata_LS_Dev",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"schema": {
+				"type": "string"
+			},
+			"tablename": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": {
+				"value": "@dataset().schema",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().tablename",
+				"type": "Expression"
+			}
+		}
+	}
+}
