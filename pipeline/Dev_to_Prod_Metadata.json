@@ -83,8 +83,14 @@
 									"referenceName": "DS2_Metadata_dev_to_prod",
 									"type": "DatasetReference",
 									"parameters": {
-										"schema": "@item().source_schema",
-										"tablename": "@item().source_table"
+										"schema": {
+											"value": "@item().source_schema",
+											"type": "Expression"
+										},
+										"tablename": {
+											"value": "@item().source_table",
+											"type": "Expression"
+										}
 									}
 								}
 							],
@@ -93,8 +99,14 @@
 									"referenceName": "DS_metadata_dev_to_prod",
 									"type": "DatasetReference",
 									"parameters": {
-										"targetschema": "@item().target_schema",
-										"targettable": "@item().target_table"
+										"targetschema": {
+											"value": "@item().target_schema",
+											"type": "Expression"
+										},
+										"targettable": {
+											"value": "@item().target_table",
+											"type": "Expression"
+										}
 									}
 								}
 							]
