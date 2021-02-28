@@ -76,7 +76,13 @@
 									"tableOption": "autoCreate",
 									"disableMetricsCollection": false
 								},
-								"enableStaging": true
+								"enableStaging": true,
+								"stagingSettings": {
+									"linkedServiceName": {
+										"referenceName": "dev_prod_staging_data",
+										"type": "LinkedServiceReference"
+									}
+								}
 							},
 							"inputs": [
 								{
