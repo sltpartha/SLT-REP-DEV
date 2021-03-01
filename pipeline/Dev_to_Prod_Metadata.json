@@ -67,7 +67,7 @@
 								},
 								"sink": {
 									"type": "SqlDWSink",
-									"preCopyScript": "truncate table metadata_dev_to_prod",
+									"preCopyScript": "drop table metadata_dev_to_prod",
 									"allowPolyBase": true,
 									"polyBaseSettings": {
 										"rejectValue": 0,
